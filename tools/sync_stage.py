@@ -148,16 +148,31 @@ def run_job(job: dict, ex: Path, cache: dict) -> dict:
 def stage2(exch: str) -> None:
     ex = Path(exch)
     jobs = json.loads((ex / "lipsync_jobs.json").read_text())
+    prev = ex / "stage2" / "manifest.json"
+    done = {}
+    if prev.exists():  # rerun: keep finished jobs instead of paying for them again
+        done = {r["name"]: r for r in json.loads(prev.read_text())
+                if r.get("status") == "COMPLETED" and r.get("file") and (ex / r["file"]).exists()}
+    todo = [j for j in jobs if j["name"] not in done]
     cache: dict = {}
     # Upload the trimmed videos first (sequentially) so parallel jobs share them.
-    for j in jobs:
+    for j in todo:
         key = (j["clip"], j["first_frame"], j["last_frame"])
         if key not in cache:
             v = trim_video(j["clip"], *key[1:], ex / "stage2" / "src" / f"{key[0]}_f{key[1]}-{key[2]}.mp4")
             cache[key] = api.upload(v, name=v.name)["id"]
     with ThreadPoolExecutor(max_workers=3) as pool:  # Creator plan: 3 concurrent jobs
-        results = list(pool.map(lambda j: run_job(j, ex, cache), jobs))
-    save_json(ex / "stage2" / "manifest.json", results)
+        results = list(pool.map(lambda j: safe_job(j, ex, cache), todo))
+    by_name = {**done, **{r["name"]: r for r in results}}
+    save_json(ex / "stage2" / "manifest.json", [by_name[j["name"]] for j in jobs if j["name"] in by_name])
+
+
+def safe_job(job: dict, ex: Path, cache: dict) -> dict:
+    try:
+        return run_job(job, ex, cache)
+    except Exception as e:  # keep the other jobs' results
+        print(f"{job['name']}: ERROR {e}")
+        return {**job, "status": "ERROR", "error": str(e)}
 
 
 if __name__ == "__main__":

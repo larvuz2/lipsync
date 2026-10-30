@@ -1,0 +1,76 @@
+{
+  "_about": "Test 1: first three clips of the S01E01 archery scene. Windows are measured from the dialogue track (tools/speech_windows.py), in seconds from the start of each clip. 'tts' is the text sent to TTS (Jankó respelled so English TTS says YAHN-ko); 'en' is the subtitle form. The pipeline makes every variant, then keeps the one that fits the Hungarian timing best.",
+  "fps": "24000/1001",
+  "speaker_voices": {
+    "trainer": {
+      "clone_name": "Raven S01 - Trainer (archery)",
+      "sample_windows": {
+        "87434": [[1.12, 1.65], [2.23, 2.82]],
+        "87646": [[0.20, 0.90], [1.49, 2.99]],
+        "87725": [[1.90, 4.09], [6.24, 7.47]],
+        "88011": [[0.15, 2.01], [3.58, 4.90]],
+        "88186": [[0.26, 1.80]],
+        "88693": [[0.09, 0.75]]
+      }
+    }
+  },
+  "clips": {
+    "87434": {
+      "frames": 92,
+      "shots": [{"first_frame": 0, "last_frame": 91, "lipsync": true, "face": {"frame": 46, "xy": [1000, 400]}, "note": "trainer alone, profile turning to 3/4"}],
+      "lines": [
+        {"id": "87434_1", "speaker": "trainer", "on_screen": true,
+         "hu": "Jankó, gyere ide!", "phrases": [[1.17, 1.60], [2.28, 2.77]],
+         "variants": [
+           {"en": "Jankó… come here!", "tts": "Yahnko... come here!"},
+           {"en": "Jankó! Come here!", "tts": "Yahnko! Come here!"},
+           {"en": "Jankó… over here!", "tts": "Yahnko... over here!"}
+         ]}
+      ]
+    },
+    "87646": {
+      "frames": 79,
+      "shots": [{"first_frame": 0, "last_frame": 78, "lipsync": false, "note": "trainer speaks off-screen; boy on camera is listening, so picture stays untouched"}],
+      "lines": [
+        {"id": "87646_1", "speaker": "trainer", "on_screen": false,
+         "hu": "Na, mutasd!", "phrases": [[0.25, 0.85]],
+         "variants": [
+           {"en": "Go on, show me.", "tts": "Go on, show me."},
+           {"en": "Well, show me!", "tts": "Well, show me!"},
+           {"en": "Come on, show me.", "tts": "Come on, show me."}
+         ]},
+        {"id": "87646_2", "speaker": "trainer", "on_screen": false,
+         "hu": "Hogy tartod azt az íjat?", "phrases": [[1.54, 2.94]],
+         "variants": [
+           {"en": "How are you holding that bow?", "tts": "How are you holding that bow?"},
+           {"en": "How do you hold that bow?", "tts": "How do you hold that bow?"},
+           {"en": "How are you holding your bow?", "tts": "How are you holding your bow?"}
+         ]}
+      ]
+    },
+    "87725": {
+      "frames": 220,
+      "shots": [
+        {"first_frame": 0, "last_frame": 54, "lipsync": false, "note": "close on the boy drawing the bow; trainer's face not in frame"},
+        {"first_frame": 55, "last_frame": 219, "lipsync": true, "face": {"frame": 24, "xy": [630, 270]}, "note": "wide: trainer left, boy right. face.frame is relative to the shot"}
+      ],
+      "keep_original": [[0.50, 0.90]],
+      "lines": [
+        {"id": "87725_1", "speaker": "trainer", "on_screen": "starts off-screen, on-screen from 2.294 s",
+         "hu": "Az ideget tartsd távolabb, megüti az arcod.", "phrases": [[1.95, 4.04]],
+         "variants": [
+           {"en": "Keep the string away, or it'll hit your face.", "tts": "Keep the string away, or it'll hit your face."},
+           {"en": "Hold the string out farther, or it'll hit your face.", "tts": "Hold the string out farther, or it'll hit your face."},
+           {"en": "Keep that string clear, or it'll catch your face.", "tts": "Keep that string clear, or it'll catch your face."}
+         ]},
+        {"id": "87725_2", "speaker": "trainer", "on_screen": true,
+         "hu": "Engedd lejjebb a vállad.", "phrases": [[6.29, 7.42]],
+         "variants": [
+           {"en": "Drop your shoulder down.", "tts": "Drop your shoulder down."},
+           {"en": "Lower your shoulder.", "tts": "Lower your shoulder."},
+           {"en": "Let your shoulder drop.", "tts": "Let your shoulder drop."}
+         ]}
+      ]
+    }
+  }
+}

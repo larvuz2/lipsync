@@ -1,7 +1,7 @@
 # Clip inventory: Drive folder `LIP SYNC TEST` (S01E01)
 
 17 clips: 1920×1080 H.264, 23.976 fps, stereo 48 kHz AAC. Each `.mp3` is a copy of the clip's
-own audio (full mix). File names share the prefix
+own audio, which is the dialogue-only track (no music or effects). File names share the prefix
 `RISE_OF_THE_RAVEN_S01E01_INT_VERSION_ProRes4444_2160p25_200_SDR_OV20R128_MNE20_OV51R128_MNE51_First16_Splits`;
 the table uses the number at the end.
 

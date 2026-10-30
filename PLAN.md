@@ -33,7 +33,9 @@ bills you directly for dubbing audio.)
 
 - Video: 1920×1080 H.264, **23.976 fps**, 1.5–9.5 s per clip.
 - Each `.mp3` is the **same audio** as its `.mp4` (99.9 % match, 47 ms encoder offset). It is the
-  **final mix**: Hungarian dialogue plus music and sound effects. No clean voice track.
+  **dialogue-only track**: no music or effects, near-silence between lines (corrected after
+  measuring; I first assumed it was a full mix). So the voices are clean for cloning, and our
+  deliverable is an English dialogue track that sits on the production's M&E.
 - **No `.wav` file** is in the shared folder. The WAV you mentioned (the full conversation audio)
   hasn't been shared yet, or sits somewhere the link doesn't cover.
 - The file names say the masters are `ProRes4444_2160p25 … OV20 / MNE20 / OV51 / MNE51`: 4K ProRes
@@ -74,11 +76,11 @@ Details and endpoint notes: [`docs/sync-docs-notes.md`](docs/sync-docs-notes.md)
    Lip-syncing the visible listener would be wrong. Every line gets tagged "on screen" or
    "off screen", and only on-screen lines are lip-synced.
 3. **Voice-clone quality.** In these clips each character speaks for only a few seconds, which is
-   too little for a good clone (aim for 1–2 minutes of clean speech). More audio per character
-   (e.g. the whole episode), ideally as a **dialogue-only stem**, fixes this.
-4. **Music and effects.** The audio we have is a full mix. For the English version we need the
-   background without Hungarian dialogue. The production's **M&E track** is the clean answer.
-   AI separation (Demucs or ElevenLabs) is the fallback and leaves some artifacts.
+   too little for a great clone (aim for 1–2 minutes of clean speech). The audio is already clean
+   dialogue, so the fix is simply more of it: all of a character's lines across the episode(s).
+4. **Music and effects.** The clips carry dialogue only, so the English dialogue track goes on the
+   production's **M&E track** (the masters list M&E 2.0 and 5.1). Breaths and efforts in the
+   original dialogue are kept as they are, since they aren't language.
 5. **Frame rate and resolution.** The proxies are 23.976 fps and the masters 25 fps. Final renders
    must run on the delivery master (or a frame-exact copy), or the sync drifts when conformed.
    Sync accepts up to 4096×2160, so 4K masters work. Send 4:4:4 BT.709 to avoid colour shifts.

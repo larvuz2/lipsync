@@ -17,3 +17,7 @@ outputs/
 __pycache__/
 *.pyc
 .venv/
+
+# Small test exchange files between sessions (inputs, TTS takes, review outputs)
+!exchange/
+!exchange/**

@@ -1,0 +1,37 @@
+{
+ "sample_rate": 48000,
+ "order": [
+  "87434",
+  "87646",
+  "87725",
+  "88011",
+  "88186",
+  "88693"
+ ],
+ "offsets": {
+  "87434": {
+   "start_sample": 0,
+   "samples": 185280
+  },
+  "87646": {
+   "start_sample": 214080,
+   "samples": 159680
+  },
+  "87725": {
+   "start_sample": 402560,
+   "samples": 442304
+  },
+  "88011": {
+   "start_sample": 873664,
+   "samples": 352192
+  },
+  "88186": {
+   "start_sample": 1254656,
+   "samples": 262080
+  },
+  "88693": {
+   "start_sample": 1545536,
+   "samples": 77760
+  }
+ }
+}

@@ -40,7 +40,9 @@ def _req(method: str, path: str, **kw):
 def upload(path: str | Path, name: str | None = None) -> dict:
     """Upload a local file into Sync storage and register it. Returns the Asset (has 'id' and 'url')."""
     p = Path(path)
-    ctype = mimetypes.guess_type(p.name)[0] or "application/octet-stream"
+    known = {".wav": "audio/wav", ".mp3": "audio/mpeg", ".flac": "audio/flac", ".mp4": "video/mp4",
+             ".mov": "video/quicktime", ".png": "image/png", ".jpg": "image/jpeg"}
+    ctype = known.get(p.suffix.lower()) or mimetypes.guess_type(p.name)[0] or "application/octet-stream"
     kind = "VIDEO" if ctype.startswith("video") else "AUDIO" if ctype.startswith("audio") else "IMAGE"
     pre = _req("POST", "/v2/assets/upload",
                json={"fileName": p.name, "contentType": ctype, "size": p.stat().st_size})

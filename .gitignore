@@ -1,0 +1,19 @@
+# Secrets — never commit API keys
+.env
+.env.*
+!.env.example
+
+# Media and working files (too large for git; they live in Drive / Sync storage)
+media/
+work/
+outputs/
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.flac
+
+# Python
+__pycache__/
+*.pyc
+.venv/

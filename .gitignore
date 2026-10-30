@@ -24,3 +24,7 @@ __pycache__/
 
 # Trimmed lip-sync inputs; recreated by tools/sync_stage.py stage2
 exchange/*/stage2/src/
+
+# Test deliverables (small, reviewed outputs)
+!deliverables/
+!deliverables/**

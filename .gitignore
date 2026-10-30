@@ -21,3 +21,6 @@ __pycache__/
 # Small test exchange files between sessions (inputs, TTS takes, review outputs)
 !exchange/
 !exchange/**
+
+# Trimmed lip-sync inputs; recreated by tools/sync_stage.py stage2
+exchange/*/stage2/src/

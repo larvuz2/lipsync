@@ -43,7 +43,7 @@ def get_or_clone_voice(name: str, sample: Path) -> dict:
     for v in api.list_voices():
         if v.get("name") == name:
             print(f"reusing voice '{name}'")
-            return {"voiceId": v.get("id") or v.get("voiceId"), "syncId": v.get("internalVoiceId") or v.get("id"),
+            return {"voiceId": v.get("voiceId") or v.get("id"), "syncId": v.get("internalVoiceId") or v.get("id"),
                     "name": name, "reused": True}
     asset = api.upload(sample, name=f"{name} sample")
     v = api.clone_voice(name, asset_id=asset["id"])
@@ -57,6 +57,10 @@ def stage1(sheet_path: str, exch: str) -> None:
     out = ex / "stage1"
     inputs = ex / "inputs"
     manifest: dict = {"voices": {}, "tts": [], "autodub": None}
+    prev = out / "manifest.json"
+    done_tts = {}
+    if prev.exists():  # rerun: keep takes already downloaded instead of paying for them again
+        done_tts = {t["name"]: t for t in json.loads(prev.read_text()).get("tts", []) if (ex / t["file"]).exists()}
 
     for spk, cfg in sheet["speaker_voices"].items():
         manifest["voices"][spk] = get_or_clone_voice(cfg["clone_name"], inputs / f"voice_sample_{spk}.wav")
@@ -70,6 +74,8 @@ def stage1(sheet_path: str, exch: str) -> None:
             for vi, var in enumerate(line["variants"]):
                 for ti, tk in enumerate(takes):
                     name = f"{line['id']}_v{vi}_t{ti}"
+                    if name in done_tts:
+                        manifest["tts"].append(done_tts[name]); continue
                     for attempt in range(4):
                         try:
                             r = api.tts(var["tts"], voice, stability=tk["stability"], similarity=tk["similarity"])
@@ -86,9 +92,11 @@ def stage1(sheet_path: str, exch: str) -> None:
     save_json(out / "manifest.json", manifest)
 
     # Sync / ElevenLabs auto-dub of the joined scene, for comparison (Test A).
-    asset = api.upload(inputs / "autodub_source.wav", name="Raven test1 autodub source")
-    job = api.dub_audio(asset["id"], target="en-US", source="hu", strength=7)
-    entry = {"jobId": job["id"], "status": job["status"], "error": job.get("error"),
+    # Fixed project id so reruns reuse the same project.
+    proj = api.create_project("Raven test1 autodub", project_id="5f1d2c3a-7b4e-4c1a-9e2d-0a7b3c6d8e11")
+    asset = api.upload(inputs / "autodub_source.wav", name="Raven test1 autodub source", project_id=proj["id"])
+    job = api.dub_audio(asset["id"], target="en-US", source="hu", strength=7, project_id=proj["id"])
+    entry = {"jobId": job["id"], "projectId": proj["id"], "status": job["status"], "error": job.get("error"),
              "outputDurationSec": job.get("outputDurationSec")}
     if job["status"] == "COMPLETED" and job.get("outputMediaUrl"):
         u = job["outputMediaUrl"]

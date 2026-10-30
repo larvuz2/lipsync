@@ -28,8 +28,8 @@ def _key() -> str:
     return key
 
 
-def _req(method: str, path: str, **kw):
-    r = requests.request(method, BASE + path, headers={"x-api-key": _key()}, timeout=120, **kw)
+def _req(method: str, path: str, headers: dict | None = None, **kw):
+    r = requests.request(method, BASE + path, headers={"x-api-key": _key(), **(headers or {})}, timeout=120, **kw)
     if r.status_code >= 400:
         raise RuntimeError(f"{method} {path} -> {r.status_code}: {r.text[:500]}")
     return r.json() if r.content else None
@@ -37,7 +37,7 @@ def _req(method: str, path: str, **kw):
 
 # --- assets -----------------------------------------------------------------
 
-def upload(path: str | Path, name: str | None = None) -> dict:
+def upload(path: str | Path, name: str | None = None, project_id: str | None = None) -> dict:
     """Upload a local file into Sync storage and register it. Returns the Asset (has 'id' and 'url')."""
     p = Path(path)
     known = {".wav": "audio/wav", ".mp3": "audio/mpeg", ".flac": "audio/flac", ".mp4": "video/mp4",
@@ -49,7 +49,18 @@ def upload(path: str | Path, name: str | None = None) -> dict:
     with open(p, "rb") as fh:  # presigned PUT: no API key, same Content-Type
         put = requests.put(pre["uploadUrl"], data=fh, headers={"Content-Type": ctype}, timeout=600)
     put.raise_for_status()
-    return _req("POST", "/v2/assets", json={"url": pre["url"], "type": kind, "name": name or p.name})
+    body = {"url": pre["url"], "type": kind, "name": name or p.name}
+    if project_id:
+        body["projectId"] = project_id
+    return _req("POST", "/v2/assets", json=body)
+
+
+def create_project(name: str, project_id: str | None = None) -> dict:
+    """Create a Studio project. Passing a fixed id makes this idempotent (returns the existing one)."""
+    body = {"name": name}
+    if project_id:
+        body["id"] = project_id
+    return _req("POST", "/v2/projects", json=body)
 
 
 # --- lip sync ---------------------------------------------------------------
@@ -105,10 +116,16 @@ def tts(script: str, voice_id: str, stability: float = 0.5, similarity: float = 
                                          "stability": stability, "similarityBoost": similarity})
 
 
-def dub_audio(audio_asset_id: str, target: str = "en-US", source: str = "hu", strength: int = 7) -> dict:
-    job = _req("POST", "/v2/integrations/dubbing",
-               json={"audioAssetId": audio_asset_id, "targetLang": target, "sourceLang": source,
-                     "providerName": "elevenlabs", "cloningStrength": strength})
+def dub_audio(audio_asset_id: str, target: str = "en-US", source: str = "hu", strength: int = 7,
+              project_id: str | None = None, idempotency_key: str | None = None) -> dict:
+    # A saved (registered) audio asset must be dubbed inside a project.
+    body = {"audioAssetId": audio_asset_id, "targetLang": target, "sourceLang": source,
+            "providerName": "elevenlabs", "cloningStrength": strength}
+    if project_id:
+        body["projectId"] = project_id
+    # Saved sources also need an Idempotency-Key; reusing the key returns the same job instead of a new one.
+    job = _req("POST", "/v2/integrations/dubbing", json=body,
+               headers={"Idempotency-Key": idempotency_key or f"dub-{audio_asset_id}-{target}"})
     while job["status"] not in {"COMPLETED", "FAILED"}:
         time.sleep(5)
         job = _req("GET", f"/v2/integrations/dubbing/{job['id']}")

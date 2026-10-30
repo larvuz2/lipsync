@@ -1,0 +1,90 @@
+{
+ "87434": {
+  "lines": [
+   {
+    "id": "87434_1",
+    "hu": "Jankó, gyere ide!",
+    "en": "Jankó… come here!",
+    "take": "87434_1_v0_t1",
+    "stability": 0.6,
+    "wer": 0.0,
+    "heard": "Yonko, come here.",
+    "natural_s": 1.55,
+    "stretch": [
+     0.9,
+     0.98
+    ],
+    "pieces": 2
+   }
+  ]
+ },
+ "87646": {
+  "lines": [
+   {
+    "id": "87646_1",
+    "hu": "Na, mutasd!",
+    "en": "Well, show me!",
+    "take": "87646_1_v1_t0",
+    "stability": 0.35,
+    "wer": 0.0,
+    "heard": "Well, show me.",
+    "natural_s": 1.15,
+    "stretch": [
+     0.9
+    ],
+    "pieces": 1
+   },
+   {
+    "id": "87646_2",
+    "hu": "Hogy tartod azt az íjat?",
+    "en": "How are you holding your bow?",
+    "take": "87646_2_v2_t0",
+    "stability": 0.35,
+    "wer": 0.0,
+    "heard": "How are you holding your bow?",
+    "natural_s": 1.47,
+    "stretch": [
+     0.952
+    ],
+    "pieces": 1
+   }
+  ]
+ },
+ "87725": {
+  "lines": [
+   {
+    "id": "87725_1",
+    "hu": "Az ideget tartsd távolabb, megüti az arcod.",
+    "en": "Keep the string away, or it'll hit your face.",
+    "take": "87725_1_v0_t1",
+    "stability": 0.6,
+    "wer": 0.0,
+    "heard": "Keep the string away, or it'll hit your face.",
+    "natural_s": 2.53,
+    "stretch": [
+     0.9
+    ],
+    "pieces": 1
+   },
+   {
+    "id": "87725_2",
+    "hu": "Engedd lejjebb a vállad.",
+    "en": "Lower your shoulder.",
+    "take": "87725_2_v1_t0",
+    "stability": 0.35,
+    "wer": 0.0,
+    "heard": "Lower your shoulder.",
+    "natural_s": 1.13,
+    "stretch": [
+     1.0
+    ],
+    "pieces": 1
+   }
+  ]
+ },
+ "_autodub": {
+  "in_s": 34.419,
+  "out_s": 34.419,
+  "scale": 1.0
+ }
+}

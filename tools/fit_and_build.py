@@ -127,7 +127,11 @@ def main():
     takes = {}
     for t in s1["tts"]:
         x = trim_silence(load(os.path.join(ex, t["file"])))
-        segs, _ = asr.transcribe(x[0], language="en", beam_size=5)
+        # Whisper expects 16 kHz samples.
+        x16 = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", os.path.join(ex, t["file"]), "-ac", "1",
+                                            "-ar", "16000", "-f", "f32le", "-"], capture_output=True, check=True).stdout,
+                            dtype=np.float32)
+        segs, _ = asr.transcribe(x16, language="en", beam_size=5)
         heard = " ".join(s.text.strip() for s in segs)
         t.update({"x": x, "nat": x.shape[1] / SR, "heard": heard, "wer": wer(t["text"], heard)})
         takes.setdefault(t["line"], []).append(t)
@@ -136,7 +140,7 @@ def main():
     report, jobs = {}, []
     for clip, c in sheet["clips"].items():
         path = glob.glob(os.path.join(media, f"*{clip}.mp4"))[0]
-        orig = load(path)[0]
+        orig = load(path, ch=2)[0]  # channel 0 of the dual-mono original (ffmpeg's mono fold adds +3 dB)
         en = orig.copy()
         report[clip] = {"lines": []}
         for line in c["lines"]:
@@ -157,9 +161,16 @@ def main():
             ph = split_phrases(best["x"])
             pieces = list(zip(ph, wins)) if len(wins) > 1 and len(ph) == len(wins) else [((0, best["x"].shape[1]), (wins[0][0], wins[-1][1]))]
             ratios = []
+            starts = sorted(w[0] for ln in c["lines"] for w in ln["phrases"])
             for (pa, pb), (wa, wb) in pieces:
-                a, b = int(round(wa * SR)), int(round(wb * SR))
                 seg = best["x"][:, pa:pb]
+                nat = seg.shape[1] / SR
+                # Start where the actor starts. Length: as close to the Hungarian phrase as possible, but
+                # never more than ±10 % off the natural English read (lip sync redraws the mouth to the
+                # English anyway), and never running into the next phrase or past the clip end.
+                nxt = min([s for s in starts if s > wa + 1e-6] + [len(orig) / SR + 0.12]) - 0.12
+                dur = min(max(wb - wa, nat * 0.90), nat * 1.10, nxt - wa)
+                a, b = int(round(wa * SR)), int(round((wa + dur) * SR))
                 ratios.append((b - a) / seg.shape[1])
                 y = stretch(seg, b - a)[0]
                 ref = orig[a:b]
@@ -169,12 +180,14 @@ def main():
                     y *= 0.89 / peak
                 y = fade(y)
                 # Swap the Hungarian words for English: 30 ms crossfade margins.
+                # Mute the whole span covered by either the Hungarian phrase or the English take.
                 m = int(0.03 * SR)
-                lo, hi = max(0, a - m), min(len(en), b + m)
+                ma, mb = min(a, int(round(wa * SR))), max(b, int(round(wb * SR)))
+                lo, hi = max(0, ma - m), min(len(en), mb + m)
                 ramp = np.ones(hi - lo)
-                ramp[: a - lo] = np.linspace(1, 0, a - lo)
-                ramp[a - lo: b - lo] = 0
-                ramp[b - lo:] = np.linspace(0, 1, hi - b)
+                ramp[: ma - lo] = np.linspace(1, 0, ma - lo)
+                ramp[ma - lo: mb - lo] = 0
+                ramp[mb - lo:] = np.linspace(0, 1, hi - mb)
                 en[lo:hi] *= ramp
                 en[a:b] += y
             info = {"id": line["id"], "hu": line["hu"], "en": line["variants"][best["variant"]]["en"],
@@ -198,6 +211,10 @@ def main():
             a = int(round(o["start_sample"] * scale))
             seg = dub[a:a + o["samples"]]
             seg = np.pad(seg, (0, o["samples"] - len(seg)))
+            # Match the original dialogue level (active speech only) so A and B compare fairly.
+            hu = load(glob.glob(os.path.join(media, f"*{clip}.mp4"))[0], ch=2)[0][:len(seg)]
+            # Compare the loud speech frames (90th percentile of 10 ms loudness) of both tracks.
+            seg = seg * 10 ** ((np.percentile(frame_db(hu), 90) - np.percentile(frame_db(seg), 90)) / 20)
             save(os.path.join(build, f"{clip}_EN_A.wav"), np.stack([seg, seg]))
 
     # Lip-sync jobs: only shots where the speaker is on camera.

@@ -84,20 +84,6 @@
   }
  },
  {
-  "name": "00090756_f0-55",
-  "clip": "00090756",
-  "first_frame": 0,
-  "last_frame": 55,
-  "audio": "lipsync_audio/00090756_f0-55.wav",
-  "face": {
-   "frame": 29,
-   "xy": [
-    941,
-    326
-   ]
-  }
- },
- {
   "name": "00090983_f53-81",
   "clip": "00090983",
   "first_frame": 53,

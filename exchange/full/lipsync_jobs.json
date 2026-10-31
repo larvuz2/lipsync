@@ -1,0 +1,212 @@
+[
+ {
+  "name": "00088011_f182-235",
+  "clip": "00088011",
+  "first_frame": 182,
+  "last_frame": 235,
+  "audio": "lipsync_audio/00088011_f182-235.wav",
+  "face": {
+   "frame": 18,
+   "xy": [
+    805,
+    313
+   ]
+  }
+ },
+ {
+  "name": "00088514_f20-79",
+  "clip": "00088514",
+  "first_frame": 20,
+  "last_frame": 79,
+  "audio": "lipsync_audio/00088514_f20-79.wav",
+  "face": {
+   "frame": 14,
+   "xy": [
+    760,
+    297
+   ]
+  }
+ },
+ {
+  "name": "00088693_f0-37",
+  "clip": "00088693",
+  "first_frame": 0,
+  "last_frame": 37,
+  "audio": "lipsync_audio/00088693_f0-37.wav",
+  "face": {
+   "frame": 3,
+   "xy": [
+    494,
+    221
+   ]
+  }
+ },
+ {
+  "name": "00090058_f0-115",
+  "clip": "00090058",
+  "first_frame": 0,
+  "last_frame": 115,
+  "audio": "lipsync_audio/00090058_f0-115.wav",
+  "face": {
+   "frame": 81,
+   "xy": [
+    806,
+    534
+   ]
+  }
+ },
+ {
+  "name": "00090058_f160-193",
+  "clip": "00090058",
+  "first_frame": 160,
+  "last_frame": 193,
+  "audio": "lipsync_audio/00090058_f160-193.wav",
+  "face": {
+   "frame": 18,
+   "xy": [
+    629,
+    485
+   ]
+  }
+ },
+ {
+  "name": "00090252_f0-31",
+  "clip": "00090252",
+  "first_frame": 0,
+  "last_frame": 31,
+  "audio": "lipsync_audio/00090252_f0-31.wav",
+  "face": {
+   "frame": 11,
+   "xy": [
+    659,
+    465
+   ]
+  }
+ },
+ {
+  "name": "00090527_f0-85",
+  "clip": "00090527",
+  "first_frame": 0,
+  "last_frame": 85,
+  "audio": "lipsync_audio/00090527_f0-85.wav",
+  "face": {
+   "frame": 57,
+   "xy": [
+    464,
+    355
+   ]
+  }
+ },
+ {
+  "name": "00090694_f30-61",
+  "clip": "00090694",
+  "first_frame": 30,
+  "last_frame": 61,
+  "audio": "lipsync_audio/00090694_f30-61.wav",
+  "face": {
+   "frame": 9,
+   "xy": [
+    1060,
+    400
+   ]
+  }
+ },
+ {
+  "name": "00090756_f0-55",
+  "clip": "00090756",
+  "first_frame": 0,
+  "last_frame": 55,
+  "audio": "lipsync_audio/00090756_f0-55.wav",
+  "face": {
+   "frame": 29,
+   "xy": [
+    941,
+    326
+   ]
+  }
+ },
+ {
+  "name": "00090983_f53-81",
+  "clip": "00090983",
+  "first_frame": 53,
+  "last_frame": 81,
+  "audio": "lipsync_audio/00090983_f53-81.wav",
+  "face": {
+   "frame": 9,
+   "xy": [
+    1024,
+    362
+   ]
+  }
+ },
+ {
+  "name": "00091606_f0-36",
+  "clip": "00091606",
+  "first_frame": 0,
+  "last_frame": 36,
+  "audio": "lipsync_audio/00091606_f0-36.wav",
+  "face": {
+   "frame": 11,
+   "xy": [
+    1177,
+    245
+   ]
+  }
+ },
+ {
+  "name": "00101509_f0-45",
+  "clip": "00101509",
+  "first_frame": 0,
+  "last_frame": 45,
+  "audio": "lipsync_audio/00101509_f0-45.wav",
+  "face": {
+   "frame": 13,
+   "xy": [
+    717,
+    378
+   ]
+  }
+ },
+ {
+  "name": "00101704_f0-71",
+  "clip": "00101704",
+  "first_frame": 0,
+  "last_frame": 71,
+  "audio": "lipsync_audio/00101704_f0-71.wav",
+  "face": {
+   "frame": 33,
+   "xy": [
+    1027,
+    455
+   ]
+  }
+ },
+ {
+  "name": "00102065_f20-75",
+  "clip": "00102065",
+  "first_frame": 20,
+  "last_frame": 75,
+  "audio": "lipsync_audio/00102065_f20-75.wav",
+  "face": {
+   "frame": 23,
+   "xy": [
+    874,
+    352
+   ]
+  }
+ },
+ {
+  "name": "00102148_f20-75",
+  "clip": "00102148",
+  "first_frame": 20,
+  "last_frame": 75,
+  "audio": "lipsync_audio/00102148_f20-75.wav",
+  "face": {
+   "frame": 13,
+   "xy": [
+    1153,
+    362
+   ]
+  }
+ }
+]

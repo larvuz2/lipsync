@@ -1,0 +1,16 @@
+{
+ "00088011": {"note": "close-up: trainer mouth hidden by hand -> audio only; wide shot 175-304 trainer says 'Right here'", "jobs": [{"first": 182, "last": 235, "face": [200, 805, 313]}]},
+ "00088514": {"note": "woman on stairs speaks; 2nd shot tiny figure -> audio only", "jobs": [{"first": 20, "last": 79, "face": [34, 760, 297]}]},
+ "00088693": {"note": "trainer walking, 'Go on, keep at it'", "jobs": [{"first": 0, "last": 37, "face": [3, 494, 221]}]},
+ "00090058": {"note": "father close-ups; middle shot his face hidden over the kids -> audio only", "jobs": [{"first": 0, "last": 115, "face": [81, 806, 534]}, {"first": 160, "last": 193, "face": [178, 629, 485]}]},
+ "00090252": {"note": "Janko: 'I'm staying with you'", "jobs": [{"first": 0, "last": 31, "face": [11, 659, 465]}]},
+ "00090527": {"note": "father close; 2nd shot father from behind -> audio only", "jobs": [{"first": 0, "last": 85, "face": [57, 464, 355]}]},
+ "00090694": {"note": "1st shot mother listening (father off-screen) -> audio only; 2nd shot father", "jobs": [{"first": 30, "last": 61, "face": [39, 1060, 400]}]},
+ "00090756": {"note": "mother shouting to the girl", "jobs": [{"first": 0, "last": 55, "face": [29, 941, 326]}]},
+ "00090983": {"note": "father close-up shouting 'Open up'; wide/action shots audio only", "jobs": [{"first": 53, "last": 81, "face": [62, 1024, 362]}]},
+ "00091606": {"note": "old man shouting; cut at f37", "jobs": [{"first": 0, "last": 36, "face": [11, 1177, 245]}]},
+ "00101509": {"note": "blonde woman in forest", "jobs": [{"first": 0, "last": 45, "face": [13, 717, 378]}]},
+ "00101704": {"note": "forest man apology", "jobs": [{"first": 0, "last": 71, "face": [33, 1027, 455]}]},
+ "00102065": {"note": "blonde woman 'now it's all yours'", "jobs": [{"first": 20, "last": 75, "face": [43, 874, 352]}]},
+ "00102148": {"note": "forest man 'help me back to the castle'", "jobs": [{"first": 20, "last": 75, "face": [33, 1153, 362]}]}
+}

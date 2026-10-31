@@ -28,3 +28,10 @@ exchange/*/stage2/src/
 # Test deliverables (small, reviewed outputs)
 !deliverables/
 !deliverables/**
+
+# Full run: large/local-only working files
+exchange/full/en/
+exchange/full/_ecapa/
+exchange/full/review/
+exchange/full/analysis/*.jpg
+exchange/*/lipsync/src/

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rise of the Raven — English Localization Report</title>
+<style>
+@page { size: 8.5in 11in; margin: 0; }
+:root {
+  --ink: #111318; --body: #2B2F36; --muted: #6A707A; --line: #E3E5E8; --paper: #FFFFFF;
+  --gold: #D4A24C; --gold-d: #8A6420; --teal: #4BA3A8; --slate: #5B6B82; --red: #B5473A; --tint: #F6F3EC;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { font-family: "Inter", sans-serif; color: var(--body); font-size: 9.6pt; line-height: 1.5;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; background: var(--paper); }
+.page:last-child { page-break-after: auto; }
+
+/* header & footer */
+.hdr { position: absolute; top: 0; left: 0; right: 0; height: 0.64in; background: var(--ink);
+       display: flex; align-items: center; justify-content: space-between; padding: 0 0.6in; }
+.hdr img { height: 0.36in; display: block; }
+.hdr .ttl { color: #C9C6BE; font-size: 7.4pt; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; }
+.ftr { position: absolute; bottom: 0.32in; left: 0.6in; right: 0.6in; display: flex; justify-content: space-between;
+       font-size: 7.2pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 0.08in; letter-spacing: 0.04em; }
+.content { position: absolute; top: 0.95in; left: 0.6in; right: 0.6in; bottom: 0.7in; }
+
+/* type */
+.kicker { font-size: 7.6pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-d); font-weight: 700; margin-bottom: 0.06in; }
+h1 { font-family: "Inter Display", "Inter", sans-serif; font-size: 23pt; line-height: 1.12; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.12in; }
+h2 { font-family: "Inter Display", "Inter", sans-serif; font-size: 12.5pt; color: var(--ink); font-weight: 700; margin: 0.16in 0 0.06in; }
+h3 { font-size: 9.6pt; color: var(--ink); font-weight: 700; margin-bottom: 0.03in; }
+p { margin-bottom: 0.08in; }
+.lead { font-size: 11pt; line-height: 1.55; color: #3A3F47; }
+.muted { color: var(--muted); }
+.small { font-size: 8.2pt; }
+.cap { font-size: 7.8pt; color: var(--muted); margin-top: 0.05in; line-height: 1.4; }
+.cap b { color: var(--ink); font-weight: 600; }
+figure img { width: 100%; display: block; border-radius: 3px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25in; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.18in; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.14in; }
+ul.ticks { list-style: none; }
+ul.ticks li { padding-left: 0.2in; position: relative; margin-bottom: 0.05in; }
+ul.ticks li::before { content: ""; position: absolute; left: 0; top: 0.065in; width: 0.08in; height: 0.08in; background: var(--gold); border-radius: 1px; }
+.rule { height: 3px; width: 0.55in; background: var(--gold); margin: 0.04in 0 0.14in; }
+
+/* KPI tiles */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; margin-top: 0.12in; }
+.kpi { background: var(--tint); border-top: 3px solid var(--gold); padding: 0.13in 0.14in 0.12in; }
+.kpi .n { font-family: "Inter Display", "Inter"; font-size: 21pt; font-weight: 700; color: var(--ink); line-height: 1.05; }
+.kpi .l { font-size: 7.8pt; color: #4A4F57; margin-top: 0.04in; line-height: 1.35; }
+
+/* tables */
+table { width: 100%; border-collapse: collapse; font-size: 8.3pt; }
+th { text-align: left; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 700;
+     border-bottom: 1.5px solid var(--ink); padding: 0.05in 0.06in; }
+td { border-bottom: 1px solid var(--line); padding: 0.055in 0.06in; vertical-align: top; }
+td.who { font-weight: 600; color: var(--ink); white-space: nowrap; }
+td.orig { color: #59606B; font-style: italic; }
+td.en { color: var(--ink); }
+td.tc { font-size: 7.4pt; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.scene { margin-top: 0.13in; }
+.scene .sh { display: flex; align-items: baseline; gap: 0.12in; border-left: 3px solid var(--gold); padding-left: 0.1in; margin-bottom: 0.04in; }
+.scene .sh .t { font-weight: 700; color: var(--ink); font-size: 10pt; }
+.scene .sh .m { font-size: 7.6pt; color: var(--muted); letter-spacing: 0.04em; }
+.badge { display: inline-block; font-size: 6.6pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.02in 0.06in; border-radius: 2px; }
+.b-gold { background: var(--gold); color: var(--ink); } .b-teal { background: var(--teal); color: #fff; }
+.b-red { background: var(--red); color: #fff; } .b-slate { background: var(--slate); color: #fff; } .b-ink { background: var(--ink); color: #E9E5DA; }
+
+/* pipeline */
+.pipe { display: grid; grid-template-columns: 0.42in 1fr; gap: 0 0.16in; margin-top: 0.06in; }
+.pipe .num { width: 0.42in; height: 0.42in; border-radius: 50%; background: var(--ink); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11pt; font-family: "Inter Display"; }
+.pipe .rail { display: flex; flex-direction: column; align-items: center; }
+.pipe .rail .bar { width: 2px; flex: 1; background: linear-gradient(var(--gold), #E8D3A6); margin: 0.03in 0; min-height: 0.12in; }
+.pipe .step { padding: 0.02in 0 0.12in; }
+.pipe .step h3 { font-size: 10.4pt; margin-bottom: 0.02in; }
+.pipe .step .tags { margin-top: 0.03in; }
+.pipe .step .tags span { display: inline-block; font-size: 6.9pt; color: #4A4F57; border: 1px solid #D9D3C4; border-radius: 10px; padding: 0.01in 0.08in; margin: 0 0.04in 0.03in 0; background: #FBFAF7; }
+
+/* cast */
+.cast6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.16in; }
+.card { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; }
+.card img.p { width: 100%; aspect-ratio: 1/0.82; object-fit: cover; object-position: center 35%; display: block; }
+.card .b { padding: 0.08in 0.1in 0.09in; }
+.card .nm { font-weight: 700; color: var(--ink); font-size: 9.6pt; }
+.card .rl { font-size: 7.6pt; color: var(--muted); margin-bottom: 0.04in; }
+.card .st { display: flex; justify-content: space-between; font-size: 7.4pt; color: #4A4F57; border-top: 1px solid var(--line); padding-top: 0.04in; margin-top: 0.04in; }
+.card .st b { color: var(--ink); }
+.card img.w { width: 100%; height: 0.26in; object-fit: fill; display: block; margin-top: 0.03in; }
+.mini { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.12in; }
+.mini .card .nm { font-size: 8.6pt; }
+.mini .card img.p { aspect-ratio: 1/0.86; }
+
+/* cover */
+.cover { background: #0B0C0F; color: #EDEAE2; }
+.cover .bg { position: absolute; inset: 0; background: url("fig/cover.jpg") center 30% / cover no-repeat; filter: saturate(0.9); }
+.cover .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,9,12,0.88) 0%, rgba(8,9,12,0.35) 30%, rgba(8,9,12,0.25) 48%, rgba(8,9,12,0.92) 72%, #08090C 100%); }
+.cover .logo { position: absolute; top: 0.5in; left: 0.6in; height: 0.62in; }
+.cover .tagtop { position: absolute; top: 0.62in; right: 0.6in; font-size: 7.6pt; letter-spacing: 0.2em; color: #CFC8B6; text-transform: uppercase; font-weight: 600; text-align: right; line-height: 1.6; }
+.cover .titles { position: absolute; left: 0.6in; right: 0.6in; bottom: 2.35in; }
+.cover .eyebrow { color: var(--gold); font-size: 8.4pt; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.12in; }
+.cover h1 { color: #F4F1EA; font-size: 40pt; line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 0.14in; }
+.cover .sub { font-size: 12.5pt; color: #D9D4C8; line-height: 1.5; max-width: 6.2in; }
+.cover .band { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.7in; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid rgba(212,162,76,0.55); padding-top: 0.16in; }
+.cover .band .n { font-family: "Inter Display"; font-size: 19pt; font-weight: 700; color: #F4F1EA; }
+.cover .band .l { font-size: 7.2pt; color: #B9B3A5; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.02in; }
+.cover .foot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.32in; font-size: 7pt; color: #8E897D; letter-spacing: 0.08em; display: flex; justify-content: space-between; }
+
+.callout { background: var(--ink); color: #E8E4DA; padding: 0.16in 0.2in; border-radius: 4px; }
+.callout .k { color: var(--gold); font-size: 7.4pt; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.04in; }
+.callout p { color: #D6D1C5; margin: 0; }
+.stat3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.12in; margin: 0.1in 0; }
+.stat3 > div { border-left: 3px solid var(--gold); padding: 0.02in 0 0.02in 0.1in; }
+.stat3 .n { font-family: "Inter Display"; font-size: 16pt; font-weight: 700; color: var(--ink); line-height: 1.1; }
+.stat3 .l { font-size: 7.6pt; color: var(--muted); }
+.chk td:first-child { width: 0.24in; color: var(--gold-d); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- =============================================================== 1. COVER -->
+<section class="page cover">
+  <div class="bg"></div><div class="shade"></div>
+  <img class="logo" src="fig/logo_trim.png" alt="Phatty Acid">
+  <div class="tagtop">Localization report<br>October 2026</div>
+  <div class="titles">
+    <div class="eyebrow">Season 1 · Episode 1 · English localization</div>
+    <h1>Rise of the Raven</h1>
+    <div class="sub">Hungarian and Serbian to American English: dubbing with voice cloning and frame-accurate lip sync, built on our custom workflow. Process and delivery report.</div>
+  </div>
+  <div class="band">
+    <div><div class="n">58</div><div class="l">Clips delivered</div></div>
+    <div><div class="n">8,874</div><div class="l">Frames analyzed</div></div>
+    <div><div class="n">20+</div><div class="l">Speaking roles voiced</div></div>
+    <div><div class="n">52</div><div class="l">Lip-sync passes</div></div>
+    <div><div class="n">100%</div><div class="l">Frame-exact &amp; verified</div></div>
+  </div>
+  <div class="foot"><span>PHATTY ACID · CONFIDENTIAL</span><span>Prepared for the production team</span></div>
+</section>
+
+<!-- =============================================================== 2. OVERVIEW -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">01 — Project overview</div>
+    <h1>Every line in English, in the actor's own voice, on the actor's own lips.</h1>
+    <div class="rule"></div>
+    <div class="grid2">
+      <div>
+        <h3>The objective</h3>
+        <p>Convert the first episode of <i>Rise of the Raven</i> into American English for an international audience. Every character should keep the tone and character of the original actor's voice, and every on-camera line should be lip-synced so the English reads as if it had been performed on set.</p>
+        <h3 style="margin-top:0.12in">The material</h3>
+        <p>58 picture-locked clips of the episode (1920×1080, 23.976 fps) with their dialogue tracks. Most of the episode is in Hungarian, but the scenes with the Serbian lord Branković and his family are performed in Serbian, so the work covered two source languages.</p>
+      </div>
+      <div>
+        <h3>What we accomplished</h3>
+        <ul class="ticks">
+          <li>All 58 clips delivered in American English, in the original order and with the original file names (plus an <b>_EN</b> suffix).</li>
+          <li>Each speaking role voiced with a clone of its own actor's performance. Six principal characters received dedicated, purpose-built voice models.</li>
+          <li>Lip sync on every shot where the speaker's face is visible, pinned to that speaker only. Shots with two people talking were handled in two passes.</li>
+          <li>Every line checked against the original and corrected where needed: names, period vocabulary and meaning.</li>
+          <li>Picture untouched wherever no lip sync was needed. Every file is frame-exact to its source.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="n">58</div><div class="l">Clips localized, 6 min 10 s of footage</div></div>
+      <div class="kpi"><div class="n">2</div><div class="l">Source languages: Hungarian and Serbian</div></div>
+      <div class="kpi"><div class="n">20+</div><div class="l">Speaking roles identified and voice-cloned</div></div>
+      <div class="kpi"><div class="n">6</div><div class="l">Dedicated character voice models</div></div>
+      <div class="kpi"><div class="n">38</div><div class="l">Clips lip-synced, 4,500+ frames re-rendered</div></div>
+      <div class="kpi"><div class="n">52</div><div class="l">Face-pinned lip-sync passes, incl. 3 two-speaker shots</div></div>
+      <div class="kpi"><div class="n">36</div><div class="l">Targeted script and audio corrections</div></div>
+      <div class="kpi"><div class="n">58/58</div><div class="l">Clips passed frame, sync and language checks</div></div>
+    </div>
+    <div class="callout" style="margin-top:0.22in">
+      <div class="k">Our approach</div>
+      <p>Off-the-shelf dubbing gets a scene roughly right. Our custom workflow adds the precision a drama needs: it identifies who is speaking in every frame, keeps each character's voice consistent across the episode, verifies the English line by line against the original, and only alters the picture where the speaker's mouth is actually on screen.</p>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>2</span></div>
+</section>
+
+<!-- =============================================================== 3. WORKFLOW -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">02 — Our workflow</div>
+    <h1>Eight stages, each with its own checks</h1>
+    <div class="rule"></div>
+    <div class="pipe">
+      <div class="rail"><div class="num">1</div><div class="bar"></div></div>
+      <div class="step"><h3>Scene, shot and face analysis</h3><p>Every frame is scanned: shot boundaries detected, every face found, tracked across the shot and mapped with a dense facial-landmark mesh.</p>
+        <div class="tags"><span>Shot detection</span><span>Face detection &amp; tracking</span><span>478-point landmark mesh</span></div></div>
+      <div class="rail"><div class="num">2</div><div class="bar"></div></div>
+      <div class="step"><h3>Speaker identification</h3><p>Each line is matched to the person saying it, using mouth movement measured frame by frame plus voice analysis of every sentence. On-screen and off-screen lines are separated.</p>
+        <div class="tags"><span>Lip-motion analysis</span><span>Voice pitch &amp; identity analysis</span><span>Active-speaker detection</span></div></div>
+      <div class="rail"><div class="num">3</div><div class="bar"></div></div>
+      <div class="step"><h3>Dubbing with voice cloning</h3><p>The whole episode is dubbed in one continuous pass, so each character's cloned voice stays consistent from scene to scene. Levels are matched to the original dialogue.</p>
+        <div class="tags"><span>Voice cloning</span><span>Neural dubbing</span><span>Loudness matching</span></div></div>
+      <div class="rail"><div class="num">4</div><div class="bar"></div></div>
+      <div class="step"><h3>Script verification &amp; correction</h3><p>Both the original and the English are transcribed and compared line by line. Wrong words, names or meanings are rebuilt in the character's own cloned voice, down to single-word edits.</p>
+        <div class="tags"><span>Speech recognition</span><span>Forced word alignment</span><span>Dedicated voice models</span></div></div>
+      <div class="rail"><div class="num">5</div><div class="bar"></div></div>
+      <div class="step"><h3>Multilingual detection</h3><p>Language identification runs on every spoken phrase. It found the Serbian-language scenes, which were then transcribed in Serbian and translated directly.</p>
+        <div class="tags"><span>Language identification</span><span>Serbian → English translation</span></div></div>
+      <div class="rail"><div class="num">6</div><div class="bar"></div></div>
+      <div class="step"><h3>Lip sync</h3><p>Each on-camera line is lip-synced on a shot-by-shot basis and pinned to the speaker's face. The model only hears that speaker's own words, so listeners' mouths stay still.</p>
+        <div class="tags"><span>Lip-sync model</span><span>Face pinning</span><span>Per-speaker audio gating</span><span>Dual-pass two-shots</span></div></div>
+      <div class="rail"><div class="num">7</div><div class="bar"></div></div>
+      <div class="step"><h3>Frame-exact assembly</h3><p>Lip-synced shots are cut back into the original picture on exact frame boundaries. Everything else stays original.</p>
+        <div class="tags"><span>Frame-accurate conform</span><span>Mastering-grade encode</span></div></div>
+      <div class="rail"><div class="num">8</div></div>
+      <div class="step"><h3>Verification &amp; delivery</h3><p>Every file is checked for frame count, format, audio-to-picture alignment and spoken language before delivery.</p>
+        <div class="tags"><span>Automated QA</span><span>Visual review</span></div></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>3</span></div>
+</section>
+
+<!-- =============================================================== 4. FACE ANALYSIS -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">03 — Stage 1 · Scene, shot &amp; face analysis</div>
+    <h1>We read every frame before changing any of them</h1>
+    <div class="rule"></div>
+    <p class="lead">All 8,874 frames of the episode were analyzed. The workflow detects every cut, finds every face, tracks it through the shot and decides which face is speaking. Only that face is ever lip-synced.</p>
+    <figure style="margin-top:0.12in"><img src="fig/face_grid.jpg"><figcaption class="cap"><b>Face detection across the episode.</b> Every face is located with a confidence score and five anchor points (eyes, nose, mouth corners). The face marked <b>active speaker</b> is the one whose mouth matches the dialogue; listeners and background faces are left untouched.</figcaption></figure>
+    <div class="grid2" style="margin-top:0.18in; align-items:start">
+      <figure><img src="fig/mesh.jpg"><figcaption class="cap"><b>Dense landmark mesh.</b> For each tracked face, a 478-point mesh measures lip opening and jaw movement in every frame, even in profile and low light.</figcaption></figure>
+      <div>
+        <div class="stat3" style="grid-template-columns:1fr; gap:0.14in; margin-top:0">
+          <div><div class="n">8,874</div><div class="l">frames scanned for faces, cuts and mouth movement</div></div>
+          <div><div class="n">52</div><div class="l">speaker anchor points placed on exact frames and verified against face detection</div></div>
+          <div><div class="n">1 frame</div><div class="l">precision on every cut and every lip-sync boundary (1/24 s)</div></div>
+        </div>
+        <p class="small muted" style="margin-top:0.12in">Shots where the speaker is turned away, hidden behind a hand, too small in a wide shot or simply off-screen are flagged as <b>audio only</b>. They get the English voice while their picture stays exactly as shot.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>4</span></div>
+</section>
+
+<!-- =============================================================== 5. SPEAKER ID -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">04 — Stage 2 · Speaker identification</div>
+    <h1>Who is speaking, frame by frame</h1>
+    <div class="rule"></div>
+    <p class="lead">A lip-sync model will animate whatever face it is given. The precision comes from deciding, line by line, whose mouth should move and whose should not.</p>
+    <figure style="margin-top:0.1in"><img src="fig/two_speaker.jpg" style="height:3.2in; object-fit:cover"><figcaption class="cap"><b>A two-person shot (Hunyadi and Erzsébet in the forest, 17 seconds).</b> Each character is lip-synced in a separate pass, and each pass receives only that character's own lines.</figcaption></figure>
+    <figure style="margin-top:0.14in"><img src="fig/speaker_timeline.png"><figcaption class="cap"><b>Measured mouth opening for both faces against the dialogue.</b> Gold and teal bands show which lines the workflow attributed to Hunyadi and to Erzsébet. Attribution combines mouth movement with voice analysis of every sentence (pitch and voice identity).</figcaption></figure>
+    <div class="grid3" style="margin-top:0.12in">
+      <div><h3>Lip-motion analysis</h3><p class="small">Mouth opening is tracked per face and correlated with the speech in the dialogue track.</p></div>
+      <div><h3>Voice analysis</h3><p class="small">Pitch and voice-identity analysis of each sentence separate male, female and child speakers, and tell characters apart.</p></div>
+      <div><h3>Word-level gating</h3><p class="small">Each lip-sync pass hears only its speaker's words, timed to the individual word, so a reply never moves the wrong mouth.</p></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>5</span></div>
+</section>
+
+<!-- =============================================================== 6. CAST & VOICES (1) -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">05 — Characters &amp; voice clones</div>
+    <h1>20+ voices, each cloned from its own actor</h1>
+    <div class="rule"></div>
+    <div class="stat3">
+      <div><div class="n">20+</div><div class="l">speaking roles identified in the episode</div></div>
+      <div><div class="n">100%</div><div class="l">of roles voiced from the original actor's own performance</div></div>
+      <div><div class="n">6</div><div class="l">principal characters with dedicated voice models</div></div>
+    </div>
+    <p>Every speaking role is voiced with a clone of the actor who played it, so the English keeps each performer's timbre, age and energy. The six principal characters also received a <b>dedicated voice model</b>, built from clean, isolated takes of their performance. We use these models to re-voice individual lines and words with full control.</p>
+    <h2>Principal cast · dedicated voice models</h2>
+    <div class="cast6">
+      <div class="card"><img class="p" src="fig/cast_hunyadi.jpg"><div class="b"><div class="nm">Hunyadi János</div><div class="rl">Lead · the hero</div><span class="badge b-gold">Dedicated voice model</span><img class="w" src="fig/wave_HUNYADI.png"><div class="st"><span>Model sample <b>9.7 s</b></span><span>Clips <b>7</b></span></div></div></div>
+      <div class="card"><img class="p" src="fig/cast_erzsebet.jpg"><div class="b"><div class="nm">Szilágyi Erzsébet</div><div class="rl">Lead · Hunyadi's love interest</div><span class="badge b-teal">Dedicated voice model</span><img class="w" src="fig/wave_ERZSEBET.png"><div class="st"><span>Model sample <b>11.9 s</b></span><span>Clips <b>6</b></span></div></div></div>
+      <div class="card"><img class="p" src="fig/cast_brankovic.jpg"><div class="b"><div class="nm">Branković</div><div class="rl">Serbian lord · speaks Serbian</div><span class="badge b-gold">Dedicated voice model</span><img class="w" src="fig/wave_OLDNOBLE.png"><div class="st"><span>Model sample <b>10.5 s</b></span><span>Clips <b>5</b></span></div></div></div>
+      <div class="card"><img class="p" src="fig/cast_daughter.jpg"><div class="b"><div class="nm">Branković's daughter</div><div class="rl">Serbian court · speaks Serbian</div><span class="badge b-teal">Dedicated voice model</span><img class="w" src="fig/wave_DARKWOMAN.png"><div class="st"><span>Model sample <b>7.3 s</b></span><span>Clips <b>5</b></span></div></div></div>
+      <div class="card"><img class="p" src="fig/cast_father.jpg"><div class="b"><div class="nm">Jankó's father</div><div class="rl">Prologue · the attack</div><span class="badge b-gold">Dedicated voice model</span><img class="w" src="fig/wave_FATHER.png"><div class="st"><span>Model sample <b>13.2 s</b></span><span>Clips <b>5</b></span></div></div></div>
+      <div class="card"><img class="p" src="fig/cast_miklos.jpg"><div class="b"><div class="nm">Miklós</div><div class="rl">Erzsébet's betrothed</div><span class="badge b-gold">Dedicated voice model</span><img class="w" src="fig/wave_MIKLOS.png"><div class="st"><span>Model sample <b>6.5 s</b></span><span>Clips <b>3</b></span></div></div></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>6</span></div>
+</section>
+
+<!-- =============================================================== 7. CAST & VOICES (2) -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">05 — Characters &amp; voice clones (continued)</div>
+    <h1>Supporting cast</h1>
+    <div class="rule"></div>
+    <p>Supporting and minor roles are voiced with performance clones made from their own lines in the episode. The same voice follows the character from scene to scene.</p>
+    <div class="mini" style="margin-top:0.1in">
+      <div class="card"><img class="p" src="fig/cast_trainer.jpg"><div class="b"><div class="nm">The archery master</div><div class="rl">Prologue · 4 clips</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_janko.jpg"><div class="b"><div class="nm">Young Jankó</div><div class="rl">Hunyadi as a boy · 2 clips</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_mother.jpg"><div class="b"><div class="nm">Jankó's mother</div><div class="rl">Prologue · 2 clips</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_queen.jpg"><div class="b"><div class="nm">The Queen</div><div class="rl">Royal banquet</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_noble_fur.jpg"><div class="b"><div class="nm">Nobleman in furs</div><div class="rl">Royal banquet · 2 clips</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_courtier.jpg"><div class="b"><div class="nm">The courtier</div><div class="rl">Court scenes · 4 clips</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_hall_lady.jpg"><div class="b"><div class="nm">Lady of the hall</div><div class="rl">Castle corridor</div><span class="badge b-ink">Performance clone</span></div></div>
+      <div class="card"><img class="p" src="fig/cast_lord_chain.jpg"><div class="b"><div class="nm">Lord with the gold chain</div><div class="rl">Balcony scene</div><span class="badge b-ink">Performance clone</span></div></div>
+    </div>
+    <h2>All speaking roles</h2>
+    <table>
+      <tr><th>Character</th><th>Language</th><th>Voice</th><th>Scenes</th></tr>
+      <tr><td class="who">Hunyadi János</td><td>Hungarian, Serbian</td><td><span class="badge b-gold">Dedicated model</span></td><td>Forest, Branković's court, banquet</td></tr>
+      <tr><td class="who">Szilágyi Erzsébet</td><td>Hungarian</td><td><span class="badge b-teal">Dedicated model</span></td><td>Forest, castle, banquet</td></tr>
+      <tr><td class="who">Branković · his daughter</td><td>Serbian</td><td><span class="badge b-gold">Dedicated models</span></td><td>Branković's court, banquet</td></tr>
+      <tr><td class="who">Jankó's father · Miklós</td><td>Hungarian</td><td><span class="badge b-gold">Dedicated models</span></td><td>Prologue · castle balcony</td></tr>
+      <tr><td class="who">Archery master, young Jankó, mother</td><td>Hungarian</td><td><span class="badge b-ink">Performance clones</span></td><td>Prologue: archery lesson, the attack</td></tr>
+      <tr><td class="who">Queen, nobleman in furs, courtier, lords and ladies</td><td>Hungarian</td><td><span class="badge b-ink">Performance clones</span></td><td>Court, corridor, royal banquet</td></tr>
+      <tr><td class="who">Guards, servants, villagers, off-screen voices</td><td>Hungarian, Serbian</td><td><span class="badge b-ink">Performance clones</span></td><td>Throughout</td></tr>
+    </table>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>7</span></div>
+</section>
+
+<!-- =============================================================== 8. DUBBING + SCRIPT VERIFICATION -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">06 — Stages 3 &amp; 4 · Dubbing, script verification &amp; correction</div>
+    <h1>Line-by-line verification, down to a single word</h1>
+    <div class="rule"></div>
+    <div class="grid2">
+      <div>
+        <h3>Dubbing with voice cloning</h3>
+        <p>The episode is dubbed as one continuous performance rather than clip by clip. Each character keeps the same cloned voice throughout, and the English is level-matched to the original dialogue so the mix sits exactly where the original did.</p>
+      </div>
+      <div>
+        <h3>Script verification</h3>
+        <p>We transcribe both the original dialogue and the English dub, then compare them line by line. Mistranslated lines, mispronounced names and missing lines are corrected in the character's own dedicated voice model, timed to the actor's original delivery.</p>
+      </div>
+    </div>
+    <figure style="margin-top:0.08in"><img src="fig/alignment.png"><figcaption class="cap"><b>Word-level surgery.</b> Forced alignment locates every word to the millisecond. Here only the mispronounced name is rebuilt in the character's cloned voice, and the rest of the actor-matched line is kept untouched.</figcaption></figure>
+    <h2>Examples of corrections</h2>
+    <table>
+      <tr><th>Clip</th><th>First-pass dub</th><th>Delivered English</th><th>Correction</th></tr>
+      <tr><td class="tc">90527</td><td class="orig">"Bring me my partridge…"</td><td class="en">"Bring me my <b>bracer</b>, then do what your mother says, understand?"</td><td class="small">Period vocabulary · single word</td></tr>
+      <tr><td class="tc">102229</td><td class="orig">"You're Miho's sister…"</td><td class="en">"You're <b>Mihály's</b> sister, little Erzsébet Szilágyi."</td><td class="small">Character name · single word</td></tr>
+      <tr><td class="tc">104461</td><td class="orig">"King Kasnik usually plays with his cow."</td><td class="en">"The king is late, as usual. No doubt still amusing himself with his whores."</td><td class="small">Meaning · full line re-voiced</td></tr>
+      <tr><td class="tc">105002</td><td class="orig">"will be want you"</td><td class="en">"You'll behave, won't you?"</td><td class="small">Garbled line · re-voiced</td></tr>
+      <tr><td class="tc">104695</td><td class="orig">(line missing)</td><td class="en">"It'll be fine."</td><td class="small">Missing line · inserted</td></tr>
+      <tr><td class="tc">108806</td><td class="orig">"…as jealous as we lucky."</td><td class="en">"Not nearly as jealous as <b>Újlaki</b>."</td><td class="small">Character name · single word</td></tr>
+    </table>
+    <div class="stat3" style="margin-top:0.16in">
+      <div><div class="n">36</div><div class="l">targeted corrections across the episode</div></div>
+      <div><div class="n">0.93–1.12×</div><div class="l">pace range of re-voiced lines: natural speed, never rushed</div></div>
+      <div><div class="n">100%</div><div class="l">of corrected lines re-checked by transcription after editing</div></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>8</span></div>
+</section>
+
+<!-- =============================================================== 9. MULTILINGUAL -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">07 — Stage 5 · Multilingual detection</div>
+    <h1>Two source languages, one English episode</h1>
+    <div class="rule"></div>
+    <p class="lead">Language identification ran on every one of the 137 spoken phrases in the finished episode. It confirmed that no Hungarian dialogue remains (only character names). It also showed that the Serbian court is performed in Serbian, so those scenes were transcribed in Serbian and translated directly from Serbian into English.</p>
+    <figure style="margin-top:0.1in"><img src="fig/language_map.png"><figcaption class="cap"><b>Language map of the episode.</b> Top: the original dialogue, Hungarian (slate) and Serbian (red). Bottom: the delivered episode, entirely American English.</figcaption></figure>
+    <h2>Serbian scenes · translated from Serbian</h2>
+    <table>
+      <tr><th>Clip</th><th>Character</th><th>Original (Serbian)</th><th>Delivered English</th></tr>
+      <tr><td class="tc">103835</td><td class="who">Branković</td><td class="orig">Taj vuk pripada meni, jer si ga ubio na srpskoj zemlji.</td><td class="en">That wolf belongs to me. You killed it on Serbian soil.</td></tr>
+      <tr><td class="tc">104123</td><td class="who">Hunyadi</td><td class="orig">Ali sam ga dao tvojoj kćeri.</td><td class="en">But I gave it to your daughter.</td></tr>
+      <tr><td class="tc">104240</td><td class="who">Daughter</td><td class="orig">Pa kako to izgledaš? Ajde, umij se, obuci se.</td><td class="en">Look at the state of you! Wash up, get dressed!</td></tr>
+      <tr><td class="tc">104240</td><td class="who">Branković</td><td class="orig">Kralj dolazi. Tvoj, mađarski.</td><td class="en">The king is coming. Your Hungarian king.</td></tr>
+      <tr><td class="tc">104461</td><td class="who">Branković</td><td class="orig">Oprosti, kćeri. Janko!</td><td class="en">Excuse me, daughter. Janko!</td></tr>
+      <tr><td class="tc">104695</td><td class="who">Branković</td><td class="orig">Slušaj, ovo veče je za mene jako važno.</td><td class="en">Listen, this evening is very important to me.</td></tr>
+      <tr><td class="tc">104695</td><td class="who">Branković</td><td class="orig">Ako razljutiš kralja, u ovu kuću više ne dolaziš.</td><td class="en">If you anger the king, don't you ever come back to this house.</td></tr>
+      <tr><td class="tc">107827</td><td class="who">Branković</td><td class="orig">Mara mi je potrebna da živi uz mene, pomaže mi u svemu, ne mogu je dati na tvoj dvor.</td><td class="en">I need Mara here with me. She helps me with everything. I can't give her to your court.</td></tr>
+      <tr><td class="tc">109692</td><td class="who">Servant</td><td class="orig">Gospodaru!</td><td class="en">My lord!</td></tr>
+    </table>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>9</span></div>
+</section>
+
+<!-- =============================================================== 10. REFERENCE SCRIPT (1) -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">08 — Reference script</div>
+    <h1>The English script, scene by scene</h1>
+    <div class="rule"></div>
+    <p class="small muted">Excerpts of the bilingual reference script, with the original line beside the English as delivered. Clip numbers refer to the delivered files.</p>
+
+    <div class="scene"><div class="sh"><span class="t">Prologue · The archery lesson</span><span class="m">Clips 87434–88693 · Hungarian</span></div>
+    <table>
+      <tr><th style="width:0.7in">Clip</th><th style="width:1.1in">Character</th><th>Original</th><th>English</th></tr>
+      <tr><td class="tc">87434</td><td class="who">Archery master</td><td class="orig">Jankó, gyere ide!</td><td class="en">Jankó, come here.</td></tr>
+      <tr><td class="tc">87646</td><td class="who">Archery master</td><td class="orig">Na, mutasd! Hogy tartod azt az íjat?</td><td class="en">Now let me see how you hold that bow.</td></tr>
+      <tr><td class="tc">87646</td><td class="who">Archery master</td><td class="orig">Az ideget tartsd távolabb, megüti az arcod. Engedd lejjebb a vállad.</td><td class="en">Keep the string further away or it'll slap the cheek. Drop your shoulder.</td></tr>
+      <tr><td class="tc">88011</td><td class="who">Archery master</td><td class="orig">Ne a kezeddel célozz. Ne is a szemeddel. Itt.</td><td class="en">Don't aim with your hand, nor with your eye. Right here.</td></tr>
+      <tr><td class="tc">88514</td><td class="who">Mother</td><td class="orig">Jankó, hányszor mondtam, hogy ne az udvaron játssz azzal az íjjal?</td><td class="en">Jankó, how many times have I told you not to play with that bow in the courtyard?</td></tr>
+    </table></div>
+
+    <div class="scene"><div class="sh"><span class="t">Prologue · The attack</span><span class="m">Clips 90058–90694 · Hungarian</span></div>
+    <table>
+      <tr><th style="width:0.7in">Clip</th><th style="width:1.1in">Character</th><th>Original</th><th>English</th></tr>
+      <tr><td class="tc">90058</td><td class="who">Father</td><td class="orig">Ide figyeljetek! El kell bújnotok!</td><td class="en">Listen to me. You need to hide.</td></tr>
+      <tr><td class="tc">90058</td><td class="who">Father</td><td class="orig">Bármi történik, azt teszitek, amit anyátok mond, megértettétek?</td><td class="en">Whatever happens, do as your mother says. Do you hear me?</td></tr>
+      <tr><td class="tc">90252</td><td class="who">Young Jankó</td><td class="orig">Én maradok veled.</td><td class="en">I'm staying with you.</td></tr>
+      <tr><td class="tc">90527</td><td class="who">Father</td><td class="orig">Ide figyelj, a te dolgod most az, hogy ezt túléld.</td><td class="en">Listen to me. Your only job right now is to survive this.</td></tr>
+      <tr><td class="tc">90694</td><td class="who">Father</td><td class="orig">Nem lesz semmi baj. Minden rendben lesz.</td><td class="en">It'll be alright. Everything will be fine.</td></tr>
+    </table></div>
+
+    <div class="scene"><div class="sh"><span class="t">The forest · Hunyadi meets Erzsébet</span><span class="m">Clips 102065–103629 · Hungarian</span></div>
+    <table>
+      <tr><th style="width:0.7in">Clip</th><th style="width:1.1in">Character</th><th>Original</th><th>English</th></tr>
+      <tr><td class="tc">102065</td><td class="who">Erzsébet</td><td class="orig">Most már a tiéd lehet.</td><td class="en">Well, now it's all yours.</td></tr>
+      <tr><td class="tc">102148</td><td class="who">Hunyadi</td><td class="orig">Segítesz visszajutni a várba?</td><td class="en">Will you help me find my way back to the castle?</td></tr>
+      <tr><td class="tc">102229</td><td class="who">Hunyadi</td><td class="orig">Hunyadi János vagyok.</td><td class="en">I'm János Hunyadi.</td></tr>
+      <tr><td class="tc">102229</td><td class="who">Erzsébet</td><td class="orig">Tudom, ki vagy. Minden lány tudja a neved. A bátyámmal szoktál mulatni.</td><td class="en">I know who you are. Every girl knows your name. You carouse with my brother.</td></tr>
+      <tr><td class="tc">102229</td><td class="who">Hunyadi</td><td class="orig">Te Mihály húga vagy? A kis Szilágyi Erzsébet? Mit keresel itt?</td><td class="en">You're Mihály's sister, little Erzsébet Szilágyi. What are you doing out here?</td></tr>
+      <tr><td class="tc">102229</td><td class="who">Erzsébet</td><td class="orig">A királyné frajláival jöttem.</td><td class="en">I came with the queen's ladies.</td></tr>
+      <tr><td class="tc">103629</td><td class="who">Hunyadi</td><td class="orig">De valójában ez téged illet, szerelmem.</td><td class="en">But in truth, it belongs to you, my love.</td></tr>
+    </table></div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>10</span></div>
+</section>
+
+<!-- =============================================================== 11. REFERENCE SCRIPT (2) -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">08 — Reference script (continued)</div>
+    <div class="scene" style="margin-top:0"><div class="sh"><span class="t">Branković's court</span><span class="m">Clips 103835–104695 · Serbian</span></div>
+    <table>
+      <tr><th style="width:0.7in">Clip</th><th style="width:1.1in">Character</th><th>Original</th><th>English</th></tr>
+      <tr><td class="tc">103835</td><td class="who">Branković</td><td class="orig">Hej, Janko! Taj vuk pripada meni, jer si ga ubio na srpskoj zemlji. Dođi.</td><td class="en">Hey, Janko! That wolf belongs to me. You killed it on Serbian soil. Come on!</td></tr>
+      <tr><td class="tc">104123</td><td class="who">Hunyadi</td><td class="orig">Ali sam ga dao tvojoj kćeri.</td><td class="en">But I gave it to your daughter.</td></tr>
+      <tr><td class="tc">104240</td><td class="who">Daughter</td><td class="orig">Pa kako to izgledaš? Ajde, umij se, obuci se.</td><td class="en">Look at the state of you! Wash up, get dressed!</td></tr>
+      <tr><td class="tc">104240</td><td class="who">Branković</td><td class="orig">Kralj dolazi. Tvoj, mađarski.</td><td class="en">The king is coming. Your Hungarian king.</td></tr>
+      <tr><td class="tc">104240</td><td class="who">Hunyadi</td><td class="orig">Je l' Zigismund već tu?</td><td class="en">Is Sigismund here already?</td></tr>
+      <tr><td class="tc">104461</td><td class="who">Branković</td><td class="orig">Samo kraljica. Kralj kasni kao obično, sigurno se još zabavlja sa svojim kurvama.</td><td class="en">Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.</td></tr>
+      <tr><td class="tc">104461</td><td class="who">Daughter</td><td class="orig">Oče!</td><td class="en">Father!</td></tr>
+      <tr><td class="tc">104461</td><td class="who">Branković</td><td class="orig">Oprosti, kćeri. Janko!</td><td class="en">Excuse me, daughter. Janko!</td></tr>
+      <tr><td class="tc">104695</td><td class="who">Branković</td><td class="orig">Slušaj, ovo veče je za mene jako važno. Ako razljutiš kralja, u ovu kuću više ne dolaziš. Zato pazi što radiš.</td><td class="en">Listen, this evening is very important to me. If you anger the king, don't you ever come back to this house. So watch what you do.</td></tr>
+      <tr><td class="tc">104695</td><td class="who">Daughter</td><td class="orig">Biće dobro.</td><td class="en">It'll be fine.</td></tr>
+    </table></div>
+
+    <div class="scene"><div class="sh"><span class="t">The royal banquet</span><span class="m">Clips 107025–108806 · Hungarian &amp; Serbian</span></div>
+    <table>
+      <tr><th style="width:0.7in">Clip</th><th style="width:1.1in">Character</th><th>Original</th><th>English</th></tr>
+      <tr><td class="tc">107025</td><td class="who">Nobleman</td><td class="orig">Éppen drága Brankovicsot faggatom, hogy mi a terve a kisebbik lányával.</td><td class="en">I was just pressing dear Branković about what he plans for his younger daughter.</td></tr>
+      <tr><td class="tc">107339</td><td class="who">Nobleman</td><td class="orig">Gondoskodtál már a lányod jövőjéről, Brankovics? Beállhatna a királyné mellé udvarhölgynek.</td><td class="en">Have you seen to your daughter's future yet, Branković? She could join the Queen as a lady-in-waiting.</td></tr>
+      <tr><td class="tc">107575</td><td class="who">Courtier</td><td class="orig">Ez egészen pompás ötlet, felség.</td><td class="en">A splendid idea, Your Majesty.</td></tr>
+      <tr><td class="tc">107637</td><td class="who">The Queen</td><td class="orig">A frajláimat én választom, a kurváidat te.</td><td class="en">I choose my ladies-in-waiting, and you choose your whores.</td></tr>
+      <tr><td class="tc">107827</td><td class="who">Branković</td><td class="orig">Mara mi je potrebna da živi uz mene, pomaže mi u svemu, ne mogu je dati na tvoj dvor.</td><td class="en">I need Mara here with me. She helps me with everything. I can't give her to your court.</td></tr>
+      <tr><td class="tc">108382</td><td class="who">Erzsébet</td><td class="orig">Már megint te? Pont olyan beképzelt vagy, mint ahogy gondoltam. De legalább jól táncolsz.</td><td class="en">You again? You're just as arrogant as I thought. At least you can dance.</td></tr>
+      <tr><td class="tc">108806</td><td class="who">Hunyadi</td><td class="orig">Annyira biztos nem, mint Újlaki.</td><td class="en">Not nearly as jealous as Újlaki.</td></tr>
+    </table></div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>11</span></div>
+</section>
+
+<!-- =============================================================== 12. LIP SYNC -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">09 — Stage 6 · Lip sync</div>
+    <h1>The English on the actor's lips</h1>
+    <div class="rule"></div>
+    <p class="lead">Our lip-sync model re-renders only the lower face of the speaking actor, shot by shot, so the mouth forms the English words. Skin, beard, lighting, grain and the rest of the frame stay as photographed.</p>
+    <figure style="margin-top:0.1in"><img src="fig/lipsync_before_after.jpg"><figcaption class="cap"><b>Original vs. lip-synced, same frames.</b> Three moments per character, taken from the delivered episode. The original mouth shapes follow the Hungarian or Serbian; the lip-synced ones follow the English.</figcaption></figure>
+    <div class="grid4" style="margin-top:0.16in">
+      <div><h3>Shot-trimmed</h3><p class="small">Each pass covers exactly one shot, cut on the frame, so a lip-sync never runs across an edit.</p></div>
+      <div><h3>Face-pinned</h3><p class="small">Each pass is anchored to the speaker's face on a chosen frame, verified against face detection.</p></div>
+      <div><h3>Speaker-gated</h3><p class="small">The model hears only the on-screen speaker's own words, so listeners don't move their lips.</p></div>
+      <div><h3>Dual-pass two-shots</h3><p class="small">When two people talk in one shot, each gets their own pass, chained on top of the other.</p></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>12</span></div>
+</section>
+
+<!-- =============================================================== 13. PRECISION + ASSEMBLY -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">10 — Stages 6 &amp; 7 · Precision &amp; frame-exact assembly</div>
+    <h1>Change only what must change</h1>
+    <div class="rule"></div>
+    <figure><img src="fig/change_heatmap.jpg"><figcaption class="cap"><b>Where the picture was altered.</b> Average difference between the original and the lip-synced shot. The change is confined to the speaking actor's mouth and jaw; the listener, background and lighting are untouched.</figcaption></figure>
+    <figure style="margin-top:0.16in"><img src="fig/assembly.png"><figcaption class="cap"><b>Frame-exact assembly.</b> Each clip is rebuilt on exact frame boundaries: lip-synced shots (gold, and teal for the second speaker in a two-shot) are cut into the untouched original frames (grey). Ten of the 38 lip-synced clips shown.</figcaption></figure>
+    <div class="stat3" style="margin-top:0.14in">
+      <div><div class="n">38</div><div class="l">clips with lip sync · 20 clips with picture untouched</div></div>
+      <div><div class="n">52</div><div class="l">shot-level lip-sync passes, each frame-checked</div></div>
+      <div><div class="n">0</div><div class="l">frames added, dropped or shifted against the source</div></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>13</span></div>
+</section>
+
+<!-- =============================================================== 14. QA & DELIVERY -->
+<section class="page">
+  <div class="hdr"><img src="fig/logo_trim.png" alt="Phatty Acid"><div class="ttl">Rise of the Raven · S01E01 · English localization</div></div>
+  <div class="content">
+    <div class="kicker">11 — Stage 8 · Verification &amp; delivery</div>
+    <h1>Every file verified before it leaves</h1>
+    <div class="rule"></div>
+    <figure><img src="fig/qa_av.png"><figcaption class="cap"><b>Audio-to-picture alignment of all 58 delivered clips.</b> Every clip falls well inside a one-frame tolerance.</figcaption></figure>
+    <div class="grid2" style="margin-top:0.16in; align-items:start">
+      <div>
+        <h2 style="margin-top:0">Quality checks</h2>
+        <table class="chk">
+          <tr><td>✓</td><td><b>Frame count</b> identical to the source, all 58 clips</td></tr>
+          <tr><td>✓</td><td><b>Format</b> 1920×1080, 23.976 fps, as delivered to us</td></tr>
+          <tr><td>✓</td><td><b>Audio</b> one English dialogue track, AAC 48 kHz</td></tr>
+          <tr><td>✓</td><td><b>Sync</b> audio within one frame of the picture</td></tr>
+          <tr><td>✓</td><td><b>Content</b> each file carries the verified English track</td></tr>
+          <tr><td>✓</td><td><b>Language</b> all 137 spoken phrases identified as English (names excepted)</td></tr>
+          <tr><td>✓</td><td><b>Lip sync</b> every pass checked: the change sits on the pinned face, mouth crops reviewed by eye</td></tr>
+        </table>
+      </div>
+      <div>
+        <h2 style="margin-top:0">Deliverables</h2>
+        <p><b>58 video files</b>, one per original clip, in the original order. Each keeps its original file name with an <b>_EN</b> suffix:</p>
+        <p class="small" style="font-family:'DejaVu Sans Mono',monospace; background:var(--tint); padding:0.08in 0.1in; border-radius:3px; word-break:break-all; color:var(--ink)">RISE_OF_THE_RAVEN_S01E01_…_Splits00087434_EN.mp4</p>
+        <p>Picture is the original master wherever no lip sync was needed, and frame-exact lip-synced picture elsewhere, with the English dialogue track.</p>
+        <div class="callout" style="margin-top:0.12in">
+          <div class="k">Ready for review</div>
+          <p>A native-speaker pass on the final English is always welcome; our reference script makes that review quick.</p>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute; bottom:0.1in; left:0; right:0; text-align:center">
+      <div style="display:inline-block; background:var(--ink); padding:0.14in 0.3in; border-radius:4px"><img src="fig/logo_trim.png" style="height:0.42in; display:block"></div>
+      <div class="small muted" style="margin-top:0.06in; letter-spacing:0.12em; text-transform:uppercase">Dubbing · Voice cloning · Lip sync · Localization</div>
+    </div>
+  </div>
+  <div class="ftr"><span>Phatty Acid · Localization report</span><span>14</span></div>
+</section>
+
+</body>
+</html>

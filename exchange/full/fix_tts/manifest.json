@@ -463,6 +463,357 @@
    "file": "fix_tts/L15_t2.mp3",
    "duration": 2.08,
    "text": "Not nearly as jealous as Ooylakee."
+  },
+  {
+   "id": "L07c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07c_t0.mp3",
+   "duration": 2.4,
+   "text": "Come on, wash up and get dressed!"
+  },
+  {
+   "id": "L07c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07c_t1.mp3",
+   "duration": 2.32,
+   "text": "Come on, wash up and get dressed!"
+  },
+  {
+   "id": "L07c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07c_t2.mp3",
+   "duration": 2.4,
+   "text": "Come on, wash up and get dressed!"
+  },
+  {
+   "id": "L07d",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07d_t0.mp3",
+   "duration": 3.52,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L07d",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07d_t1.mp3",
+   "duration": 3.52,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L07d",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07d_t2.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L09b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L09b_t0.mp3",
+   "duration": 6.88,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "L09b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L09b_t1.mp3",
+   "duration": 6.96,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "L09b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L09b_t2.mp3",
+   "duration": 6.8,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "L11b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L11b_t0.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yahnko!"
+  },
+  {
+   "id": "L11b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L11b_t1.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Yahnko!"
+  },
+  {
+   "id": "L11b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L11b_t2.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Yahnko!"
+  },
+  {
+   "id": "L16",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L16_t0.mp3",
+   "duration": 4.32,
+   "text": "That wolf belongs to me. You killed it on Serbian soil."
+  },
+  {
+   "id": "L16",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L16_t1.mp3",
+   "duration": 4.24,
+   "text": "That wolf belongs to me. You killed it on Serbian soil."
+  },
+  {
+   "id": "L16",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L16_t2.mp3",
+   "duration": 4.24,
+   "text": "That wolf belongs to me. You killed it on Serbian soil."
+  },
+  {
+   "id": "L17",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L17_t0.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L17_t1.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L17_t2.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L18a",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L18a_t0.mp3",
+   "duration": 3.28,
+   "text": "Listen, this evening is very important to me."
+  },
+  {
+   "id": "L18a",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L18a_t1.mp3",
+   "duration": 3.36,
+   "text": "Listen, this evening is very important to me."
+  },
+  {
+   "id": "L18a",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L18a_t2.mp3",
+   "duration": 3.36,
+   "text": "Listen, this evening is very important to me."
+  },
+  {
+   "id": "L18b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L18b_t0.mp3",
+   "duration": 4.24,
+   "text": "If you anger the king, don't you ever come back to this house."
+  },
+  {
+   "id": "L18b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L18b_t1.mp3",
+   "duration": 4.32,
+   "text": "If you anger the king, don't you ever come back to this house."
+  },
+  {
+   "id": "L18b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L18b_t2.mp3",
+   "duration": 4.32,
+   "text": "If you anger the king, don't you ever come back to this house."
+  },
+  {
+   "id": "L18c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L18c_t0.mp3",
+   "duration": 1.68,
+   "text": "So watch what you do."
+  },
+  {
+   "id": "L18c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L18c_t1.mp3",
+   "duration": 1.68,
+   "text": "So watch what you do."
+  },
+  {
+   "id": "L18c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L18c_t2.mp3",
+   "duration": 1.68,
+   "text": "So watch what you do."
+  },
+  {
+   "id": "L19a",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L19a_t0.mp3",
+   "duration": 2,
+   "text": "I need Mara here with me."
+  },
+  {
+   "id": "L19a",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L19a_t1.mp3",
+   "duration": 2,
+   "text": "I need Mara here with me."
+  },
+  {
+   "id": "L19a",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L19a_t2.mp3",
+   "duration": 1.92,
+   "text": "I need Mara here with me."
+  },
+  {
+   "id": "L19b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L19b_t0.mp3",
+   "duration": 2.08,
+   "text": "She helps me with everything."
+  },
+  {
+   "id": "L19b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L19b_t1.mp3",
+   "duration": 2,
+   "text": "She helps me with everything."
+  },
+  {
+   "id": "L19b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L19b_t2.mp3",
+   "duration": 2,
+   "text": "She helps me with everything."
+  },
+  {
+   "id": "L19c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L19c_t0.mp3",
+   "duration": 2,
+   "text": "I can't give her to your court."
+  },
+  {
+   "id": "L19c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L19c_t1.mp3",
+   "duration": 2,
+   "text": "I can't give her to your court."
+  },
+  {
+   "id": "L19c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L19c_t2.mp3",
+   "duration": 2,
+   "text": "I can't give her to your court."
+  },
+  {
+   "id": "L20",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L20_t0.mp3",
+   "duration": 1.04,
+   "text": "My lord!"
+  },
+  {
+   "id": "L20",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L20_t1.mp3",
+   "duration": 1.12,
+   "text": "My lord!"
+  },
+  {
+   "id": "L20",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L20_t2.mp3",
+   "duration": 1.12,
+   "text": "My lord!"
   }
  ]
 }

@@ -814,6 +814,33 @@
    "file": "fix_tts/L20_t2.mp3",
    "duration": 1.12,
    "text": "My lord!"
+  },
+  {
+   "id": "L07e",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07e_t0.mp3",
+   "duration": 2,
+   "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L07e",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07e_t1.mp3",
+   "duration": 2,
+   "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L07e",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07e_t2.mp3",
+   "duration": 2,
+   "text": "Wash up, get dressed!"
   }
  ]
 }

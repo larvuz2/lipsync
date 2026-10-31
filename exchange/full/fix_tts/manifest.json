@@ -1,0 +1,468 @@
+{
+ "voices": {
+  "DARKWOMAN": {
+   "voiceId": "PB0Qs0z2WT74uVrWlj0Q",
+   "syncId": "61a1c367-61e2-4de8-8bc8-515e079e0502",
+   "name": "Raven dub - DARKWOMAN"
+  },
+  "ERZSEBET": {
+   "voiceId": "iFqusCxxxWIEJLwP1rav",
+   "syncId": "64250070-8dcd-4873-bae5-44b6a76c0fad",
+   "name": "Raven dub - ERZSEBET"
+  },
+  "FATHER": {
+   "voiceId": "VtSYc3Qlc510XELkxqE6",
+   "syncId": "4a02ce70-e1a9-499d-a247-7a9c117b4c6f",
+   "name": "Raven dub - FATHER"
+  },
+  "HUNYADI": {
+   "voiceId": "MdlkhrLp6QN8cOrRcZBt",
+   "syncId": "3abd3b8b-9a88-4303-a096-254d6c1806e4",
+   "name": "Raven dub - HUNYADI"
+  },
+  "MIKLOS": {
+   "voiceId": "6fBCAPpbiK0FEAMJkJgw",
+   "syncId": "cae283bb-ad78-4e1b-8d70-d16c0cfbe13b",
+   "name": "Raven dub - MIKLOS"
+  },
+  "OLDNOBLE": {
+   "voiceId": "Ewr3Em9KpanNePRbBx23",
+   "syncId": "76a833fb-a35e-4fa9-8e88-7b713b55522e",
+   "name": "Raven dub - OLDNOBLE"
+  }
+ },
+ "takes": [
+  {
+   "id": "L01",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L01_t0.mp3",
+   "duration": 4.32,
+   "text": "Bring me my bracer, then do what your mother says, understand?"
+  },
+  {
+   "id": "L01",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L01_t1.mp3",
+   "duration": 4.16,
+   "text": "Bring me my bracer, then do what your mother says, understand?"
+  },
+  {
+   "id": "L01",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L01_t2.mp3",
+   "duration": 4.16,
+   "text": "Bring me my bracer, then do what your mother says, understand?"
+  },
+  {
+   "id": "L02",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L02_t0.mp3",
+   "duration": 1.52,
+   "text": "I let you kill it."
+  },
+  {
+   "id": "L02",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L02_t1.mp3",
+   "duration": 1.6,
+   "text": "I let you kill it."
+  },
+  {
+   "id": "L02",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L02_t2.mp3",
+   "duration": 1.6,
+   "text": "I let you kill it."
+  },
+  {
+   "id": "L03",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L03_t0.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L03_t1.mp3",
+   "duration": 4,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L03_t2.mp3",
+   "duration": 3.84,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L04",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L04_t0.mp3",
+   "duration": 3.12,
+   "text": "But in truth, it belongs to you, my love."
+  },
+  {
+   "id": "L04",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L04_t1.mp3",
+   "duration": 3.04,
+   "text": "But in truth, it belongs to you, my love."
+  },
+  {
+   "id": "L04",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L04_t2.mp3",
+   "duration": 2.96,
+   "text": "But in truth, it belongs to you, my love."
+  },
+  {
+   "id": "L05",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L05_t0.mp3",
+   "duration": 1.12,
+   "text": "Come on!"
+  },
+  {
+   "id": "L05",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L05_t1.mp3",
+   "duration": 1.12,
+   "text": "Come on!"
+  },
+  {
+   "id": "L05",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L05_t2.mp3",
+   "duration": 1.12,
+   "text": "Come on!"
+  },
+  {
+   "id": "L06w",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L06w_t0.mp3",
+   "duration": 1.92,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L06w",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L06w_t1.mp3",
+   "duration": 1.92,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L06w",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L06w_t2.mp3",
+   "duration": 1.92,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L07a",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07a_t0.mp3",
+   "duration": 1.6,
+   "text": "Come on, let's go!"
+  },
+  {
+   "id": "L07a",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07a_t1.mp3",
+   "duration": 1.6,
+   "text": "Come on, let's go!"
+  },
+  {
+   "id": "L07a",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07a_t2.mp3",
+   "duration": 1.6,
+   "text": "Come on, let's go!"
+  },
+  {
+   "id": "L07b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07b_t0.mp3",
+   "duration": 2.4,
+   "text": "The King of Hungary is here!"
+  },
+  {
+   "id": "L07b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07b_t1.mp3",
+   "duration": 2.08,
+   "text": "The King of Hungary is here!"
+  },
+  {
+   "id": "L07b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07b_t2.mp3",
+   "duration": 2.24,
+   "text": "The King of Hungary is here!"
+  },
+  {
+   "id": "L08",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L08_t0.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L08_t1.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L08_t2.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L09",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L09_t0.mp3",
+   "duration": 4.56,
+   "text": "Only the queen. The king, as usual, is running late."
+  },
+  {
+   "id": "L09",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L09_t1.mp3",
+   "duration": 4.48,
+   "text": "Only the queen. The king, as usual, is running late."
+  },
+  {
+   "id": "L09",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L09_t2.mp3",
+   "duration": 4.48,
+   "text": "Only the queen. The king, as usual, is running late."
+  },
+  {
+   "id": "L10",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L10_t0.mp3",
+   "duration": 0.96,
+   "text": "Father!"
+  },
+  {
+   "id": "L10",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L10_t1.mp3",
+   "duration": 0.96,
+   "text": "Father!"
+  },
+  {
+   "id": "L10",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L10_t2.mp3",
+   "duration": 0.88,
+   "text": "Father!"
+  },
+  {
+   "id": "L11",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L11_t0.mp3",
+   "duration": 2.32,
+   "text": "Thank you, my dear. Yahnko!"
+  },
+  {
+   "id": "L11",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L11_t1.mp3",
+   "duration": 2.32,
+   "text": "Thank you, my dear. Yahnko!"
+  },
+  {
+   "id": "L11",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L11_t2.mp3",
+   "duration": 2.4,
+   "text": "Thank you, my dear. Yahnko!"
+  },
+  {
+   "id": "L12",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L12_t0.mp3",
+   "duration": 1.28,
+   "text": "It'll be fine."
+  },
+  {
+   "id": "L12",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L12_t1.mp3",
+   "duration": 1.12,
+   "text": "It'll be fine."
+  },
+  {
+   "id": "L12",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L12_t2.mp3",
+   "duration": 1.28,
+   "text": "It'll be fine."
+  },
+  {
+   "id": "L13",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L13_t0.mp3",
+   "duration": 1.84,
+   "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L13",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L13_t1.mp3",
+   "duration": 1.92,
+   "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L13",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L13_t2.mp3",
+   "duration": 1.84,
+   "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L14",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L14_t0.mp3",
+   "duration": 2.4,
+   "text": "Erzhebet Szilagyi is my betrothed."
+  },
+  {
+   "id": "L14",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L14_t1.mp3",
+   "duration": 2.4,
+   "text": "Erzhebet Szilagyi is my betrothed."
+  },
+  {
+   "id": "L14",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L14_t2.mp3",
+   "duration": 2.4,
+   "text": "Erzhebet Szilagyi is my betrothed."
+  },
+  {
+   "id": "L15",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L15_t0.mp3",
+   "duration": 2.24,
+   "text": "Not nearly as jealous as Ooylakee."
+  },
+  {
+   "id": "L15",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L15_t1.mp3",
+   "duration": 2.24,
+   "text": "Not nearly as jealous as Ooylakee."
+  },
+  {
+   "id": "L15",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L15_t2.mp3",
+   "duration": 2.08,
+   "text": "Not nearly as jealous as Ooylakee."
+  }
+ ]
+}

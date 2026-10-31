@@ -335,5 +335,471 @@
     ]
    }
   ]
+ },
+ "00092071": {
+  "note": "mother cries 'Jank\u00f3! Jank\u00f3!' (original restored) then 'My boy!' (dub)",
+  "jobs": [
+   {
+    "first": 40,
+    "last": 80,
+    "face": [
+     56,
+     952,
+     478
+    ]
+   }
+  ]
+ },
+ "00102229": {
+  "note": "walking two-shot: Hunyadi then Erzs\u00e9bet chained",
+  "jobs": [
+   {
+    "first": 20,
+    "last": 420,
+    "face": [
+     39,
+     823,
+     312
+    ],
+    "keep": [
+     [
+      1.1,
+      2.5
+     ],
+     [
+      9.9,
+      12.6
+     ],
+     [
+      13.5,
+      14.8
+     ]
+    ]
+   },
+   {
+    "first": 20,
+    "last": 420,
+    "face": [
+     39,
+     1296,
+     382
+    ],
+    "keep": [
+     [
+      3.5,
+      4.6
+     ],
+     [
+      5.3,
+      6.8
+     ],
+     [
+      7.2,
+      9.1
+     ],
+     [
+      15.2,
+      17.3
+     ]
+    ],
+    "after": 0
+   }
+  ]
+ },
+ "00103629": {
+  "note": "Hunyadi close in shot 1; shot 2 back to camera",
+  "jobs": [
+   {
+    "first": 30,
+    "last": 73,
+    "face": [
+     47,
+     1292,
+     441
+    ]
+   }
+  ]
+ },
+ "00103835": {
+  "note": "old nobleman close-up (shot 3): 'You killed it on Serbian land' + 'Come on!'; earlier lines off-screen",
+  "jobs": [
+   {
+    "first": 106,
+    "last": 191,
+    "face": [
+     123,
+     813,
+     408
+    ]
+   }
+  ]
+ },
+ "00104123": {
+  "note": "Hunyadi close (line content to be confirmed by native reviewer)",
+  "jobs": [
+   {
+    "first": 0,
+    "last": 70,
+    "face": [
+     18,
+     1066,
+     364
+    ]
+   }
+  ]
+ },
+ "00104240": {
+  "note": "daughter's lines off-face (shot 1); nobleman close-up shot 3; Hunyadi close-up shot 4 'Is Sigismund here already?'",
+  "jobs": [
+   {
+    "first": 119,
+    "last": 169,
+    "face": [
+     133,
+     759,
+     475
+    ],
+    "keep": [
+     [
+      3.8,
+      6.5
+     ]
+    ]
+   },
+   {
+    "first": 170,
+    "last": 220,
+    "face": [
+     180,
+     1353,
+     449
+    ],
+    "keep": [
+     [
+      6.8,
+      7.6
+     ]
+    ]
+   }
+  ]
+ },
+ "00104461": {
+  "note": "nobleman close-ups (shots 2, 4), daughter 'Father!' (shot 3)",
+  "jobs": [
+   {
+    "first": 86,
+    "last": 149,
+    "face": [
+     106,
+     761,
+     537
+    ],
+    "keep": [
+     [
+      0.0,
+      5.9
+     ]
+    ]
+   },
+   {
+    "first": 150,
+    "last": 182,
+    "face": [
+     154,
+     1159,
+     488
+    ],
+    "keep": [
+     [
+      5.9,
+      6.6
+     ]
+    ]
+   },
+   {
+    "first": 183,
+    "last": 233,
+    "face": [
+     197,
+     735,
+     478
+    ],
+    "keep": [
+     [
+      7.0,
+      9.2
+     ]
+    ]
+   }
+  ]
+ },
+ "00104695": {
+  "note": "nobleman profile shot 1; close shot 3 'So watch what you do'; daughter's 'It'll be fine' off-face",
+  "jobs": [
+   {
+    "first": 0,
+    "last": 176,
+    "face": [
+     45,
+     607,
+     593
+    ],
+    "keep": [
+     [
+      0.0,
+      8.2
+     ]
+    ]
+   },
+   {
+    "first": 237,
+    "last": 275,
+    "face": [
+     256,
+     690,
+     566
+    ],
+    "keep": [
+     [
+      9.5,
+      10.9
+     ]
+    ]
+   }
+  ]
+ },
+ "00105386": {
+  "note": "young man on balcony (Mikl\u00f3s): both lines",
+  "jobs": [
+   {
+    "first": 57,
+    "last": 161,
+    "face": [
+     76,
+     473,
+     420
+    ]
+   }
+  ]
+ },
+ "00105583": {
+  "note": "woman's mouth is still; the 'What?' is male, off-screen -> audio only",
+  "jobs": []
+ },
+ "00106229": {
+  "note": "dark hall: man then woman, chained, faces visible f100-410",
+  "jobs": [
+   {
+    "first": 100,
+    "last": 410,
+    "face": [
+     200,
+     1154,
+     319
+    ],
+    "keep": [
+     [
+      3.3,
+      7.8
+     ],
+     [
+      11.2,
+      15.6
+     ]
+    ]
+   },
+   {
+    "first": 100,
+    "last": 410,
+    "face": [
+     200,
+     826,
+     322
+    ],
+    "keep": [
+     [
+      7.8,
+      11.2
+     ],
+     [
+      15.6,
+      16.7
+     ]
+    ],
+    "after": 0
+   }
+  ]
+ },
+ "00107025": {
+  "note": "fur-collared nobleman (shot 2) both lines; shot 3 listeners",
+  "jobs": [
+   {
+    "first": 60,
+    "last": 193,
+    "face": [
+     60,
+     1310,
+     354
+    ]
+   }
+  ]
+ },
+ "00107339": {
+  "note": "nobleman shots 1 and 3; old man (shot 2) and woman (shot 4) listening",
+  "jobs": [
+   {
+    "first": 0,
+    "last": 121,
+    "face": [
+     40,
+     853,
+     495
+    ]
+   },
+   {
+    "first": 178,
+    "last": 215,
+    "face": [
+     178,
+     1067,
+     514
+    ]
+   }
+  ]
+ },
+ "00107575": {
+  "note": "man in shadow (shot 2) 'A splendid idea, your majesty'",
+  "jobs": [
+   {
+    "first": 30,
+    "last": 61,
+    "face": [
+     40,
+     1035,
+     439
+    ]
+   }
+  ]
+ },
+ "00107637": {
+  "note": "queen close-up (shot 2)",
+  "jobs": [
+   {
+    "first": 41,
+    "last": 126,
+    "face": [
+     60,
+     1100,
+     445
+    ]
+   }
+  ]
+ },
+ "00107827": {
+  "note": "old grey man close (shot 2) and in the wide (shot 4); nobleman drinking and listeners untouched",
+  "jobs": [
+   {
+    "first": 42,
+    "last": 94,
+    "face": [
+     60,
+     1150,
+     465
+    ]
+   },
+   {
+    "first": 146,
+    "last": 198,
+    "face": [
+     163,
+     730,
+     449
+    ]
+   }
+  ]
+ },
+ "00108026": {
+  "note": "woman in profile 'Come.'",
+  "jobs": [
+   {
+    "first": 30,
+    "last": 80,
+    "face": [
+     53,
+     988,
+     390
+    ]
+   }
+  ]
+ },
+ "00108382": {
+  "note": "blonde 'You're just as arrogant as I thought'; other lines off-face/dark -> audio only",
+  "jobs": [
+   {
+    "first": 125,
+    "last": 200,
+    "face": [
+     156,
+     744,
+     407
+    ],
+    "keep": [
+     [
+      5.6,
+      8.1
+     ]
+    ]
+   }
+  ]
+ },
+ "00109321": {
+  "note": "man with goatee at banquet",
+  "jobs": [
+   {
+    "first": 15,
+    "last": 70,
+    "face": [
+     27,
+     469,
+     495
+    ]
+   }
+  ]
+ },
+ "00109943": {
+  "note": "man 'What's that?' then woman 'Nothing, just...', chained",
+  "jobs": [
+   {
+    "first": 0,
+    "last": 76,
+    "face": [
+     35,
+     647,
+     322
+    ],
+    "keep": [
+     [
+      1.1,
+      1.8
+     ]
+    ]
+   },
+   {
+    "first": 0,
+    "last": 76,
+    "face": [
+     57,
+     1474,
+     403
+    ],
+    "keep": [
+     [
+      2.0,
+      2.8
+     ]
+    ],
+    "after": 0
+   }
+  ]
  }
 }

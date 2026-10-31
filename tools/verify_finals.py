@@ -37,7 +37,7 @@ def main():
     for c in json.load(open(os.path.join(ex, "clips.json"))):
         clip = c["clip"]
         src = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
-        dst = os.path.join(out, os.path.basename(src))
+        dst = os.path.join(out, os.path.basename(src)[:-4] + "_EN.mp4")  # delivered as <original name>_EN.mp4
         r = {"clip": clip, "file": os.path.basename(dst), "exists": os.path.exists(dst)}
         if r["exists"]:
             s = probe(dst)

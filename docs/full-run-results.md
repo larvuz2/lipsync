@@ -52,16 +52,30 @@ The original actor's own audio was kept for name shouts and screams where the du
 These are in 91606, 92071, 92290, 95210, 103835 ("Hé, Jankó!") and 109692. Stray dub words were muted
 in 91928, 104461, 105583 and 106957.
 
+## Serbian scenes (language check)
+
+A language check of every final phrase found no Hungarian dialogue left (character names only).
+It did find that the scenes with the Serbian lord Branković's family are in **Serbian** in the
+original. The auto-dub (set to Hungarian -> English) had left 4 of them in Serbian (103835, 104123,
+104695, 107827), and 109692 still had the original shout "Gospodaru!". These lines were transcribed
+in Serbian, translated, and re-voiced in the characters' cloned voices, then re-lip-synced:
+
+| Clip | Serbian | English now |
+|---|---|---|
+| 103835 | Taj vuk pripada meni, jer si ga ubio na srpskoj zemlji. | That wolf belongs to me. You killed it on Serbian soil. |
+| 104123 | Ali sam ga dao tvojoj kćeri. | But I gave it to your daughter. |
+| 104240 | Ajde, umij se, obuci se. Kralj dolazi, tvoj, mađarski. | Wash up, get dressed! / The king is coming. Your Hungarian king. |
+| 104461 | Samo kraljica. Kralj kasni kao obično, sigurno se još zabavlja sa svojim kurvama. / Oprosti, kćeri. Janko! | Only the queen. The king is late, as usual. No doubt still amusing himself with his whores. / Excuse me, daughter. Janko! |
+| 104695 | Slušaj, ovo veče je za mene jako važno. / Ako razljutiš kralja, u ovu kuću više ne dolaziš. / Zato pazi što radiš. | Listen, this evening is very important to me. / If you anger the king, don't you ever come back to this house. / So watch what you do. |
+| 107827 | Mara mi je potrebna da živi uz mene, pomaže mi u svemu, ne mogu je dati na tvoj dvor. | I need Mara here with me. She helps me with everything. I can't give her to your court. |
+| 109692 | Gospodaru! | My lord! (minor character; voiced with the FATHER clone) |
+
 ## For a Hungarian speaker to spot-check
 
 The Hungarian audio is hard to transcribe in these places, so the English is a best guess:
 
 | Clip | English now |
 |---|---|
-| 104461 (0–4.7 s) | Only the queen. The king, as usual, is running late. |
-| 104123 | And I gave it to your father-in-law. |
-| 104695 (3.8–7.3 s) | If you don't come back, the king won't come back to this house. |
-| 107827 | I need you to live with me. / Help me with everything. / I won't let you down. |
 | 91750 | Let go of me! |
 
 If the client has the Hungarian script or subtitles, sending them would let us confirm these lines.

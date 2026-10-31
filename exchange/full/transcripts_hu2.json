@@ -487,5 +487,26 @@
     "text": "KOSZPADÁR"
    }
   ]
+ },
+ "00092071": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.18,
+    "text": "Jankó! Jankó!"
+   },
+   {
+    "start": 2.52,
+    "end": 3.06,
+    "text": "Késvér!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 3.54,
+    "text": "Jánkó, Jánkó, és mi a..."
+   }
+  ]
  }
 }

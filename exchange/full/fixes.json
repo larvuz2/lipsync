@@ -138,12 +138,21 @@
   {
    "id": "L01",
    "clip": "00090527",
-   "start": 3.38,
-   "end": 5.86,
+   "start": 4.0,
+   "end": 4.52,
    "character": "FATHER",
    "en": "Bring me my bracer, then do what your mother says, understand?",
    "tts": "Bring me my bracer, then do what your mother says, understand?",
-   "was": "Bring me my partridge, ..."
+   "was": "partridge",
+   "line_span": [
+    3.38,
+    5.86
+   ],
+   "type": "word",
+   "take_line": "L01",
+   "word": "bracer",
+   "prev": "my",
+   "next": "then"
   },
   {
    "id": "L02",
@@ -153,17 +162,33 @@
    "character": "ERZSEBET",
    "en": "I let you kill it.",
    "tts": "I let you kill it.",
-   "was": "I was going to kill it."
+   "was": "I was going to",
+   "type": "word",
+   "take_line": "L02",
+   "word": "I let you",
+   "line_span": [
+    0.0,
+    0.98
+   ]
   },
   {
    "id": "L03",
    "clip": "00102229",
-   "start": 10.2,
-   "end": 12.62,
+   "start": 10.7,
+   "end": 10.94,
    "character": "HUNYADI",
    "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
    "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-   "was": "You're Miho's sister, little Erzhebet Szilagyi."
+   "was": "Miho's",
+   "line_span": [
+    10.2,
+    12.62
+   ],
+   "type": "word",
+   "take_line": "L03",
+   "word": "Mihai's",
+   "prev": "you're",
+   "next": "sister"
   },
   {
    "id": "L04",
@@ -209,21 +234,28 @@
    "id": "L07b",
    "clip": "00104240",
    "start": 3.78,
-   "end": 5.88,
+   "end": 6.4,
    "character": "OLDNOBLE",
    "en": "The King of Hungary is here!",
    "tts": "The King of Hungary is here!",
-   "was": "The king is coming, your Hungarian."
+   "was": "The king is coming, your Hungarian.",
+   "note": "old 'your Hungarian' runs to 6.35"
   },
   {
    "id": "L08",
    "clip": "00104240",
-   "start": 6.36,
-   "end": 7.62,
+   "start": 6.62,
+   "end": 7.8,
    "character": "HUNYADI",
    "en": "Is Sigismund here already?",
    "tts": "Is Sigismund here already?",
-   "was": "Is Zygismund already here?"
+   "line_span": [
+    6.36,
+    7.62
+   ],
+   "lead": 0.15,
+   "was": "Is Zygismund already here?",
+   "note": "re-voiced whole line; dub line really spans 6.73-7.75 (forced alignment)"
   },
   {
    "id": "L09",
@@ -259,12 +291,13 @@
   {
    "id": "L12",
    "clip": "00104695",
-   "start": 11.46,
-   "end": 12.0,
+   "start": 11.62,
+   "end": 12.45,
    "character": "DARKWOMAN",
    "en": "It'll be fine.",
    "tts": "It'll be fine.",
-   "was": "(missing in the dub)"
+   "was": "(missing in the dub)",
+   "note": "the dub has a quiet garbled version here; replace it"
   },
   {
    "id": "L13",
@@ -279,22 +312,40 @@
   {
    "id": "L14",
    "clip": "00105386",
-   "start": 5.08,
-   "end": 7.06,
+   "start": 5.1,
+   "end": 5.68,
    "character": "MIKLOS",
    "en": "Erzsébet Szilágyi is my betrothed.",
    "tts": "Erzhebet Szilagyi is my betrothed.",
-   "was": "Herjibet Szilagyi is my betrothed."
+   "was": "Herjibet",
+   "line_span": [
+    5.08,
+    7.06
+   ],
+   "type": "word",
+   "take_line": "L14",
+   "word": "Erzhebet",
+   "prev": "",
+   "next": "Szilagyi"
   },
   {
    "id": "L15",
    "clip": "00108806",
-   "start": 3.24,
-   "end": 5.26,
+   "start": 4.86,
+   "end": 5.24,
    "character": "HUNYADI",
    "en": "Not nearly as jealous as Újlaki.",
    "tts": "Not nearly as jealous as Ooylakee.",
-   "was": "Not nearly as jealous as we lucky."
+   "was": "we lucky",
+   "line_span": [
+    3.24,
+    5.26
+   ],
+   "type": "word",
+   "take_line": "L15",
+   "word": "Ooylakee",
+   "prev": "as",
+   "next": ""
   }
  ],
  "edits": [
@@ -352,7 +403,9 @@
    "start": 1.54,
    "end": 1.82,
    "type": "mute",
-   "why": "'What up?' -> 'What?'"
+   "why": "'What up?' -> 'What?'",
+   "exact": true,
+   "note": "keep 'What?', mute only 'up'"
   },
   {
    "id": "E08",
@@ -377,6 +430,14 @@
    "end": 5.96,
    "type": "mute",
    "why": "remove the start of the dub's 'Wait.' before 'Father!'"
+  },
+  {
+   "id": "E11",
+   "clip": "00104240",
+   "type": "mute",
+   "start": 3.32,
+   "end": 3.78,
+   "note": "old dub words left between L07a and L07b"
   }
  ]
 }

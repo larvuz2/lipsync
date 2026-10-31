@@ -74,9 +74,15 @@ def main():
         names = {}
         for k, j in enumerate(cfg.get("jobs", [])):
             f0, f1 = j["first"], j["last"]
-            base = f"{clip}_f{f0}-{f1}" + (f"_s{k}" if j.get("keep") else "")
+            base = f"{clip}_f{f0}-{f1}" + (f"_s{k}" if j.get("keep") or j.get("en_keep") else "")
             x = en.copy()
-            if j.get("keep"):
+            if j.get("en_keep"):
+                # exact English windows of this speaker (known placements of re-voiced lines)
+                mask = np.zeros(len(x))
+                for w0, w1 in j["en_keep"]:
+                    mask[max(0, int(w0 * SR)):int(w1 * SR)] = 1
+                x *= np.convolve(mask, np.ones(960) / 960, mode="same")
+            elif j.get("keep"):
                 keep = [tuple(w) for w in j["keep"]]
                 other = [p for p in hu_ph if sum(overlap(p, w) for w in keep) < 0.5 * (p[1] - p[0])]
                 mask = np.zeros(len(x))

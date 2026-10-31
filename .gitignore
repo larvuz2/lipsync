@@ -35,3 +35,5 @@ exchange/full/_ecapa/
 exchange/full/review/
 exchange/full/analysis/*.jpg
 exchange/*/lipsync/src/
+exchange/full/en_orig/
+exchange/full/qa/

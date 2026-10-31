@@ -1,0 +1,395 @@
+[
+ {
+  "id": "L01",
+  "clip": "00090527",
+  "type": "word",
+  "was": "partridge",
+  "word": "bracer",
+  "take": "fix_tts/L01_t2.mp3",
+  "take_heard": "Bring me my bracer. Then do what your mother says. Understand?",
+  "align_match": 1.0,
+  "slot_s": [
+   4.11,
+   4.68
+  ],
+  "word_s": 0.75,
+  "pushed_s": 0.1,
+  "speed": 1.12
+ },
+ {
+  "id": "E03",
+  "clip": "00091606",
+  "type": "restore",
+  "span": [
+   0.0,
+   2.9
+  ],
+  "cleared": [
+   0.0,
+   2.9
+  ]
+ },
+ {
+  "id": "E09",
+  "clip": "00091928",
+  "type": "mute",
+  "span": [
+   0.0,
+   0.74
+  ],
+  "cleared": [
+   0.0,
+   0.74
+  ]
+ },
+ {
+  "id": "E01",
+  "clip": "00092071",
+  "type": "restore",
+  "span": [
+   0.0,
+   2.24
+  ],
+  "cleared": [
+   0.0,
+   2.41
+  ]
+ },
+ {
+  "id": "E04",
+  "clip": "00092290",
+  "type": "restore",
+  "span": [
+   0.0,
+   2.66
+  ],
+  "cleared": [
+   0.0,
+   2.66
+  ]
+ },
+ {
+  "id": "E02",
+  "clip": "00095210",
+  "type": "restore",
+  "span": [
+   0.0,
+   4.2
+  ],
+  "cleared": [
+   0.0,
+   4.2
+  ]
+ },
+ {
+  "id": "L02",
+  "clip": "00101676",
+  "type": "word",
+  "was": "I was going to",
+  "word": "I let you",
+  "take": "fix_tts/L02_t1.mp3",
+  "take_heard": "I let you kill it.",
+  "align_match": 1.0,
+  "slot_s": [
+   0.11,
+   0.72
+  ],
+  "word_s": 0.61,
+  "pushed_s": 0.0,
+  "speed": 1.0
+ },
+ {
+  "id": "L03",
+  "clip": "00102229",
+  "type": "word",
+  "was": "Miho's",
+  "word": "Mihai's",
+  "take": "fix_tts/L03_t2.mp3",
+  "take_heard": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
+  "align_match": 1.0,
+  "slot_s": [
+   10.76,
+   11.05
+  ],
+  "word_s": 0.44,
+  "pushed_s": 0.1,
+  "speed": 1.12
+ },
+ {
+  "id": "L04",
+  "clip": "00103629",
+  "en": "But in truth, it belongs to you, my love.",
+  "take": "fix_tts/L04_t2.mp3",
+  "heard": "But in truth, it belongs to you, my love.",
+  "wer": 0.0,
+  "span_s": 2.66,
+  "natural_s": 2.75,
+  "placed": [
+   1.52,
+   4.18
+  ],
+  "speed": 1.03
+ },
+ {
+  "id": "E05",
+  "clip": "00103835",
+  "type": "restore",
+  "span": [
+   0.8,
+   1.96
+  ],
+  "cleared": [
+   0.8,
+   2.06
+  ]
+ },
+ {
+  "id": "L05",
+  "clip": "00103835",
+  "en": "Come on!",
+  "take": "fix_tts/L05_t0.mp3",
+  "heard": "Come on!",
+  "wer": 0.0,
+  "span_s": 0.7,
+  "natural_s": 0.9,
+  "placed": [
+   6.62,
+   7.42
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "E11",
+  "clip": "00104240",
+  "type": "mute",
+  "span": [
+   3.32,
+   3.78
+  ],
+  "cleared": [
+   3.32,
+   3.97
+  ]
+ },
+ {
+  "id": "L06w",
+  "clip": "00104240",
+  "en": "Look at the state of you!",
+  "take": "fix_tts/L06w_t2.mp3",
+  "heard": "Look at the state of you.",
+  "wer": 0.0,
+  "span_s": 1.3,
+  "natural_s": 1.69,
+  "placed": [
+   0.64,
+   2.15
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "L07a",
+  "clip": "00104240",
+  "en": "Come on, let's go!",
+  "take": "fix_tts/L07a_t2.mp3",
+  "heard": "Come on, let's go.",
+  "wer": 0.0,
+  "span_s": 0.94,
+  "natural_s": 1.3,
+  "placed": [
+   2.38,
+   3.54
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "L07b",
+  "clip": "00104240",
+  "en": "The King of Hungary is here!",
+  "take": "fix_tts/L07b_t0.mp3",
+  "heard": "The King of Hungary is here!",
+  "wer": 0.0,
+  "span_s": 2.62,
+  "natural_s": 2.16,
+  "placed": [
+   3.78,
+   6.11
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L08",
+  "clip": "00104240",
+  "en": "Is Sigismund here already?",
+  "take": "fix_tts/L08_t1.mp3",
+  "heard": "Is Sigismund here already?",
+  "wer": 0.0,
+  "span_s": 1.18,
+  "natural_s": 1.46,
+  "placed": [
+   6.62,
+   7.92
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "E10",
+  "clip": "00104461",
+  "type": "mute",
+  "span": [
+   5.8,
+   5.96
+  ],
+  "cleared": [
+   5.5,
+   5.96
+  ]
+ },
+ {
+  "id": "L09",
+  "clip": "00104461",
+  "en": "Only the queen. The king, as usual, is running late.",
+  "take": "fix_tts/L09_t0.mp3",
+  "heard": "Only the Queen. The King, as usual, is running late.",
+  "wer": 0.0,
+  "span_s": 5.54,
+  "natural_s": 4.36,
+  "placed": [
+   0.0,
+   4.71
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L10",
+  "clip": "00104461",
+  "en": "Father!",
+  "take": "fix_tts/L10_t1.mp3",
+  "heard": "Father",
+  "wer": 0.0,
+  "span_s": 0.5,
+  "natural_s": 0.67,
+  "placed": [
+   5.96,
+   6.56
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "L11",
+  "clip": "00104461",
+  "en": "Thank you, my dear. Jankó!",
+  "take": "fix_tts/L11_t2.mp3",
+  "heard": "Thank you, my dear. Yonko!",
+  "wer": 0.2,
+  "span_s": 2.28,
+  "natural_s": 2.21,
+  "placed": [
+   6.82,
+   9.1
+  ],
+  "speed": 0.97
+ },
+ {
+  "id": "L12",
+  "clip": "00104695",
+  "en": "It'll be fine.",
+  "take": "fix_tts/L12_t1.mp3",
+  "heard": "It'll be fine.",
+  "wer": 0.0,
+  "span_s": 0.83,
+  "natural_s": 0.98,
+  "placed": [
+   11.62,
+   12.49
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "L13",
+  "clip": "00105002",
+  "en": "You'll behave, won't you?",
+  "take": "fix_tts/L13_t1.mp3",
+  "heard": "You'll behave, won't you?",
+  "wer": 0.0,
+  "span_s": 2.22,
+  "natural_s": 1.65,
+  "placed": [
+   0.0,
+   1.78
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L14",
+  "clip": "00105386",
+  "type": "word",
+  "was": "Herjibet",
+  "word": "Erzhebet",
+  "take": "fix_tts/L14_t1.mp3",
+  "take_heard": "Erzhebet Szilagyi is my betrothed.",
+  "align_match": 1.0,
+  "slot_s": [
+   5.21,
+   5.74
+  ],
+  "word_s": 0.52,
+  "pushed_s": 0.0,
+  "speed": 1.0
+ },
+ {
+  "id": "E07",
+  "clip": "00105583",
+  "type": "mute",
+  "span": [
+   1.54,
+   1.82
+  ],
+  "cleared": [
+   1.54,
+   1.82
+  ]
+ },
+ {
+  "id": "E08",
+  "clip": "00106957",
+  "type": "mute",
+  "span": [
+   2.3,
+   2.86
+  ],
+  "cleared": [
+   2.3,
+   2.86
+  ]
+ },
+ {
+  "id": "L15",
+  "clip": "00108806",
+  "type": "word",
+  "was": "we lucky",
+  "word": "Ooylakee",
+  "take": "fix_tts/L15_t2.mp3",
+  "take_heard": "Not nearly as jealous as Eulachy.",
+  "align_match": 1.0,
+  "slot_s": [
+   4.92,
+   5.53
+  ],
+  "word_s": 0.61,
+  "pushed_s": 0.0,
+  "speed": 1.0
+ },
+ {
+  "id": "E06",
+  "clip": "00109692",
+  "type": "restore",
+  "span": [
+   3.4,
+   5.6
+  ],
+  "cleared": [
+   3.4,
+   5.6
+  ]
+ }
+]

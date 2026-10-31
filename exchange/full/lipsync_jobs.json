@@ -294,20 +294,6 @@
   }
  },
  {
-  "name": "00104123_f0-70_334111",
-  "clip": "00104123",
-  "first_frame": 0,
-  "last_frame": 70,
-  "audio": "lipsync_audio/00104123_f0-70_334111.wav",
-  "face": {
-   "frame": 18,
-   "xy": [
-    1066,
-    364
-   ]
-  }
- },
- {
   "name": "00107025_f60-193_ed9e7f",
   "clip": "00107025",
   "first_frame": 60,
@@ -374,34 +360,6 @@
    "xy": [
     1100,
     445
-   ]
-  }
- },
- {
-  "name": "00107827_f42-94_d0e530",
-  "clip": "00107827",
-  "first_frame": 42,
-  "last_frame": 94,
-  "audio": "lipsync_audio/00107827_f42-94_d0e530.wav",
-  "face": {
-   "frame": 18,
-   "xy": [
-    1150,
-    465
-   ]
-  }
- },
- {
-  "name": "00107827_f146-198_f06322",
-  "clip": "00107827",
-  "first_frame": 146,
-  "last_frame": 198,
-  "audio": "lipsync_audio/00107827_f146-198_f06322.wav",
-  "face": {
-   "frame": 17,
-   "xy": [
-    730,
-    449
    ]
   }
  },
@@ -577,11 +535,25 @@
   }
  },
  {
-  "name": "00103835_f106-191_2beaff",
+  "name": "00105386_f57-161_0d7fc4",
+  "clip": "00105386",
+  "first_frame": 57,
+  "last_frame": 161,
+  "audio": "lipsync_audio/00105386_f57-161_0d7fc4.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    473,
+    420
+   ]
+  }
+ },
+ {
+  "name": "00103835_f106-191_d22034",
   "clip": "00103835",
   "first_frame": 106,
   "last_frame": 191,
-  "audio": "lipsync_audio/00103835_f106-191_2beaff.wav",
+  "audio": "lipsync_audio/00103835_f106-191_d22034.wav",
   "face": {
    "frame": 17,
    "xy": [
@@ -591,11 +563,25 @@
   }
  },
  {
-  "name": "00104240_f119-169_s0_16ed91",
+  "name": "00104123_f0-70_a31689",
+  "clip": "00104123",
+  "first_frame": 0,
+  "last_frame": 70,
+  "audio": "lipsync_audio/00104123_f0-70_a31689.wav",
+  "face": {
+   "frame": 18,
+   "xy": [
+    1066,
+    364
+   ]
+  }
+ },
+ {
+  "name": "00104240_f119-169_s0_9e4cf3",
   "clip": "00104240",
   "first_frame": 119,
   "last_frame": 169,
-  "audio": "lipsync_audio/00104240_f119-169_s0_16ed91.wav",
+  "audio": "lipsync_audio/00104240_f119-169_s0_9e4cf3.wav",
   "face": {
    "frame": 14,
    "xy": [
@@ -619,11 +605,11 @@
   }
  },
  {
-  "name": "00104461_f86-149_s0_189015",
+  "name": "00104461_f86-149_s0_664ab6",
   "clip": "00104461",
   "first_frame": 86,
   "last_frame": 149,
-  "audio": "lipsync_audio/00104461_f86-149_s0_189015.wav",
+  "audio": "lipsync_audio/00104461_f86-149_s0_664ab6.wav",
   "face": {
    "frame": 20,
    "xy": [
@@ -647,11 +633,11 @@
   }
  },
  {
-  "name": "00104461_f183-233_s2_9fcea0",
+  "name": "00104461_f183-233_s2_b6a1b6",
   "clip": "00104461",
   "first_frame": 183,
   "last_frame": 233,
-  "audio": "lipsync_audio/00104461_f183-233_s2_9fcea0.wav",
+  "audio": "lipsync_audio/00104461_f183-233_s2_b6a1b6.wav",
   "face": {
    "frame": 14,
    "xy": [
@@ -661,11 +647,11 @@
   }
  },
  {
-  "name": "00104695_f0-176_s0_68f31f",
+  "name": "00104695_f0-176_s0_ac8397",
   "clip": "00104695",
   "first_frame": 0,
   "last_frame": 176,
-  "audio": "lipsync_audio/00104695_f0-176_s0_68f31f.wav",
+  "audio": "lipsync_audio/00104695_f0-176_s0_ac8397.wav",
   "face": {
    "frame": 45,
    "xy": [
@@ -675,11 +661,11 @@
   }
  },
  {
-  "name": "00104695_f237-275_s1_6342de",
+  "name": "00104695_f237-275_s1_2db307",
   "clip": "00104695",
   "first_frame": 237,
   "last_frame": 275,
-  "audio": "lipsync_audio/00104695_f237-275_s1_6342de.wav",
+  "audio": "lipsync_audio/00104695_f237-275_s1_2db307.wav",
   "face": {
    "frame": 19,
    "xy": [
@@ -689,16 +675,30 @@
   }
  },
  {
-  "name": "00105386_f57-161_0d7fc4",
-  "clip": "00105386",
-  "first_frame": 57,
-  "last_frame": 161,
-  "audio": "lipsync_audio/00105386_f57-161_0d7fc4.wav",
+  "name": "00107827_f42-94_b31449",
+  "clip": "00107827",
+  "first_frame": 42,
+  "last_frame": 94,
+  "audio": "lipsync_audio/00107827_f42-94_b31449.wav",
   "face": {
-   "frame": 19,
+   "frame": 18,
    "xy": [
-    473,
-    420
+    1150,
+    465
+   ]
+  }
+ },
+ {
+  "name": "00107827_f146-198_b8ca6d",
+  "clip": "00107827",
+  "first_frame": 146,
+  "last_frame": 198,
+  "audio": "lipsync_audio/00107827_f146-198_b8ca6d.wav",
+  "face": {
+   "frame": 17,
+   "xy": [
+    730,
+    449
    ]
   }
  }

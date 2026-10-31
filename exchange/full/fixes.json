@@ -306,17 +306,6 @@
    "next": ""
   },
   {
-   "id": "L07c",
-   "clip": "00104240",
-   "start": 2.38,
-   "end": 3.32,
-   "character": "DARKWOMAN",
-   "en": "Come on, wash up and get dressed!",
-   "tts": "Come on, wash up and get dressed!",
-   "was": "Ajde, umij se, obuci se. (was: Come on, let's go!)",
-   "source": "serbian"
-  },
-  {
    "id": "L07d",
    "clip": "00104240",
    "start": 3.78,
@@ -441,12 +430,23 @@
   {
    "id": "L20",
    "clip": "00109692",
-   "start": 3.4,
+   "start": 3.9,
    "end": 5.6,
    "character": "FATHER",
    "en": "My lord!",
    "tts": "My lord!",
    "was": "Gospodaru! (original Serbian audio had been kept)",
+   "source": "serbian"
+  },
+  {
+   "id": "L07e",
+   "clip": "00104240",
+   "start": 2.38,
+   "end": 3.32,
+   "character": "DARKWOMAN",
+   "en": "Wash up, get dressed!",
+   "tts": "Wash up, get dressed!",
+   "was": "Ajde, umij se, obuci se. (L07c 'Come on, wash up and get dressed!' was too long for the gap)",
    "source": "serbian"
   }
  ],
@@ -532,6 +532,14 @@
    "start": 3.32,
    "end": 3.78,
    "note": "old dub words left between L07a and L07b"
+  },
+  {
+   "id": "E12",
+   "clip": "00109692",
+   "type": "mute",
+   "start": 3.4,
+   "end": 3.9,
+   "note": "start of the old dub 'LOS PADAR' before L20"
   }
  ]
 }

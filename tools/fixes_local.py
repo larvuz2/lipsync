@@ -271,7 +271,7 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
             "speed": round(L / m, 2)}
 
 
-def apply(ex):
+def apply(ex, only=()):
     from faster_whisper import WhisperModel
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from align import align
@@ -285,6 +285,8 @@ def apply(ex):
     items = sorted(cfg["lines"] + cfg.get("edits", []), key=lambda l: (l["clip"], l["start"]))
     report = []
     for clip in sorted({l["clip"] for l in items}):
+        if only and clip not in only:
+            continue
         if not os.path.exists(en_path(ex, clip, orig=True)):
             os.makedirs(os.path.join(ex, "en_orig"), exist_ok=True)
             shutil.copy(en_path(ex, clip), en_path(ex, clip, orig=True))
@@ -386,8 +388,14 @@ def apply(ex):
             if r["clip"] == clip:
                 print(json.dumps(r, ensure_ascii=False), flush=True)
     json.dump(heard, open(heard_p, "w"), indent=1, ensure_ascii=False)
-    json.dump(report, open(os.path.join(ex, "fix_tts", "applied.json"), "w"), indent=1, ensure_ascii=False)
+    ap = os.path.join(ex, "fix_tts", "applied.json")
+    if only and os.path.exists(ap):  # partial run: keep the report of the other clips
+        report = [r for r in json.load(open(ap)) if r["clip"] not in only] + report
+    json.dump(report, open(ap, "w"), indent=1, ensure_ascii=False)
 
 
 if __name__ == "__main__":
-    {"voices": voices, "apply": apply}[sys.argv[1]](sys.argv[2])
+    if sys.argv[1] == "apply":
+        apply(sys.argv[2], set(sys.argv[3:]))
+    else:
+        voices(sys.argv[2])

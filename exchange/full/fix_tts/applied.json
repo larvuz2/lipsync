@@ -144,6 +144,21 @@
   ]
  },
  {
+  "id": "L16",
+  "clip": "00103835",
+  "en": "That wolf belongs to me. You killed it on Serbian soil.",
+  "take": "fix_tts/L16_t2.mp3",
+  "heard": "That wolf belongs to me. You killed it on Serbian soil.",
+  "wer": 0.0,
+  "span_s": 3.69,
+  "natural_s": 3.69,
+  "placed": [
+   2.06,
+   5.75
+  ],
+  "speed": 1.0
+ },
+ {
   "id": "L05",
   "clip": "00103835",
   "en": "Come on!",
@@ -157,6 +172,21 @@
    7.42
   ],
   "speed": 1.12
+ },
+ {
+  "id": "L17",
+  "clip": "00104123",
+  "en": "But I gave it to your daughter.",
+  "take": "fix_tts/L17_t0.mp3",
+  "heard": "But I gave it to your daughter.",
+  "wer": 0.0,
+  "span_s": 1.95,
+  "natural_s": 1.38,
+  "placed": [
+   0.6,
+   2.09
+  ],
+  "speed": 0.93
  },
  {
   "id": "E11",
@@ -187,34 +217,35 @@
   "speed": 1.12
  },
  {
-  "id": "L07a",
+  "id": "L07c",
   "clip": "00104240",
-  "en": "Come on, let's go!",
-  "take": "fix_tts/L07a_t2.mp3",
-  "heard": "Come on, let's go.",
+  "en": "Come on, wash up and get dressed!",
+  "take": "fix_tts/L07c_t2.mp3",
+  "heard": "Come on, wash up and get dressed.",
   "wer": 0.0,
   "span_s": 0.94,
-  "natural_s": 1.3,
+  "natural_s": 2.09,
   "placed": [
-   2.38,
-   3.54
+   2.25,
+   3.7
   ],
-  "speed": 1.12
+  "speed": 1.44,
+  "TOO_LONG": true
  },
  {
-  "id": "L07b",
+  "id": "L07d",
   "clip": "00104240",
-  "en": "The King of Hungary is here!",
-  "take": "fix_tts/L07b_t0.mp3",
-  "heard": "The King of Hungary is here!",
+  "en": "The king is coming. Your Hungarian king.",
+  "take": "fix_tts/L07d_t2.mp3",
+  "heard": "The king is coming, your Hungarian king.",
   "wer": 0.0,
   "span_s": 2.62,
-  "natural_s": 2.16,
+  "natural_s": 2.91,
   "placed": [
    3.78,
-   6.11
+   6.4
   ],
-  "speed": 0.93
+  "speed": 1.11
  },
  {
   "id": "L08",
@@ -245,19 +276,19 @@
   ]
  },
  {
-  "id": "L09",
+  "id": "L09b",
   "clip": "00104461",
-  "en": "Only the queen. The king, as usual, is running late.",
-  "take": "fix_tts/L09_t0.mp3",
-  "heard": "Only the Queen. The King, as usual, is running late.",
+  "en": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+  "take": "fix_tts/L09b_t2.mp3",
+  "heard": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
   "wer": 0.0,
   "span_s": 5.54,
-  "natural_s": 4.36,
+  "natural_s": 5.61,
   "placed": [
    0.0,
-   4.71
+   5.54
   ],
-  "speed": 0.93
+  "speed": 1.01
  },
  {
   "id": "L10",
@@ -275,19 +306,64 @@
   "speed": 1.12
  },
  {
-  "id": "L11",
+  "id": "L11b",
   "clip": "00104461",
-  "en": "Thank you, my dear. Jankó!",
-  "take": "fix_tts/L11_t2.mp3",
-  "heard": "Thank you, my dear. Yonko!",
-  "wer": 0.2,
+  "en": "Excuse me, daughter. Janko!",
+  "take": "fix_tts/L11b_t2.mp3",
+  "heard": "Excuse me, daughter. Yanko!",
+  "wer": 0.25,
   "span_s": 2.28,
-  "natural_s": 2.21,
+  "natural_s": 2.22,
   "placed": [
    6.82,
    9.1
   ],
   "speed": 0.97
+ },
+ {
+  "id": "L18a",
+  "clip": "00104695",
+  "en": "Listen, this evening is very important to me.",
+  "take": "fix_tts/L18a_t2.mp3",
+  "heard": "Listen, this evening is very important to me.",
+  "wer": 0.0,
+  "span_s": 3.1,
+  "natural_s": 3.11,
+  "placed": [
+   0.1,
+   3.2
+  ],
+  "speed": 1.0
+ },
+ {
+  "id": "L18b",
+  "clip": "00104695",
+  "en": "If you anger the king, don't you ever come back to this house.",
+  "take": "fix_tts/L18b_t1.mp3",
+  "heard": "If you anger the king, don't you ever come back to this house.",
+  "wer": 0.0,
+  "span_s": 4.44,
+  "natural_s": 4.09,
+  "placed": [
+   3.76,
+   8.18
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L18c",
+  "clip": "00104695",
+  "en": "So watch what you do.",
+  "take": "fix_tts/L18c_t2.mp3",
+  "heard": "So watch what you do.",
+  "wer": 0.0,
+  "span_s": 1.54,
+  "natural_s": 1.54,
+  "placed": [
+   9.46,
+   11.0
+  ],
+  "speed": 1.0
  },
  {
   "id": "L12",
@@ -363,6 +439,51 @@
   ]
  },
  {
+  "id": "L19a",
+  "clip": "00107827",
+  "en": "I need Mara here with me.",
+  "take": "fix_tts/L19a_t1.mp3",
+  "heard": "I need Mara here with me.",
+  "wer": 0.0,
+  "span_s": 2.45,
+  "natural_s": 1.83,
+  "placed": [
+   0.9,
+   2.88
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L19b",
+  "clip": "00107827",
+  "en": "She helps me with everything.",
+  "take": "fix_tts/L19b_t2.mp3",
+  "heard": "She helps me with everything.",
+  "wer": 0.0,
+  "span_s": 1.35,
+  "natural_s": 1.78,
+  "placed": [
+   4.05,
+   5.64
+  ],
+  "speed": 1.12
+ },
+ {
+  "id": "L19c",
+  "clip": "00107827",
+  "en": "I can't give her to your court.",
+  "take": "fix_tts/L19c_t0.mp3",
+  "heard": "I can't give her to your court.",
+  "wer": 0.0,
+  "span_s": 1.43,
+  "natural_s": 1.75,
+  "placed": [
+   6.72,
+   8.28
+  ],
+  "speed": 1.12
+ },
+ {
   "id": "L15",
   "clip": "00108806",
   "type": "word",
@@ -380,16 +501,31 @@
   "speed": 1.0
  },
  {
-  "id": "E06",
+  "id": "E12",
   "clip": "00109692",
-  "type": "restore",
+  "type": "mute",
   "span": [
    3.4,
-   5.6
+   3.9
   ],
   "cleared": [
    3.4,
-   5.6
+   3.9
   ]
+ },
+ {
+  "id": "L20",
+  "clip": "00109692",
+  "en": "My lord!",
+  "take": "fix_tts/L20_t0.mp3",
+  "heard": "My lord!",
+  "wer": 0.0,
+  "span_s": 1.7,
+  "natural_s": 0.95,
+  "placed": [
+   3.9,
+   4.93
+  ],
+  "speed": 0.93
  }
 ]

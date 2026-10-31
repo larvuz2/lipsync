@@ -1,0 +1,5 @@
+{
+ "sample_rate": 48000,
+ "gap_samples": 19200,
+ "total_samples": 18964352
+}

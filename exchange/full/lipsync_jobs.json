@@ -208,5 +208,131 @@
     362
    ]
   }
+ },
+ {
+  "name": "00103215_f0-64",
+  "clip": "00103215",
+  "first_frame": 0,
+  "last_frame": 64,
+  "audio": "lipsync_audio/00103215_f0-64.wav",
+  "face": {
+   "frame": 17,
+   "xy": [
+    748,
+    346
+   ]
+  }
+ },
+ {
+  "name": "00103280_f0-50",
+  "clip": "00103280",
+  "first_frame": 0,
+  "last_frame": 50,
+  "audio": "lipsync_audio/00103280_f0-50.wav",
+  "face": {
+   "frame": 33,
+   "xy": [
+    1209,
+    396
+   ]
+  }
+ },
+ {
+  "name": "00103280_f102-178",
+  "clip": "00103280",
+  "first_frame": 102,
+  "last_frame": 178,
+  "audio": "lipsync_audio/00103280_f102-178.wav",
+  "face": {
+   "frame": 25,
+   "xy": [
+    897,
+    545
+   ]
+  }
+ },
+ {
+  "name": "00103280_f179-215",
+  "clip": "00103280",
+  "first_frame": 179,
+  "last_frame": 215,
+  "audio": "lipsync_audio/00103280_f179-215.wav",
+  "face": {
+   "frame": 10,
+   "xy": [
+    681,
+    497
+   ]
+  }
+ },
+ {
+  "name": "00105631_f10-125",
+  "clip": "00105631",
+  "first_frame": 10,
+  "last_frame": 125,
+  "audio": "lipsync_audio/00105631_f10-125.wav",
+  "face": {
+   "frame": 37,
+   "xy": [
+    1226,
+    471
+   ]
+  }
+ },
+ {
+  "name": "00105789_f10-42",
+  "clip": "00105789",
+  "first_frame": 10,
+  "last_frame": 42,
+  "audio": "lipsync_audio/00105789_f10-42.wav",
+  "face": {
+   "frame": 11,
+   "xy": [
+    771,
+    568
+   ]
+  }
+ },
+ {
+  "name": "00105832_f0-40",
+  "clip": "00105832",
+  "first_frame": 0,
+  "last_frame": 40,
+  "audio": "lipsync_audio/00105832_f0-40.wav",
+  "face": {
+   "frame": 9,
+   "xy": [
+    886,
+    300
+   ]
+  }
+ },
+ {
+  "name": "00105832_f65-110",
+  "clip": "00105832",
+  "first_frame": 65,
+  "last_frame": 110,
+  "audio": "lipsync_audio/00105832_f65-110.wav",
+  "face": {
+   "frame": 11,
+   "xy": [
+    1018,
+    583
+   ]
+  }
+ },
+ {
+  "name": "00105832_f111-240",
+  "clip": "00105832",
+  "first_frame": 111,
+  "last_frame": 240,
+  "audio": "lipsync_audio/00105832_f111-240.wav",
+  "face": {
+   "frame": 15,
+   "xy": [
+    965,
+    486
+   ]
+  }
  }
 ]

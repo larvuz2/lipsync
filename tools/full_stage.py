@@ -142,10 +142,61 @@ def lipsync(exch: str, workers: int = 6) -> None:
         print("  ", r["name"], r.get("status"), r.get("errorCode"), (r.get("error") or "")[:200])
 
 
+# ------------------------------------------------------------------ line fixes (re-voice wrong dub lines)
+
+def fixes(exch: str) -> None:
+    """Clone each character's dub voice (exchange/full/fix_inputs/voice_<char>.wav) and TTS every fix line.
+
+    fixes.json: {"characters": {"<char>": {...}}, "lines": [{"id", "character", "tts", ...}]}
+    Writes fix_tts/<id>_t<k>.mp3 and fix_tts/manifest.json. Reruns skip finished takes and reuse clones.
+    """
+    ex = Path(exch)
+    cfg = json.loads((ex / "fixes.json").read_text())
+    man_p = ex / "fix_tts" / "manifest.json"
+    man = load_json(man_p, {"voices": {}, "takes": []})
+    have = {t["file"] for t in man["takes"] if (ex / t["file"]).exists()}
+    existing = {v.get("name"): v for v in api.list_voices()}
+    for char in sorted({ln["character"] for ln in cfg["lines"]}):
+        if char in man["voices"]:
+            continue
+        name = f"Raven dub - {char}"
+        if name in existing:
+            v = existing[name]
+            man["voices"][char] = {"voiceId": v.get("voiceId") or v.get("id"), "name": name, "reused": True}
+        else:
+            asset = api.upload(ex / "fix_inputs" / f"voice_{char}.wav", name=f"{name} sample", project_id=PROJECT_ID)
+            v = api.clone_voice(name, asset_id=asset["id"])
+            man["voices"][char] = {"voiceId": v["voiceId"], "syncId": v["id"], "name": name}
+        print("voice", char, man["voices"][char]["voiceId"], flush=True)
+        save_json(man_p, man)
+    takes = [(0.35, 0.95), (0.5, 0.95), (0.7, 0.9)]
+    for ln in cfg["lines"]:
+        vid = man["voices"][ln["character"]]["voiceId"]
+        for k, (st, sim) in enumerate(takes):
+            rel = f"fix_tts/{ln['id']}_t{k}.mp3"
+            if rel in have:
+                continue
+            for attempt in range(4):
+                try:
+                    r = api.tts(ln["tts"], vid, stability=st, similarity=sim)
+                    break
+                except RuntimeError as e:
+                    print(ln["id"], e, flush=True); time.sleep(5 * (attempt + 1))
+            else:
+                continue
+            api.download(r["url"], ex / rel)
+            man["takes"].append({"id": ln["id"], "take": k, "stability": st, "similarity": sim, "file": rel,
+                                 "duration": r.get("duration"), "text": ln["tts"]})
+            save_json(man_p, man)
+            print("tts", rel, r.get("duration"), flush=True)
+
+
 if __name__ == "__main__":
     if len(sys.argv) >= 3 and sys.argv[1] == "dub":
         dub(sys.argv[2])
     elif len(sys.argv) >= 3 and sys.argv[1] == "lipsync":
         lipsync(sys.argv[2])
+    elif len(sys.argv) >= 3 and sys.argv[1] == "fixes":
+        fixes(sys.argv[2])
     else:
         print(__doc__)

@@ -88,8 +88,13 @@ def trim(clip: str, frames: int, first: int, last: int, dest: Path) -> Path:
 def run_job(job: dict, ex: Path, frames: dict) -> dict:
     out = ex / "lipsync" / "out" / f"{job['name']}.mp4"
     try:
-        v = trim(job["clip"], frames[job["clip"]], job["first_frame"], job["last_frame"],
-                 ex / "lipsync" / "src" / f"{job['clip']}_f{job['first_frame']}-{job['last_frame']}.mp4")
+        if job.get("input_from"):  # second speaker in the same shot: build on the first speaker's output
+            v = ex / "lipsync" / "out" / f"{job['input_from']}.mp4"
+            if not v.exists():
+                raise RuntimeError(f"chain input {job['input_from']} not finished")
+        else:
+            v = trim(job["clip"], frames[job["clip"]], job["first_frame"], job["last_frame"],
+                     ex / "lipsync" / "src" / f"{job['clip']}_f{job['first_frame']}-{job['last_frame']}.mp4")
         vid = api.upload(v, name=v.name, project_id=PROJECT_ID)["id"]
         aud = api.upload(ex / job["audio"], name=Path(job["audio"]).name, project_id=PROJECT_ID)["id"]
         body = {"model": "sync-3", "projectId": PROJECT_ID,
@@ -125,10 +130,12 @@ def lipsync(exch: str, workers: int = 6) -> None:
     todo = [j for j in jobs if j["name"] not in done]
     print(f"{len(jobs)} jobs, {len(done)} already done, {len(todo)} to run", flush=True)
     results = dict(done)
-    with ThreadPoolExecutor(max_workers=workers) as pool:  # Growth plan: 6 concurrent
-        for r in pool.map(lambda j: run_job(j, ex, clips), todo):
-            results[r["name"]] = r
-            save_json(man_p, list(results.values()))
+    # Wave 1: independent jobs. Wave 2: jobs chained on a wave-1 output (second speaker in a shot).
+    for wave in ([j for j in todo if not j.get("input_from")], [j for j in todo if j.get("input_from")]):
+        with ThreadPoolExecutor(max_workers=workers) as pool:  # Growth plan: 6 concurrent
+            for r in pool.map(lambda j: run_job(j, ex, clips), wave):
+                results[r["name"]] = r
+                save_json(man_p, list(results.values()))
     bad = [r for r in results.values() if r.get("status") != "COMPLETED"]
     print(f"finished: {len(results) - len(bad)} completed, {len(bad)} not completed", flush=True)
     for r in bad:

@@ -99,14 +99,29 @@ def apply(ex):
     man = json.load(open(os.path.join(ex, "fix_tts", "manifest.json")))
     report = []
     work = {}  # clip -> track being rebuilt from the original dub (reruns never stack edits)
-    for ln in sorted(cfg["lines"], key=lambda l: (l["clip"], l["start"])):
+    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+    for ln in sorted(cfg["lines"] + cfg.get("edits", []), key=lambda l: (l["clip"], l["start"])):
         clip = ln["clip"]
         if not os.path.exists(en_path(ex, clip, orig=True)):
             os.makedirs(os.path.join(ex, "en_orig"), exist_ok=True)
             shutil.copy(en_path(ex, clip), en_path(ex, clip, orig=True))
         orig = load(en_path(ex, clip, orig=True))
         cur = work.setdefault(clip, orig.copy())
-        a, b = int(ln["start"] * SR), int(ln["end"] * SR)
+        a, b = int(ln["start"] * SR), int(min(ln["end"], len(orig) / SR) * SR)
+        kind = ln.get("type", "tts")
+        if kind in ("mute", "restore"):
+            m = int(0.02 * SR)
+            lo, hi = max(0, a - m), min(len(cur), b + m)
+            ramp = np.ones(hi - lo)
+            ramp[:a - lo] = np.linspace(1, 0, a - lo); ramp[a - lo:b - lo] = 0; ramp[b - lo:] = np.linspace(0, 1, hi - b)
+            cur[lo:hi] *= ramp
+            if kind == "restore":  # the original actor's own audio (names, screams): same timeline
+                hu = load(glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0])
+                seg = hu[lo:hi] * (1 - ramp)
+                cur[lo:lo + len(seg)] += seg
+            report.append({"id": ln["id"], "clip": clip, "type": kind, "span": [ln["start"], ln["end"]]})
+            print(json.dumps(report[-1]), flush=True)
+            continue
         span = (b - a) / SR
         # room after the span: up to the next English speech in the original dub (or clip end)
         db = fdb(orig)
@@ -128,6 +143,8 @@ def apply(ex):
         n = int(dur * SR)
         y = stretch(best["x"], n)
         ref = orig[a:b]
+        if np.percentile(fdb(ref), 90) < -55:  # inserting where the dub is silent: match the Hungarian level
+            ref = load(glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0])[a:b]
         y *= 10 ** ((np.percentile(fdb(ref), 90) - np.percentile(fdb(y), 90)) / 20)
         fade = int(0.01 * SR)
         y[:fade] *= np.linspace(0, 1, fade); y[-fade:] *= np.linspace(1, 0, fade)

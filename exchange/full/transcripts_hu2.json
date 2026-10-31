@@ -1,0 +1,491 @@
+{
+ "00090527": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 6.86,
+    "text": "Ide figyelj, a te dolgod most az, hogy ezt túléld, hozd ide a karvasomat, aztán azt csináld, amit anyád mond, megértetted? Gyerünk!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 6.86,
+    "text": "Ide figyelj, a te dolgod most az, hogy ezt túléld, hozd ide a karvosomat, aztán azt csináld, amit anyád mond, megértetted? Gyerünk!"
+   }
+  ]
+ },
+ "00091606": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "János!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 1.6,
+    "text": "János!"
+   }
+  ]
+ },
+ "00092290": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "A-A-A-A-A"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Főcímdalot készítette NAMASTE"
+   }
+  ]
+ },
+ "00095210": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.84,
+    "text": "Jankó!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.84,
+    "text": "Jankó!"
+   }
+  ]
+ },
+ "00101676": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 1.06,
+    "text": "Hagytam, hogy megöld."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 1.06,
+    "text": "Hagytam, hogy megöld."
+   }
+  ]
+ },
+ "00102229": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "Húnyadi János vagyok."
+   },
+   {
+    "start": 3.0,
+    "end": 5.0,
+    "text": "Tudom, ki vagy."
+   },
+   {
+    "start": 5.0,
+    "end": 7.0,
+    "text": "Minden lány tudja a neved."
+   },
+   {
+    "start": 7.0,
+    "end": 10.0,
+    "text": "A bátyámmal szoktál mulatni."
+   },
+   {
+    "start": 10.0,
+    "end": 13.0,
+    "text": "Te mi húga vagy? Kis Szilágyi Erzsébet?"
+   },
+   {
+    "start": 13.0,
+    "end": 15.0,
+    "text": "Mit keresel itt?"
+   },
+   {
+    "start": 15.0,
+    "end": 18.0,
+    "text": "A királynő frajláival jöttem."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "Húnyadi János vagyok."
+   },
+   {
+    "start": 4.0,
+    "end": 9.0,
+    "text": "Tudom ki vagy. Minden lány tudja a neved. A bátyámmal szoktál mulatni."
+   },
+   {
+    "start": 10.0,
+    "end": 15.0,
+    "text": "Te mi húga vagy? A kis Szilágyi Erzsébet? Mit keresel itt?"
+   },
+   {
+    "start": 16.0,
+    "end": 18.0,
+    "text": "A királynő frajláival jöttem."
+   }
+  ]
+ },
+ "00103215": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.62,
+    "text": "Erzsébet, te is eljöttél."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.64,
+    "text": "Erzsébet, te is eljöttél."
+   }
+  ]
+ },
+ "00103629": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 4.04,
+    "text": "De valójában ez téged illet szerelme."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 4.06,
+    "text": "De valójában ez téged illet szerelme."
+   }
+  ]
+ },
+ "00103835": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Hé, Jankó!"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Ez a világ nekem!"
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "A szerbszörnyen megvettél őt!"
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "Gyere!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Hé, Jankó!"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Ez a világ az én számomra!"
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "Összegyűjtöttél a Szilágyi országban?"
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "Gyerünk!"
+   }
+  ]
+ },
+ "00104123": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "De én tettem őt a fejedből."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "De én tettem őt a fejedből."
+   }
+  ]
+ },
+ "00104240": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Hogy tűnik ez?"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Gyerünk, tűnjünk!"
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "A magyarszági király jött!"
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "Zsigmond már itt?"
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "Nem."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.5,
+    "text": "Hogy tűnik ez?"
+   },
+   {
+    "start": 2.5,
+    "end": 4.0,
+    "text": "Gyerünk, tűnjünk!"
+   },
+   {
+    "start": 4.0,
+    "end": 6.5,
+    "text": "A magyarszági király vannak."
+   },
+   {
+    "start": 6.5,
+    "end": 8.0,
+    "text": "Erzsigismund már itt?"
+   },
+   {
+    "start": 8.0,
+    "end": 9.0,
+    "text": "Nem."
+   }
+  ]
+ },
+ "00104461": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 9.79,
+    "text": "Csak a karácsony. A karácsony, mint alapvetően, valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg valószínűleg"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 6.0,
+    "text": "Csak a karácsony. A karácsony, mint alapvetően, valószínűleg valószínűleg valószínűleg dolgozik a saját karácsonyról."
+   },
+   {
+    "start": 6.0,
+    "end": 7.0,
+    "text": "Apám!"
+   },
+   {
+    "start": 7.0,
+    "end": 10.0,
+    "text": "Köszönöm, kicsim. Jankó."
+   }
+  ]
+ },
+ "00104695": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 4.0,
+    "text": "Lássuk, ez az éjjel nagyon fontos nekem."
+   },
+   {
+    "start": 4.0,
+    "end": 6.8,
+    "text": "Ha a kártyákat kiválasztanak,"
+   },
+   {
+    "start": 6.8,
+    "end": 9.8,
+    "text": "ebben a házban még nem jönnek."
+   },
+   {
+    "start": 9.8,
+    "end": 11.8,
+    "text": "Ezért nézd, mit csinálsz."
+   },
+   {
+    "start": 11.8,
+    "end": 12.8,
+    "text": "Jó lesz."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 4.0,
+    "text": "Lássuk, ez az éjjel nagyon fontos nekem."
+   },
+   {
+    "start": 4.0,
+    "end": 6.8,
+    "text": "Ha a kárpányod megváltozik,"
+   },
+   {
+    "start": 6.8,
+    "end": 9.8,
+    "text": "ebben a házban még nem jössz."
+   },
+   {
+    "start": 9.8,
+    "end": 11.8,
+    "text": "Ezért nézd, mit csinálsz."
+   },
+   {
+    "start": 11.8,
+    "end": 12.8,
+    "text": "Jó lesz."
+   }
+  ]
+ },
+ "00105002": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.3,
+    "text": "Ugye? Jó leszel."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.3,
+    "text": "Ugye? Jó leszel."
+   }
+  ]
+ },
+ "00105583": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Mienka"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Mienka"
+   }
+  ]
+ },
+ "00106957": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 0.98,
+    "text": "Felség?"
+   },
+   {
+    "start": 1.54,
+    "end": 2.84,
+    "text": "Gyere, gyere, csillegy!"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 0.98,
+    "text": "Felség?"
+   },
+   {
+    "start": 1.52,
+    "end": 2.84,
+    "text": "Gyere, gyere, csillegy!"
+   }
+  ]
+ },
+ "00107827": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 8.34,
+    "text": "Mármint szükségem van, hogy visszatérjen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen, hogy segítsen,"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 8.34,
+    "text": "Mármint szükségem van, hogy éljenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segítsenek, hogy segíts"
+   }
+  ]
+ },
+ "00108806": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Mara nem lesz fértékvé?"
+   },
+   {
+    "start": 3.0,
+    "end": 5.0,
+    "text": "Annyira biztos nem, mint új laki."
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 2.0,
+    "text": "Mara nem lesz féltékeny?"
+   },
+   {
+    "start": 3.0,
+    "end": 5.0,
+    "text": "Annyira biztos nem, mint új laki."
+   }
+  ]
+ },
+ "00109692": {
+  "normal": [
+   {
+    "start": 0.0,
+    "end": 5.44,
+    "text": "KOSZPADÁR"
+   }
+  ],
+  "boosted": [
+   {
+    "start": 0.0,
+    "end": 5.44,
+    "text": "KOSZPADÁR"
+   }
+  ]
+ }
+}

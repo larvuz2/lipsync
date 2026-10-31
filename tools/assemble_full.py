@@ -30,8 +30,24 @@ def nframes(path):
                                "stream=nb_read_frames", "-of", "csv=p=0", path], capture_output=True, text=True).stdout)
 
 
+def split_orig(segs, orig_ranges):
+    """Within job segments, fall back to original frames for the given absolute ranges."""
+    out = []
+    for f0, f1, path, off in segs:
+        cuts = [(max(f0, a), min(f1, b)) for a, b in orig_ranges if a <= f1 and b >= f0] if path else []
+        cur = f0
+        for a, b in sorted(cuts):
+            if a > cur:
+                out.append((cur, a - 1, path, off))
+            out.append((a, b, None, 0))
+            cur = b + 1
+        if cur <= f1:
+            out.append((cur, f1, path, off))
+    return out
+
+
 def segments_for(clip, frames, jobs):
-    """List of (first, last, source_path or None) covering 0..frames-1; None = original."""
+    """List of (first, last, source_path or None, job_first_frame) covering 0..frames-1; None = original."""
     final = {}
     for j in jobs:  # a chained job (second speaker) replaces its parent on the same frame range
         key = (j["first_frame"], j["last_frame"])
@@ -40,11 +56,11 @@ def segments_for(clip, frames, jobs):
     segs, cur = [], 0
     for (f0, f1), j in sorted(final.items()):
         if f0 > cur:
-            segs.append((cur, f0 - 1, None))
-        segs.append((f0, f1, j["file"]))
+            segs.append((cur, f0 - 1, None, 0))
+        segs.append((f0, f1, j["file"], f0))
         cur = f1 + 1
     if cur < frames:
-        segs.append((cur, frames - 1, None))
+        segs.append((cur, frames - 1, None, 0))
     return segs
 
 
@@ -69,16 +85,19 @@ def build(clip, src, ex, out_dir, jobs):
              *X264, "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", dst])
         return dst, frames, "reused approved test versions (87646 + 87725)"
     segs = segments_for(clip, frames, jobs)
+    plan = json.load(open(os.path.join(ex, "plan.json"))).get(clip, {})
+    orig_ranges = [r for j in plan.get("jobs", []) for r in j.get("orig_ranges", [])]
+    segs = split_orig(segs, orig_ranges)
     if all(s[2] is None for s in segs):
         run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
              "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", dst])
         return dst, frames, "English audio, picture untouched"
     inputs, chains, labels = ["-i", src], [], []
-    for k, (f0, f1, path) in enumerate(segs):
+    for k, (f0, f1, path, job_f0) in enumerate(segs):
         n = f1 - f0 + 1
         if path:
             inputs += ["-i", os.path.join(ex, path)]
-            idx, start = len(inputs) // 2 - 1, 0
+            idx, start = len(inputs) // 2 - 1, f0 - job_f0
         else:
             idx, start = 0, f0
         chains.append(f"[{idx}:v]trim=start_frame={start}:end_frame={start + n},setpts=PTS-STARTPTS,"
@@ -88,7 +107,7 @@ def build(clip, src, ex, out_dir, jobs):
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", audio, "-filter_complex", fc, "-map", "[v]",
          "-map", f"{len(inputs) // 2}:a", *X264, "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-shortest",
          "-movflags", "+faststart", dst])
-    synced = [f"{f0}-{f1}" for f0, f1, p in segs if p]
+    synced = [f"{f0}-{f1}" for f0, f1, p, _ in segs if p]
     return dst, frames, "lip-synced frames " + ", ".join(synced)
 
 
@@ -97,8 +116,10 @@ def main():
     only = set(sys.argv[4:])
     os.makedirs(out, exist_ok=True)
     man_p = os.path.join(ex, "lipsync", "manifest.json")
+    current = {j["name"] for j in json.load(open(os.path.join(ex, "lipsync_jobs.json")))}
     done = [j for j in (json.load(open(man_p)) if os.path.exists(man_p) else [])
-            if j.get("status") == "COMPLETED" and os.path.exists(os.path.join(ex, j.get("file", "x")))]
+            if j.get("status") == "COMPLETED" and os.path.exists(os.path.join(ex, j.get("file", "x")))
+            and j["name"] in current]  # only jobs that match the current plan and audio
     rep_p = os.path.join(out, "report.json")
     report = {r["clip"]: r for r in (json.load(open(rep_p)) if os.path.exists(rep_p) else [])}
     for c in json.load(open(os.path.join(ex, "clips.json"))):

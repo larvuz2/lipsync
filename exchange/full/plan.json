@@ -65,7 +65,7 @@
   ]
  },
  "00090252": {
-  "note": "Janko: 'I'm staying with you'",
+  "note": "Janko 'I'm staying with you'; the 'Janko!' call after it is someone else (muted in his job)",
   "jobs": [
    {
     "first": 0,
@@ -74,12 +74,18 @@
      11,
      659,
      465
+    ],
+    "keep": [
+     [
+      0.0,
+      0.84
+     ]
     ]
    }
   ]
  },
  "00090527": {
-  "note": "father close; 2nd shot father from behind -> audio only",
+  "note": "father close; 2nd shot father from behind -> audio only; mother's blurred face passes f22-44: keep original frames there",
   "jobs": [
    {
     "first": 0,
@@ -88,6 +94,12 @@
      57,
      464,
      355
+    ],
+    "orig_ranges": [
+     [
+      22,
+      44
+     ]
     ]
    }
   ]
@@ -135,18 +147,8 @@
   ]
  },
  "00091606": {
-  "note": "old man shouting; cut at f37",
-  "jobs": [
-   {
-    "first": 0,
-    "last": 36,
-    "face": [
-     11,
-     1177,
-     245
-    ]
-   }
-  ]
+  "note": "old man shouts 'J\u00e1nos!' (a name): original shout kept, picture untouched",
+  "jobs": []
  },
  "00101509": {
   "note": "blonde woman in forest",
@@ -219,7 +221,7 @@
   ]
  },
  "00103280": {
-  "note": "man line 1 (woman's line 2 is off-screen, outside his job); woman close-up and profile",
+  "note": "man line 1; woman's 2nd line over her close-up only; man's 'I thought I'd bring...' line is off-screen over her close-up, on-screen in the final two-shot",
   "jobs": [
    {
     "first": 0,
@@ -237,6 +239,12 @@
      127,
      897,
      545
+    ],
+    "keep": [
+     [
+      3.7,
+      5.66
+     ]
     ]
    },
    {
@@ -244,8 +252,14 @@
     "last": 215,
     "face": [
      189,
-     681,
-     497
+     1058,
+     388
+    ],
+    "keep": [
+     [
+      5.92,
+      7.92
+     ]
     ]
    }
   ]
@@ -279,7 +293,7 @@
   ]
  },
  "00105832": {
-  "note": "blonde 'Hunting', Miklos line, blonde close-up lines",
+  "note": "blonde 'Hunting'; Miklos line; blonde 'I am not your wife'; 'Not yet'/'Your Majesty?' are male, off-screen",
   "jobs": [
    {
     "first": 0,
@@ -297,15 +311,27 @@
      76,
      1018,
      583
+    ],
+    "keep": [
+     [
+      1.76,
+      3.82
+     ]
     ]
    },
    {
     "first": 111,
-    "last": 240,
+    "last": 150,
     "face": [
      126,
      965,
      486
+    ],
+    "keep": [
+     [
+      4.0,
+      5.52
+     ]
     ]
    }
   ]

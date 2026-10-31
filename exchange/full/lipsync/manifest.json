@@ -700,25 +700,6 @@
   "file": "lipsync/out/00104123_f0-70_334111.mp4"
  },
  {
-  "name": "00106229_f100-410_s0_3eb0ed",
-  "clip": "00106229",
-  "first_frame": 100,
-  "last_frame": 410,
-  "audio": "lipsync_audio/00106229_f100-410_s0_3eb0ed.wav",
-  "face": {
-   "frame": 100,
-   "xy": [
-    1154,
-    319
-   ]
-  },
-  "generationId": "6b5d4b86-0c78-4af4-937e-08e6def8d80a",
-  "status": "REJECTED",
-  "error": "We could not use the selected speaker face for this video. Please select the face again or try auto-detect.",
-  "errorCode": "generation_input_face_selection_invalid",
-  "outputUrl": null
- },
- {
   "name": "00107025_f60-193_ed9e7f",
   "clip": "00107025",
   "first_frame": 60,
@@ -939,23 +920,6 @@
   "file": "lipsync/out/00109943_f0-76_s0_f38abb.mp4"
  },
  {
-  "name": "00106229_f100-410_s1_9e8340",
-  "clip": "00106229",
-  "first_frame": 100,
-  "last_frame": 410,
-  "audio": "lipsync_audio/00106229_f100-410_s1_9e8340.wav",
-  "face": {
-   "frame": 100,
-   "xy": [
-    826,
-    322
-   ]
-  },
-  "input_from": "00106229_f100-410_s0_3eb0ed",
-  "status": "ERROR",
-  "error": "chain input 00106229_f100-410_s0_3eb0ed not finished"
- },
- {
   "name": "00109943_f0-76_s1_9bedd0",
   "clip": "00109943",
   "first_frame": 0,
@@ -975,5 +939,46 @@
   "errorCode": null,
   "outputUrl": "https://api.sync.so/v2/generations/aa7550bf-1ce1-4094-8b0b-fa4e6a376eed/result?token=6b7bdde5-f60e-4564-883f-c5729fbfa8b7",
   "file": "lipsync/out/00109943_f0-76_s1_9bedd0.mp4"
+ },
+ {
+  "name": "00106229_f100-410_s0_ded917",
+  "clip": "00106229",
+  "first_frame": 100,
+  "last_frame": 410,
+  "audio": "lipsync_audio/00106229_f100-410_s0_ded917.wav",
+  "face": {
+   "frame": 100,
+   "xy": [
+    1335,
+    320
+   ]
+  },
+  "generationId": "cd7ae0ea-0d12-4e8d-b927-fc67cf31c451",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/cd7ae0ea-0d12-4e8d-b927-fc67cf31c451/result?token=fdfd0aca-0d23-46a0-ad1a-bc2663179722",
+  "file": "lipsync/out/00106229_f100-410_s0_ded917.mp4"
+ },
+ {
+  "name": "00106229_f100-410_s1_0dce2b",
+  "clip": "00106229",
+  "first_frame": 100,
+  "last_frame": 410,
+  "audio": "lipsync_audio/00106229_f100-410_s1_0dce2b.wav",
+  "face": {
+   "frame": 100,
+   "xy": [
+    826,
+    322
+   ]
+  },
+  "input_from": "00106229_f100-410_s0_ded917",
+  "generationId": "64d7f431-b409-40cb-a139-145c86e18665",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/64d7f431-b409-40cb-a139-145c86e18665/result?token=5554f32d-8b75-4cc7-b18a-48534db2f9ab",
+  "file": "lipsync/out/00106229_f100-410_s1_0dce2b.mp4"
  }
 ]

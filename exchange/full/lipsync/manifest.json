@@ -1235,11 +1235,11 @@
    ]
   },
   "input_from": "00102229_f20-420_s0_fa92b7",
-  "generationId": "0cf08223-2eee-44af-9e17-ed481033a60e",
+  "generationId": "047a9c65-825c-4380-a863-2c49e17a617b",
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/0cf08223-2eee-44af-9e17-ed481033a60e/result?token=0b0f1246-706b-4d93-9e46-7dc2b5560595",
+  "outputUrl": "https://api.sync.so/v2/generations/047a9c65-825c-4380-a863-2c49e17a617b/result?token=8e9f7ea7-4e87-42e2-b604-2382c6299e33",
   "file": "lipsync/out/00102229_f20-420_s1_09e528.mp4"
  }
 ]

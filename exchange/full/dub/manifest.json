@@ -1,0 +1,10 @@
+{
+ "jobId": "63dc7cca-8e50-4877-aa06-41b397f95929",
+ "projectId": "7c2e9a41-3b5d-4f8e-a1c6-2d9b0e4f6a73",
+ "assetId": "3dce42c0-ade6-4a96-b5fb-f45edc9ff8f0",
+ "status": "COMPLETED",
+ "error": null,
+ "outputDurationSec": 395.091,
+ "file": "dub/dub_en.flac",
+ "url": "https://prod-public-sync-user-assets.s3.us-east-1.amazonaws.com/org-ea2aec63-1553-474d-9ab0-4eef2db2a2a2/dubbing-63dc7cca-8e50-4877-aa06-41b397f95929-1793409300733.flac"
+}

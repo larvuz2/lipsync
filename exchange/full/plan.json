@@ -147,7 +147,7 @@
   ]
  },
  "00091606": {
-  "note": "old man shouts 'J\u00e1nos!' (a name): original shout kept, picture untouched",
+  "note": "old man shouts 'János!' (a name): original shout kept, picture untouched",
   "jobs": []
  },
  "00101509": {
@@ -337,7 +337,7 @@
   ]
  },
  "00092071": {
-  "note": "mother cries 'Jank\u00f3! Jank\u00f3!' (original restored) then 'My boy!' (dub)",
+  "note": "mother cries 'Jankó! Jankó!' (original restored) then 'My boy!' (dub)",
   "jobs": [
    {
     "first": 40,
@@ -351,7 +351,7 @@
   ]
  },
  "00102229": {
-  "note": "walking two-shot: Hunyadi then Erzs\u00e9bet chained",
+  "note": "walking two-shot: Hunyadi then Erzsébet chained",
   "jobs": [
    {
     "first": 20,
@@ -569,7 +569,7 @@
   ]
  },
  "00105386": {
-  "note": "young man on balcony (Mikl\u00f3s): both lines",
+  "note": "young man on balcony (Miklós): both lines",
   "jobs": [
    {
     "first": 57,
@@ -594,8 +594,8 @@
     "last": 410,
     "face": [
      200,
-     1154,
-     319
+     1335,
+     320
     ],
     "keep": [
      [

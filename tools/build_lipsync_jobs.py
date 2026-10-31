@@ -85,12 +85,17 @@ def main():
                     # word level: each English word goes to the Hungarian phrase it overlaps most / is nearest to
                     def dist(wd, ph):
                         return 0.0 if overlap(wd, ph) > 0 else min(abs(wd[0] - ph[1]), abs(ph[0] - wd[1]))
+                    starts = sorted(w[0] for w in words)
                     for w0, w1, _txt, *_ in words:
                         wd = (w0, w1)
                         dk = min(dist(wd, ph) - overlap(wd, ph) for ph in keep)
                         do = min([dist(wd, ph) - overlap(wd, ph) for ph in other] or [9e9])
                         if dk <= do:
-                            mask[max(0, int(w0 * SR) - 1920):int(w1 * SR) + 1920] = 1  # 40 ms margins
+                            # Whisper word ends are often early: let the word run on up to 0.25 s, stopping
+                            # 40 ms before the next word starts
+                            nxt = min([s for s in starts if s > w0] or [9e9])
+                            end = max(w1 + 0.04, min(w1 + 0.25, nxt - 0.04))
+                            mask[max(0, int(w0 * SR) - 1920):int(end * SR)] = 1
                 else:
                     for seg in phrases(en):
                         if sum(overlap(seg, w) for w in keep) >= sum(overlap(seg, w) for w in other) and \

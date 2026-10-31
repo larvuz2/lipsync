@@ -69,6 +69,28 @@ def dub(exch: str) -> None:
 
 # ------------------------------------------------------------------ lip sync
 
+def video_ok(path: Path, n: int, strict: bool = False) -> bool:
+    """Exactly n frames at 24000/1001 (container frame count, no decode). strict also requires the
+    average rate to match, i.e. no B-frame delay in the timeline (needed for files we send to Sync)."""
+    out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                          "stream=nb_frames,r_frame_rate,avg_frame_rate", "-of", "csv=p=0", str(path)],
+                         capture_output=True, text=True).stdout.strip().split(",")
+    return (len(out) == 3 and out[0] == "24000/1001" and out[2] == str(n)
+            and (out[1] == "24000/1001" or not strict))
+
+
+def normalize(src: Path, n: int, dest: Path) -> Path:
+    if not (dest.exists() and video_ok(dest, n, strict=True)):
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-map", "0:v", "-an",
+                        "-vf", "setpts=N/(24000/1001)/TB", "-r", "24000/1001", "-c:v", "libx264", "-crf", "10",
+                        "-preset", "slow", "-bf", "0", "-pix_fmt", "yuv420p", "-color_primaries", "bt709",
+                        "-color_trc", "bt709", "-colorspace", "bt709", str(dest)], check=True)
+    if not video_ok(dest, n, strict=True):
+        raise RuntimeError(f"normalize {src.name}: not {n} frames at 24000/1001")
+    return dest
+
+
 def trim(clip: str, frames: int, first: int, last: int, dest: Path) -> Path:
     if dest.exists():
         return dest
@@ -92,6 +114,10 @@ def run_job(job: dict, ex: Path, frames: dict) -> dict:
             v = ex / "lipsync" / "out" / f"{job['input_from']}.mp4"
             if not v.exists():
                 raise RuntimeError(f"chain input {job['input_from']} not finished")
+            # Re-encode it to clean constant-rate video without B-frames: a Sync output with B-frame delay
+            # was read as 23.857 fps and the chained output came back 2 frames short.
+            v = normalize(v, job["last_frame"] - job["first_frame"] + 1,
+                          ex / "lipsync" / "src" / f"{job['input_from']}_cfr.mp4")
         else:
             v = trim(job["clip"], frames[job["clip"]], job["first_frame"], job["last_frame"],
                      ex / "lipsync" / "src" / f"{job['clip']}_f{job['first_frame']}-{job['last_frame']}.mp4")
@@ -126,7 +152,11 @@ def lipsync(exch: str, workers: int = 6) -> None:
     clips = {c["clip"]: c["frames"] for c in json.loads((ex / "clips.json").read_text())}
     jobs = json.loads((ex / "lipsync_jobs.json").read_text())
     man_p = ex / "lipsync" / "manifest.json"
-    done = {r["name"]: r for r in load_json(man_p, []) if r.get("status") == "COMPLETED" and (ex / r.get("file", "x")).exists()}
+    expect = {j["name"]: j["last_frame"] - j["first_frame"] + 1 for j in jobs}
+    # done = completed AND the output really has the expected frames at 23.976 fps (else it is re-run)
+    done = {r["name"]: r for r in load_json(man_p, []) if r.get("status") == "COMPLETED"
+            and (ex / r.get("file", "x")).exists()
+            and (r["name"] not in expect or video_ok(ex / r["file"], expect[r["name"]]))}
     todo = [j for j in jobs if j["name"] not in done]
     print(f"{len(jobs)} jobs, {len(done)} already done, {len(todo)} to run", flush=True)
     results = dict(done)

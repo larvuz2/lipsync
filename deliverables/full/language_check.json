@@ -1,0 +1,1703 @@
+[
+ {
+  "clip": "00087434",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.14,
+     1.62
+    ],
+    "lang": "pl",
+    "en": 0.11,
+    "hu": 0.0,
+    "as_en": "Yanko",
+    "as_hu": "Jánko"
+   },
+   {
+    "t": [
+     2.29,
+     2.71
+    ],
+    "lang": "en",
+    "en": 0.87,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00087646",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.24,
+     0.79
+    ],
+    "lang": "en",
+    "en": 0.73,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.54,
+     2.66
+    ],
+    "lang": "en",
+    "en": 0.45,
+    "hu": 0.0,
+    "as_en": "How are you holding that bow?",
+    "as_hu": "Hogy érzed ezt a bőrt?"
+   },
+   {
+    "t": [
+     3.86,
+     4.13
+    ],
+    "lang": "nn",
+    "en": 0.17,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Feliratok az Amara.org közösségétől"
+   },
+   {
+    "t": [
+     5.29,
+     7.33
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     9.83,
+     10.58
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00088011",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.27,
+     1.96
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.7,
+     4.71
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     8.72,
+     9.08
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00088514",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.43,
+     4.38
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00088693",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.16,
+     0.77
+    ],
+    "lang": "en",
+    "en": 0.87,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00089846",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     8.87
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090058",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     1.39
+    ],
+    "lang": "en",
+    "en": 0.86,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.89,
+     4.29
+    ],
+    "lang": "en",
+    "en": 0.85,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     4.56,
+     7.91
+    ],
+    "lang": "en",
+    "en": 0.87,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090252",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.03,
+     1.32
+    ],
+    "lang": "en",
+    "en": 0.76,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090482",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.39,
+     1.78
+    ],
+    "lang": "en",
+    "en": 0.89,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090527",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.14,
+     0.36
+    ],
+    "lang": "nn",
+    "en": 0.28,
+    "hu": 0.0,
+    "as_en": "You",
+    "as_hu": "Ha tetszett, kapcsold be az angol feliratot!"
+   },
+   {
+    "t": [
+     0.75,
+     6.95
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090694",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.55,
+     2.36
+    ],
+    "lang": "en",
+    "en": 0.85,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090756",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.41,
+     0.63
+    ],
+    "lang": "nn",
+    "en": 0.3,
+    "hu": 0.0,
+    "as_en": "Mm-hmm.",
+    "as_hu": "Feliratok az Amara.org közösségétől"
+   },
+   {
+    "t": [
+     1.05,
+     2.19
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090909",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     3.11
+    ],
+    "lang": "en",
+    "en": 0.71,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00090983",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.02,
+     7.44
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00091239",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     2.97
+    ],
+    "lang": "en",
+    "en": 0.84,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.32,
+     5.39
+    ],
+    "lang": "en",
+    "en": 0.78,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00091606",
+  "original_audio": [
+   [
+    0.38,
+    1.87
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     0.5,
+     1.68
+    ],
+    "lang": "en",
+    "en": 0.34,
+    "hu": 0.0,
+    "as_en": "Ah! General!",
+    "as_hu": "Gyerünk!"
+   }
+  ]
+ },
+ {
+  "clip": "00091750",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     2.28
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00091928",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.74,
+     4.2
+    ],
+    "lang": "en",
+    "en": 0.27,
+    "hu": 0.01,
+    "as_en": "Come, quiet now. No!",
+    "as_hu": "Ram! Kajátnám! Jaj, jó!"
+   }
+  ]
+ },
+ {
+  "clip": "00092071",
+  "original_audio": [
+   [
+    0.25,
+    2.37
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     0.35,
+     2.25
+    ],
+    "lang": "ko",
+    "en": 0.13,
+    "hu": 0.0,
+    "as_en": "Yonko! Yonko!",
+    "as_hu": "Jánkó! Jánkó!"
+   },
+   {
+    "t": [
+     2.62,
+     3.54
+    ],
+    "lang": "en",
+    "en": 0.62,
+    "hu": 0.0,
+    "as_en": "I'm flying!",
+    "as_hu": "HAJBORJ!"
+   }
+  ]
+ },
+ {
+  "clip": "00092290",
+  "original_audio": [
+   [
+    0.0,
+    2.63
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     2.63
+    ],
+    "lang": "en",
+    "en": 0.24,
+    "hu": 0.0,
+    "as_en": "Oh",
+    "as_hu": "Állj fel!"
+   }
+  ]
+ },
+ {
+  "clip": "00095210",
+  "original_audio": [
+   [
+    2.12,
+    3.0
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     2.29,
+     2.91
+    ],
+    "lang": "ko",
+    "en": 0.17,
+    "hu": 0.01,
+    "as_en": "Yonko...",
+    "as_hu": "Jánkó!"
+   }
+  ]
+ },
+ {
+  "clip": "00101509",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.32,
+     1.36
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00101555",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.27,
+     1.49
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00101676",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.13,
+     1.15
+    ],
+    "lang": "en",
+    "en": 0.78,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00101704",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.64,
+     2.9
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00102065",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.51,
+     2.43
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00102148",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.42,
+     2.84
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00102229",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.6,
+     2.4
+    ],
+    "lang": "sl",
+    "en": 0.13,
+    "hu": 0.0,
+    "as_en": "I'm Yano Shunyadi.",
+    "as_hu": "Amiános hunyadi."
+   },
+   {
+    "t": [
+     4.07,
+     4.71
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.01
+   },
+   {
+    "t": [
+     5.83,
+     6.89
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     7.92,
+     9.1
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     10.63,
+     12.66
+    ],
+    "lang": "en",
+    "en": 0.82,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     14.17,
+     14.9
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     15.86,
+     17.3
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00103215",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.2,
+     0.71
+    ],
+    "lang": "tr",
+    "en": 0.04,
+    "hu": 0.06,
+    "as_en": "Erzsebet.",
+    "as_hu": "Erzsébet"
+   },
+   {
+    "t": [
+     1.9,
+     2.7
+    ],
+    "lang": "en",
+    "en": 0.84,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00103280",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.5,
+     1.65
+    ],
+    "lang": "en",
+    "en": 0.96,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.32,
+     3.04
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     4.13,
+     5.69
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.25,
+     7.98
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00103629",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.05,
+     0.36
+    ],
+    "lang": "en",
+    "en": 0.62,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Köszönöm szépen!"
+   },
+   {
+    "t": [
+     1.54,
+     2.26
+    ],
+    "lang": "en",
+    "en": 0.98,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.6,
+     4.11
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00103835",
+  "original_audio": [
+   [
+    1.12,
+    2.13
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     1.25,
+     1.97
+    ],
+    "lang": "en",
+    "en": 0.83,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.81,
+     4.07
+    ],
+    "lang": "en",
+    "en": 0.35,
+    "hu": 0.0,
+    "as_en": "They won't prepare the money.",
+    "as_hu": "Te volt pripa, de mennyi?"
+   },
+   {
+    "t": [
+     4.35,
+     6.13
+    ],
+    "lang": "en",
+    "en": 0.19,
+    "hu": 0.01,
+    "as_en": "Yes, you go over here and subscribe to Zambie.",
+    "as_hu": "Köszönöm, hogy megnéztétek, és köszönöm, hogy megnéztétek!"
+   },
+   {
+    "t": [
+     6.62,
+     7.4
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00104123",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.81,
+     2.47
+    ],
+    "lang": "hr",
+    "en": 0.01,
+    "hu": 0.0,
+    "as_en": "And I gave it to your father-in-law.",
+    "as_hu": "Ami számra dalt, vagy olyan cserc?"
+   }
+  ]
+ },
+ {
+  "clip": "00104240",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.66,
+     2.11
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.4,
+     3.47
+    ],
+    "lang": "en",
+    "en": 0.85,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.83,
+     6.06
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.64,
+     7.85
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     8.43,
+     8.7
+    ],
+    "lang": "en",
+    "en": 0.5,
+    "hu": 0.0,
+    "as_en": "Mm-mm.",
+    "as_hu": "Köszönöm."
+   }
+  ]
+ },
+ {
+  "clip": "00104461",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.03,
+     1.23
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.76,
+     3.4
+    ],
+    "lang": "en",
+    "en": 0.99,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.69,
+     4.66
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.08,
+     6.5
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.89,
+     7.84
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     8.41,
+     8.99
+    ],
+    "lang": "ja",
+    "en": 0.14,
+    "hu": 0.0,
+    "as_en": "Yonko!",
+    "as_hu": "Jankó!"
+   }
+  ]
+ },
+ {
+  "clip": "00104695",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.15,
+     0.48
+    ],
+    "lang": "ru",
+    "en": 0.07,
+    "hu": 0.0,
+    "as_en": "Sushi.",
+    "as_hu": "Sziasztok!"
+   },
+   {
+    "t": [
+     1.25,
+     3.18
+    ],
+    "lang": "hr",
+    "en": 0.01,
+    "hu": 0.0,
+    "as_en": "This evening is for me a big lie.",
+    "as_hu": "Amikor én látom, nagyon lényegesek."
+   },
+   {
+    "t": [
+     4.19,
+     5.25
+    ],
+    "lang": "it",
+    "en": 0.06,
+    "hu": 0.0,
+    "as_en": "I'm going to do the Shriner.",
+    "as_hu": "Akkor az utolsó klára."
+   },
+   {
+    "t": [
+     6.98,
+     8.14
+    ],
+    "lang": "ru",
+    "en": 0.04,
+    "hu": 0.0,
+    "as_en": "We'll cut you a little less.",
+    "as_hu": "Való kutya is eladó az."
+   },
+   {
+    "t": [
+     9.9,
+     10.99
+    ],
+    "lang": "pt",
+    "en": 0.05,
+    "hu": 0.0,
+    "as_en": "It's a tough process to run, this.",
+    "as_hu": "Csak a pásztorán is."
+   },
+   {
+    "t": [
+     11.64,
+     12.43
+    ],
+    "lang": "en",
+    "en": 0.96,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00105002",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.02,
+     0.99
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.26,
+     1.74
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     7.74,
+     8.07
+    ],
+    "lang": "nn",
+    "en": 0.16,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Feliratok az Amara.org közösségétől"
+   }
+  ]
+ },
+ {
+  "clip": "00105196",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.92,
+     2.42
+    ],
+    "lang": "lt",
+    "en": 0.02,
+    "hu": 0.05,
+    "as_en": "Erzsébet!",
+    "as_hu": "Erzsébet!"
+   },
+   {
+    "t": [
+     4.52,
+     5.76
+    ],
+    "lang": "nn",
+    "en": 0.05,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Feliratok az Amara.org közösségétől"
+   }
+  ]
+ },
+ {
+  "clip": "00105386",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.76,
+     1.53
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.31,
+     3.35
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     5.23,
+     7.1
+    ],
+    "lang": "en",
+    "en": 0.68,
+    "hu": 0.03,
+    "as_en": "Erzhebet Silagi is my betrothed.",
+    "as_hu": "Erzhebet Szilági az én betródásom."
+   }
+  ]
+ },
+ {
+  "clip": "00105583",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.42,
+     1.54
+    ],
+    "lang": "en",
+    "en": 0.24,
+    "hu": 0.0,
+    "as_en": "What?",
+    "as_hu": "Köszönöm, hogy megnézted!"
+   }
+  ]
+ },
+ {
+  "clip": "00105631",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     0.23
+    ],
+    "lang": "en",
+    "en": 0.45,
+    "hu": 0.0,
+    "as_en": "Hey",
+    "as_hu": "Így."
+   },
+   {
+    "t": [
+     0.82,
+     4.29
+    ],
+    "lang": "en",
+    "en": 0.91,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     4.77,
+     5.0
+    ],
+    "lang": "nn",
+    "en": 0.23,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Feliratok az Amara.org közösségétől"
+   }
+  ]
+ },
+ {
+  "clip": "00105789",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.89,
+     1.42
+    ],
+    "lang": "en",
+    "en": 0.48,
+    "hu": 0.0,
+    "as_en": "Where were you?",
+    "as_hu": "Hol voltál?"
+   }
+  ]
+ },
+ {
+  "clip": "00105832",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.41,
+     0.87
+    ],
+    "lang": "en",
+    "en": 0.78,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     2.31,
+     3.74
+    ],
+    "lang": "en",
+    "en": 0.77,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     4.42,
+     5.59
+    ],
+    "lang": "en",
+    "en": 0.89,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.98,
+     7.44
+    ],
+    "lang": "en",
+    "en": 0.86,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     9.31,
+     9.97
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00106229",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.24,
+     0.75
+    ],
+    "lang": "en",
+    "en": 0.94,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.32,
+     3.09
+    ],
+    "lang": "en",
+    "en": 0.92,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.68,
+     7.72
+    ],
+    "lang": "en",
+    "en": 0.66,
+    "hu": 0.0,
+    "as_en": "We'll be seen together for a bit. Then, once the boys tire of the king, you'll go with them.",
+    "as_hu": "Köszönjük, hogy megnéztétek egy kicsit. Amikor a lányok megszületik a kéneket, megnéztetek őket."
+   },
+   {
+    "t": [
+     8.46,
+     16.92
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     18.27,
+     19.92
+    ],
+    "lang": "en",
+    "en": 0.82,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00106957",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.52,
+     1.17
+    ],
+    "lang": "en",
+    "en": 0.73,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.63,
+     2.3
+    ],
+    "lang": "en",
+    "en": 0.82,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00107025",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.74,
+     5.84
+    ],
+    "lang": "en",
+    "en": 0.54,
+    "hu": 0.01,
+    "as_en": "I was just pressing dear Brankovic about what he plans for his younger daughter.",
+    "as_hu": "Csak értettem a született Brankovics, hogy mi a jelentése a másik lányjáról."
+   },
+   {
+    "t": [
+     6.28,
+     8.81
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     9.32,
+     11.85
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00107339",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.74,
+     4.15
+    ],
+    "lang": "en",
+    "en": 0.48,
+    "hu": 0.04,
+    "as_en": "Have you seen to your daughter's future yet?",
+    "as_hu": "Még nem láttál a fiatalodnak a jövőt?"
+   },
+   {
+    "t": [
+     4.76,
+     5.61
+    ],
+    "lang": "it",
+    "en": 0.12,
+    "hu": 0.01,
+    "as_en": "Brankovic.",
+    "as_hu": "Brankovics"
+   },
+   {
+    "t": [
+     6.71,
+     9.42
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00107575",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.24,
+     0.38
+    ],
+    "lang": "nn",
+    "en": 0.13,
+    "hu": 0.0,
+    "as_en": "Thank you.",
+    "as_hu": "Köszönöm, hogy megnézted!"
+   },
+   {
+    "t": [
+     0.71,
+     2.45
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00107637",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.35,
+     3.13
+    ],
+    "lang": "en",
+    "en": 0.93,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.88,
+     5.24
+    ],
+    "lang": "en",
+    "en": 0.9,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00107827",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.95,
+     2.07
+    ],
+    "lang": "tr",
+    "en": 0.03,
+    "hu": 0.01,
+    "as_en": "Marami Potrimna.",
+    "as_hu": "Marami potrimna."
+   },
+   {
+    "t": [
+     2.34,
+     3.3
+    ],
+    "lang": "en",
+    "en": 0.64,
+    "hu": 0.0,
+    "as_en": "The Shibu's Manor",
+    "as_hu": "A zsibúzmere."
+   },
+   {
+    "t": [
+     4.12,
+     5.32
+    ],
+    "lang": "ru",
+    "en": 0.03,
+    "hu": 0.0,
+    "as_en": "We'll be right back.",
+    "as_hu": "Pomorzsami szövó."
+   },
+   {
+    "t": [
+     6.88,
+     8.24
+    ],
+    "lang": "en",
+    "en": 0.13,
+    "hu": 0.06,
+    "as_en": "I don't like the word war.",
+    "as_hu": "Nem olyan, mint a Trojan War."
+   }
+  ]
+ },
+ {
+  "clip": "00108026",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     2.08,
+     2.48
+    ],
+    "lang": "en",
+    "en": 0.87,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00108382",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     4.18,
+     4.83
+    ],
+    "lang": "en",
+    "en": 0.82,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.12,
+     7.79
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.02
+   },
+   {
+    "t": [
+     11.23,
+     12.29
+    ],
+    "lang": "en",
+    "en": 0.96,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00108806",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.74,
+     1.75
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.01
+   },
+   {
+    "t": [
+     3.67,
+     5.47
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00108943",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.94,
+     2.45
+    ],
+    "lang": "en",
+    "en": 0.88,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.8,
+     5.49
+    ],
+    "lang": "en",
+    "en": 0.91,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.51,
+     7.29
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     8.08,
+     9.52
+    ],
+    "lang": "en",
+    "en": 0.7,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00109321",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.21,
+     2.8
+    ],
+    "lang": "fi",
+    "en": 0.04,
+    "hu": 0.03,
+    "as_en": "Oh",
+    "as_hu": "Köszönöm szépen!"
+   }
+  ]
+ },
+ {
+  "clip": "00109692",
+  "original_audio": [
+   [
+    4.62,
+    5.37
+   ]
+  ],
+  "phrases": [
+   {
+    "t": [
+     4.75,
+     5.35
+    ],
+    "lang": "pt",
+    "en": 0.02,
+    "hu": 0.01,
+    "as_en": "Los Padaros",
+    "as_hu": "Köszönöm!"
+   }
+  ]
+ },
+ {
+  "clip": "00109943",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     1.51,
+     1.81
+    ],
+    "lang": "en",
+    "en": 0.47,
+    "hu": 0.0,
+    "as_en": "What's that?",
+    "as_hu": "Mi az ez?"
+   },
+   {
+    "t": [
+     2.23,
+     2.75
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   }
+  ]
+ },
+ {
+  "clip": "00110020",
+  "original_audio": [],
+  "phrases": [
+   {
+    "t": [
+     0.24,
+     0.85
+    ],
+    "lang": "en",
+    "en": 0.96,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     1.2,
+     1.55
+    ],
+    "lang": "en",
+    "en": 0.66,
+    "hu": 0.0,
+    "as_en": "Who is that?",
+    "as_hu": "Ki az az?"
+   },
+   {
+    "t": [
+     1.93,
+     3.19
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     3.97,
+     4.74
+    ],
+    "lang": "en",
+    "en": 0.95,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     4.99,
+     5.61
+    ],
+    "lang": "en",
+    "en": 0.84,
+    "hu": 0.0
+   },
+   {
+    "t": [
+     6.07,
+     7.91
+    ],
+    "lang": "en",
+    "en": 0.97,
+    "hu": 0.0
+   }
+  ]
+ }
+]

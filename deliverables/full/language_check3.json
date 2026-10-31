@@ -1,0 +1,1240 @@
+{
+ "00087434": {
+  "orig_lid": {
+   "hu": 0.02,
+   "slavic": 0.0,
+   "en": 0.0
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.14,
+     1.62
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.577,
+      "text": "Yonko"
+     },
+     "hr": {
+      "lp": -0.27,
+      "text": "Janko"
+     },
+     "hu": {
+      "lp": -0.48,
+      "text": "Jánko"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00087646": {
+  "orig_lid": {
+   "hu": 0.88,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.54,
+     2.66
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.231,
+      "text": "How are you holding that bow?"
+     },
+     "hr": {
+      "lp": -0.791,
+      "text": "Kako stavljate ovu stavu?"
+     },
+     "hu": {
+      "lp": -0.829,
+      "text": "Hogy tartod ezt a bőrt?"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00088011": {
+  "orig_lid": {
+   "hu": 0.97,
+   "slavic": 0.0,
+   "en": 0.01
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00088514": {
+  "orig_lid": {
+   "hu": 0.95,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00088693": {
+  "orig_lid": {
+   "hu": 0.17,
+   "slavic": 0.02,
+   "en": 0.08
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00089846": {
+  "orig_lid": {
+   "hu": 0.6,
+   "slavic": 0.0,
+   "en": 0.1
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090058": {
+  "orig_lid": {
+   "hu": 0.89,
+   "slavic": 0.0,
+   "en": 0.04
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090252": {
+  "orig_lid": {
+   "hu": 0.93,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090482": {
+  "orig_lid": {
+   "hu": 0.3,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090527": {
+  "orig_lid": {
+   "hu": 0.91,
+   "slavic": 0.0,
+   "en": 0.04
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090694": {
+  "orig_lid": {
+   "hu": 0.95,
+   "slavic": 0.0,
+   "en": 0.01
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090756": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.01,
+   "en": 0.09
+  },
+  "orig_lang": "serbian",
+  "phrases": []
+ },
+ "00090909": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.0,
+   "en": 0.32
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00090983": {
+  "orig_lid": {
+   "hu": 0.89,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00091239": {
+  "orig_lid": {
+   "hu": 0.4,
+   "slavic": 0.0,
+   "en": 0.08
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00091606": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.0,
+   "en": 0.38
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.5,
+     1.68
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.89,
+      "text": "Ah! / General!"
+     },
+     "hr": {
+      "lp": -1.077,
+      "text": "Aaaa, jedan!"
+     },
+     "hu": {
+      "lp": -0.919,
+      "text": "Gyerünk!"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00091750": {
+  "orig_lid": {
+   "hu": 0.02,
+   "slavic": 0.0,
+   "en": 0.3
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00091928": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.0,
+   "en": 0.14
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.74,
+     4.2
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.968,
+      "text": "Come quiet now. / No!"
+     },
+     "hr": {
+      "lp": -0.848,
+      "text": "Hrm, koja je ta nama? / Jel njom?"
+     },
+     "hu": {
+      "lp": -0.856,
+      "text": "Ram, kolyatnak! / Jaj, jó!"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00092071": {
+  "orig_lid": {
+   "hu": 0.02,
+   "slavic": 0.01,
+   "en": 0.19
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.35,
+     2.25
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.612,
+      "text": "Yonko! YONKO!"
+     },
+     "hr": {
+      "lp": -0.359,
+      "text": "Janko! Janko!"
+     },
+     "hu": {
+      "lp": -0.385,
+      "text": "Jánkó! Jánkó!"
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     2.62,
+     3.54
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.961,
+      "text": "Hi, boy"
+     },
+     "hr": {
+      "lp": -0.92,
+      "text": "Hvala vam!"
+     },
+     "hu": {
+      "lp": -1.111,
+      "text": "HAJBORJ!"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00092290": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.0,
+   "en": 0.34
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     0.0,
+     2.63
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.864,
+      "text": "Oh"
+     },
+     "hr": {
+      "lp": -0.761,
+      "text": "OČE!"
+     },
+     "hu": {
+      "lp": -0.809,
+      "text": "Állj fel!"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00095210": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.0,
+   "en": 0.12
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     2.29,
+     2.91
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.995,
+      "text": "Uncle."
+     },
+     "hr": {
+      "lp": -0.634,
+      "text": "Janko..."
+     },
+     "hu": {
+      "lp": -0.943,
+      "text": "Jánkó."
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00101509": {
+  "orig_lid": {
+   "hu": 0.92,
+   "slavic": 0.0,
+   "en": 0.01
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00101555": {
+  "orig_lid": {
+   "hu": 0.05,
+   "slavic": 0.0,
+   "en": 0.05
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00101676": {
+  "orig_lid": {
+   "hu": 0.75,
+   "slavic": 0.0,
+   "en": 0.06
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00101704": {
+  "orig_lid": {
+   "hu": 0.94,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00102065": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.0,
+   "en": 0.1
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00102148": {
+  "orig_lid": {
+   "hu": 0.77,
+   "slavic": 0.0,
+   "en": 0.01
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00102229": {
+  "orig_lid": {
+   "hu": 0.89,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.6,
+     2.4
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.571,
+      "text": "I'm Yano Shunyadi."
+     },
+     "hr": {
+      "lp": -0.496,
+      "text": "A mi je ono šunjadi."
+     },
+     "hu": {
+      "lp": -0.451,
+      "text": "Amiános hunyadi."
+     }
+    },
+    "best": "hu"
+   }
+  ]
+ },
+ "00103215": {
+  "orig_lid": {
+   "hu": 0.97,
+   "slavic": 0.0,
+   "en": 0.0
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.2,
+     0.71
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.676,
+      "text": "Erzhebet."
+     },
+     "hr": {
+      "lp": -0.471,
+      "text": "RZB"
+     },
+     "hu": {
+      "lp": -0.179,
+      "text": "Erzsébet"
+     }
+    },
+    "best": "hu"
+   }
+  ]
+ },
+ "00103280": {
+  "orig_lid": {
+   "hu": 0.9,
+   "slavic": 0.0,
+   "en": 0.04
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00103629": {
+  "orig_lid": {
+   "hu": 0.99,
+   "slavic": 0.0,
+   "en": 0.0
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00103835": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.62,
+   "en": 0.17
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     2.81,
+     4.07
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.483,
+      "text": "They won't put the money"
+     },
+     "hr": {
+      "lp": -0.433,
+      "text": "Taj Bog pripada meni."
+     },
+     "hu": {
+      "lp": -0.628,
+      "text": "Tejvók, pliped a mennyi!"
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     4.35,
+     6.13
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.589,
+      "text": "Yes, he go be on the sub screws Andy"
+     },
+     "hr": {
+      "lp": -0.51,
+      "text": "Jesi govorio na subskrize MD."
+     },
+     "hu": {
+      "lp": -0.37,
+      "text": "Köszönöm, hogy megnéztétek, és köszönöm, hogy megnéztétek!"
+     }
+    },
+    "best": "hu"
+   }
+  ]
+ },
+ "00104123": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.77,
+   "en": 0.02
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     0.81,
+     2.47
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.491,
+      "text": "And I gave it to your father-in-law."
+     },
+     "hr": {
+      "lp": -0.17,
+      "text": "A mi sam ga dao tvojoj čerci."
+     },
+     "hu": {
+      "lp": -1.119,
+      "text": "És én tettem a fejét a fejére."
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00104240": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.3,
+   "en": 0.09
+  },
+  "orig_lang": "serbian",
+  "phrases": []
+ },
+ "00104461": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.83,
+   "en": 0.05
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     8.41,
+     8.99
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.455,
+      "text": "Yonko"
+     },
+     "hr": {
+      "lp": -0.339,
+      "text": "Janko"
+     },
+     "hu": {
+      "lp": -0.457,
+      "text": "Jankó"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00104695": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.97,
+   "en": 0.01
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     1.25,
+     3.18
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.863,
+      "text": "This evening is a big lie for me."
+     },
+     "hr": {
+      "lp": -0.296,
+      "text": "Ove će za mene jako važno."
+     },
+     "hu": {
+      "lp": -1.073,
+      "text": "Ez már nagyon lényeges."
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     4.19,
+     5.25
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.714,
+      "text": "I'm going to do this cry now."
+     },
+     "hr": {
+      "lp": -0.564,
+      "text": "Ako vam se sviđa sviđajte na našoj kanali."
+     },
+     "hu": {
+      "lp": -0.451,
+      "text": "Akkor az utolsó klára."
+     }
+    },
+    "best": "hu"
+   },
+   {
+    "t": [
+     6.98,
+     8.14
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.84,
+      "text": "Well, we'll cut you a little less."
+     },
+     "hr": {
+      "lp": -0.518,
+      "text": "U ovu kuću bih šela dolazi."
+     },
+     "hu": {
+      "lp": -0.706,
+      "text": "Való kutya is eladó az."
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     9.9,
+     10.99
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.83,
+      "text": "It's a good place to start on this."
+     },
+     "hr": {
+      "lp": -0.986,
+      "text": "Svijetlosti i sviđanje sviđanje"
+     },
+     "hu": {
+      "lp": -0.721,
+      "text": "Ez a több az, hogy találni is."
+     }
+    },
+    "best": "hu"
+   }
+  ]
+ },
+ "00105002": {
+  "orig_lid": {
+   "hu": 0.46,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00105196": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.0,
+   "en": 0.01
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.92,
+     2.42
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.728,
+      "text": "Erzsébet!"
+     },
+     "hr": {
+      "lp": -0.572,
+      "text": "Erzibet!"
+     },
+     "hu": {
+      "lp": -0.233,
+      "text": "Erzsébet!"
+     }
+    },
+    "best": "hu"
+   },
+   {
+    "t": [
+     4.52,
+     5.76
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.708,
+      "text": "Thank you."
+     },
+     "hr": {
+      "lp": -0.297,
+      "text": "Hvala što pratite kanal."
+     },
+     "hu": {
+      "lp": -0.158,
+      "text": "Feliratok az Amara.org közösségétől"
+     }
+    },
+    "best": "hu"
+   }
+  ]
+ },
+ "00105386": {
+  "orig_lid": {
+   "hu": 0.77,
+   "slavic": 0.0,
+   "en": 0.09
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     5.23,
+     7.1
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.357,
+      "text": "Erzheber Zilagi is my betrothed."
+     },
+     "hr": {
+      "lp": -0.632,
+      "text": "Erzheber Cilagi je moj potrošak."
+     },
+     "hu": {
+      "lp": -0.631,
+      "text": "Erzheber Cilagi az én betródásom."
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00105583": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.04,
+   "en": 0.13
+  },
+  "orig_lang": "serbian",
+  "phrases": []
+ },
+ "00105631": {
+  "orig_lid": {
+   "hu": 0.91,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00105789": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.0,
+   "en": 0.48
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.89,
+     1.42
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.378,
+      "text": "Where were you?"
+     },
+     "hr": {
+      "lp": -0.587,
+      "text": "Gdje si?"
+     },
+     "hu": {
+      "lp": -0.686,
+      "text": "Hol voltál?"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00105832": {
+  "orig_lid": {
+   "hu": 0.99,
+   "slavic": 0.0,
+   "en": 0.0
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00106229": {
+  "orig_lid": {
+   "hu": 0.95,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     3.68,
+     7.72
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.248,
+      "text": "We'll be seen together for a bit. Then once the boys tire of the king, you'll go with them."
+     },
+     "hr": {
+      "lp": -0.971,
+      "text": "Svi ćemo se sviđati, a kada će se ljudi pustiti, idete s njima."
+     },
+     "hu": {
+      "lp": -0.819,
+      "text": "Egy kicsit megnézzük együtt, majd amikor a lányok a kéneket bántanak, megnézzük őket."
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00106957": {
+  "orig_lid": {
+   "hu": 0.51,
+   "slavic": 0.0,
+   "en": 0.14
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00107025": {
+  "orig_lid": {
+   "hu": 0.93,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     0.74,
+     5.84
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.149,
+      "text": "i was just pressing dear brankovitch about what he plans for his younger daughter"
+     },
+     "hr": {
+      "lp": -0.672,
+      "text": "Samo sam držao ljubavi Branković o tome što planira za svoju mladinu."
+     },
+     "hu": {
+      "lp": -0.908,
+      "text": "Csak értettem a született Brankovicsot, hogy mi a jelentése a másik lányjáról."
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ "00107339": {
+  "orig_lid": {
+   "hu": 0.9,
+   "slavic": 0.0,
+   "en": 0.04
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.74,
+     4.15
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.103,
+      "text": "Have you seen to your daughter's future yet?"
+     },
+     "hr": {
+      "lp": -0.562,
+      "text": "Uvijek li ste vidjeli svoju djecu budućnost?"
+     },
+     "hu": {
+      "lp": -0.769,
+      "text": "Még nem láttál a fiatalodnak a jövőt?"
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     4.76,
+     5.61
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.493,
+      "text": "Brankovic."
+     },
+     "hr": {
+      "lp": -0.275,
+      "text": "Branković"
+     },
+     "hu": {
+      "lp": -0.329,
+      "text": "Brankovics"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00107575": {
+  "orig_lid": {
+   "hu": 0.99,
+   "slavic": 0.0,
+   "en": 0.0
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00107637": {
+  "orig_lid": {
+   "hu": 0.83,
+   "slavic": 0.0,
+   "en": 0.05
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00107827": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.88,
+   "en": 0.03
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     0.95,
+     2.07
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.868,
+      "text": "More of me for terminal"
+     },
+     "hr": {
+      "lp": -0.415,
+      "text": "Moram je potrebna."
+     },
+     "hu": {
+      "lp": -0.736,
+      "text": "Marami potromra."
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     2.34,
+     3.3
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.449,
+      "text": "The Shibu's Manor."
+     },
+     "hr": {
+      "lp": -0.598,
+      "text": "Da si blizu mene."
+     },
+     "hu": {
+      "lp": -0.545,
+      "text": "A zsibúzmere."
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     4.12,
+     5.32
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.901,
+      "text": "We'll measure this, will we?"
+     },
+     "hr": {
+      "lp": -0.417,
+      "text": "Pomaži mi svemu."
+     },
+     "hu": {
+      "lp": -0.841,
+      "text": "Poma, zsövés, szővó!"
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     6.88,
+     8.24
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.53,
+      "text": "Never got in a trade war"
+     },
+     "hr": {
+      "lp": -0.504,
+      "text": "Nemojem dati na tvoj rvor."
+     },
+     "hu": {
+      "lp": -0.585,
+      "text": "Nem olyan, mint a Trojan War."
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00108026": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.01,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00108382": {
+  "orig_lid": {
+   "hu": 0.88,
+   "slavic": 0.0,
+   "en": 0.03
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00108806": {
+  "orig_lid": {
+   "hu": 0.77,
+   "slavic": 0.0,
+   "en": 0.07
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00108943": {
+  "orig_lid": {
+   "hu": 0.87,
+   "slavic": 0.0,
+   "en": 0.05
+  },
+  "orig_lang": "hungarian",
+  "phrases": []
+ },
+ "00109321": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.02,
+   "en": 0.04
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     1.21,
+     2.8
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.959,
+      "text": "There it is."
+     },
+     "hr": {
+      "lp": -0.532,
+      "text": "Hvala što pratite kanal."
+     },
+     "hu": {
+      "lp": -0.589,
+      "text": "Köszönöm szépen!"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00109692": {
+  "orig_lid": {
+   "hu": 0.0,
+   "slavic": 0.04,
+   "en": 0.03
+  },
+  "orig_lang": "serbian",
+  "phrases": [
+   {
+    "t": [
+     4.75,
+     5.35
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.805,
+      "text": "LOS FADARO"
+     },
+     "hr": {
+      "lp": -0.479,
+      "text": "Gospodaru."
+     },
+     "hu": {
+      "lp": -0.576,
+      "text": "Gospodár"
+     }
+    },
+    "best": "hr"
+   }
+  ]
+ },
+ "00109943": {
+  "orig_lid": {
+   "hu": 0.01,
+   "slavic": 0.04,
+   "en": 0.03
+  },
+  "orig_lang": "serbian",
+  "phrases": []
+ },
+ "00110020": {
+  "orig_lid": {
+   "hu": 0.93,
+   "slavic": 0.0,
+   "en": 0.02
+  },
+  "orig_lang": "hungarian",
+  "phrases": [
+   {
+    "t": [
+     1.2,
+     1.55
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.217,
+      "text": "Who is that?"
+     },
+     "hr": {
+      "lp": -0.573,
+      "text": "Ko je to?"
+     },
+     "hu": {
+      "lp": -0.696,
+      "text": "Ki az az?"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ }
+}

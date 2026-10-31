@@ -1,0 +1,450 @@
+[
+ {
+  "clip": "00087434",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.668,
+     "text": "Janko, come here."
+    },
+    "hr": {
+     "lp": -0.29,
+     "text": "Janko, gjera ide!"
+    },
+    "hu": {
+     "lp": -0.195,
+     "text": "Jankó, gyere ide!"
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     1.14,
+     1.62
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.577,
+      "text": "Yonko"
+     },
+     "hr": {
+      "lp": -0.27,
+      "text": "Janko"
+     },
+     "hu": {
+      "lp": -0.48,
+      "text": "Jánko"
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     2.29,
+     2.71
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.157,
+      "text": "Come here"
+     },
+     "hr": {
+      "lp": -0.964,
+      "text": "Ovo je."
+     },
+     "hu": {
+      "lp": -0.58,
+      "text": "Köszönöm, hogy megnézted!"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00087646",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.814,
+     "text": "Come on, show me how you hold that knife. / Hold your breath away, it'll hit your face. / Let go of this knife."
+    },
+    "hr": {
+     "lp": -0.649,
+     "text": "Uvijek ćeš možda. / Uvijek ćeš možda. / Uvijek ćeš možda."
+    },
+    "hu": {
+     "lp": -0.262,
+     "text": "Na, mutasd! Hogy tartod azt az íjat? / Az ideget tarts távolabb, megüti az arcod. / Engedd lejjebb a vállad."
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     0.24,
+     0.79
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.081,
+      "text": "Now show me"
+     },
+     "hr": {
+      "lp": -0.664,
+      "text": "Now show me."
+     },
+     "hu": {
+      "lp": -0.749,
+      "text": "Most megnézzük!"
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     1.54,
+     2.94
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.254,
+      "text": "How are you holding that bow?"
+     },
+     "hr": {
+      "lp": -0.825,
+      "text": "Kako stavljate ovu stavu?"
+     },
+     "hu": {
+      "lp": -0.816,
+      "text": "Hogy tartod ezt a bőrt?"
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     5.29,
+     7.33
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.166,
+      "text": "Hold the bow further out. It'll hit your face"
+     },
+     "hr": {
+      "lp": -1.075,
+      "text": "Poslušaj broj više, nešto će biti na tvojoj glavi."
+     },
+     "hu": {
+      "lp": -0.846,
+      "text": "Hold the bow further out, it'll hit your face."
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     9.83,
+     10.58
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.265,
+      "text": "Drop your shoulder"
+     },
+     "hr": {
+      "lp": -0.532,
+      "text": "Drop your shoulder."
+     },
+     "hu": {
+      "lp": -1.129,
+      "text": "Nyomd be a helyet!"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00088011",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.543,
+     "text": "Don't aim with your hand. / Don't even with your eye. / Here."
+    },
+    "hr": {
+     "lp": -0.751,
+     "text": "Ne svojim rukom, ne svojim očima. / Ovdje."
+    },
+    "hu": {
+     "lp": -0.325,
+     "text": "Ne a kezeddel célozz. / Ne is a szemeddel. / Itt."
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     0.27,
+     1.96
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.157,
+      "text": "Don't aim with your hand."
+     },
+     "hr": {
+      "lp": -0.314,
+      "text": "Don't aim with your hand."
+     },
+     "hu": {
+      "lp": -0.898,
+      "text": "Ne állítsd el a fejedből!"
+     }
+    },
+    "best": "en"
+   },
+   {
+    "t": [
+     3.7,
+     4.71
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.314,
+      "text": "nor with your eye."
+     },
+     "hr": {
+      "lp": -0.272,
+      "text": "Nor with your eye."
+     },
+     "hu": {
+      "lp": -0.472,
+      "text": "Nor with your eye."
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     8.72,
+     9.08
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.391,
+      "text": "Right here"
+     },
+     "hr": {
+      "lp": -0.483,
+      "text": "Ovdje."
+     },
+     "hu": {
+      "lp": -0.819,
+      "text": "Itt."
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00088514",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.471,
+     "text": "Janko, how many times have I told you not to play with that stick in the yard?"
+    },
+    "hr": {
+     "lp": -0.701,
+     "text": "Janko, koliko sam ti rekao da ne igraš s ovom zidom?"
+    },
+    "hu": {
+     "lp": -0.256,
+     "text": "Jankó, hányszor mondtam, hogy ne az udvaron játssz azzal az íjjal?"
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     1.43,
+     4.38
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.293,
+      "text": "Yanko, how many times have I told you not to play with that bow in the courtyard?"
+     },
+     "hr": {
+      "lp": -0.845,
+      "text": "Janko, koliko sam ti rekao da ne igraš s ovom bavom u košariju?"
+     },
+     "hu": {
+      "lp": -0.955,
+      "text": "Jankó, mennyire sokan mondtam neked, hogy nem játsszál a bába a kórházban?"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00088693",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -1.093,
+     "text": "She's in that chair."
+    },
+    "hr": {
+     "lp": -0.491,
+     "text": "Čineću."
+    },
+    "hu": {
+     "lp": -0.535,
+     "text": "Csináljátok!"
+    }
+   },
+   "best": "hr"
+  },
+  "final": [
+   {
+    "t": [
+     0.16,
+     0.77
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.16,
+      "text": "Go on keep at it"
+     },
+     "hr": {
+      "lp": -0.413,
+      "text": "Go on, keep at it."
+     },
+     "hu": {
+      "lp": -0.785,
+      "text": "Gyerünk, gyerünk!"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00089846",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.669,
+     "text": "They're coming! Come to the front! / Tell the others, come on, move! / Everyone to the gate, come on! Move!"
+    },
+    "hr": {
+     "lp": -0.752,
+     "text": "Idemo! / Idemo u staklenke! / Rek' joj, drugima! / Idemo! / Idemo! / Idemo! / Idemo! / Idemo!"
+    },
+    "hu": {
+     "lp": -0.279,
+     "text": "Jönnek! Gyerünk fegyverben! Szólja többieknek, gyerünk mozgás! / Mindenki a kapuhoz! Gyerünk! Mozgás!"
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     0.0,
+     8.87
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.248,
+      "text": "they're coming to arms alert the others come on move everyone to the gate move move"
+     },
+     "hr": {
+      "lp": -0.305,
+      "text": "They're coming! To arms! Alert the others! Come on, move! Everyone to the gate! Move! Move!"
+     },
+     "hu": {
+      "lp": -0.306,
+      "text": "Feliratok az Amara.org közösségétől"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ },
+ {
+  "clip": "00090058",
+  "orig": {
+   "fit": {
+    "en": {
+     "lp": -0.606,
+     "text": "Here, listen. You have to shut up. / Whatever happens, do what your mother says. Do you understand?"
+    },
+    "hr": {
+     "lp": -0.876,
+     "text": "Svijetlosti!"
+    },
+    "hu": {
+     "lp": -0.216,
+     "text": "Szent a lábad! / Ide figyeljétek! El kell bújnatok! / Bármi történik, azt teszitek, amit anyátok mond, megértettétek?"
+    }
+   },
+   "best": "hu"
+  },
+  "final": [
+   {
+    "t": [
+     0.0,
+     1.39
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.403,
+      "text": "Pick up the pace!"
+     },
+     "hr": {
+      "lp": -0.402,
+      "text": "Pick up the pace!"
+     },
+     "hu": {
+      "lp": -0.622,
+      "text": "Pick up the pace!"
+     }
+    },
+    "best": "hr"
+   },
+   {
+    "t": [
+     1.89,
+     7.91
+    ],
+    "fit": {
+     "en": {
+      "lp": -0.17,
+      "text": "Listen to me. You need to hide. Whatever happens, do as your mother says. Do you hear me?"
+     },
+     "hr": {
+      "lp": -0.723,
+      "text": "Poslušaj me. Trebali ste se stvariti. Što se događa, radite kao tvoja matka reče. Slušate me?"
+     },
+     "hu": {
+      "lp": -0.927,
+      "text": "Lássátok meg, hagyjátok benneteket! / Milyen történik, csináljatok, mint mondta a lányom. Hallottátok?"
+     }
+    },
+    "best": "en"
+   }
+  ]
+ }
+]

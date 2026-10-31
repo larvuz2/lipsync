@@ -221,27 +221,6 @@
    "was": "How do you look like?"
   },
   {
-   "id": "L07a",
-   "clip": "00104240",
-   "start": 2.38,
-   "end": 3.32,
-   "character": "DARKWOMAN",
-   "en": "Come on, let's go!",
-   "tts": "Come on, let's go!",
-   "was": "Come on, get dressed."
-  },
-  {
-   "id": "L07b",
-   "clip": "00104240",
-   "start": 3.78,
-   "end": 6.4,
-   "character": "OLDNOBLE",
-   "en": "The King of Hungary is here!",
-   "tts": "The King of Hungary is here!",
-   "was": "The king is coming, your Hungarian.",
-   "note": "old 'your Hungarian' runs to 6.35"
-  },
-  {
    "id": "L08",
    "clip": "00104240",
    "start": 6.62,
@@ -258,17 +237,6 @@
    "note": "re-voiced whole line; dub line really spans 6.73-7.75 (forced alignment)"
   },
   {
-   "id": "L09",
-   "clip": "00104461",
-   "start": 0.0,
-   "end": 5.54,
-   "character": "OLDNOBLE",
-   "en": "Only the queen. The king, as usual, is running late.",
-   "tts": "Only the queen. The king, as usual, is running late.",
-   "was": "Only the queen. King Kasnik usually plays with his cow.",
-   "uncertain": true
-  },
-  {
    "id": "L10",
    "clip": "00104461",
    "start": 5.96,
@@ -277,16 +245,6 @@
    "en": "Father!",
    "tts": "Father!",
    "was": "Wait."
-  },
-  {
-   "id": "L11",
-   "clip": "00104461",
-   "start": 6.82,
-   "end": 9.1,
-   "character": "OLDNOBLE",
-   "en": "Thank you, my dear. Jankó!",
-   "tts": "Thank you, my dear. Yahnko!",
-   "was": "Excuse me, Janko."
   },
   {
    "id": "L12",
@@ -346,6 +304,150 @@
    "word": "Ooylakee",
    "prev": "as",
    "next": ""
+  },
+  {
+   "id": "L07c",
+   "clip": "00104240",
+   "start": 2.38,
+   "end": 3.32,
+   "character": "DARKWOMAN",
+   "en": "Come on, wash up and get dressed!",
+   "tts": "Come on, wash up and get dressed!",
+   "was": "Ajde, umij se, obuci se. (was: Come on, let's go!)",
+   "source": "serbian"
+  },
+  {
+   "id": "L07d",
+   "clip": "00104240",
+   "start": 3.78,
+   "end": 6.4,
+   "character": "OLDNOBLE",
+   "en": "The king is coming. Your Hungarian king.",
+   "tts": "The king is coming. Your Hungarian king.",
+   "was": "Kralj dolazi, tvoj, mađarski. (was: The King of Hungary is here!)",
+   "source": "serbian"
+  },
+  {
+   "id": "L09b",
+   "clip": "00104461",
+   "start": 0.0,
+   "end": 5.54,
+   "character": "OLDNOBLE",
+   "en": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "was": "Samo kraljica. Kralj kasni kao obično, sigurno se još zabavlja sa svojim kurvama.",
+   "source": "serbian"
+  },
+  {
+   "id": "L11b",
+   "clip": "00104461",
+   "start": 6.82,
+   "end": 9.1,
+   "character": "OLDNOBLE",
+   "en": "Excuse me, daughter. Janko!",
+   "tts": "Excuse me, daughter. Yahnko!",
+   "was": "Oprosti, kćeri. Janko!",
+   "source": "serbian"
+  },
+  {
+   "id": "L16",
+   "clip": "00103835",
+   "start": 2.06,
+   "end": 5.75,
+   "character": "OLDNOBLE",
+   "en": "That wolf belongs to me. You killed it on Serbian soil.",
+   "tts": "That wolf belongs to me. You killed it on Serbian soil.",
+   "was": "Taj vuk pripada meni, jer si ga ubio na srpskoj zemlji. (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L17",
+   "clip": "00104123",
+   "start": 0.6,
+   "end": 2.55,
+   "character": "HUNYADI",
+   "en": "But I gave it to your daughter.",
+   "tts": "But I gave it to your daughter.",
+   "was": "Ali sam ga dao tvojoj kćeri. (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L18a",
+   "clip": "00104695",
+   "start": 0.1,
+   "end": 3.2,
+   "character": "OLDNOBLE",
+   "en": "Listen, this evening is very important to me.",
+   "tts": "Listen, this evening is very important to me.",
+   "was": "Slušaj, ovo veče je za mene jako važno. (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L18b",
+   "clip": "00104695",
+   "start": 3.76,
+   "end": 8.2,
+   "character": "OLDNOBLE",
+   "en": "If you anger the king, don't you ever come back to this house.",
+   "tts": "If you anger the king, don't you ever come back to this house.",
+   "was": "Ako razljutiš kralja, u ovu kuću više ne dolaziš. (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L18c",
+   "clip": "00104695",
+   "start": 9.46,
+   "end": 11.0,
+   "character": "OLDNOBLE",
+   "en": "So watch what you do.",
+   "tts": "So watch what you do.",
+   "was": "Zato pazi što radiš. (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L19a",
+   "clip": "00107827",
+   "start": 0.9,
+   "end": 3.35,
+   "character": "OLDNOBLE",
+   "en": "I need Mara here with me.",
+   "tts": "I need Mara here with me.",
+   "was": "Mara mi je potrebna da živi uz mene, (dub was still Serbian)",
+   "source": "serbian"
+  },
+  {
+   "id": "L19b",
+   "clip": "00107827",
+   "start": 4.05,
+   "end": 5.4,
+   "character": "OLDNOBLE",
+   "en": "She helps me with everything.",
+   "tts": "She helps me with everything.",
+   "was": "pomaže mi u svemu,",
+   "source": "serbian"
+  },
+  {
+   "id": "L19c",
+   "clip": "00107827",
+   "start": 6.85,
+   "end": 8.28,
+   "character": "OLDNOBLE",
+   "en": "I can't give her to your court.",
+   "tts": "I can't give her to your court.",
+   "was": "ne mogu je dati na tvoj dvor.",
+   "source": "serbian",
+   "lead": 0.4
+  },
+  {
+   "id": "L20",
+   "clip": "00109692",
+   "start": 3.4,
+   "end": 5.6,
+   "character": "FATHER",
+   "en": "My lord!",
+   "tts": "My lord!",
+   "was": "Gospodaru! (original Serbian audio had been kept)",
+   "source": "serbian"
   }
  ],
  "edits": [
@@ -388,14 +490,6 @@
    "end": 1.96,
    "type": "restore",
    "why": "'Hey Jalko' -> original 'Hé, Jankó!'"
-  },
-  {
-   "id": "E06",
-   "clip": "00109692",
-   "start": 3.4,
-   "end": 5.6,
-   "type": "restore",
-   "why": "'Los Padar' -> original shouted name"
   },
   {
    "id": "E07",

@@ -413,24 +413,28 @@
    "en": "But I gave it to your daughter.",
    "tts": "But I gave it to your daughter.",
    "was": "client: not manly enough -> new Hunyadi voice cloned from the actor's own lines",
-   "source": "serbian"
+   "source": "serbian",
+   "pitch_target": 100
   },
   {
    "id": "L03b",
    "clip": "00102229",
    "type": "word",
    "start": 10.7,
-   "end": 10.94,
+   "end": 11.3,
    "character": "HUNYADI2",
    "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
    "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
    "take_line": "L03b",
-   "word": "Mihai's",
+   "word": "Mihai's sister",
    "prev": "you're",
-   "next": "sister",
-   "was": "Miho's",
+   "next": "little",
+   "was": "Miho's sister",
    "pitch_match": true,
-   "note": "client: high-pitch drop-out on the swapped word -> new Hunyadi voice + pitch matched to the line"
+   "note": "client: high-pitch drop-out on the swapped word -> new Hunyadi voice, 'Mihai's sister' swapped together, pitch matched to the dub's own pitch on these words",
+   "takes": [
+    "L03b_t0"
+   ]
   },
   {
    "id": "L08b",
@@ -441,7 +445,8 @@
    "en": "Is Sigismund here already?",
    "tts": "Is Sigismund here already?",
    "was": "Je l' Zigismund već tu? (new Hunyadi voice; timed to the original)",
-   "source": "serbian"
+   "source": "serbian",
+   "pitch_target": 115
   }
  ],
  "edits": [

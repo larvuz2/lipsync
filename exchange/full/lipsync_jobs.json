@@ -238,48 +238,6 @@
   }
  },
  {
-  "name": "00105832_f0-40",
-  "clip": "00105832",
-  "first_frame": 0,
-  "last_frame": 40,
-  "audio": "lipsync_audio/00105832_f0-40.wav",
-  "face": {
-   "frame": 9,
-   "xy": [
-    886,
-    300
-   ]
-  }
- },
- {
-  "name": "00105832_f65-110_s1_9bf46c",
-  "clip": "00105832",
-  "first_frame": 65,
-  "last_frame": 110,
-  "audio": "lipsync_audio/00105832_f65-110_s1_9bf46c.wav",
-  "face": {
-   "frame": 11,
-   "xy": [
-    1018,
-    583
-   ]
-  }
- },
- {
-  "name": "00105832_f111-150_s2_997901",
-  "clip": "00105832",
-  "first_frame": 111,
-  "last_frame": 150,
-  "audio": "lipsync_audio/00105832_f111-150_s2_997901.wav",
-  "face": {
-   "frame": 15,
-   "xy": [
-    965,
-    486
-   ]
-  }
- },
- {
   "name": "00107025_f60-193_ed9e7f",
   "clip": "00107025",
   "first_frame": 60,
@@ -506,20 +464,6 @@
   }
  },
  {
-  "name": "00104123_f0-70_a31689",
-  "clip": "00104123",
-  "first_frame": 0,
-  "last_frame": 70,
-  "audio": "lipsync_audio/00104123_f0-70_a31689.wav",
-  "face": {
-   "frame": 18,
-   "xy": [
-    1066,
-    364
-   ]
-  }
- },
- {
   "name": "00104461_f86-149_s0_664ab6",
   "clip": "00104461",
   "first_frame": 86,
@@ -632,35 +576,6 @@
   }
  },
  {
-  "name": "00102229_f0-464_s0_cb0ec1",
-  "clip": "00102229",
-  "first_frame": 0,
-  "last_frame": 464,
-  "audio": "lipsync_audio/00102229_f0-464_s0_cb0ec1.wav",
-  "face": {
-   "frame": 39,
-   "xy": [
-    823,
-    312
-   ]
-  }
- },
- {
-  "name": "00102229_f0-464_s1_c134de",
-  "clip": "00102229",
-  "first_frame": 0,
-  "last_frame": 464,
-  "audio": "lipsync_audio/00102229_f0-464_s1_c134de.wav",
-  "face": {
-   "frame": 39,
-   "xy": [
-    1296,
-    382
-   ]
-  },
-  "input_from": "00102229_f0-464_s0_cb0ec1"
- },
- {
   "name": "00108382_f0-252_s0_819b8e",
   "clip": "00108382",
   "first_frame": 0,
@@ -675,11 +590,95 @@
   }
  },
  {
-  "name": "00104240_f119-169_s0_9e4cf3",
+  "name": "00105832_f0-40",
+  "clip": "00105832",
+  "first_frame": 0,
+  "last_frame": 40,
+  "audio": "lipsync_audio/00105832_f0-40.wav",
+  "face": {
+   "frame": 9,
+   "xy": [
+    886,
+    300
+   ]
+  }
+ },
+ {
+  "name": "00105832_f65-110_s1_9bf46c",
+  "clip": "00105832",
+  "first_frame": 65,
+  "last_frame": 110,
+  "audio": "lipsync_audio/00105832_f65-110_s1_9bf46c.wav",
+  "face": {
+   "frame": 11,
+   "xy": [
+    1018,
+    583
+   ]
+  }
+ },
+ {
+  "name": "00105832_f111-294_s2_3922f3",
+  "clip": "00105832",
+  "first_frame": 111,
+  "last_frame": 294,
+  "audio": "lipsync_audio/00105832_f111-294_s2_3922f3.wav",
+  "face": {
+   "frame": 15,
+   "xy": [
+    965,
+    486
+   ]
+  }
+ },
+ {
+  "name": "00102229_f0-380_s0_69d8d8",
+  "clip": "00102229",
+  "first_frame": 0,
+  "last_frame": 380,
+  "audio": "lipsync_audio/00102229_f0-380_s0_69d8d8.wav",
+  "face": {
+   "frame": 39,
+   "xy": [
+    823,
+    312
+   ]
+  }
+ },
+ {
+  "name": "00102229_f60-440_s1_9b5caa",
+  "clip": "00102229",
+  "first_frame": 60,
+  "last_frame": 440,
+  "audio": "lipsync_audio/00102229_f60-440_s1_9b5caa.wav",
+  "face": {
+   "frame": 30,
+   "xy": [
+    1299,
+    402
+   ]
+  }
+ },
+ {
+  "name": "00104123_f0-80_s0_b37e65",
+  "clip": "00104123",
+  "first_frame": 0,
+  "last_frame": 80,
+  "audio": "lipsync_audio/00104123_f0-80_s0_b37e65.wav",
+  "face": {
+   "frame": 18,
+   "xy": [
+    1066,
+    364
+   ]
+  }
+ },
+ {
+  "name": "00104240_f119-169_s0_b6ea9f",
   "clip": "00104240",
   "first_frame": 119,
   "last_frame": 169,
-  "audio": "lipsync_audio/00104240_f119-169_s0_9e4cf3.wav",
+  "audio": "lipsync_audio/00104240_f119-169_s0_b6ea9f.wav",
   "face": {
    "frame": 14,
    "xy": [
@@ -689,16 +688,30 @@
   }
  },
  {
-  "name": "00104240_f170-220_s1_113977",
+  "name": "00104240_f170-220_s1_147cb1",
   "clip": "00104240",
   "first_frame": 170,
   "last_frame": 220,
-  "audio": "lipsync_audio/00104240_f170-220_s1_113977.wav",
+  "audio": "lipsync_audio/00104240_f170-220_s1_147cb1.wav",
   "face": {
    "frame": 10,
    "xy": [
     1353,
     449
+   ]
+  }
+ },
+ {
+  "name": "00108943_f80-176_s0_88e49a",
+  "clip": "00108943",
+  "first_frame": 80,
+  "last_frame": 176,
+  "audio": "lipsync_audio/00108943_f80-176_s0_88e49a.wav",
+  "face": {
+   "frame": 40,
+   "xy": [
+    672,
+    381
    ]
   }
  }

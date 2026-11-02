@@ -99,23 +99,6 @@
   "speed": 1.0
  },
  {
-  "id": "L03",
-  "clip": "00102229",
-  "type": "word",
-  "was": "Miho's",
-  "word": "Mihai's",
-  "take": "fix_tts/L03_t2.mp3",
-  "take_heard": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-  "align_match": 1.0,
-  "slot_s": [
-   10.76,
-   11.05
-  ],
-  "word_s": 0.44,
-  "pushed_s": 0.1,
-  "speed": 1.12
- },
- {
   "id": "L04",
   "clip": "00103629",
   "en": "But in truth, it belongs to you, my love.",
@@ -172,21 +155,6 @@
    7.42
   ],
   "speed": 1.12
- },
- {
-  "id": "L17",
-  "clip": "00104123",
-  "en": "But I gave it to your daughter.",
-  "take": "fix_tts/L17_t0.mp3",
-  "heard": "But I gave it to your daughter.",
-  "wer": 0.0,
-  "span_s": 1.95,
-  "natural_s": 1.38,
-  "placed": [
-   0.6,
-   2.09
-  ],
-  "speed": 0.93
  },
  {
   "id": "E10",
@@ -440,6 +408,37 @@
   "speed": 0.93
  },
  {
+  "id": "L13d",
+  "clip": "00105002",
+  "en": "You'll behave, won't you?",
+  "take": "fix_tts/L13d_t2.mp3",
+  "heard": "You'll behave, won't you?",
+  "wer": 0.0,
+  "span_s": 2.22,
+  "natural_s": 1.77,
+  "placed": [
+   0.0,
+   1.91
+  ],
+  "speed": 0.93
+ },
+ {
+  "id": "L17b",
+  "clip": "00104123",
+  "en": "But I gave it to your daughter.",
+  "take": "fix_tts/L17b_t1.mp3",
+  "heard": "But I gave it to your daughter.",
+  "wer": 0.0,
+  "span_s": 1.95,
+  "natural_s": 1.69,
+  "placed": [
+   0.6,
+   2.43
+  ],
+  "speed": 0.93,
+  "pitch_ratio": 0.753
+ },
+ {
   "id": "E11",
   "clip": "00104240",
   "type": "mute",
@@ -459,13 +458,14 @@
   "take": "fix_tts/L06x_t1.mp3",
   "heard": "Look at the state of you!",
   "wer": 0.0,
-  "span_s": 1.3,
+  "span_s": 1.28,
   "natural_s": 1.64,
   "placed": [
-   0.64,
-   2.1
+   1.02,
+   2.48
   ],
-  "speed": 1.12
+  "speed": 1.12,
+  "pitch_ratio": null
  },
  {
   "id": "L07f",
@@ -474,13 +474,14 @@
   "take": "fix_tts/L07f_t1.mp3",
   "heard": "Wash up. Get dressed.",
   "wer": 0.0,
-  "span_s": 0.94,
+  "span_s": 1.07,
   "natural_s": 1.34,
   "placed": [
-   2.38,
-   3.58
+   2.78,
+   3.98
   ],
-  "speed": 1.12
+  "speed": 1.12,
+  "pitch_ratio": null
  },
  {
   "id": "L07d",
@@ -489,42 +490,47 @@
   "take": "fix_tts/L07d_t2.mp3",
   "heard": "The king is coming, your Hungarian king.",
   "wer": 0.0,
-  "span_s": 2.62,
+  "span_s": 2.17,
   "natural_s": 2.91,
   "placed": [
-   3.78,
-   6.4
+   4.05,
+   6.64
   ],
-  "speed": 1.11
+  "speed": 1.12,
+  "pitch_ratio": null
  },
  {
-  "id": "L08",
+  "id": "L08b",
   "clip": "00104240",
   "en": "Is Sigismund here already?",
-  "take": "fix_tts/L08_t1.mp3",
+  "take": "fix_tts/L08b_t2.mp3",
   "heard": "Is Sigismund here already?",
   "wer": 0.0,
-  "span_s": 1.18,
-  "natural_s": 1.46,
+  "span_s": 1.08,
+  "natural_s": 1.54,
   "placed": [
-   6.62,
-   7.92
+   6.72,
+   8.1
   ],
-  "speed": 1.12
+  "speed": 1.12,
+  "pitch_ratio": 0.74
  },
  {
-  "id": "L13d",
-  "clip": "00105002",
-  "en": "You'll behave, won't you?",
-  "take": "fix_tts/L13d_t2.mp3",
-  "heard": "You'll behave, won't you?",
-  "wer": 0.0,
-  "span_s": 2.22,
-  "natural_s": 1.77,
-  "placed": [
-   0.0,
-   1.91
+  "id": "L03b",
+  "clip": "00102229",
+  "type": "word",
+  "was": "Miho's sister",
+  "word": "Mihai's sister",
+  "take": "fix_tts/L03b_t0.mp3",
+  "take_heard": "So you're Mihály's sister? Little Ercebetszilagyi.",
+  "align_match": 1.0,
+  "slot_s": [
+   10.76,
+   11.54
   ],
-  "speed": 0.93
+  "word_s": 1.26,
+  "pushed_s": 0.35,
+  "speed": 1.12,
+  "pitch_ratio": 0.669
  }
 ]

@@ -231,7 +231,8 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
     d0, d1 = edges(orig, dw, i, j)
     # the corrected word(s) in each take, aligned against the take's own script
     best = None
-    for t in [t for t in man["takes"] if t["id"] == ln["take_line"]]:
+    for t in [t for t in man["takes"] if t["id"] == ln["take_line"]
+              and (not ln.get("takes") or os.path.basename(t["file"]).rsplit(".", 1)[0] in ln["takes"])]:
         x = load(os.path.join(ex, t["file"]))
         tw = align(x, SR, ln["tts"])
         ti, tj, tsc = find(tw, ln["word"])
@@ -248,8 +249,9 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
     shift_ratio = None
     if ln.get("pitch_match"):
         # match the inserted word's pitch to the dub's own words around it (no "high-pitch" pop)
+        # target: the pitch the dub voice itself had on this word (same speaker, same spot); else its neighbours
         ctx = np.concatenate([orig[int(max(0, d0 - 0.6) * SR):int(d0 * SR)], orig[int(d1 * SR):int((d1 + 0.6) * SR)]])
-        f_ctx, f_seg = median_f0(ctx), median_f0(seg)
+        f_ctx, f_seg = median_f0(orig[int(d0 * SR):int(d1 * SR)]) or median_f0(ctx), median_f0(seg)
         if f_ctx and f_seg:
             shift_ratio = f_ctx / f_seg
             if abs(np.log(shift_ratio)) > np.log(1.03):
@@ -390,6 +392,13 @@ def apply(ex, only=()):
             good = [c for c in cands if c["wer"] <= 0.25] or cands
             avail = max(room, span) + lead
             best = min(good, key=lambda c: (c["nat"] / 1.2 > avail, abs(np.log(span / c["nat"]))))
+            shift_ratio = None
+            if ln.get("pitch_target"):  # bring the take onto the character's dubbed register
+                f_take = median_f0(best["x"])
+                if f_take:
+                    shift_ratio = float(np.clip(ln["pitch_target"] / f_take, 0.74, 1.35))
+                    if abs(np.log(shift_ratio)) > np.log(1.03):
+                        best = {**best, "x": pitch_shift(best["x"], shift_ratio)}
             nat = best["nat"]
             # natural pace where possible: speed up at most 1.12x to meet the span, 1.2x if room is short,
             # slow down at most 1.08x to fill it
@@ -410,7 +419,8 @@ def apply(ex, only=()):
             add(cur, y, a0)
             r = {"id": ln["id"], "clip": clip, "en": ln["en"], "take": best["file"], "heard": best["heard"],
                  "wer": round(best["wer"], 2), "span_s": round(span, 2), "natural_s": round(nat, 2),
-                 "placed": [round(a0 / SR, 2), round((a0 + n) / SR, 2)], "speed": round(nat / dur, 2)}
+                 "placed": [round(a0 / SR, 2), round((a0 + n) / SR, 2)], "speed": round(nat / dur, 2),
+                 "pitch_ratio": None if shift_ratio is None else round(shift_ratio, 3)}
             if too_long:
                 r["TOO_LONG"] = True
             report.append(r)

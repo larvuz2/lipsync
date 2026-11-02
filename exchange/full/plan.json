@@ -169,11 +169,11 @@
   ]
  },
  "00102065": {
-  "note": "blonde woman 'now it's all yours'",
+  "note": "blonde 'now it's all yours'; single shot, lip-synced over the full shot so there is no mid-shot seam (client review)",
   "jobs": [
    {
-    "first": 20,
-    "last": 75,
+    "first": 0,
+    "last": 82,
     "face": [
      43,
      874,
@@ -341,11 +341,11 @@
   ]
  },
  "00102229": {
-  "note": "walking two-shot: Hunyadi then Erzsébet chained",
+  "note": "walking two-shot: Hunyadi then Erzsébet chained, both over the full shot (no mid-shot seam; client review)",
   "jobs": [
    {
-    "first": 20,
-    "last": 420,
+    "first": 0,
+    "last": 464,
     "face": [
      39,
      823,
@@ -367,8 +367,8 @@
     ]
    },
    {
-    "first": 20,
-    "last": 420,
+    "first": 0,
+    "last": 464,
     "face": [
      39,
      1296,
@@ -765,17 +765,21 @@
   ]
  },
  "00108382": {
-  "note": "blonde 'You're just as arrogant as I thought'; other lines off-face/dark -> audio only",
+  "note": "one continuous dance shot: Erzsébet lip-synced from the first frame until she turns away (f252), her lines 'You again?' and 'You're just as arrogant'; 'At least you can dance' is said with her back to camera. Full-shot job = no mid-shot seam (client review)",
   "jobs": [
    {
-    "first": 125,
-    "last": 200,
+    "first": 0,
+    "last": 252,
     "face": [
      156,
      744,
      407
     ],
     "keep": [
+     [
+      3.6,
+      4.7
+     ],
      [
       5.6,
       8.1

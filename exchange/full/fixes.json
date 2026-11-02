@@ -211,16 +211,6 @@
    "was": "I'm coming."
   },
   {
-   "id": "L06w",
-   "clip": "00104240",
-   "start": 0.64,
-   "end": 1.94,
-   "character": "DARKWOMAN",
-   "en": "Look at the state of you!",
-   "tts": "Look at the state of you!",
-   "was": "How do you look like?"
-  },
-  {
    "id": "L08",
    "clip": "00104240",
    "start": 6.62,
@@ -439,14 +429,25 @@
    "source": "serbian"
   },
   {
-   "id": "L07e",
+   "id": "L06x",
+   "clip": "00104240",
+   "start": 0.64,
+   "end": 1.94,
+   "character": "OLDNOBLE",
+   "en": "Look at the state of you!",
+   "tts": "Look at the state of you!",
+   "was": "Pa kako to izgledaš? (was voiced by the daughter; client review: it is Branković)",
+   "source": "serbian"
+  },
+  {
+   "id": "L07f",
    "clip": "00104240",
    "start": 2.38,
    "end": 3.32,
-   "character": "DARKWOMAN",
+   "character": "OLDNOBLE",
    "en": "Wash up, get dressed!",
    "tts": "Wash up, get dressed!",
-   "was": "Ajde, umij se, obuci se. (L07c 'Come on, wash up and get dressed!' was too long for the gap)",
+   "was": "Ajde, umij se, obuci se. (was voiced by the daughter; client review: it is Branković)",
    "source": "serbian"
   }
  ],

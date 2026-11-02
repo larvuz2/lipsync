@@ -643,7 +643,7 @@
   "source_frames": 238,
   "video_ok": true,
   "audio_ok": true,
-  "av_diff_ms": 34,
+  "av_diff_ms": -7,
   "english_match": 1.0,
   "ok": true
  },

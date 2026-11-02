@@ -860,7 +860,7 @@
   "jobs": []
  },
  "00108943": {
-  "note": "dance shot: Erzsébet 'I think so too' lip-synced while she faces camera (client round 3); masked composite",
+  "note": "dance shot: Erzsébet 'I think so too' lip-synced while she faces camera (client round 3); masked composite | lip sync only from frame 104: her mouth is hidden by her hand (91-93) and by a passing dancer (94-104)",
   "assemble": "masked",
   "jobs": [
    {
@@ -876,6 +876,10 @@
       3.7,
       5.6
      ]
+    ],
+    "active": [
+     104,
+     176
     ]
    }
   ]

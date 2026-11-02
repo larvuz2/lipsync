@@ -100,7 +100,14 @@ The clips the client sent for this round are byte-identical to our source clips,
 | 104123 | Not manly enough (he just killed a wolf) | The old clone was made from the dub. There is now a new Hunyadi voice (HUNYADI2), cloned from the actor's own lines and set to the dub Hunyadi's pitch (~100 Hz). Re-lip-synced. |
 | 102229 | High-pitch drop-out on the man; pixel jump by her face | The swapped name came from a thin clone at about 150 Hz in a ~100 Hz line. It is now "Mihai's sister", taken from the new Hunyadi voice and pitch-matched to the dub's own pitch on those words (heard back as "You're Mihaly's sister?"). Each person now has a separate lip-sync pass. |
 
-**Masked, speech-gated composite (all 5 clips):** the final picture is the original frame everywhere except a soft,
-tracked area around the speaking person's mouth and jaw. That area is used only while that person speaks,
-following the speech in that person's own lip-sync audio, with short fades before and after. Background pixels,
-and each face while it is not speaking, are the original pixels.
+**Masked, speech-gated composite (all 5 clips):** the final picture is the original frame everywhere except the
+speaking person's mouth, chin and jaw. That area comes from face landmarks on both the original and the
+lip-synced frame, so it hugs the skin and leaves the hair and background beside the face untouched. It is used
+only while that person speaks, following the speech in that person's own lip-sync audio, with short fades that
+finish before the first word. Background pixels, and each face while it is not speaking, are the original pixels.
+
+The lip-sync output on its own also changed hair and background bokeh around Erzsébet's face in 102229. That was
+the "pixel jump" by her face; the mask now removes it. In 108943 her mouth is hidden by her hand (frames 91–93)
+and then by a passing dancer (94–104), so lip sync starts at frame 104 when her face comes back into view.
+
+Checks: no frame-to-frame jumps around any face; 58/58 finals pass (frames, A/V sync, English matches the script).

@@ -83,6 +83,8 @@ def track(src, f0, f1, pin_frame, pin_xy, det):
             a, b = prev[-1], nxt[0]
             t = (k - a) / (b - a)
             full[k] = boxes[a] * (1 - t) + boxes[b] * t
+        elif (prev and not nxt and k - prev[-1] <= 4) or (nxt and not prev and nxt[0] - k <= 4):
+            full[k] = boxes[prev[-1] if prev else nxt[0]]  # hold for a few frames at the ends of the track
     return full
 
 
@@ -126,9 +128,9 @@ def hull_mask(pts, w):
     """Filled hull of the lower-face points, grown a little (jaw movement) and softly feathered."""
     m = np.zeros((H, W), np.float32)
     cv2.fillConvexPoly(m, cv2.convexHull(pts.astype(np.int32)), 1.0)
-    r = max(2, int(w * 0.05))
+    r = max(2, int(w * 0.025))
     m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
-    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.025))
+    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.02))
 
 
 def ellipse_mask(box):
@@ -202,7 +204,13 @@ def build(ex, media, out_dir, clip):
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
         boxes = track(src, f0, f1, f0 + j["face"]["frame"], tuple(j["face"]["xy"]), det)
-        layers.append({"name": j["name"], "f0": f0, "f1": f1, "boxes": boxes, "env": envelope(n, f0, f1, windows),
+        env = envelope(n, f0, f1, windows)
+        if pj.get("active"):
+            # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
+            a0, a1 = pj["active"]
+            env[:a0] = 0
+            env[a1 + 1:] = 0
+        layers.append({"name": j["name"], "f0": f0, "f1": f1, "boxes": boxes, "env": env,
                        "out": os.path.join(ex, m["file"]), "it": None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)

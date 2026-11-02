@@ -87,3 +87,20 @@ If the client has the Hungarian script or subtitles, sending them would let us c
 | 108382, 102229, 102065 | Glitch / no continuity in the mouth | These are single continuous shots and the lip sync started and ended mid-shot, so the lower face jumped at those frames. Lip sync now covers the full shot (108382: until Erzsébet turns away, and it now includes her "You again?"). |
 | 104240 | Wrong voice (should be male) | "Look at the state of you! / Wash up, get dressed!" are Branković's lines; re-voiced in his voice. |
 | 105002 | Static mouth / wrong speaker | The line "You'll behave, won't you?" is said off camera by Branković's daughter (client; voice match 0.35, female ~200 Hz). Re-voiced in her voice; no lip sync, picture untouched. |
+
+## Client review round 3
+
+The clips the client sent for this round are byte-identical to our source clips, so the same timings and voices apply.
+
+| Clip | Note from review | Fix |
+|---|---|---|
+| 108943 | She is off with "I think so too" | Her line was not lip-synced. It now is, while she faces the camera. |
+| 105832 | "Not yet… your Majesty" sync is off | These lines were wrongly treated as an off-screen man. They are hers (female voice) and are now lip-synced on her close-up together with "I am not your wife, Miklós". |
+| 104240 | The King is all off with sync | The English came 0.4–0.5 s early. The lines are now timed to the original Serbian, and the close-ups are re-lip-synced. "Is Sigismund here already?" now uses the new Hunyadi voice. |
+| 104123 | Not manly enough (he just killed a wolf) | The old clone was made from the dub. There is now a new Hunyadi voice (HUNYADI2), cloned from the actor's own lines and set to the dub Hunyadi's pitch (~100 Hz). Re-lip-synced. |
+| 102229 | High-pitch drop-out on the man; pixel jump by her face | The swapped name came from a thin clone at about 150 Hz in a ~100 Hz line. It is now "Mihai's sister", taken from the new Hunyadi voice and pitch-matched to the dub's own pitch on those words (heard back as "You're Mihaly's sister?"). Each person now has a separate lip-sync pass. |
+
+**Masked, speech-gated composite (all 5 clips):** the final picture is the original frame everywhere except a soft,
+tracked area around the speaking person's mouth and jaw. That area is used only while that person speaks,
+following the speech in that person's own lip-sync audio, with short fades before and after. Background pixels,
+and each face while it is not speaking, are the original pixels.

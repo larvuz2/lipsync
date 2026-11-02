@@ -6,7 +6,7 @@ speaker's mouth and jaw, and only while that speaker is talking (with short fade
 For each lip-sync job of the clip (lipsync_jobs.json + manifest.json):
 - the speaker's face is tracked on the original frames (face detection, starting from the job's pin);
 - a feathered lower-face ellipse is built per frame;
-- a temporal envelope is built from the job's speech windows (plan "en_keep" or "keep"; whole job if none),
+- a temporal envelope is built from the speech in the job's own audio (plan "en_keep"/"keep" as fallback),
   widened by PRE/POST seconds and faded over FADE frames;
 - out = original * (1 - a) + lip-synced * a, with a = envelope * mask.
 Writes outputs/full/<original name>_EN.mp4 (English dialogue track from exchange/full/en/<clip>_EN.wav).
@@ -22,7 +22,7 @@ import numpy as np
 
 W, H = 1920, 1080
 FPS = 24000 / 1001
-FADE = 6          # frames of fade in/out around speech windows
+FADE = 4          # frames of fade in/out around speech windows
 PRE, POST = 0.12, 0.18
 MODELS = "/tmp/claude-0/-home-user-lipsync/68247ef9-9d3a-5aed-9838-8178804c0bd0/scratchpad/models"
 X264 = ["-c:v", "libx264", "-crf", "14", "-preset", "slow", "-pix_fmt", "yuv420p",
@@ -100,7 +100,8 @@ def envelope(n_abs, f0, f1, windows):
         e[f0:f1 + 1] = 1
     else:
         for a, b in windows:
-            s, t = int(np.floor((a - PRE) * FPS)), int(np.ceil((b + POST) * FPS))
+            # widened by FADE frames so the fade is finished before speech starts (full lip sync while speaking)
+            s, t = int(np.floor((a - PRE) * FPS)) - FADE, int(np.ceil((b + POST) * FPS)) + FADE
             e[max(f0, s):min(f1, t) + 1] = 1
     # fades
     k = np.ones(2 * FADE + 1, np.float32) / (2 * FADE + 1)
@@ -108,6 +109,30 @@ def envelope(n_abs, f0, f1, windows):
     e[:f0] = 0
     e[f1 + 1:] = 0
     return np.clip(e, 0, 1)
+
+
+def speech_spans(path, gap=0.35, floor_db=-45.0):
+    """Spans (s, relative to the job start) where the job's own audio has speech: what the mouth was synced to."""
+    import soundfile as sf
+    x, sr = sf.read(path)
+    x = x.mean(1) if x.ndim > 1 else x
+    w = int(sr * 0.05)
+    on = 20 * np.log10(np.sqrt(np.convolve(x ** 2, np.ones(w) / w, "same")) + 1e-9) > floor_db
+    spans, k = [], 0
+    while k < len(on):
+        if on[k]:
+            m = k
+            while m < len(on) and on[m]:
+                m += 1
+            if (m - k) / sr > 0.05:
+                if spans and k / sr - spans[-1][1] < gap:
+                    spans[-1][1] = m / sr
+                else:
+                    spans.append([k / sr, m / sr])
+            k = m
+        else:
+            k += 1
+    return spans
 
 
 def build(ex, media, out_dir, clip):
@@ -125,8 +150,11 @@ def build(ex, media, out_dir, clip):
             raise SystemExit(f"{j['name']} has no completed output")
         pj = next((p for p in plan.get("jobs", []) if p["first"] == j["first_frame"] and p["last"] == j["last_frame"]
                    and p["face"][1:] == j["face"]["xy"]), {})
-        windows = pj.get("en_keep") or pj.get("keep") or []
         f0, f1 = j["first_frame"], j["last_frame"]
+        # gate on the speech actually in this job's audio (falls back to the plan's windows)
+        aud = os.path.join(ex, j["audio"])
+        windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
+            if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
         boxes = track(src, f0, f1, f0 + j["face"]["frame"], tuple(j["face"]["xy"]), det)
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "boxes": boxes, "env": envelope(n, f0, f1, windows),
                        "out": os.path.join(ex, m["file"]), "it": None})

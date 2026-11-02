@@ -841,6 +841,60 @@
    "file": "fix_tts/L07e_t2.mp3",
    "duration": 2,
    "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L06x",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L06x_t0.mp3",
+   "duration": 2,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L06x",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L06x_t1.mp3",
+   "duration": 1.92,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L06x",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L06x_t2.mp3",
+   "duration": 1.92,
+   "text": "Look at the state of you!"
+  },
+  {
+   "id": "L07f",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07f_t0.mp3",
+   "duration": 1.84,
+   "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L07f",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07f_t1.mp3",
+   "duration": 1.92,
+   "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L07f",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07f_t2.mp3",
+   "duration": 1.84,
+   "text": "Wash up, get dressed!"
   }
  ]
 }

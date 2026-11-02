@@ -307,21 +307,6 @@
   "speed": 1.12
  },
  {
-  "id": "L13",
-  "clip": "00105002",
-  "en": "You'll behave, won't you?",
-  "take": "fix_tts/L13_t1.mp3",
-  "heard": "You'll behave, won't you?",
-  "wer": 0.0,
-  "span_s": 2.22,
-  "natural_s": 1.65,
-  "placed": [
-   0.0,
-   1.78
-  ],
-  "speed": 0.93
- },
- {
   "id": "L14",
   "clip": "00105386",
   "type": "word",
@@ -526,5 +511,20 @@
    7.92
   ],
   "speed": 1.12
+ },
+ {
+  "id": "L13d",
+  "clip": "00105002",
+  "en": "You'll behave, won't you?",
+  "take": "fix_tts/L13d_t2.mp3",
+  "heard": "You'll behave, won't you?",
+  "wer": 0.0,
+  "span_s": 2.22,
+  "natural_s": 1.77,
+  "placed": [
+   0.0,
+   1.91
+  ],
+  "speed": 0.93
  }
 ]

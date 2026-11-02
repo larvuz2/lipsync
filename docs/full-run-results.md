@@ -86,4 +86,4 @@ If the client has the Hungarian script or subtitles, sending them would let us c
 |---|---|---|
 | 108382, 102229, 102065 | Glitch / no continuity in the mouth | These are single continuous shots and the lip sync started and ended mid-shot, so the lower face jumped at those frames. Lip sync now covers the full shot (108382: until Erzsébet turns away, and it now includes her "You again?"). |
 | 104240 | Wrong voice (should be male) | "Look at the state of you! / Wash up, get dressed!" are Branković's lines; re-voiced in his voice. |
-| 105002 | Static mouth | In the original, Hunyadi's mouth is closed; the line is said by the old man with his back to camera. Kept as the original (confirmed with the user). |
+| 105002 | Static mouth / wrong speaker | The line "You'll behave, won't you?" is said off camera by Branković's daughter (client; voice match 0.35, female ~200 Hz). Re-voiced in her voice; no lip sync, picture untouched. |

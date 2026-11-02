@@ -283,7 +283,7 @@
   ]
  },
  "00105832": {
-  "note": "blonde 'Hunting'; Miklos line; blonde 'I am not your wife'; 'Not yet'/'Your Majesty?' are male, off-screen",
+  "note": "blonde (Erzsébet) close-up shot 3 says 'I am not your wife, Miklós' + 'Not yet' + 'Your Majesty?' (female voice; client round 3); masked composite",
   "jobs": [
    {
     "first": 0,
@@ -311,7 +311,7 @@
    },
    {
     "first": 111,
-    "last": 150,
+    "last": 294,
     "face": [
      126,
      965,
@@ -319,12 +319,21 @@
     ],
     "keep": [
      [
-      4.0,
-      5.52
+      3.95,
+      5.6
+     ],
+     [
+      6.4,
+      7.45
+     ],
+     [
+      8.8,
+      9.85
      ]
     ]
    }
-  ]
+  ],
+  "assemble": "masked"
  },
  "00092071": {
   "note": "mother cries 'Jankó! Jankó!' (original restored) then 'My boy!' (dub)",
@@ -341,11 +350,12 @@
   ]
  },
  "00102229": {
-  "note": "walking two-shot: Hunyadi then Erzsébet chained, both over the full shot (no mid-shot seam; client review)",
+  "note": "walking two-shot: Hunyadi and Erzsébet as two independent passes on the original; masked, speech-gated composite so pixels around each face stay original when they are not speaking (client round 3)",
+  "assemble": "masked",
   "jobs": [
    {
     "first": 0,
-    "last": 464,
+    "last": 380,
     "face": [
      39,
      823,
@@ -353,22 +363,22 @@
     ],
     "keep": [
      [
-      1.1,
-      2.5
+      1.0,
+      2.6
      ],
      [
-      9.9,
-      12.6
+      9.8,
+      12.8
      ],
      [
-      13.5,
-      14.8
+      13.4,
+      15.0
      ]
     ]
    },
    {
-    "first": 0,
-    "last": 464,
+    "first": 60,
+    "last": 440,
     "face": [
      39,
      1296,
@@ -376,23 +386,22 @@
     ],
     "keep": [
      [
-      3.5,
-      4.6
+      3.4,
+      4.7
      ],
      [
-      5.3,
-      6.8
+      5.2,
+      6.9
      ],
      [
-      7.2,
-      9.1
+      7.1,
+      9.2
      ],
      [
-      15.2,
-      17.3
+      15.1,
+      17.4
      ]
-    ],
-    "after": 0
+    ]
    }
   ]
  },
@@ -425,21 +434,28 @@
   ]
  },
  "00104123": {
-  "note": "Hunyadi close (line content to be confirmed by native reviewer)",
+  "note": "Hunyadi close, single continuous shot; new Hunyadi voice; masked, speech-gated composite (client round 3)",
+  "assemble": "masked",
   "jobs": [
    {
     "first": 0,
-    "last": 70,
+    "last": 80,
     "face": [
      18,
      1066,
      364
+    ],
+    "en_keep": [
+     [
+      0.55,
+      2.3
+     ]
     ]
    }
   ]
  },
  "00104240": {
-  "note": "daughter's lines off-face (shot 1); nobleman close-up shot 3; Hunyadi close-up shot 4 'Is Sigismund here already?'",
+  "note": "daughter's lines off-face (shot 1); nobleman close-up shot 3; Hunyadi close-up shot 4 'Is Sigismund here already?' | client round 3: lines re-timed to the Serbian original, masked composite",
   "jobs": [
    {
     "first": 119,
@@ -457,8 +473,8 @@
     ],
     "en_keep": [
      [
-      3.75,
-      6.45
+      4.1,
+      6.75
      ]
     ]
    },
@@ -478,12 +494,13 @@
     ],
     "en_keep": [
      [
-      6.55,
+      6.62,
       8.0
      ]
     ]
    }
-  ]
+  ],
+  "assemble": "masked"
  },
  "00104461": {
   "note": "nobleman close-ups (shots 2, 4), daughter 'Father!' (shot 3)",
@@ -841,5 +858,26 @@
  "00105002": {
   "note": "'You'll behave, won't you?' is said off camera by Branković's daughter (client review); audio only, no lip sync",
   "jobs": []
+ },
+ "00108943": {
+  "note": "dance shot: Erzsébet 'I think so too' lip-synced while she faces camera (client round 3); masked composite",
+  "assemble": "masked",
+  "jobs": [
+   {
+    "first": 80,
+    "last": 176,
+    "face": [
+     120,
+     672,
+     381
+    ],
+    "keep": [
+     [
+      3.7,
+      5.6
+     ]
+    ]
+   }
+  ]
  }
 }

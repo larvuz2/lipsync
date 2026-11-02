@@ -468,32 +468,32 @@
   ]
  },
  {
-  "id": "L06w",
+  "id": "L06x",
   "clip": "00104240",
   "en": "Look at the state of you!",
-  "take": "fix_tts/L06w_t2.mp3",
-  "heard": "Look at the state of you.",
+  "take": "fix_tts/L06x_t1.mp3",
+  "heard": "Look at the state of you!",
   "wer": 0.0,
   "span_s": 1.3,
-  "natural_s": 1.69,
+  "natural_s": 1.64,
   "placed": [
    0.64,
-   2.15
+   2.1
   ],
   "speed": 1.12
  },
  {
-  "id": "L07e",
+  "id": "L07f",
   "clip": "00104240",
   "en": "Wash up, get dressed!",
-  "take": "fix_tts/L07e_t1.mp3",
-  "heard": "Wash up, get dressed.",
+  "take": "fix_tts/L07f_t1.mp3",
+  "heard": "Wash up. Get dressed.",
   "wer": 0.0,
   "span_s": 0.94,
-  "natural_s": 1.61,
+  "natural_s": 1.34,
   "placed": [
-   2.26,
-   3.7
+   2.38,
+   3.58
   ],
   "speed": 1.12
  },

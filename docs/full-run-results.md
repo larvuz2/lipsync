@@ -79,3 +79,11 @@ The Hungarian audio is hard to transcribe in these places, so the English is a b
 | 91750 | Let go of me! |
 
 If the client has the Hungarian script or subtitles, sending them would let us confirm these lines.
+
+## Client review round (final revision)
+
+| Clip | Note from review | Fix |
+|---|---|---|
+| 108382, 102229, 102065 | Glitch / no continuity in the mouth | These are single continuous shots and the lip sync started and ended mid-shot, so the lower face jumped at those frames. Lip sync now covers the full shot (108382: until Erzsébet turns away, and it now includes her "You again?"). |
+| 104240 | Wrong voice (should be male) | "Look at the state of you! / Wash up, get dressed!" are Branković's lines; re-voiced in his voice. |
+| 105002 | Static mouth | In the original, Hunyadi's mouth is closed; the line is said by the old man with his back to camera. Kept as the original (confirmed with the user). |

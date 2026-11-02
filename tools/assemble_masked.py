@@ -5,7 +5,8 @@ speaker's mouth and jaw, and only while that speaker is talking (with short fade
 
 For each lip-sync job of the clip (lipsync_jobs.json + manifest.json):
 - the speaker's face is tracked on the original frames (face detection, starting from the job's pin);
-- a feathered lower-face ellipse is built per frame;
+- a feathered lower-face mask is built per frame from face landmarks (jaw, chin, mouth) on the original and
+  the lip-synced frame, so it covers the mouth and jaw and not the background beside the face;
 - a temporal envelope is built from the speech in the job's own audio (plan "en_keep"/"keep" as fallback),
   widened by PRE/POST seconds and faded over FADE frames;
 - out = original * (1 - a) + lip-synced * a, with a = envelope * mask.
@@ -85,6 +86,51 @@ def track(src, f0, f1, pin_frame, pin_xy, det):
     return full
 
 
+# lower-face outline (face-mesh indices): jaw contour from one ear to the other through the chin, plus the
+# mouth corners and the point under the nose, so the hull hugs the skin of the lower face
+JAW = [234, 93, 132, 58, 172, 136, 150, 149, 176, 148, 152, 377, 400, 378, 379, 365, 397, 288, 361, 323, 454,
+       2, 61, 291, 0, 17]
+_LM = None
+
+
+def landmarker():
+    global _LM
+    if _LM is None:
+        import mediapipe as mp
+        from mediapipe.tasks.python import BaseOptions, vision
+        _LM = (mp, vision.FaceLandmarker.create_from_options(vision.FaceLandmarkerOptions(
+            base_options=BaseOptions(model_asset_path=f"{MODELS}/face_landmarker.task"),
+            running_mode=vision.RunningMode.IMAGE, num_faces=1, min_face_detection_confidence=0.3)))
+    return _LM
+
+
+def lower_face(im, box):
+    """Lower-face outline points (full-frame coords) of the face in box, or None."""
+    mp, lm = landmarker()
+    x, y, w, h = box
+    side = max(w, h) * 1.8
+    cx, cy = x + w / 2, y + h / 2
+    x0, y0 = int(max(0, cx - side / 2)), int(max(0, cy - side / 2))
+    x1, y1 = int(min(W, cx + side / 2)), int(min(H, cy + side / 2))
+    if x1 - x0 < 16 or y1 - y0 < 16:
+        return None
+    crop = cv2.resize(im[y0:y1, x0:x1], (384, 384), interpolation=cv2.INTER_CUBIC)
+    res = lm.detect(mp.Image(image_format=mp.ImageFormat.SRGB, data=cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)))
+    if not res.face_landmarks:
+        return None
+    q = res.face_landmarks[0]
+    return np.array([[x0 + q[i].x * (x1 - x0), y0 + q[i].y * (y1 - y0)] for i in JAW], np.float32)
+
+
+def hull_mask(pts, w):
+    """Filled hull of the lower-face points, grown a little (jaw movement) and softly feathered."""
+    m = np.zeros((H, W), np.float32)
+    cv2.fillConvexPoly(m, cv2.convexHull(pts.astype(np.int32)), 1.0)
+    r = max(2, int(w * 0.05))
+    m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
+    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.025))
+
+
 def ellipse_mask(box):
     x, y, w, h = box
     m = np.zeros((H, W), np.float32)
@@ -160,6 +206,28 @@ def build(ex, media, out_dir, clip):
                        "out": os.path.join(ex, m["file"]), "it": None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
+    for L in layers:
+        # outline of the lower face on the original and on the lip-synced frame (the synced jaw can open wider);
+        # the mask is the hull of both, so it covers the new mouth and nothing beside the face
+        co, cs = cv2.VideoCapture(src), cv2.VideoCapture(L["out"])
+        co.set(cv2.CAP_PROP_POS_FRAMES, L["f0"])
+        raw = {}
+        for k in range(L["f0"], L["f1"] + 1):
+            ok1, a = co.read()
+            ok2, b = cs.read()
+            if not (ok1 and ok2) or L["env"][k] <= 0 or k not in L["boxes"]:
+                continue
+            pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
+            if pa is not None or pb is not None:
+                raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
+        pts = {}
+        for k in raw:
+            # +-2 frame smoothing of the outline (same point count only), to keep the mask edge steady
+            nb = [raw[j] for j in range(k - 2, k + 3) if j in raw and raw[j].shape == raw[k].shape]
+            pts[k] = np.mean(nb, 0)
+        L["pts"] = pts
+        need = [k for k in range(L["f0"], L["f1"] + 1) if L["env"][k] > 0 and k in L["boxes"]]
+        print(f"  {L['name']}: lower-face outline on {len(pts)}/{len(need)} gated frames", flush=True)
     dst = os.path.join(out_dir, os.path.basename(src)[:-4] + "_EN.mp4")
     audio = os.path.join(ex, "en", f"{clip}_EN.wav")
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",
@@ -177,11 +245,23 @@ def build(ex, media, out_dir, clip):
             a = L["env"][k]
             if a <= 0 or k not in L["boxes"]:
                 continue
-            m = ellipse_mask(L["boxes"][k]) * a
+            box = L["boxes"][k]
+            near = [j for j in range(k - 3, k + 4) if j in L["pts"]]
+            if near:
+                j = min(near, key=lambda q: abs(q - k))
+                bj = L["boxes"].get(j, box)
+                shift = np.array([box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2])
+                m = hull_mask(L["pts"][j] + shift, box[2]) * a
+            else:
+                m = ellipse_mask(box) * a
+                L["fallback"] = L.get("fallback", 0) + 1
             outf = outf * (1 - m[..., None]) + syn.astype(np.float32) * m[..., None]
         enc.stdin.write(np.clip(outf + 0.5, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
     enc.wait()
+    for L in layers:
+        if L.get("fallback"):
+            print(f"  {L['name']}: ellipse fallback on {L['fallback']} frames", flush=True)
     got = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
                               "stream=nb_read_frames", "-of", "csv=p=0", dst], capture_output=True, text=True).stdout)
     print(f"{clip}: {'OK' if got == n else f'FRAME MISMATCH {got}/{n}'} - masked composite of {len(layers)} lip-sync layer(s)",

@@ -29,6 +29,11 @@
    "voiceId": "Ewr3Em9KpanNePRbBx23",
    "syncId": "76a833fb-a35e-4fa9-8e88-7b713b55522e",
    "name": "Raven dub - OLDNOBLE"
+  },
+  "HUNYADI2": {
+   "voiceId": "4iL4RdhYJ1l6k8IJFoPu",
+   "syncId": "9b81db48-9733-4bb9-ab7b-d2624a785122",
+   "name": "Raven dub - HUNYADI2"
   }
  },
  "takes": [
@@ -922,6 +927,87 @@
    "file": "fix_tts/L13d_t2.mp3",
    "duration": 2,
    "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L17b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_t0.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_t1.mp3",
+   "duration": 1.92,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L17b_t2.mp3",
+   "duration": 1.68,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L03b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_t0.mp3",
+   "duration": 3.52,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_t1.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L03b_t2.mp3",
+   "duration": 3.6,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L08b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_t0.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_t1.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_t2.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
   }
  ]
 }

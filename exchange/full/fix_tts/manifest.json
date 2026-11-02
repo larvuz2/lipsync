@@ -895,6 +895,33 @@
    "file": "fix_tts/L07f_t2.mp3",
    "duration": 1.84,
    "text": "Wash up, get dressed!"
+  },
+  {
+   "id": "L13d",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L13d_t0.mp3",
+   "duration": 1.84,
+   "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L13d",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L13d_t1.mp3",
+   "duration": 1.92,
+   "text": "You'll behave, won't you?"
+  },
+  {
+   "id": "L13d",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L13d_t2.mp3",
+   "duration": 2,
+   "text": "You'll behave, won't you?"
   }
  ]
 }

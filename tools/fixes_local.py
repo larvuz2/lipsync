@@ -193,6 +193,28 @@ def edges(x, words, i, j, rel=40):
     return c0, c1
 
 
+def pitch_shift(x, ratio):
+    """Shift pitch by ratio, formants preserved, same length."""
+    with tempfile.TemporaryDirectory() as d:
+        a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
+        save(a, x, stereo=False)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a, "-af",
+                        f"rubberband=pitch={ratio:.5f}:formant=preserved:pitchq=quality:window=short",
+                        "-c:a", "pcm_f32le", b], check=True)
+        y = load(b)
+    return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
+
+
+def median_f0(x):
+    import librosa
+    y = librosa.resample(x, orig_sr=SR, target_sr=16000)
+    if len(y) < 1600:
+        return None
+    f0, _, _ = librosa.pyin(y * (0.3 / (np.abs(y).max() + 1e-9)), fmin=60, fmax=400, sr=16000, frame_length=1024)
+    f = f0[~np.isnan(f0)]
+    return float(np.median(f)) if len(f) >= 3 else None
+
+
 def splice_word(ex, ln, man, tr, orig, cur, align, hear):
     """Replace wrong word(s) (usually a name) inside the dub's own line with the same word(s) cut from a
     TTS take of the corrected line, in the cloned dub voice. Word boundaries come from forced alignment
@@ -223,6 +245,15 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
             best = (key, cand)
     c = best[1]
     seg = c["seg"]
+    shift_ratio = None
+    if ln.get("pitch_match"):
+        # match the inserted word's pitch to the dub's own words around it (no "high-pitch" pop)
+        ctx = np.concatenate([orig[int(max(0, d0 - 0.6) * SR):int(d0 * SR)], orig[int(d1 * SR):int((d1 + 0.6) * SR)]])
+        f_ctx, f_seg = median_f0(ctx), median_f0(seg)
+        if f_ctx and f_seg:
+            shift_ratio = f_ctx / f_seg
+            if abs(np.log(shift_ratio)) > np.log(1.03):
+                seg = pitch_shift(seg, shift_ratio)
     n = int((d1 - d0) * SR)
     L = len(seg)
     if L > n * 1.05 and i == 0:
@@ -268,7 +299,7 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
     return {"id": ln["id"], "clip": ln["clip"], "type": "word", "was": ln["was"], "word": ln["word"],
             "take": c["take"], "take_heard": c["heard"], "align_match": round(min(dsc, c["score"]), 2),
             "slot_s": [round(d0, 2), round(d1, 2)], "word_s": round(L / SR, 2), "pushed_s": round(push / SR, 2),
-            "speed": round(L / m, 2)}
+            "speed": round(L / m, 2), "pitch_ratio": None if shift_ratio is None else round(shift_ratio, 3)}
 
 
 def apply(ex, only=()):

@@ -172,25 +172,6 @@
    ]
   },
   {
-   "id": "L03",
-   "clip": "00102229",
-   "start": 10.7,
-   "end": 10.94,
-   "character": "HUNYADI",
-   "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
-   "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-   "was": "Miho's",
-   "line_span": [
-    10.2,
-    12.62
-   ],
-   "type": "word",
-   "take_line": "L03",
-   "word": "Mihai's",
-   "prev": "you're",
-   "next": "sister"
-  },
-  {
    "id": "L04",
    "clip": "00103629",
    "start": 1.52,
@@ -209,22 +190,6 @@
    "en": "Come on!",
    "tts": "Come on!",
    "was": "I'm coming."
-  },
-  {
-   "id": "L08",
-   "clip": "00104240",
-   "start": 6.62,
-   "end": 7.8,
-   "character": "HUNYADI",
-   "en": "Is Sigismund here already?",
-   "tts": "Is Sigismund here already?",
-   "line_span": [
-    6.36,
-    7.62
-   ],
-   "lead": 0.15,
-   "was": "Is Zygismund already here?",
-   "note": "re-voiced whole line; dub line really spans 6.73-7.75 (forced alignment)"
   },
   {
    "id": "L10",
@@ -288,8 +253,8 @@
   {
    "id": "L07d",
    "clip": "00104240",
-   "start": 3.78,
-   "end": 6.4,
+   "start": 4.18,
+   "end": 6.35,
    "character": "OLDNOBLE",
    "en": "The king is coming. Your Hungarian king.",
    "tts": "The king is coming. Your Hungarian king.",
@@ -327,17 +292,6 @@
    "en": "That wolf belongs to me. You killed it on Serbian soil.",
    "tts": "That wolf belongs to me. You killed it on Serbian soil.",
    "was": "Taj vuk pripada meni, jer si ga ubio na srpskoj zemlji. (dub was still Serbian)",
-   "source": "serbian"
-  },
-  {
-   "id": "L17",
-   "clip": "00104123",
-   "start": 0.6,
-   "end": 2.55,
-   "character": "HUNYADI",
-   "en": "But I gave it to your daughter.",
-   "tts": "But I gave it to your daughter.",
-   "was": "Ali sam ga dao tvojoj kćeri. (dub was still Serbian)",
    "source": "serbian"
   },
   {
@@ -421,8 +375,8 @@
   {
    "id": "L06x",
    "clip": "00104240",
-   "start": 0.64,
-   "end": 1.94,
+   "start": 1.02,
+   "end": 2.3,
    "character": "OLDNOBLE",
    "en": "Look at the state of you!",
    "tts": "Look at the state of you!",
@@ -432,8 +386,8 @@
   {
    "id": "L07f",
    "clip": "00104240",
-   "start": 2.38,
-   "end": 3.32,
+   "start": 2.78,
+   "end": 3.85,
    "character": "OLDNOBLE",
    "en": "Wash up, get dressed!",
    "tts": "Wash up, get dressed!",
@@ -449,6 +403,45 @@
    "en": "You'll behave, won't you?",
    "tts": "You'll behave, won't you?",
    "was": "Ugye? Jó leszel. (was voiced by Branković; client review: an off-camera woman says it = Branković's daughter, voice match 0.35)"
+  },
+  {
+   "id": "L17b",
+   "clip": "00104123",
+   "start": 0.6,
+   "end": 2.55,
+   "character": "HUNYADI2",
+   "en": "But I gave it to your daughter.",
+   "tts": "But I gave it to your daughter.",
+   "was": "client: not manly enough -> new Hunyadi voice cloned from the actor's own lines",
+   "source": "serbian"
+  },
+  {
+   "id": "L03b",
+   "clip": "00102229",
+   "type": "word",
+   "start": 10.7,
+   "end": 10.94,
+   "character": "HUNYADI2",
+   "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
+   "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
+   "take_line": "L03b",
+   "word": "Mihai's",
+   "prev": "you're",
+   "next": "sister",
+   "was": "Miho's",
+   "pitch_match": true,
+   "note": "client: high-pitch drop-out on the swapped word -> new Hunyadi voice + pitch matched to the line"
+  },
+  {
+   "id": "L08b",
+   "clip": "00104240",
+   "start": 6.72,
+   "end": 7.8,
+   "character": "HUNYADI2",
+   "en": "Is Sigismund here already?",
+   "tts": "Is Sigismund here already?",
+   "was": "Je l' Zigismund već tu? (new Hunyadi voice; timed to the original)",
+   "source": "serbian"
   }
  ],
  "edits": [

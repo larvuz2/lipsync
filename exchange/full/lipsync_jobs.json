@@ -618,34 +618,6 @@
   }
  },
  {
-  "name": "00104240_f119-169_s0_9e4cf3",
-  "clip": "00104240",
-  "first_frame": 119,
-  "last_frame": 169,
-  "audio": "lipsync_audio/00104240_f119-169_s0_9e4cf3.wav",
-  "face": {
-   "frame": 14,
-   "xy": [
-    759,
-    475
-   ]
-  }
- },
- {
-  "name": "00104240_f170-220_s1_113977",
-  "clip": "00104240",
-  "first_frame": 170,
-  "last_frame": 220,
-  "audio": "lipsync_audio/00104240_f170-220_s1_113977.wav",
-  "face": {
-   "frame": 10,
-   "xy": [
-    1353,
-    449
-   ]
-  }
- },
- {
   "name": "00102065_f0-82_1c6b60",
   "clip": "00102065",
   "first_frame": 0,
@@ -699,6 +671,34 @@
    "xy": [
     744,
     407
+   ]
+  }
+ },
+ {
+  "name": "00104240_f119-169_s0_9e4cf3",
+  "clip": "00104240",
+  "first_frame": 119,
+  "last_frame": 169,
+  "audio": "lipsync_audio/00104240_f119-169_s0_9e4cf3.wav",
+  "face": {
+   "frame": 14,
+   "xy": [
+    759,
+    475
+   ]
+  }
+ },
+ {
+  "name": "00104240_f170-220_s1_113977",
+  "clip": "00104240",
+  "first_frame": 170,
+  "last_frame": 220,
+  "audio": "lipsync_audio/00104240_f170-220_s1_113977.wav",
+  "face": {
+   "frame": 10,
+   "xy": [
+    1353,
+    449
    ]
   }
  }

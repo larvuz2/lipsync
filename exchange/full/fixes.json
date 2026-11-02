@@ -248,16 +248,6 @@
    "note": "the dub has a quiet garbled version here; replace it"
   },
   {
-   "id": "L13",
-   "clip": "00105002",
-   "start": 0.0,
-   "end": 2.22,
-   "character": "OLDNOBLE",
-   "en": "You'll behave, won't you?",
-   "tts": "You'll behave, won't you?",
-   "was": "will be want you"
-  },
-  {
    "id": "L14",
    "clip": "00105386",
    "start": 5.1,
@@ -449,6 +439,16 @@
    "tts": "Wash up, get dressed!",
    "was": "Ajde, umij se, obuci se. (was voiced by the daughter; client review: it is Branković)",
    "source": "serbian"
+  },
+  {
+   "id": "L13d",
+   "clip": "00105002",
+   "start": 0.0,
+   "end": 2.22,
+   "character": "DARKWOMAN",
+   "en": "You'll behave, won't you?",
+   "tts": "You'll behave, won't you?",
+   "was": "Ugye? Jó leszel. (was voiced by Branković; client review: an off-camera woman says it = Branković's daughter, voice match 0.35)"
   }
  ],
  "edits": [

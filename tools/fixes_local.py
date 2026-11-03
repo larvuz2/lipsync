@@ -389,7 +389,7 @@ def apply(ex, only=()):
                 k -= 1
             lead = max(0.0, (a - (k + 1) * 480) / SR - 0.06)
             cands = []
-            for t in [t for t in man["takes"] if t["id"] == ln["id"]
+            for t in [t for t in man["takes"] if t["id"] in ln.get("take_lines", [ln["id"]])
                       and (not ln.get("takes") or os.path.basename(t["file"]).rsplit(".", 1)[0] in ln["takes"])]:
                 x = trim(load(os.path.join(ex, t["file"])))
                 if len(x) / SR > span * 1.05:  # too long: drop the sentence pauses TTS adds

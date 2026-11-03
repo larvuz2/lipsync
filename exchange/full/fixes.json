@@ -568,46 +568,74 @@
    "source": "serbian",
    "pitch_target": 139,
    "extra_takes": {
-    "tag": "r4",
+    "tag": "r5",
     "settings": [
      [
-      0.45,
-      0.9
-     ],
-     [
-      0.55,
-      0.9
-     ],
-     [
-      0.55,
-      0.95
+      0.5,
+      0.8
      ],
      [
       0.6,
-      0.95
+      0.8
      ],
      [
-      0.65,
+      0.7,
+      0.8
+     ],
+     [
+      0.5,
+      0.75
+     ],
+     [
+      0.6,
+      0.75
+     ],
+     [
+      0.7,
+      0.75
+     ],
+     [
+      0.55,
       0.9
      ],
      [
       0.65,
-      0.95
-     ],
-     [
-      0.75,
       0.9
-     ],
-     [
-      0.75,
-      0.95
      ]
     ]
    },
    "takes": [
     "L08b_r4_t7"
    ],
-   "note": "r4: lowest natural take (163 Hz, st 0.75, sim 0.95), PSOLA to the actor's own 139 Hz on this line (was a 5 st phase-vocoder shift)"
+   "note": "r4: lowest natural take (163 Hz, st 0.75, sim 0.95), PSOLA to the actor's own 139 Hz on this line (was a 5 st phase-vocoder shift)",
+   "take_lines": [
+    "L08b",
+    "L08c"
+   ]
+  },
+  {
+   "id": "L08c",
+   "clip": "00104240",
+   "type": "take_only",
+   "start": 6.72,
+   "end": 7.8,
+   "character": "HUNYADI2",
+   "en": "Is Sigismund already here?",
+   "tts": "Is Sigismund already here?",
+   "note": "round 5: word order of the original dub (whose take sounded American); client: 'too posh English'",
+   "extra_takes": {
+    "tag": "r5",
+    "settings": [
+     [
+      0.55,
+      0.8
+     ],
+     [
+      0.65,
+      0.8
+     ]
+    ]
+   }
   }
  ],
  "edits": [

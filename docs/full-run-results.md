@@ -111,3 +111,18 @@ the "pixel jump" by her face; the mask now removes it. In 108943 her mouth is hi
 and then by a passing dancer (94–104), so lip sync starts at frame 104 when her face comes back into view.
 
 Checks: no frame-to-frame jumps around any face; 58/58 finals pass (frames, A/V sync, English matches the script).
+
+## Client review round 4
+
+| Clip | Note from review | Cause | Fix |
+|---|---|---|---|
+| 105832 | Mouth glitch at second 6 | In the pause between "Miklós" and "Not yet", the composite faded back to the original mouth (closed), then to the lip-synced one (slightly open). | No fades inside a single-speaker shot: the lip sync runs through the whole shot. Fades are still needed where a job ends mid-shot or a listener is silent for a long time (two-shot); they now sit on the frames where the synced and original mouths look most alike. |
+| 104240 | Old man's lip sync fails from 2 to 5 s | Shot 2 (wide, under the arch) was never lip-synced. Round 1 had these lines as the daughter speaking off camera, and his face is small. | New lip-sync job on him in shot 2 ("Wash up, get dressed! The king is coming"). |
+| 104123 | Robotic voice | The new Hunyadi voice comes out of TTS at 127–135 Hz. Round 3 forced it down 5 semitones to 100 Hz with a phase-vocoder pitch shifter, which sounds robotic. The actor's own line is at ~154 Hz. | 8 new takes per line with stability/similarity nudged slightly (0.45–0.75 / 0.9–0.95). Picked the calmest, flattest take (0.55/0.9, 127 Hz). Lowered only 1.7 semitones, to 115 Hz, with PSOLA (Praat), which keeps the voice clean. |
+| 102229 | Robotic voice at ~12 s | "Mihai's sister" was spliced into the dub's sentence and lowered 7 semitones. Every take has those words 5–11 semitones above the dub's 104 Hz, so a clean splice is not possible. | The whole sentence "So you're Mihai's sister? Little Erzhebet Szilagyi." now comes from one Hunyadi take: a smooth contour with no spikes, at natural pace, lowered 3 semitones to ~113 Hz (the actor's own line is at ~105 Hz). |
+| 104240 (also) | — | "Is Sigismund here already?" had the same 5-semitone phase-vocoder shift. | Lowest natural take, lowered 3 semitones with PSOLA to the actor's own 139 Hz. |
+
+The time-stretch for the re-voiced lines also uses PSOLA now. Check on the re-voiced lines (round 3 vs round 4):
+- Harmonics-to-noise ratio (higher = cleaner, less robotic): 4.95 → 8.3 (104123), 5.91 → 7.64 (102229), 6.77 → 9.21 (104240).
+- No pitch jump of 3 semitones or more within 30 ms (no "gallos").
+- Every line is heard back as scripted.

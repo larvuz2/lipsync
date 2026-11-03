@@ -132,7 +132,10 @@
     1.86,
     3.46
    ]
-  ]
+  ],
+  "MOTHER": {
+   "note": "woman on the stairs (Janko's mother), only line in 88514; clone from her dub line + her original Hungarian line (6 s)"
+  }
  },
  "lines": [
   {
@@ -633,6 +636,62 @@
      [
       0.65,
       0.8
+     ]
+    ]
+   }
+  },
+  {
+   "id": "L88b",
+   "clip": "00088514",
+   "type": "take_only",
+   "start": 1.44,
+   "end": 4.08,
+   "character": "MOTHER",
+   "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+   "tts": "Yanko, how many times have I told you not to play with that beau in the courtyard?",
+   "note": "client r5: 'bow' pronounced BAU -> 'bow' spelled 'beau' (read /boʊ/)",
+   "extra_takes": {
+    "tag": "r5",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.65,
+      0.85
+     ]
+    ]
+   }
+  },
+  {
+   "id": "L88a",
+   "clip": "00088514",
+   "type": "take_only",
+   "start": 1.44,
+   "end": 4.08,
+   "character": "MOTHER",
+   "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+   "tts": "Yanko, how many times have I told you not to play with that bo in the courtyard?",
+   "note": "client r5: 'bow' pronounced BAU -> 'bow' spelled 'bo' so it is read /boʊ/ (bow and arrow), not /baʊ/",
+   "extra_takes": {
+    "tag": "r5",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.65,
+      0.85
      ]
     ]
    }

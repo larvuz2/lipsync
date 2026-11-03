@@ -122,8 +122,9 @@ def lower_face(im, box):
     x, y, w, h = box
     side = max(w, h) * 1.8
     cx, cy = x + w / 2, y + h / 2
+    hh, ww = im.shape[:2]
     x0, y0 = int(max(0, cx - side / 2)), int(max(0, cy - side / 2))
-    x1, y1 = int(min(W, cx + side / 2)), int(min(H, cy + side / 2))
+    x1, y1 = int(min(ww, cx + side / 2)), int(min(hh, cy + side / 2))
     if x1 - x0 < 16 or y1 - y0 < 16:
         return None
     crop = cv2.resize(im[y0:y1, x0:x1], (384, 384), interpolation=cv2.INTER_CUBIC)
@@ -282,7 +283,8 @@ def build(ex, media, out_dir, clip):
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
                        "spans": windows, "start_cut": f0 == 0 or f0 in cutset or a0 > f0,
                        "end_cut": f1 >= n - 1 or (f1 + 1) in cutset or a1 < f1,
-                       "out": os.path.join(ex, m["file"]), "it": None, "zoom": zoom})
+                       "out": os.path.join(ex, m["file"]), "it": None, "zoom": zoom,
+                       "zin": os.path.join(ex, j["input_video"]) if zoom else None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
     for L in layers:
@@ -290,6 +292,7 @@ def build(ex, media, out_dir, clip):
         # the mask is the hull of both, so it covers the new mouth and nothing beside the face
         co, cs = cv2.VideoCapture(src), cv2.VideoCapture(L["out"])
         co.set(cv2.CAP_PROP_POS_FRAMES, L["f0"])
+        cz = cv2.VideoCapture(L["zin"]) if L["zoom"] else None
         raw = {}
         cost = np.full(n, np.nan, np.float32)
         for k in range(L["f0"], L["f1"] + 1):
@@ -297,8 +300,19 @@ def build(ex, media, out_dir, clip):
             ok2, b = cs.read()
             if not (ok1 and ok2) or k not in L["boxes"]:
                 continue
-            b = unzoom(a, b, L["zoom"])
-            pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
+            if L["zoom"]:
+                # small face: find the lower-face outline on the enlarged crops, then map it back
+                zx, zy, zs = L["zoom"]
+                kz = b.shape[0] / zs
+                az = cz.read()[1]
+                bx = L["boxes"][k]
+                bz = ((bx[0] - zx) * kz, (bx[1] - zy) * kz, bx[2] * kz, bx[3] * kz)
+                pa, pb = lower_face(az, bz), lower_face(b, bz)
+                pa = None if pa is None else pa / kz + np.array([zx, zy], np.float32)
+                pb = None if pb is None else pb / kz + np.array([zx, zy], np.float32)
+                b = unzoom(a, b, L["zoom"])
+            else:
+                pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame

@@ -414,7 +414,44 @@
    "tts": "But I gave it to your daughter.",
    "was": "client: not manly enough -> new Hunyadi voice cloned from the actor's own lines",
    "source": "serbian",
-   "pitch_target": 100
+   "pitch_target": 100,
+   "extra_takes": {
+    "tag": "r4",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.55,
+      0.95
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.65,
+      0.95
+     ],
+     [
+      0.75,
+      0.9
+     ],
+     [
+      0.75,
+      0.95
+     ]
+    ]
+   }
   },
   {
    "id": "L03b",
@@ -425,16 +462,101 @@
    "character": "HUNYADI2",
    "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
    "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-   "take_line": "L03b",
+   "take_line": [
+    "L03b",
+    "L03c"
+   ],
    "word": "Mihai's sister",
    "prev": "you're",
    "next": "little",
    "was": "Miho's sister",
    "pitch_match": true,
    "note": "client: high-pitch drop-out on the swapped word -> new Hunyadi voice, 'Mihai's sister' swapped together, pitch matched to the dub's own pitch on these words",
-   "takes": [
-    "L03b_t0"
-   ]
+   "extra_takes": {
+    "tag": "r4",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.55,
+      0.95
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.65,
+      0.95
+     ],
+     [
+      0.75,
+      0.9
+     ],
+     [
+      0.75,
+      0.95
+     ]
+    ]
+   }
+  },
+  {
+   "id": "L03c",
+   "clip": "00102229",
+   "type": "take_only",
+   "start": 10.7,
+   "end": 11.3,
+   "character": "HUNYADI",
+   "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
+   "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
+   "note": "round 4: the same line in the dub's own Hunyadi voice, so 'Mihai's sister' can be taken from whichever voice already sits at the dub's pitch",
+   "extra_takes": {
+    "tag": "r4",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.55,
+      0.95
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.65,
+      0.95
+     ],
+     [
+      0.75,
+      0.9
+     ],
+     [
+      0.75,
+      0.95
+     ]
+    ]
+   }
   },
   {
    "id": "L08b",
@@ -446,7 +568,44 @@
    "tts": "Is Sigismund here already?",
    "was": "Je l' Zigismund već tu? (new Hunyadi voice; timed to the original)",
    "source": "serbian",
-   "pitch_target": 115
+   "pitch_target": 115,
+   "extra_takes": {
+    "tag": "r4",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.55,
+      0.95
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.65,
+      0.95
+     ],
+     [
+      0.75,
+      0.9
+     ],
+     [
+      0.75,
+      0.95
+     ]
+    ]
+   }
   }
  ],
  "edits": [

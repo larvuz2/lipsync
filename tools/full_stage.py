@@ -202,8 +202,12 @@ def fixes(exch: str) -> None:
     takes = [(0.35, 0.95), (0.5, 0.95), (0.7, 0.9)]
     for ln in cfg["lines"]:
         vid = man["voices"][ln["character"]]["voiceId"]
-        for k, (st, sim) in enumerate(takes):
-            rel = f"fix_tts/{ln['id']}_t{k}.mp3"
+        todo = [(k, st, sim, f"fix_tts/{ln['id']}_t{k}.mp3") for k, (st, sim) in enumerate(takes)]
+        extra = ln.get("extra_takes")  # more takes with slightly different settings: {"tag", "settings": [[st, sim]]}
+        if extra:
+            todo += [(f"{extra['tag']}_{k}", st, sim, f"fix_tts/{ln['id']}_{extra['tag']}_t{k}.mp3")
+                     for k, (st, sim) in enumerate(extra["settings"])]
+        for k, st, sim, rel in todo:
             if rel in have:
                 continue
             for attempt in range(4):

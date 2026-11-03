@@ -194,14 +194,16 @@ def edges(x, words, i, j, rel=40):
 
 
 def pitch_shift(x, ratio):
-    """Shift pitch by ratio, formants preserved, same length."""
-    with tempfile.TemporaryDirectory() as d:
-        a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
-        save(a, x, stereo=False)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a, "-af",
-                        f"rubberband=pitch={ratio:.5f}:formant=preserved:pitchq=quality:window=short",
-                        "-c:a", "pcm_f32le", b], check=True)
-        y = load(b)
+    """Shift pitch by ratio, formants and length kept. PSOLA (Praat "Change gender" with formant ratio 1):
+    much cleaner on speech than a phase vocoder, which made lowered lines sound robotic."""
+    import parselmouth
+    from parselmouth.praat import call
+    s = parselmouth.Sound(np.asarray(x, np.float64), SR)
+    p = call(s, "To Pitch", 0.0, 60, 400)
+    med = call(p, "Get quantile", 0, 0, 0.5, "Hertz")
+    if not med or med != med:
+        return x
+    y = call(s, "Change gender", 60, 400, 1.0, med * ratio, 1.0, 1.0).values[0].astype(np.float32)
     return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
 
 
@@ -229,9 +231,13 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
     dw = [(w, s + r0, e + r0) for w, s, e in dw]
     i, j, dsc = find(dw, ln["was"])
     d0, d1 = edges(orig, dw, i, j)
+    # pitch the dub voice itself had on these words (same speaker, same spot); else its neighbours
+    ctx = np.concatenate([orig[int(max(0, d0 - 0.6) * SR):int(d0 * SR)], orig[int(d1 * SR):int((d1 + 0.6) * SR)]])
+    f_ctx = (median_f0(orig[int(d0 * SR):int(d1 * SR)]) or median_f0(ctx)) if ln.get("pitch_match") else None
     # the corrected word(s) in each take, aligned against the take's own script
     best = None
-    for t in [t for t in man["takes"] if t["id"] == ln["take_line"]
+    lines_ok = ln["take_line"] if isinstance(ln["take_line"], list) else [ln["take_line"]]
+    for t in [t for t in man["takes"] if t["id"] in lines_ok
               and (not ln.get("takes") or os.path.basename(t["file"]).rsplit(".", 1)[0] in ln["takes"])]:
         x = load(os.path.join(ex, t["file"]))
         tw = align(x, SR, ln["tts"])
@@ -240,20 +246,21 @@ def splice_word(ex, ln, man, tr, orig, cur, align, hear):
         seg = x[int(c0 * SR):int(c1 * SR)]
         cand = {"take": t["file"], "seg": seg, "score": tsc, "ratio": len(seg) / SR / (d1 - d0),
                 "heard": hear(t["file"])}
-        # prefer a take that is heard exactly as scripted, then the length closest to the slot
-        key = (wer(ln["tts"], cand["heard"]) > 0, -round(tsc, 1), abs(np.log(cand["ratio"])))
+        # prefer a take that is heard exactly as scripted, then (pitch match) one whose own pitch on the word is
+        # already close to the dub's (little or no shifting), then the length closest to the slot
+        cand["f0"] = median_f0(seg)
+        semis = abs(12 * np.log2(f_ctx / cand["f0"])) if f_ctx and cand["f0"] else 0.0
+        key = (wer(ln["tts"], cand["heard"]) > 0, round(semis / 2), -round(tsc, 1), abs(np.log(cand["ratio"])))
         if best is None or key < best[0]:
             best = (key, cand)
     c = best[1]
     seg = c["seg"]
     shift_ratio = None
     if ln.get("pitch_match"):
-        # match the inserted word's pitch to the dub's own words around it (no "high-pitch" pop)
-        # target: the pitch the dub voice itself had on this word (same speaker, same spot); else its neighbours
-        ctx = np.concatenate([orig[int(max(0, d0 - 0.6) * SR):int(d0 * SR)], orig[int(d1 * SR):int((d1 + 0.6) * SR)]])
-        f_ctx, f_seg = median_f0(orig[int(d0 * SR):int(d1 * SR)]) or median_f0(ctx), median_f0(seg)
+        # match the inserted word's pitch to the dub's own words around it (no "high-pitch" pop), small shifts only
+        f_seg = c["f0"]
         if f_ctx and f_seg:
-            shift_ratio = f_ctx / f_seg
+            shift_ratio = float(np.clip(f_ctx / f_seg, ln.get("max_down", 0.84), 1.12))
             if abs(np.log(shift_ratio)) > np.log(1.03):
                 seg = pitch_shift(seg, shift_ratio)
     n = int((d1 - d0) * SR)
@@ -332,7 +339,7 @@ def apply(ex, only=()):
         for ln in mine:
             kind = ln.get("type", "tts")
             a, b = int(ln["start"] * SR), int(min(ln["end"], len(orig) / SR) * SR)
-            if kind == "word":
+            if kind in ("word", "take_only"):
                 continue
             a2, b2 = snap_out(orig, a, b) if not ln.get("exact") else (a, b)
             clear(cur, a2, b2)
@@ -378,7 +385,8 @@ def apply(ex, only=()):
                 k -= 1
             lead = max(0.0, (a - (k + 1) * 480) / SR - 0.06)
             cands = []
-            for t in [t for t in man["takes"] if t["id"] == ln["id"]]:
+            for t in [t for t in man["takes"] if t["id"] == ln["id"]
+                      and (not ln.get("takes") or os.path.basename(t["file"]).rsplit(".", 1)[0] in ln["takes"])]:
                 x = trim(load(os.path.join(ex, t["file"])))
                 if len(x) / SR > span * 1.05:  # too long: drop the sentence pauses TTS adds
                     x = squeeze_pauses(x)
@@ -396,7 +404,7 @@ def apply(ex, only=()):
             if ln.get("pitch_target"):  # bring the take onto the character's dubbed register
                 f_take = median_f0(best["x"])
                 if f_take:
-                    shift_ratio = float(np.clip(ln["pitch_target"] / f_take, 0.74, 1.35))
+                    shift_ratio = float(np.clip(ln["pitch_target"] / f_take, ln.get("max_down", 0.84), 1.12))
                     if abs(np.log(shift_ratio)) > np.log(1.03):
                         best = {**best, "x": pitch_shift(best["x"], shift_ratio)}
             nat = best["nat"]

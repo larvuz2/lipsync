@@ -392,6 +392,13 @@ def apply(ex, only=()):
             for t in [t for t in man["takes"] if t["id"] in ln.get("take_lines", [ln["id"]])
                       and (not ln.get("takes") or os.path.basename(t["file"]).rsplit(".", 1)[0] in ln["takes"])]:
                 x = trim(load(os.path.join(ex, t["file"])))
+                if ln.get("crop_text"):
+                    # use only part of the take (e.g. one sentence of it, placed on its own mouth movement)
+                    from align import find
+                    tw = align(x, SR, t.get("text") or ln["tts"])
+                    ci, cj, _sc = find(tw, ln["crop_text"])
+                    c0, c1 = edges(x, tw, ci, cj)
+                    x = trim(x[int(c0 * SR):int(c1 * SR)])
                 if len(x) / SR > span * 1.05:  # too long: drop the sentence pauses TTS adds
                     x = squeeze_pauses(x)
                 if t["file"] not in heard:

@@ -34,6 +34,11 @@
    "voiceId": "4iL4RdhYJ1l6k8IJFoPu",
    "syncId": "9b81db48-9733-4bb9-ab7b-d2624a785122",
    "name": "Raven dub - HUNYADI2"
+  },
+  "MOTHER": {
+   "voiceId": "wWk0c9Gi6FDTJ34Pc9x1",
+   "syncId": "2824ff5d-36df-4032-b753-8110b72a97bd",
+   "name": "Raven dub - MOTHER"
   }
  },
  "takes": [
@@ -1323,6 +1328,231 @@
    "file": "fix_tts/L08b_r4_t7.mp3",
    "duration": 1.84,
    "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_0",
+   "stability": 0.5,
+   "similarity": 0.8,
+   "file": "fix_tts/L08b_r5_t0.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_1",
+   "stability": 0.6,
+   "similarity": 0.8,
+   "file": "fix_tts/L08b_r5_t1.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_2",
+   "stability": 0.7,
+   "similarity": 0.8,
+   "file": "fix_tts/L08b_r5_t2.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_3",
+   "stability": 0.5,
+   "similarity": 0.75,
+   "file": "fix_tts/L08b_r5_t3.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_4",
+   "stability": 0.6,
+   "similarity": 0.75,
+   "file": "fix_tts/L08b_r5_t4.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_5",
+   "stability": 0.7,
+   "similarity": 0.75,
+   "file": "fix_tts/L08b_r5_t5.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_6",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r5_t6.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r5_7",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r5_t7.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L08c_t0.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund already here?"
+  },
+  {
+   "id": "L08c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L08c_t1.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund already here?"
+  },
+  {
+   "id": "L08c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L08c_t2.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund already here?"
+  },
+  {
+   "id": "L08c",
+   "take": "r5_0",
+   "stability": 0.55,
+   "similarity": 0.8,
+   "file": "fix_tts/L08c_r5_t0.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund already here?"
+  },
+  {
+   "id": "L08c",
+   "take": "r5_1",
+   "stability": 0.65,
+   "similarity": 0.8,
+   "file": "fix_tts/L08c_r5_t1.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund already here?"
+  },
+  {
+   "id": "L88b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L88b_t0.mp3",
+   "duration": 4.48,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L88b_t1.mp3",
+   "duration": 4.4,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L88b_t2.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88b",
+   "take": "r5_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L88b_r5_t0.mp3",
+   "duration": 4.48,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88b",
+   "take": "r5_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L88b_r5_t1.mp3",
+   "duration": 4.48,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88b",
+   "take": "r5_2",
+   "stability": 0.65,
+   "similarity": 0.85,
+   "file": "fix_tts/L88b_r5_t2.mp3",
+   "duration": 4.4,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L88a_t0.mp3",
+   "duration": 4.48,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L88a_t1.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L88a_t2.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": "r5_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L88a_r5_t0.mp3",
+   "duration": 4.4,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": "r5_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L88a_r5_t1.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L88a",
+   "take": "r5_2",
+   "stability": 0.65,
+   "similarity": 0.85,
+   "file": "fix_tts/L88a_r5_t2.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
   }
  ]
 }

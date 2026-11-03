@@ -1008,6 +1008,321 @@
    "file": "fix_tts/L08b_t2.mp3",
    "duration": 1.76,
    "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L17b",
+   "take": "r4_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L17b_r4_t0.mp3",
+   "duration": 1.84,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L17b_r4_t1.mp3",
+   "duration": 1.92,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_2",
+   "stability": 0.55,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_r4_t2.mp3",
+   "duration": 1.68,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_3",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_r4_t3.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_4",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L17b_r4_t4.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_5",
+   "stability": 0.65,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_r4_t5.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_6",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/L17b_r4_t6.mp3",
+   "duration": 1.6,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L17b",
+   "take": "r4_7",
+   "stability": 0.75,
+   "similarity": 0.95,
+   "file": "fix_tts/L17b_r4_t7.mp3",
+   "duration": 1.68,
+   "text": "But I gave it to your daughter."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L03b_r4_t0.mp3",
+   "duration": 3.6,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L03b_r4_t1.mp3",
+   "duration": 3.6,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_2",
+   "stability": 0.55,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_r4_t2.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_3",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_r4_t3.mp3",
+   "duration": 3.6,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_4",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L03b_r4_t4.mp3",
+   "duration": 3.68,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_5",
+   "stability": 0.65,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_r4_t5.mp3",
+   "duration": 3.52,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_6",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/L03b_r4_t6.mp3",
+   "duration": 3.68,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03b",
+   "take": "r4_7",
+   "stability": 0.75,
+   "similarity": 0.95,
+   "file": "fix_tts/L03b_r4_t7.mp3",
+   "duration": 3.52,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_t0.mp3",
+   "duration": 3.68,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_t1.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L03c_t2.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L03c_r4_t0.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L03c_r4_t1.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_2",
+   "stability": 0.55,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_r4_t2.mp3",
+   "duration": 3.84,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_3",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_r4_t3.mp3",
+   "duration": 3.84,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_4",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L03c_r4_t4.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_5",
+   "stability": 0.65,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_r4_t5.mp3",
+   "duration": 3.84,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_6",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/L03c_r4_t6.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L03c",
+   "take": "r4_7",
+   "stability": 0.75,
+   "similarity": 0.95,
+   "file": "fix_tts/L03c_r4_t7.mp3",
+   "duration": 3.76,
+   "text": "So you're Mihai's sister? Little Erzhebet Szilagyi."
+  },
+  {
+   "id": "L08b",
+   "take": "r4_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r4_t0.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_1",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r4_t1.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_2",
+   "stability": 0.55,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_r4_t2.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_3",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_r4_t3.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_4",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r4_t4.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_5",
+   "stability": 0.65,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_r4_t5.mp3",
+   "duration": 1.76,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_6",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/L08b_r4_t6.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
+  },
+  {
+   "id": "L08b",
+   "take": "r4_7",
+   "stability": 0.75,
+   "similarity": 0.95,
+   "file": "fix_tts/L08b_r4_t7.mp3",
+   "duration": 1.84,
+   "text": "Is Sigismund here already?"
   }
  ]
 }

@@ -632,11 +632,25 @@
   }
  },
  {
-  "name": "00102229_f0-380_s0_69d8d8",
+  "name": "00108943_f80-176_s0_88e49a",
+  "clip": "00108943",
+  "first_frame": 80,
+  "last_frame": 176,
+  "audio": "lipsync_audio/00108943_f80-176_s0_88e49a.wav",
+  "face": {
+   "frame": 40,
+   "xy": [
+    672,
+    381
+   ]
+  }
+ },
+ {
+  "name": "00102229_f0-380_s0_d1a233",
   "clip": "00102229",
   "first_frame": 0,
   "last_frame": 380,
-  "audio": "lipsync_audio/00102229_f0-380_s0_69d8d8.wav",
+  "audio": "lipsync_audio/00102229_f0-380_s0_d1a233.wav",
   "face": {
    "frame": 39,
    "xy": [
@@ -660,11 +674,11 @@
   }
  },
  {
-  "name": "00104123_f0-80_s0_b37e65",
+  "name": "00104123_f0-116_s0_a2906b",
   "clip": "00104123",
   "first_frame": 0,
-  "last_frame": 80,
-  "audio": "lipsync_audio/00104123_f0-80_s0_b37e65.wav",
+  "last_frame": 116,
+  "audio": "lipsync_audio/00104123_f0-116_s0_a2906b.wav",
   "face": {
    "frame": 18,
    "xy": [
@@ -674,11 +688,25 @@
   }
  },
  {
-  "name": "00104240_f119-169_s0_b6ea9f",
+  "name": "00104240_f71-118_s0_5717d8",
+  "clip": "00104240",
+  "first_frame": 71,
+  "last_frame": 118,
+  "audio": "lipsync_audio/00104240_f71-118_s0_5717d8.wav",
+  "face": {
+   "frame": 9,
+   "xy": [
+    643,
+    315
+   ]
+  }
+ },
+ {
+  "name": "00104240_f119-169_s1_1aee7f",
   "clip": "00104240",
   "first_frame": 119,
   "last_frame": 169,
-  "audio": "lipsync_audio/00104240_f119-169_s0_b6ea9f.wav",
+  "audio": "lipsync_audio/00104240_f119-169_s1_1aee7f.wav",
   "face": {
    "frame": 14,
    "xy": [
@@ -688,30 +716,16 @@
   }
  },
  {
-  "name": "00104240_f170-220_s1_147cb1",
+  "name": "00104240_f170-220_s2_32ff84",
   "clip": "00104240",
   "first_frame": 170,
   "last_frame": 220,
-  "audio": "lipsync_audio/00104240_f170-220_s1_147cb1.wav",
+  "audio": "lipsync_audio/00104240_f170-220_s2_32ff84.wav",
   "face": {
    "frame": 10,
    "xy": [
     1353,
     449
-   ]
-  }
- },
- {
-  "name": "00108943_f80-176_s0_88e49a",
-  "clip": "00108943",
-  "first_frame": 80,
-  "last_frame": 176,
-  "audio": "lipsync_audio/00108943_f80-176_s0_88e49a.wav",
-  "face": {
-   "frame": 40,
-   "xy": [
-    672,
-    381
    ]
   }
  }

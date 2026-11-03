@@ -10,6 +10,7 @@ plan.json: {"<clip>": {"jobs": [{"first": F, "last": L, "face": [frame_abs, x, y
 - "after": chain this job onto another job's output (second speaker in the same shot).
 Writes exchange/full/lipsync_audio/<name>.wav and appends/replaces entries in lipsync_jobs.json.
 """
+import glob
 import hashlib
 import json
 import os
@@ -61,6 +62,8 @@ def main():
     tr = json.load(open(tr_p)) if os.path.exists(tr_p) else json.load(open(os.path.join(ex, "transcripts.json")))
     jobs_p = os.path.join(ex, "lipsync_jobs.json")
     old = {j["name"]: j for j in (json.load(open(jobs_p)) if os.path.exists(jobs_p) else [])}
+    man_p = os.path.join(ex, "lipsync", "manifest.json")
+    done = {m["name"]: m for m in (json.load(open(man_p)) if os.path.exists(man_p) else []) if m.get("status") == "COMPLETED"}
     # Rebuild from the plan: clips not selected keep their current jobs, selected clips are regenerated.
     jobs = {n: j for n, j in old.items() if only and j["clip"] not in only}
     os.makedirs(os.path.join(ex, "lipsync_audio"), exist_ok=True)
@@ -125,6 +128,17 @@ def main():
                 if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 1 and \
                         old[base]["face"] == {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
                     name = base
+            if name not in done and not j.get("after"):
+                # a finished job for the same shot, face and range whose audio differs only by rounding noise
+                # (at most 8 LSB of 16-bit, about -72 dB, e.g. from rebuilding the mix) is reused, not re-run
+                for cand in sorted(glob.glob(os.path.join(ex, "lipsync_audio", f"{base}_*.wav"))):
+                    cn = os.path.basename(cand)[:-4]
+                    if cn not in done or done[cn]["face"] != {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
+                        continue
+                    prev = np.round(load(cand)[:len(seg)] * 32767).astype(np.int16)
+                    if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 8:
+                        name = cn
+                        break
             names[k] = name
             rel = f"lipsync_audio/{name}.wav"
             if not os.path.exists(os.path.join(ex, rel)):

@@ -48,14 +48,18 @@ def trim(x, rel=40):
 
 
 def stretch(x, n):
-    tempo = len(x) / n
-    with tempfile.TemporaryDirectory() as d:
-        a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
-        save(a, x, stereo=False)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a, "-af",
-                        f"rubberband=tempo={tempo:.6f}:window=short:formant=preserved:pitchq=quality:transients=mixed",
-                        "-c:a", "pcm_f32le", b], check=True)
-        y = load(b)
+    """Change length to n samples, pitch kept. PSOLA (Praat "Lengthen (overlap-add)"): clean on speech at the small
+    factors used here (0.83-1.2x); the phase vocoder used before added a metallic, robotic colour."""
+    import parselmouth
+    from parselmouth.praat import call
+    if n <= 0 or len(x) == 0:
+        return np.zeros(max(n, 0), np.float32)
+    f = n / len(x)
+    if abs(f - 1) < 0.005:
+        y = np.asarray(x, np.float32)
+    else:
+        y = call(parselmouth.Sound(np.asarray(x, np.float64), SR), "Lengthen (overlap-add)", 60, 400, f).values[0]
+        y = y.astype(np.float32)
     return np.pad(y[:n], (0, max(0, n - len(y))))
 
 

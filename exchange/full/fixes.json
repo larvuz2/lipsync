@@ -414,7 +414,7 @@
    "tts": "But I gave it to your daughter.",
    "was": "client: not manly enough -> new Hunyadi voice cloned from the actor's own lines",
    "source": "serbian",
-   "pitch_target": 100,
+   "pitch_target": 115,
    "extra_takes": {
     "tag": "r4",
     "settings": [
@@ -451,27 +451,21 @@
       0.95
      ]
     ]
-   }
+   },
+   "takes": [
+    "L17b_r4_t1"
+   ],
+   "note": "client r3: not manly enough -> HUNYADI2 (actor's own voice); r4: robotic -> calmer take (st 0.55, sim 0.9, natural 127 Hz), lowered 1.7 st with PSOLA to 115 Hz (actor's own line is ~154 Hz)"
   },
   {
    "id": "L03b",
    "clip": "00102229",
-   "type": "word",
-   "start": 10.7,
-   "end": 11.3,
+   "start": 10.2,
+   "end": 13.45,
    "character": "HUNYADI2",
    "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
    "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-   "take_line": [
-    "L03b",
-    "L03c"
-   ],
-   "word": "Mihai's sister",
-   "prev": "you're",
-   "next": "little",
-   "was": "Miho's sister",
-   "pitch_match": true,
-   "note": "client: high-pitch drop-out on the swapped word -> new Hunyadi voice, 'Mihai's sister' swapped together, pitch matched to the dub's own pitch on these words",
+   "note": "client r4: robotic at ~12 s (2-word splice lowered 7 st) -> whole sentence from one HUNYADI2 take (st 0.75, sim 0.9: smooth contour, no spikes), PSOLA -3 st to ~114 Hz (actor's original ~105 Hz)",
    "extra_takes": {
     "tag": "r4",
     "settings": [
@@ -508,7 +502,11 @@
       0.95
      ]
     ]
-   }
+   },
+   "takes": [
+    "L03b_r4_t6"
+   ],
+   "pitch_target": 112
   },
   {
    "id": "L03c",
@@ -519,7 +517,7 @@
    "character": "HUNYADI",
    "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
    "tts": "So you're Mihai's sister? Little Erzhebet Szilagyi.",
-   "note": "round 4: the same line in the dub's own Hunyadi voice, so 'Mihai's sister' can be taken from whichever voice already sits at the dub's pitch",
+   "note": "round 4: the same line in the dub's own Hunyadi voice, so 'Mihai's sister' can be taken from whichever voice already sits at the dub's pitch | not used: every take had \"Mihai's sister\" 8-11 st above the dub",
    "extra_takes": {
     "tag": "r4",
     "settings": [
@@ -568,7 +566,7 @@
    "tts": "Is Sigismund here already?",
    "was": "Je l' Zigismund već tu? (new Hunyadi voice; timed to the original)",
    "source": "serbian",
-   "pitch_target": 115,
+   "pitch_target": 139,
    "extra_takes": {
     "tag": "r4",
     "settings": [
@@ -605,7 +603,11 @@
       0.95
      ]
     ]
-   }
+   },
+   "takes": [
+    "L08b_r4_t7"
+   ],
+   "note": "r4: lowest natural take (163 Hz, st 0.75, sim 0.95), PSOLA to the actor's own 139 Hz on this line (was a 5 st phase-vocoder shift)"
   }
  ],
  "edits": [

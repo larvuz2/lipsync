@@ -426,17 +426,17 @@
   "id": "L17b",
   "clip": "00104123",
   "en": "But I gave it to your daughter.",
-  "take": "fix_tts/L17b_t1.mp3",
+  "take": "fix_tts/L17b_r4_t1.mp3",
   "heard": "But I gave it to your daughter.",
   "wer": 0.0,
   "span_s": 1.95,
-  "natural_s": 1.69,
+  "natural_s": 1.76,
   "placed": [
    0.6,
-   2.43
+   2.5
   ],
   "speed": 0.93,
-  "pitch_ratio": 0.753
+  "pitch_ratio": 0.91
  },
  {
   "id": "E11",
@@ -503,34 +503,32 @@
   "id": "L08b",
   "clip": "00104240",
   "en": "Is Sigismund here already?",
-  "take": "fix_tts/L08b_t2.mp3",
+  "take": "fix_tts/L08b_r4_t7.mp3",
   "heard": "Is Sigismund here already?",
   "wer": 0.0,
   "span_s": 1.08,
-  "natural_s": 1.54,
+  "natural_s": 1.63,
   "placed": [
    6.72,
-   8.1
+   8.18
   ],
   "speed": 1.12,
-  "pitch_ratio": 0.74
+  "pitch_ratio": 0.853
  },
  {
   "id": "L03b",
   "clip": "00102229",
-  "type": "word",
-  "was": "Miho's sister",
-  "word": "Mihai's sister",
-  "take": "fix_tts/L03b_t0.mp3",
-  "take_heard": "So you're Mihály's sister? Little Ercebetszilagyi.",
-  "align_match": 1.0,
-  "slot_s": [
-   10.76,
-   11.54
+  "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
+  "take": "fix_tts/L03b_r4_t6.mp3",
+  "heard": "So you're Mihaly's sister? Little Ercebet Siladí.",
+  "wer": 0.33,
+  "span_s": 3.25,
+  "natural_s": 3.26,
+  "placed": [
+   10.2,
+   13.45
   ],
-  "word_s": 1.26,
-  "pushed_s": 0.35,
-  "speed": 1.12,
-  "pitch_ratio": 0.669
+  "speed": 1.0,
+  "pitch_ratio": 0.84
  }
 ]

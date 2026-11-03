@@ -688,18 +688,24 @@
   }
  },
  {
-  "name": "00104240_f71-118_s0_5717d8",
+  "name": "00104240_f71-118_s0z_369a04",
   "clip": "00104240",
   "first_frame": 71,
   "last_frame": 118,
-  "audio": "lipsync_audio/00104240_f71-118_s0_5717d8.wav",
+  "audio": "lipsync_audio/00104240_f71-118_s0z_369a04.wav",
   "face": {
    "frame": 9,
    "xy": [
-    643,
-    315
+    588,
+    561
    ]
-  }
+  },
+  "zoom": [
+   447,
+   128,
+   360
+  ],
+  "input_video": "lipsync_zoom/00104240_f71-118_s0z_369a04.mp4"
  },
  {
   "name": "00104240_f119-169_s1_1aee7f",

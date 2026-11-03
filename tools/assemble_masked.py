@@ -39,6 +39,16 @@ def frames(path):
         yield im
 
 
+def unzoom(orig, syn, zoom):
+    """Full frame from a lip-synced enlarged crop: the crop shrunk back into place over the original frame."""
+    if not zoom:
+        return syn
+    zx, zy, zs = zoom
+    f = orig.copy()
+    f[zy:zy + zs, zx:zx + zs] = cv2.resize(syn, (zs, zs), interpolation=cv2.INTER_AREA)
+    return f
+
+
 def track(src, f0, f1, pin_frame, pin_xy, det):
     """Face box per frame in [f0, f1] (absolute), following the face nearest the pin from the pin frame."""
     cap = cv2.VideoCapture(src)
@@ -257,19 +267,22 @@ def build(ex, media, out_dir, clip):
         if not m or m.get("status") != "COMPLETED":
             raise SystemExit(f"{j['name']} has no completed output")
         pj = next((p for p in plan.get("jobs", []) if p["first"] == j["first_frame"] and p["last"] == j["last_frame"]
-                   and p["face"][1:] == j["face"]["xy"]), {})
+                   and (p["face"][1:] == j["face"]["xy"] or (p.get("zoom") and p["zoom"] == j.get("zoom")))), {})
         f0, f1 = j["first_frame"], j["last_frame"]
         # gate on the speech actually in this job's audio (falls back to the plan's windows)
         aud = os.path.join(ex, j["audio"])
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
-        boxes = track(src, f0, f1, f0 + j["face"]["frame"], tuple(j["face"]["xy"]), det)
+        zoom = j.get("zoom")
+        pin = tuple(j["face"]["xy"]) if not zoom else \
+            (zoom[0] + j["face"]["xy"][0] * zoom[2] / 1080, zoom[1] + j["face"]["xy"][1] * zoom[2] / 1080)
+        boxes = track(src, f0, f1, f0 + j["face"]["frame"], pin, det)
         # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
         a0, a1 = pj.get("active", [f0, f1])
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
                        "spans": windows, "start_cut": f0 == 0 or f0 in cutset or a0 > f0,
                        "end_cut": f1 >= n - 1 or (f1 + 1) in cutset or a1 < f1,
-                       "out": os.path.join(ex, m["file"]), "it": None})
+                       "out": os.path.join(ex, m["file"]), "it": None, "zoom": zoom})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
     for L in layers:
@@ -284,6 +297,7 @@ def build(ex, media, out_dir, clip):
             ok2, b = cs.read()
             if not (ok1 and ok2) or k not in L["boxes"]:
                 continue
+            b = unzoom(a, b, L["zoom"])
             pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
@@ -318,7 +332,7 @@ def build(ex, media, out_dir, clip):
                 continue
             if L["it"] is None:
                 L["it"] = frames(L["out"])
-            syn = next(L["it"])
+            syn = unzoom(im, next(L["it"]), L["zoom"])
             a = L["env"][k]
             if a <= 0 or k not in L["boxes"]:
                 continue

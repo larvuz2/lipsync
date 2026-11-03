@@ -19,6 +19,8 @@ import sys
 
 import numpy as np
 
+ZOOM_OUT = 1080
+
 SR, SPF = 48000, 2002
 
 
@@ -77,7 +79,8 @@ def main():
         names = {}
         for k, j in enumerate(cfg.get("jobs", [])):
             f0, f1 = j["first"], j["last"]
-            base = f"{clip}_f{f0}-{f1}" + (f"_s{k}" if j.get("keep") or j.get("en_keep") else "")
+            base = f"{clip}_f{f0}-{f1}" + (f"_s{k}" if j.get("keep") or j.get("en_keep") else "") + \
+                ("z" if j.get("zoom") else "")
             x = en.copy()
             if j.get("en_keep"):
                 # exact English windows of this speaker (known placements of re-voiced lines)
@@ -120,7 +123,8 @@ def main():
             # and stale outputs are never used. An unchanged legacy job keeps its old name (no re-run).
             q = np.round(seg * 32767).astype(np.int16)
             parent = names.get(j["after"]) if j.get("after") is not None else None
-            fp = hashlib.sha1(q.tobytes() + json.dumps([j["face"], f0, f1, parent]).encode()).hexdigest()[:6]
+            fp = hashlib.sha1(q.tobytes() + json.dumps([j["face"], f0, f1, parent] +
+                                                       ([j["zoom"]] if j.get("zoom") else [])).encode()).hexdigest()[:6]
             legacy = os.path.join(ex, "lipsync_audio", f"{base}.wav")
             name = f"{base}_{fp}"
             if base in old and os.path.exists(legacy) and not j.get("after"):
@@ -128,7 +132,7 @@ def main():
                 if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 1 and \
                         old[base]["face"] == {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
                     name = base
-            if name not in done and not j.get("after"):
+            if name not in done and not j.get("after") and not j.get("zoom"):
                 # a finished job for the same shot, face and range whose audio differs only by rounding noise
                 # (at most 8 LSB of 16-bit, about -72 dB, e.g. from rebuilding the mix) is reused, not re-run
                 for cand in sorted(glob.glob(os.path.join(ex, "lipsync_audio", f"{base}_*.wav"))):
@@ -150,6 +154,25 @@ def main():
                      "face": {"frame": fr - f0, "xy": [fx, fy]}}
             if parent:
                 entry["input_from"] = parent
+            if j.get("zoom"):
+                # face too small for lip sync in the full frame: send a fixed square crop around it, enlarged to
+                # ZOOM_OUT px; the result is shrunk back and pasted in place at assembly
+                zx, zy, zs = j["zoom"]
+                kz = ZOOM_OUT / zs
+                entry["zoom"] = [zx, zy, zs]
+                entry["face"] = {"frame": fr - f0, "xy": [round((fx - zx) * kz), round((fy - zy) * kz)]}
+                rel_v = f"lipsync_zoom/{name}.mp4"
+                entry["input_video"] = rel_v
+                if not os.path.exists(os.path.join(ex, rel_v)):
+                    os.makedirs(os.path.join(ex, "lipsync_zoom"), exist_ok=True)
+                    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+                    srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
+                    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", srcv, "-vf",
+                                    f"select='between(n,{f0},{f1})',setpts=N/FRAME_RATE/TB,crop={zs}:{zs}:{zx}:{zy},"
+                                    f"scale={ZOOM_OUT}:{ZOOM_OUT}:flags=lanczos", "-an", "-r", "24000/1001",
+                                    "-c:v", "libx264", "-crf", "12", "-preset", "slow", "-bf", "0", "-pix_fmt", "yuv420p",
+                                    "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+                                    os.path.join(ex, rel_v)], check=True)
             jobs[name] = entry
             print(name, entry["face"], ("chain<-" + parent) if parent else "")
     json.dump(list(jobs.values()), open(jobs_p, "w"), indent=1)

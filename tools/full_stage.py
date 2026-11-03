@@ -118,6 +118,10 @@ def run_job(job: dict, ex: Path, frames: dict) -> dict:
             # was read as 23.857 fps and the chained output came back 2 frames short.
             v = normalize(v, job["last_frame"] - job["first_frame"] + 1,
                           ex / "lipsync" / "src" / f"{job['input_from']}_cfr.mp4")
+        elif job.get("input_video"):  # prepared input (e.g. an enlarged crop around a small face)
+            v = ex / job["input_video"]
+            if not video_ok(v, job["last_frame"] - job["first_frame"] + 1, strict=True):
+                raise RuntimeError(f"{job['input_video']}: not {job['last_frame'] - job['first_frame'] + 1} frames")
         else:
             v = trim(job["clip"], frames[job["clip"]], job["first_frame"], job["last_frame"],
                      ex / "lipsync" / "src" / f"{job['clip']}_f{job['first_frame']}-{job['last_frame']}.mp4")

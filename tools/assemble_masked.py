@@ -159,6 +159,62 @@ def envelope(n_abs, f0, f1, windows):
     return np.clip(e, 0, 1)
 
 
+MERGE = 2.5  # s: pauses shorter than this keep the lip sync on (no fade out and back in mid-sentence)
+
+
+def best_center(cost, lo, hi):
+    """Fade centre in [lo, hi] where the lip-synced and original mouth look most alike over the whole fade."""
+    if hi < lo:
+        return None
+    vals = [(np.nansum(cost[max(0, c - FADE):c + FADE + 1]), c) for c in range(lo, hi + 1)]
+    return min(vals)[1]
+
+
+def plan_envelope(n_abs, f0, f1, spans, start_cut, end_cut, cost):
+    """Alpha per frame. spans: speech [start, end] in seconds (absolute). On through each run of speech (pauses
+    under MERGE s included); at a job end that is a shot cut (or the clip edge) it stays on to the cut, so there
+    is no fade at all inside a single-speaker shot; any other fade sits where synced and original mouths match."""
+    runs = []
+    for a, b in spans:
+        s_, t_ = int(np.floor((a - PRE) * FPS)), int(np.ceil((b + POST) * FPS))
+        if runs and s_ - runs[-1][1] < MERGE * FPS:
+            runs[-1][1] = max(runs[-1][1], t_)
+        else:
+            runs.append([s_, t_])
+    if not runs:
+        runs = [[f0, f1]]
+    runs = [[max(f0, a), min(f1, b)] for a, b in runs if b >= f0 and a <= f1]
+    e = np.zeros(n_abs, np.float32)
+    fades = []
+    for i, (s_, t_) in enumerate(runs):
+        # fade in
+        if i == 0 and start_cut:
+            ci = None
+        else:
+            lo = (f0 if i == 0 else (runs[i - 1][1] + s_) // 2) + FADE
+            ci = best_center(cost, lo, s_ - FADE)
+            ci = ci if ci is not None else max(f0 + FADE, s_ - FADE)
+        # fade out
+        if i == len(runs) - 1 and end_cut:
+            co = None
+        else:
+            hi = (f1 if i == len(runs) - 1 else (t_ + runs[i + 1][0]) // 2) - FADE
+            co = best_center(cost, t_ + FADE, hi)
+            co = co if co is not None else min(f1 - FADE, t_ + FADE)
+        k = np.arange(n_abs, dtype=np.float32)
+        rise = np.ones(n_abs, np.float32) if ci is None else np.clip((k - (ci - FADE)) / (2 * FADE), 0, 1)
+        fall = np.ones(n_abs, np.float32) if co is None else np.clip(((co + FADE) - k) / (2 * FADE), 0, 1)
+        if ci is None:
+            rise[:f0] = 0
+        if co is None:
+            fall[f1 + 1:] = 0
+        e = np.maximum(e, np.minimum(rise, fall))
+        fades.append((ci, co))
+    e[:f0] = 0
+    e[f1 + 1:] = 0
+    return e, fades
+
+
 def speech_spans(path, gap=0.35, floor_db=-45.0):
     """Spans (s, relative to the job start) where the job's own audio has speech: what the mouth was synced to."""
     import soundfile as sf
@@ -191,6 +247,10 @@ def build(ex, media, out_dir, clip):
     n = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
                             "stream=nb_read_frames", "-of", "csv=p=0", src], capture_output=True, text=True).stdout)
     det = cv2.FaceDetectorYN.create(f"{MODELS}/yunet.onnx", "", (W, H), 0.5)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from analyze_clips import cuts
+    cutset = set(plan.get("cuts", cuts(src, FPS)))
+    print(f"  shot cuts at frames {sorted(cutset)}", flush=True)
     layers = []
     for j in jobs:
         m = man.get(j["name"])
@@ -204,13 +264,11 @@ def build(ex, media, out_dir, clip):
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
         boxes = track(src, f0, f1, f0 + j["face"]["frame"], tuple(j["face"]["xy"]), det)
-        env = envelope(n, f0, f1, windows)
-        if pj.get("active"):
-            # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
-            a0, a1 = pj["active"]
-            env[:a0] = 0
-            env[a1 + 1:] = 0
-        layers.append({"name": j["name"], "f0": f0, "f1": f1, "boxes": boxes, "env": env,
+        # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
+        a0, a1 = pj.get("active", [f0, f1])
+        layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
+                       "spans": windows, "start_cut": f0 == 0 or f0 in cutset or a0 > f0,
+                       "end_cut": f1 >= n - 1 or (f1 + 1) in cutset or a1 < f1,
                        "out": os.path.join(ex, m["file"]), "it": None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
@@ -220,21 +278,32 @@ def build(ex, media, out_dir, clip):
         co, cs = cv2.VideoCapture(src), cv2.VideoCapture(L["out"])
         co.set(cv2.CAP_PROP_POS_FRAMES, L["f0"])
         raw = {}
+        cost = np.full(n, np.nan, np.float32)
         for k in range(L["f0"], L["f1"] + 1):
             ok1, a = co.read()
             ok2, b = cs.read()
-            if not (ok1 and ok2) or L["env"][k] <= 0 or k not in L["boxes"]:
+            if not (ok1 and ok2) or k not in L["boxes"]:
                 continue
             pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
+            # how different the lip-synced mouth looks from the original on this frame
+            mk = hull_mask(raw[k], L["boxes"][k][2]) if k in raw else ellipse_mask(L["boxes"][k])
+            d = np.abs(a.astype(np.float32) - b.astype(np.float32)).mean(2)
+            cost[k] = float((d * mk).sum() / max(mk.sum(), 1.0))
+        cost = np.where(np.isnan(cost), np.nanmax(cost) if np.isfinite(cost).any() else 0, cost)
+        env, fades = plan_envelope(n, L["a0"], L["a1"], L["spans"], L["start_cut"], L["end_cut"], cost)
+        L["env"] = env
+        print(f"  {L['name']}: speech {L['spans']}, on frames {L['a0']}-{L['a1']} "
+              f"(start {'cut' if L['start_cut'] else 'fade'}, end {'cut' if L['end_cut'] else 'fade'}), "
+              f"fade centres {fades}", flush=True)
         pts = {}
         for k in raw:
             # +-2 frame smoothing of the outline (same point count only), to keep the mask edge steady
             nb = [raw[j] for j in range(k - 2, k + 3) if j in raw and raw[j].shape == raw[k].shape]
             pts[k] = np.mean(nb, 0)
         L["pts"] = pts
-        need = [k for k in range(L["f0"], L["f1"] + 1) if L["env"][k] > 0 and k in L["boxes"]]
+        need = [k for k in range(L["f0"], L["f1"] + 1) if env[k] > 0 and k in L["boxes"]]
         print(f"  {L['name']}: lower-face outline on {len(pts)}/{len(need)} gated frames", flush=True)
     dst = os.path.join(out_dir, os.path.basename(src)[:-4] + "_EN.mp4")
     audio = os.path.join(ex, "en", f"{clip}_EN.wav")
@@ -254,7 +323,7 @@ def build(ex, media, out_dir, clip):
             if a <= 0 or k not in L["boxes"]:
                 continue
             box = L["boxes"][k]
-            near = [j for j in range(k - 3, k + 4) if j in L["pts"]]
+            near = [j for j in range(k - 12, k + 13) if j in L["pts"]]
             if near:
                 j = min(near, key=lambda q: abs(q - k))
                 bj = L["boxes"].get(j, box)

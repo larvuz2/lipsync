@@ -434,12 +434,12 @@
   ]
  },
  "00104123": {
-  "note": "Hunyadi close, single continuous shot; new Hunyadi voice; masked, speech-gated composite (client round 3)",
+  "note": "Hunyadi close, single continuous shot; new Hunyadi voice; masked, speech-gated composite (client round 3) | round 4: whole shot (no fade inside the shot)",
   "assemble": "masked",
   "jobs": [
    {
     "first": 0,
-    "last": 80,
+    "last": 116,
     "face": [
      18,
      1066,
@@ -448,15 +448,30 @@
     "en_keep": [
      [
       0.55,
-      2.3
+      2.4
      ]
     ]
    }
   ]
  },
  "00104240": {
-  "note": "daughter's lines off-face (shot 1); nobleman close-up shot 3; Hunyadi close-up shot 4 'Is Sigismund here already?' | client round 3: lines re-timed to the Serbian original, masked composite",
+  "note": "daughter's lines off-face (shot 1); nobleman close-up shot 3; Hunyadi close-up shot 4 'Is Sigismund here already?' | client round 3: lines re-timed to the Serbian original, masked composite | round 4: shot 2 (wide, under the arch) lip-synced on the old nobleman for 'Wash up, get dressed! / The king is coming' (client: 2-5 s)",
   "jobs": [
+   {
+    "first": 71,
+    "last": 118,
+    "face": [
+     80,
+     643,
+     315
+    ],
+    "en_keep": [
+     [
+      2.6,
+      5.0
+     ]
+    ]
+   },
    {
     "first": 119,
     "last": 169,

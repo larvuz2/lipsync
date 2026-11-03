@@ -439,6 +439,22 @@
   "pitch_ratio": 0.91
  },
  {
+  "id": "L03b",
+  "clip": "00102229",
+  "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
+  "take": "fix_tts/L03b_r4_t6.mp3",
+  "heard": "So you're Mihaly's sister? Little Ercebet Siladí.",
+  "wer": 0.33,
+  "span_s": 3.25,
+  "natural_s": 3.26,
+  "placed": [
+   10.2,
+   13.45
+  ],
+  "speed": 1.0,
+  "pitch_ratio": 0.84
+ },
+ {
   "id": "E11",
   "clip": "00104240",
   "type": "mute",
@@ -490,13 +506,29 @@
   "take": "fix_tts/L07d_t2.mp3",
   "heard": "The king is coming, your Hungarian king.",
   "wer": 0.0,
-  "span_s": 2.17,
-  "natural_s": 2.91,
+  "span_s": 0.9,
+  "natural_s": 1.2,
   "placed": [
-   4.05,
-   6.64
+   4.19,
+   5.26
   ],
   "speed": 1.12,
+  "pitch_ratio": null
+ },
+ {
+  "id": "L07h",
+  "clip": "00104240",
+  "en": "Your Hungarian king.",
+  "take": "fix_tts/L07d_t2.mp3",
+  "heard": "The king is coming, your Hungarian king.",
+  "wer": 0.0,
+  "span_s": 1.27,
+  "natural_s": 1.56,
+  "placed": [
+   5.27,
+   6.64
+  ],
+  "speed": 1.14,
   "pitch_ratio": null
  },
  {
@@ -514,21 +546,5 @@
   ],
   "speed": 1.12,
   "pitch_ratio": 0.853
- },
- {
-  "id": "L03b",
-  "clip": "00102229",
-  "en": "So you're Mihály's sister? Little Erzsébet Szilágyi.",
-  "take": "fix_tts/L03b_r4_t6.mp3",
-  "heard": "So you're Mihaly's sister? Little Ercebet Siladí.",
-  "wer": 0.33,
-  "span_s": 3.25,
-  "natural_s": 3.26,
-  "placed": [
-   10.2,
-   13.45
-  ],
-  "speed": 1.0,
-  "pitch_ratio": 0.84
  }
 ]

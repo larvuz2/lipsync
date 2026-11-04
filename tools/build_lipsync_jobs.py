@@ -55,6 +55,48 @@ def overlap(a, b):
     return max(0.0, min(a[1], b[1]) - max(a[0], b[0]))
 
 
+def zoom_track(ex, clip, f0, f1, pin, zs, name):
+    """Per-frame square windows (size zs) centred on the tracked face, smoothed; writes the enlarged input video
+    lipsync_zoom/<name>.mp4 and the windows lipsync_zoom/<name>.json. Returns the job fields."""
+    import cv2
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import assemble_masked as am
+    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+    srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
+    det = cv2.FaceDetectorYN.create(f"{am.MODELS}/yunet.onnx", "", (am.W, am.H), 0.4)
+    fr, fx, fy = pin
+    boxes = am.track(srcv, f0, f1, fr, (fx, fy), det)
+    ks = sorted(boxes)
+    cx = np.array([np.interp(k, ks, [boxes[q][0] + boxes[q][2] / 2 for q in ks]) for k in range(f0, f1 + 1)])
+    cy = np.array([np.interp(k, ks, [boxes[q][1] + boxes[q][3] * 0.6 for q in ks]) for k in range(f0, f1 + 1)])
+    w = 9  # smooth the path so the crop does not shake
+    pad = lambda a: np.convolve(np.pad(a, w // 2, mode="edge"), np.ones(w) / w, mode="valid")
+    cx, cy = pad(cx), pad(cy)
+    wins = [[int(np.clip(round(x - zs / 2), 0, am.W - zs)), int(np.clip(round(y - zs / 2), 0, am.H - zs))]
+            for x, y in zip(cx, cy)]
+    os.makedirs(os.path.join(ex, "lipsync_zoom"), exist_ok=True)
+    rel_v, rel_w = f"lipsync_zoom/{name}.mp4", f"lipsync_zoom/{name}.json"
+    json.dump({"size": zs, "first": f0, "windows": wins}, open(os.path.join(ex, rel_w), "w"))
+    if not os.path.exists(os.path.join(ex, rel_v)):
+        enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s",
+                                f"{ZOOM_OUT}x{ZOOM_OUT}", "-r", "24000/1001", "-i", "-", "-an", "-c:v", "libx264", "-crf",
+                                "12", "-preset", "slow", "-bf", "0", "-pix_fmt", "yuv420p", "-color_primaries", "bt709",
+                                "-color_trc", "bt709", "-colorspace", "bt709", "-r", "24000/1001",
+                                os.path.join(ex, rel_v)], stdin=subprocess.PIPE)
+        cap = cv2.VideoCapture(srcv)
+        cap.set(cv2.CAP_PROP_POS_FRAMES, f0)
+        for (zx, zy) in wins:
+            ok, im = cap.read()
+            crop = cv2.resize(im[zy:zy + zs, zx:zx + zs], (ZOOM_OUT, ZOOM_OUT), interpolation=cv2.INTER_LANCZOS4)
+            enc.stdin.write(crop.tobytes())
+        enc.stdin.close()
+        enc.wait()
+    kz = ZOOM_OUT / zs
+    zx, zy = wins[fr - f0]
+    return {"zoom": {"size": zs, "file": rel_w}, "input_video": rel_v,
+            "face": {"frame": fr - f0, "xy": [round((fx - zx) * kz), round((fy - zy) * kz)]}}
+
+
 def main():
     ex = sys.argv[1]
     only = set(sys.argv[2:])
@@ -154,7 +196,11 @@ def main():
                      "face": {"frame": fr - f0, "xy": [fx, fy]}}
             if parent:
                 entry["input_from"] = parent
-            if j.get("zoom"):
+            if j.get("zoom") == "track":
+                # small face that moves (camera or actor): a square window that follows the tracked face,
+                # enlarged to ZOOM_OUT px; per-frame windows are saved next to the input video
+                entry.update(zoom_track(ex, clip, f0, f1, (fr, fx, fy), int(j.get("zoom_size", 360)), name))
+            elif j.get("zoom"):
                 # face too small for lip sync in the full frame: send a fixed square crop around it, enlarged to
                 # ZOOM_OUT px; the result is shrunk back and pasted in place at assembly
                 zx, zy, zs = j["zoom"]

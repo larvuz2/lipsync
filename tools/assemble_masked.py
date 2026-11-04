@@ -39,11 +39,19 @@ def frames(path):
         yield im
 
 
-def unzoom(orig, syn, zoom):
+def zoom_at(zoom, k):
+    """(zx, zy, zs) of a job's zoom window at absolute frame k (fixed window, or per-frame windows)."""
+    if isinstance(zoom, dict):
+        zx, zy = zoom["windows"][k - zoom["first"]]
+        return zx, zy, zoom["size"]
+    return zoom
+
+
+def unzoom(orig, syn, zoom, k=None):
     """Full frame from a lip-synced enlarged crop: the crop shrunk back into place over the original frame."""
     if not zoom:
         return syn
-    zx, zy, zs = zoom
+    zx, zy, zs = zoom_at(zoom, k)
     f = orig.copy()
     f[zy:zy + zs, zx:zx + zs] = cv2.resize(syn, (zs, zs), interpolation=cv2.INTER_AREA)
     return f
@@ -102,6 +110,10 @@ def track(src, f0, f1, pin_frame, pin_xy, det):
 # mouth corners and the point under the nose, so the hull hugs the skin of the lower face
 JAW = [234, 93, 132, 58, 172, 136, 150, 149, 176, 148, 152, 377, 400, 378, 379, 365, 397, 288, 361, 323, 454,
        2, 61, 291, 0, 17]
+# mouth-only outline: outer lips, the mouth corners and the strip from the lower lip down to the chin
+# (for "mask": "mouth" - keeps cheeks, beard sides and moustache edges original)
+MOUTH = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291, 409, 270, 269, 267, 0, 37, 39, 40, 185,
+         57, 287, 43, 273, 204, 424, 194, 418, 200, 199, 175, 152, 148, 377]
 _LM = None
 
 
@@ -116,8 +128,9 @@ def landmarker():
     return _LM
 
 
-def lower_face(im, box):
-    """Lower-face outline points (full-frame coords) of the face in box, or None."""
+def lower_face(im, box, idx=None):
+    """Lower-face (or mouth, with idx=MOUTH) outline points (full-frame coords) of the face in box, or None."""
+    idx = idx or JAW
     mp, lm = landmarker()
     x, y, w, h = box
     side = max(w, h) * 1.8
@@ -132,16 +145,16 @@ def lower_face(im, box):
     if not res.face_landmarks:
         return None
     q = res.face_landmarks[0]
-    return np.array([[x0 + q[i].x * (x1 - x0), y0 + q[i].y * (y1 - y0)] for i in JAW], np.float32)
+    return np.array([[x0 + q[i].x * (x1 - x0), y0 + q[i].y * (y1 - y0)] for i in idx], np.float32)
 
 
-def hull_mask(pts, w):
-    """Filled hull of the lower-face points, grown a little (jaw movement) and softly feathered."""
+def hull_mask(pts, w, grow=0.025, soft=0.02):
+    """Filled hull of the outline points, grown a little (jaw movement) and softly feathered."""
     m = np.zeros((H, W), np.float32)
     cv2.fillConvexPoly(m, cv2.convexHull(pts.astype(np.int32)), 1.0)
-    r = max(2, int(w * 0.025))
+    r = max(2, int(w * grow))
     m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
-    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.02))
+    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * soft))
 
 
 def ellipse_mask(box):
@@ -268,15 +281,21 @@ def build(ex, media, out_dir, clip):
         if not m or m.get("status") != "COMPLETED":
             raise SystemExit(f"{j['name']} has no completed output")
         pj = next((p for p in plan.get("jobs", []) if p["first"] == j["first_frame"] and p["last"] == j["last_frame"]
-                   and (p["face"][1:] == j["face"]["xy"] or (p.get("zoom") and p["zoom"] == j.get("zoom")))), {})
+                   and (p["face"][1:] == j["face"]["xy"] or (p.get("zoom") and (p["zoom"] == j.get("zoom")
+                                                                                 or p["zoom"] == "track")))), {})
         f0, f1 = j["first_frame"], j["last_frame"]
         # gate on the speech actually in this job's audio (falls back to the plan's windows)
         aud = os.path.join(ex, j["audio"])
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
         zoom = j.get("zoom")
-        pin = tuple(j["face"]["xy"]) if not zoom else \
-            (zoom[0] + j["face"]["xy"][0] * zoom[2] / 1080, zoom[1] + j["face"]["xy"][1] * zoom[2] / 1080)
+        if isinstance(zoom, dict):
+            zoom = {**zoom, **json.load(open(os.path.join(ex, zoom["file"])))}
+        if zoom:
+            zx, zy, zs = zoom_at(zoom, f0 + j["face"]["frame"])
+            pin = (zx + j["face"]["xy"][0] * zs / 1080, zy + j["face"]["xy"][1] * zs / 1080)
+        else:
+            pin = tuple(j["face"]["xy"])
         boxes = track(src, f0, f1, f0 + j["face"]["frame"], pin, det)
         # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
         a0, a1 = pj.get("active", [f0, f1])
@@ -284,6 +303,9 @@ def build(ex, media, out_dir, clip):
                        "spans": windows, "start_cut": f0 == 0 or f0 in cutset or a0 > f0,
                        "end_cut": f1 >= n - 1 or (f1 + 1) in cutset or a1 < f1,
                        "out": os.path.join(ex, m["file"]), "it": None, "zoom": zoom,
+                       "idx": MOUTH if pj.get("mask") == "mouth" else JAW,
+                       "grow": 0.04 if pj.get("mask") == "mouth" else 0.025,
+                       "soft": 0.03 if pj.get("mask") == "mouth" else 0.02,
                        "zin": os.path.join(ex, j["input_video"]) if zoom else None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
@@ -302,21 +324,21 @@ def build(ex, media, out_dir, clip):
                 continue
             if L["zoom"]:
                 # small face: find the lower-face outline on the enlarged crops, then map it back
-                zx, zy, zs = L["zoom"]
+                zx, zy, zs = zoom_at(L["zoom"], k)
                 kz = b.shape[0] / zs
                 az = cz.read()[1]
                 bx = L["boxes"][k]
                 bz = ((bx[0] - zx) * kz, (bx[1] - zy) * kz, bx[2] * kz, bx[3] * kz)
-                pa, pb = lower_face(az, bz), lower_face(b, bz)
+                pa, pb = lower_face(az, bz, L["idx"]), lower_face(b, bz, L["idx"])
                 pa = None if pa is None else pa / kz + np.array([zx, zy], np.float32)
                 pb = None if pb is None else pb / kz + np.array([zx, zy], np.float32)
-                b = unzoom(a, b, L["zoom"])
+                b = unzoom(a, b, L["zoom"], k)
             else:
-                pa, pb = lower_face(a, L["boxes"][k]), lower_face(b, L["boxes"][k])
+                pa, pb = lower_face(a, L["boxes"][k], L["idx"]), lower_face(b, L["boxes"][k], L["idx"])
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame
-            mk = hull_mask(raw[k], L["boxes"][k][2]) if k in raw else ellipse_mask(L["boxes"][k])
+            mk = hull_mask(raw[k], L["boxes"][k][2], L["grow"], L["soft"]) if k in raw else ellipse_mask(L["boxes"][k])
             d = np.abs(a.astype(np.float32) - b.astype(np.float32)).mean(2)
             cost[k] = float((d * mk).sum() / max(mk.sum(), 1.0))
         cost = np.where(np.isnan(cost), np.nanmax(cost) if np.isfinite(cost).any() else 0, cost)
@@ -346,7 +368,7 @@ def build(ex, media, out_dir, clip):
                 continue
             if L["it"] is None:
                 L["it"] = frames(L["out"])
-            syn = unzoom(im, next(L["it"]), L["zoom"])
+            syn = unzoom(im, next(L["it"]), L["zoom"], k)
             a = L["env"][k]
             if a <= 0 or k not in L["boxes"]:
                 continue
@@ -356,7 +378,7 @@ def build(ex, media, out_dir, clip):
                 j = min(near, key=lambda q: abs(q - k))
                 bj = L["boxes"].get(j, box)
                 shift = np.array([box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2])
-                m = hull_mask(L["pts"][j] + shift, box[2]) * a
+                m = hull_mask(L["pts"][j] + shift, box[2], L["grow"], L["soft"]) * a
             else:
                 m = ellipse_mask(box) * a
                 L["fallback"] = L.get("fallback", 0) + 1

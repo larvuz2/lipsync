@@ -639,8 +639,57 @@
    "note": "r4: lowest natural take (163 Hz, st 0.75, sim 0.95), PSOLA to the actor's own 139 Hz on this line (was a 5 st phase-vocoder shift)",
    "take_lines": [
     "L08b",
-    "L08c"
+    "L08c",
+    "L08d"
    ]
+  },
+  {
+   "id": "L08d",
+   "clip": "00104240",
+   "type": "take_only",
+   "start": 6.72,
+   "end": 7.8,
+   "character": "HUNYADI2",
+   "en": "Is Sigismund here yet?",
+   "tts": "Is Sigismund here yet?",
+   "note": "round 5: client 'too posh English'. Every take of '...here already?' says 'already' with the British long rounded vowel (ɔːl), and all 13 r5 takes still classify England 1.00; 'yet' keeps the meaning (Serbian 'već') without that vowel",
+   "extra_takes": {
+    "tag": "r5",
+    "settings": [
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.75,
+      0.9
+     ],
+     [
+      0.75,
+      0.95
+     ],
+     [
+      0.6,
+      0.8
+     ],
+     [
+      0.7,
+      0.8
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.65,
+      0.85
+     ]
+    ]
+   }
   },
   {
    "id": "L08c",

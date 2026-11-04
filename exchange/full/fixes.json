@@ -1027,6 +1027,33 @@
    "start": 3.4,
    "end": 3.9,
    "note": "start of the old dub 'LOS PADAR' before L20"
+  },
+  {
+   "id": "M59a",
+   "clip": "00104359",
+   "type": "mute",
+   "exact": true,
+   "start": 0.0,
+   "end": 1.72,
+   "note": "104359: clear stray end of 'The king is coming' from 104240 (the glitch at the start of 104359) and the old 'Your Hungarian king'"
+  },
+  {
+   "id": "M59b",
+   "clip": "00104359",
+   "type": "mute",
+   "exact": true,
+   "start": 4.0,
+   "end": 9.95,
+   "note": "104359: clear old 'Only the queen... whores' (one block, up to 1 s ahead of his mouth)"
+  },
+  {
+   "id": "M59c",
+   "clip": "00104359",
+   "type": "mute",
+   "exact": true,
+   "start": 10.95,
+   "end": 14.02,
+   "note": "104359: clear old 'Excuse me, daughter. Janko!'"
   }
  ]
 }

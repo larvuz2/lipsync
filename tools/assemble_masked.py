@@ -97,7 +97,7 @@ def track(src, f0, f1, pin_frame, pin_xy, det):
             continue
         prev = [j for j in ks if j < k]
         nxt = [j for j in ks if j > k]
-        if prev and nxt and nxt[0] - prev[-1] <= 8:
+        if prev and nxt and nxt[0] - prev[-1] <= 12:
             a, b = prev[-1], nxt[0]
             t = (k - a) / (b - a)
             full[k] = boxes[a] * (1 - t) + boxes[b] * t
@@ -361,7 +361,15 @@ def build(ex, media, out_dir, clip):
                             "-r", "24000/1001", "-i", "-", "-i", audio, "-map", "0:v", "-map", "1:a", *X264,
                             "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-shortest", "-movflags", "+faststart", dst],
                            stdin=subprocess.PIPE)
+    # shots kept exactly as already delivered (e.g. other speakers already done): taken from plan["base_from"]
+    keep = [tuple(r) for r in plan.get("base_keep", [])]
+    base_it = frames(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), plan["base_from"])) \
+        if keep else None
     for k, im in enumerate(frames(src)):
+        if base_it is not None:
+            bf = next(base_it)
+            if any(a <= k <= b for a, b in keep):
+                im = bf
         outf = im.astype(np.float32)
         for L in layers:
             if not (L["f0"] <= k <= L["f1"]):

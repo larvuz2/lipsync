@@ -1854,5 +1854,93 @@
   "errorCode": null,
   "outputUrl": "https://api.sync.so/v2/generations/1efcdb65-4654-44f7-9aa4-96f461586d44/result?token=fd9aca0b-afe3-45a5-88d0-4f881ab0a918",
   "file": "lipsync/out/00104240_f170-220_s2_c59277.mp4"
+ },
+ {
+  "name": "00104359_f0-50_s0_fd8e1b",
+  "clip": "00104359",
+  "first_frame": 0,
+  "last_frame": 50,
+  "audio": "lipsync_audio/00104359_f0-50_s0_fd8e1b.wav",
+  "face": {
+   "frame": 14,
+   "xy": [
+    759,
+    475
+   ]
+  },
+  "input_video": "lipsync_inputs/00104359_f0-50_s0_fd8e1b.mp4",
+  "generationId": "426b81eb-8463-4571-a8ea-d5daf4fe6449",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/426b81eb-8463-4571-a8ea-d5daf4fe6449/result?token=393cf018-02c9-4edb-8dff-0037a5c6cb4e",
+  "file": "lipsync/out/00104359_f0-50_s0_fd8e1b.mp4"
+ },
+ {
+  "name": "00104359_f102-187_s1z_d0966a",
+  "clip": "00104359",
+  "first_frame": 102,
+  "last_frame": 187,
+  "audio": "lipsync_audio/00104359_f102-187_s1z_d0966a.wav",
+  "face": {
+   "frame": 28,
+   "xy": [
+    527,
+    491
+   ]
+  },
+  "zoom": {
+   "size": 330,
+   "file": "lipsync_zoom/00104359_f102-187_s1z_d0966a.json"
+  },
+  "input_video": "lipsync_zoom/00104359_f102-187_s1z_d0966a.mp4",
+  "generationId": "6c616a8a-2ae8-493e-90ee-c019f4fe95f2",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/6c616a8a-2ae8-493e-90ee-c019f4fe95f2/result?token=2a2e99c7-c083-4f12-91ec-4d8764256f1b",
+  "file": "lipsync/out/00104359_f102-187_s1z_d0966a.mp4"
+ },
+ {
+  "name": "00104359_f188-251_s2_54b26c",
+  "clip": "00104359",
+  "first_frame": 188,
+  "last_frame": 251,
+  "audio": "lipsync_audio/00104359_f188-251_s2_54b26c.wav",
+  "face": {
+   "frame": 20,
+   "xy": [
+    761,
+    537
+   ]
+  },
+  "input_video": "lipsync_inputs/00104359_f188-251_s2_54b26c.mp4",
+  "generationId": "f99931cf-fdb9-42fb-b34a-047a4d49d897",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/f99931cf-fdb9-42fb-b34a-047a4d49d897/result?token=88c61b82-5ca0-422d-8678-5e947a30be91",
+  "file": "lipsync/out/00104359_f188-251_s2_54b26c.mp4"
+ },
+ {
+  "name": "00104359_f285-335_s3_f071f1",
+  "clip": "00104359",
+  "first_frame": 285,
+  "last_frame": 335,
+  "audio": "lipsync_audio/00104359_f285-335_s3_f071f1.wav",
+  "face": {
+   "frame": 14,
+   "xy": [
+    735,
+    478
+   ]
+  },
+  "input_video": "lipsync_inputs/00104359_f285-335_s3_f071f1.mp4",
+  "generationId": "c7c9fb8b-bbb5-4ece-8480-69280b89f7ce",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/c7c9fb8b-bbb5-4ece-8480-69280b89f7ce/result?token=e630fd9e-d261-4f72-8e9d-241b3b47b0ba",
+  "file": "lipsync/out/00104359_f285-335_s3_f071f1.mp4"
  }
 ]

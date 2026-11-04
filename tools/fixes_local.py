@@ -211,6 +211,23 @@ def pitch_shift(x, ratio):
     return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
 
 
+def pitch_reshape(x, target, k):
+    """PSOLA (Praat manipulation): move the median pitch to target and scale the swings around it by k
+    (k < 1 tames an over-emphasised peak, e.g. a squeaky high note), formants and length kept."""
+    import parselmouth
+    from parselmouth.praat import call
+    s = parselmouth.Sound(np.asarray(x, np.float64), SR)
+    med = call(call(s, "To Pitch", 0.0, 75, 600), "Get quantile", 0, 0, 0.5, "Hertz")
+    if not med or med != med:
+        return x
+    man = call(s, "To Manipulation", 0.01, 75, 600)
+    pt = call(man, "Extract pitch tier")
+    call(pt, "Formula", f"{target} * (self / {med}) ^ {k}")
+    call([man, pt], "Replace pitch tier")
+    y = call(man, "Get resynthesis (overlap-add)").values[0].astype(np.float32)
+    return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
+
+
 def median_f0(x):
     import librosa
     y = librosa.resample(x, orig_sr=SR, target_sr=16000)
@@ -416,7 +433,9 @@ def apply(ex, only=()):
                 f_take = median_f0(best["x"])
                 if f_take:
                     shift_ratio = float(np.clip(ln["pitch_target"] / f_take, ln.get("max_down", 0.84), 1.12))
-                    if abs(np.log(shift_ratio)) > np.log(1.03):
+                    if ln.get("pitch_range"):
+                        best = {**best, "x": pitch_reshape(best["x"], f_take * shift_ratio, ln["pitch_range"])}
+                    elif abs(np.log(shift_ratio)) > np.log(1.03):
                         best = {**best, "x": pitch_shift(best["x"], shift_ratio)}
             nat = best["nat"]
             # natural pace where possible: speed up at most 1.12x to meet the span, 1.2x if room is short,

@@ -770,6 +770,26 @@
      ]
     ]
    }
+  },
+  {
+   "id": "L88",
+   "clip": "00088514",
+   "start": 0.95,
+   "end": 4.85,
+   "character": "MOTHER",
+   "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+   "tts": "Yanko, how many times have I told you not to play with that beau in the courtyard?",
+   "take_lines": [
+    "L88a",
+    "L88b"
+   ],
+   "takes": [
+    "L88b_r5_t0"
+   ],
+   "pitch_target": 215,
+   "pitch_range": 0.75,
+   "lead": 0.1,
+   "note": "client r5: 'bow' said as BAU -> her line re-voiced with her own clone (MOTHER, from her dub + Hungarian lines); 'bow' spelled 'beau' so it is read /boʊ/ (checked: phonemes 'b oʊ', heard 'bow'); take st 0.45 sim 0.9, voice match 0.66, 'Yanko' said 'YAHN-ko'; pitch to her 215 Hz and the 'how MANY' emphasis peak tamed (swings x0.75) so there is no sudden high note; runs to the end of the clip (2nd shot: tiny figure) at natural pace"
   }
  ],
  "edits": [

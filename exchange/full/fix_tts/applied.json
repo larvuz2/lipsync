@@ -546,5 +546,21 @@
   ],
   "speed": 1.12,
   "pitch_ratio": 0.853
+ },
+ {
+  "id": "L88",
+  "clip": "00088514",
+  "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+  "take": "fix_tts/L88b_r5_t0.mp3",
+  "heard": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+  "wer": 0.06,
+  "span_s": 3.9,
+  "natural_s": 4.27,
+  "placed": [
+   0.95,
+   4.85
+  ],
+  "speed": 1.09,
+  "pitch_ratio": 0.85
  }
 ]

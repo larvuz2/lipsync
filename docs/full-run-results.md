@@ -126,3 +126,12 @@ The time-stretch for the re-voiced lines also uses PSOLA now. Check on the re-vo
 - Harmonics-to-noise ratio (higher = cleaner, less robotic): 4.95 → 8.3 (104123), 5.91 → 7.64 (102229), 6.77 → 9.21 (104240).
 - No pitch jump of 3 semitones or more within 30 ms (no "gallos").
 - Every line is heard back as scripted.
+
+## Client review round 5
+
+| Clip | Note from review | Cause | Fix |
+|---|---|---|---|
+| 88514 | "play with that bow" said like BAU | The auto-dub read "bow" as /baʊ/ (as in "take a bow"); a phoneme recognizer agreed ("b aʊ"). | The woman on the stairs has only this line in the episode, so she had no clone. Rebuilding the word from her own sounds was heard as "ball"/"bull". Her clone (MOTHER) is now made from her dub line plus her original Hungarian line (6 s), and the line is re-voiced with "bow" spelled "beau" so it is read /boʊ/. Checks: phonemes "b oʊ", Whisper hears "bow" (0.91, up from ~0.5), voice match to her dub 0.66. Her pitch is set to her 215 Hz, and the over-emphasised "how MANY" peak (445 Hz) is tamed, so there is no sudden high note. |
+| 104240 (wide shot, from frame 71) | The King is all off with sync | "The king is coming" started 0.25 s before the old man's lips move, and lip sync only partly reaches his small profile face. | The line is split into its two sentences, each placed on his own mouth movement: "The king is coming." at 4.22–5.04 s (his Serbian "kralj dolazi" 4.26–5.14 s) and "Your Hungarian king." on "tvoj, mađarski". The zoomed lip sync is re-run on the new timing. |
+| 104359 (Janko) | "Is Sigismund here already?" sounds too posh English | Every take (34 across rounds and settings) says "already" with the British rounded "awl" vowel; an English accent classifier rates them England 1.00. | The line is now "Is Sigismund here yet?" (same meaning as the Serbian "već"). The take (stability 0.5, similarity 0.95) has the American "r" in "here", is the least English-sounding of all takes, and is naturally deep (~100 Hz), so no pitch shift is needed. Only the emphasis peak on "SIG" is tamed. |
+| 104359 | (new split) | The client's 104359 is our 104240 frames 119–220 plus all of 104461 (checked frame by frame against the client's file: 336 frames). | Delivered as `...Splits00104359_EN.mp4`, built from our finished clips (`tools/build_resplit.py`). |

@@ -14,7 +14,7 @@
   ]
  },
  "00088514": {
-  "note": "woman on stairs speaks; 2nd shot tiny figure -> audio only",
+  "note": "woman on stairs speaks; 2nd shot tiny figure -> audio only | round 5: re-voiced line (MOTHER clone), masked composite",
   "jobs": [
    {
     "first": 20,
@@ -25,7 +25,8 @@
      297
     ]
    }
-  ]
+  ],
+  "assemble": "masked"
  },
  "00088693": {
   "note": "trainer walking, 'Go on, keep at it'",

@@ -924,7 +924,7 @@
   ]
  },
  "00104359": {
-  "note": "client's re-split = 104240 f119-220 + 104461 f0-233; King (old man) re-voiced phrase by phrase on his Serbian mouth, lip-synced on all his shots with a mouth-only mask; Janko (51-101) and the daughter (252-284) are kept from the delivered clip",
+  "note": "client's re-split = 104240 f119-220 + 104461 f0-233; King (old man) re-voiced phrase by phrase on his Serbian mouth, lip-synced on all his shots with a mouth-only mask; Janko (51-101) and the daughter (252-284) are kept from the delivered clip | client r8: beard 'flip' in the close-up 188-251 -> trial variants z (sync-3, enlarged face), p3 (lipsync-2-pro, temperature 0.3), r2 (sync-3 re-run)",
   "assemble": "masked",
   "cuts": [
    51,
@@ -1009,6 +1009,66 @@
      ]
     ],
     "mask": "mouth"
+   },
+   {
+    "first": 188,
+    "last": 251,
+    "face": [
+     208,
+     761,
+     537
+    ],
+    "en_keep": [
+     [
+      7.84,
+      10.28
+     ]
+    ],
+    "mask": "mouth",
+    "use": false,
+    "variant": "z",
+    "zoom": "track",
+    "zoom_size": 560
+   },
+   {
+    "first": 188,
+    "last": 251,
+    "face": [
+     208,
+     761,
+     537
+    ],
+    "en_keep": [
+     [
+      7.84,
+      10.28
+     ]
+    ],
+    "mask": "mouth",
+    "use": false,
+    "variant": "p3",
+    "model": "lipsync-2-pro",
+    "options": {
+     "temperature": 0.3
+    }
+   },
+   {
+    "first": 188,
+    "last": 251,
+    "face": [
+     208,
+     761,
+     537
+    ],
+    "en_keep": [
+     [
+      7.84,
+      10.28
+     ]
+    ],
+    "mask": "mouth",
+    "use": false,
+    "variant": "r2"
    }
   ],
   "base_from": "outputs/full/base_00104359_r5.mp4",

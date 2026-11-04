@@ -122,7 +122,7 @@ def main():
         for k, j in enumerate(cfg.get("jobs", [])):
             f0, f1 = j["first"], j["last"]
             base = f"{clip}_f{f0}-{f1}" + (f"_s{k}" if j.get("keep") or j.get("en_keep") else "") + \
-                ("z" if j.get("zoom") else "")
+                ("z" if j.get("zoom") else "") + (f"_{j['variant']}" if j.get("variant") else "")
             x = en.copy()
             if j.get("en_keep"):
                 # exact English windows of this speaker (known placements of re-voiced lines)
@@ -166,7 +166,10 @@ def main():
             q = np.round(seg * 32767).astype(np.int16)
             parent = names.get(j["after"]) if j.get("after") is not None else None
             fp = hashlib.sha1(q.tobytes() + json.dumps([j["face"], f0, f1, parent] +
-                                                       ([j["zoom"]] if j.get("zoom") else [])).encode()).hexdigest()[:6]
+                                                       ([j["zoom"]] if j.get("zoom") else []) +
+                                                       ([j.get("variant"), j.get("model"), j.get("options"),
+                                                         j.get("zoom_size")] if j.get("variant") else [])
+                                                       ).encode()).hexdigest()[:6]
             legacy = os.path.join(ex, "lipsync_audio", f"{base}.wav")
             name = f"{base}_{fp}"
             if base in old and os.path.exists(legacy) and not j.get("after"):
@@ -174,7 +177,7 @@ def main():
                 if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 1 and \
                         old[base]["face"] == {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
                     name = base
-            if name not in done and not j.get("after") and j.get("zoom") in (None, "track"):
+            if name not in done and not j.get("after") and not j.get("variant") and j.get("zoom") in (None, "track"):
                 # a finished job for the same shot, face and range whose audio differs only by rounding noise
                 # (at most 8 LSB of 16-bit, about -72 dB, e.g. from rebuilding the mix) is reused, not re-run
                 for cand in sorted(glob.glob(os.path.join(ex, "lipsync_audio", f"{base}_*.wav"))):
@@ -201,6 +204,9 @@ def main():
                      "face": {"frame": fr - f0, "xy": [fx, fy]}}
             if parent:
                 entry["input_from"] = parent
+            for key in ("model", "options", "variant"):
+                if j.get(key):
+                    entry[key] = j[key]
             if cfg.get("prepared_inputs") and not j.get("zoom"):
                 # the runner does not have this clip's source: send the job's frames as a prepared input
                 rel_v = f"lipsync_inputs/{name}.mp4"

@@ -127,9 +127,9 @@ def run_job(job: dict, ex: Path, frames: dict) -> dict:
                      ex / "lipsync" / "src" / f"{job['clip']}_f{job['first_frame']}-{job['last_frame']}.mp4")
         vid = api.upload(v, name=v.name, project_id=PROJECT_ID)["id"]
         aud = api.upload(ex / job["audio"], name=Path(job["audio"]).name, project_id=PROJECT_ID)["id"]
-        body = {"model": "sync-3", "projectId": PROJECT_ID,
+        body = {"model": job.get("model", "sync-3"), "projectId": PROJECT_ID,
                 "input": [{"type": "video", "assetId": vid}, {"type": "audio", "assetId": aud}],
-                "options": {"sync_mode": "cut_off"}, "outputFileName": job["name"]}
+                "options": {"sync_mode": "cut_off", **job.get("options", {})}, "outputFileName": job["name"]}
         face = job.get("face")
         if face == "auto":
             body["options"]["active_speaker_detection"] = {"auto_detect": True}

@@ -329,11 +329,14 @@ def build(ex, media, out_dir, clip):
     cutset = set(plan.get("cuts", cuts(src, FPS)))
     print(f"  shot cuts at frames {sorted(cutset)}", flush=True)
     layers = []
+    use = {(p["first"], p["last"], p.get("variant")) for p in plan.get("jobs", []) if p.get("use", True)}
+    jobs = [j for j in jobs if (j["first_frame"], j["last_frame"], j.get("variant")) in use]
     for j in jobs:
         m = man.get(j["name"])
         if not m or m.get("status") != "COMPLETED":
             raise SystemExit(f"{j['name']} has no completed output")
         pj = next((p for p in plan.get("jobs", []) if p["first"] == j["first_frame"] and p["last"] == j["last_frame"]
+                   and p.get("variant") == j.get("variant")
                    and (p["face"][1:] == j["face"]["xy"] or (p.get("zoom") and (p["zoom"] == j.get("zoom")
                                                                                  or p["zoom"] == "track")))), {})
         f0, f1 = j["first_frame"], j["last_frame"]

@@ -983,6 +983,90 @@
      ]
     ]
    }
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "id": "K59p1",
+   "start": 0.15,
+   "end": 1.62,
+   "en": "Your Hungarian king.",
+   "tts": "The king is coming. Your Hungarian king.",
+   "take_lines": [
+    "K59c"
+   ],
+   "takes": [
+    "K59c_r6_t5"
+   ],
+   "crop_text": "Your Hungarian king",
+   "pitch_target": 125,
+   "note": "on 'I tvoj, mađarski' (0.3-1.1 s, close-up); take st 0.6 sim 0.85: smooth, peak 221 Hz on HUN- softened",
+   "keep_creak": true
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "id": "K59p2",
+   "start": 4.35,
+   "end": 5.45,
+   "en": "Only the queen.",
+   "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "take_lines": [
+    "K59a"
+   ],
+   "takes": [
+    "K59a_r6_t2"
+   ],
+   "crop_text": "Only the queen",
+   "pitch_target": 145,
+   "note": "on 'samo kraljica' (4.54-5.18 s, wide shot); actor 129 Hz, take 163 Hz -> 140",
+   "keep_creak": true
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "id": "K59p3",
+   "start": 5.75,
+   "end": 7.62,
+   "en": "The king is late, as usual.",
+   "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "take_lines": [
+    "K59a"
+   ],
+   "takes": [
+    "K59a_r6_t2"
+   ],
+   "crop_text": "The king is late, as usual",
+   "note": "on 'Kralj kasni kao obično' (6.04-7.38 s, wide shot); actor 114 Hz, take 108 Hz | no pitch processing (already in his range; keeps the gravelly ending clean)"
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "id": "K59p4",
+   "start": 7.86,
+   "end": 10.45,
+   "en": "No doubt still amusing himself with his whores.",
+   "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "take_lines": [
+    "K59a"
+   ],
+   "takes": [
+    "K59a_r6_t2"
+   ],
+   "crop_text": "No doubt still amusing himself with his whores",
+   "note": "on 'sigurno se još zabavlja sa svojim kurvama' (8.13-10.1 s, close-up from 7.84); actor low (~81 Hz), take 121 Hz -> 108 | no pitch processing (already in his range; keeps the gravelly ending clean)"
   }
  ],
  "edits": [

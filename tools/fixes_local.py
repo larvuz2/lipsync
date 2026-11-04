@@ -211,21 +211,46 @@ def pitch_shift(x, ratio):
     return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
 
 
-def pitch_reshape(x, target, k):
-    """PSOLA (Praat manipulation): move the median pitch to target and scale the swings around it by k
-    (k < 1 tames an over-emphasised peak, e.g. a squeaky high note), formants and length kept."""
+def pitch_reshape(x, target, k, lo=0.84, hi=1.12):
+    """PSOLA (Praat manipulation): move the median pitch to target (kept within lo..hi of the take's own median)
+    and scale the swings around it by k (k < 1 tames an over-emphasised peak, e.g. a squeaky high note),
+    formants and length kept. Returns (audio, ratio applied)."""
     import parselmouth
     from parselmouth.praat import call
     s = parselmouth.Sound(np.asarray(x, np.float64), SR)
     med = call(call(s, "To Pitch", 0.0, 75, 600), "Get quantile", 0, 0, 0.5, "Hertz")
     if not med or med != med:
-        return x
+        return x, None
+    target = float(np.clip(target, med * lo, med * hi))
     man = call(s, "To Manipulation", 0.01, 75, 600)
     pt = call(man, "Extract pitch tier")
     call(pt, "Formula", f"{target} * (self / {med}) ^ {k}")
     call([man, pt], "Replace pitch tier")
     y = call(man, "Get resynthesis (overlap-add)").values[0].astype(np.float32)
-    return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
+    return np.pad(y[:len(x)], (0, max(0, len(x) - len(y)))), target / med
+
+
+def keep_creak_tail(raw, processed, floor=90.0, xf=0.015):
+    """Pitch processing can turn a creaky (vocal-fry) ending into a buzzy high artifact. Keep the take's own
+    audio from where the voice drops into creak (pitch under floor, or unvoiced, to the end) and cross-fade."""
+    import parselmouth
+    from parselmouth.praat import call
+    s = parselmouth.Sound(np.asarray(raw, np.float64), SR)
+    p = call(s, "To Pitch (ac)", 0.0, 50, 15, "no", 0.03, 0.45, 0.01, 0.35, 0.14, 400)
+    ts = np.arange(0.005, len(raw) / SR, 0.005)
+    f = np.array([call(p, "Get value at time", t, "Hertz", "Linear") for t in ts])
+    modal = np.nonzero(f >= floor)[0]  # NaN compares False
+    if not len(modal):
+        return processed
+    tc = ts[modal[-1]] + 0.01
+    if len(raw) / SR - tc > 0.6 or tc >= len(raw) / SR - 0.02:
+        return processed
+    a, n = int(tc * SR), int(xf * SR)
+    out = np.asarray(processed, np.float32).copy()
+    w = np.linspace(0, 1, n)
+    out[a:a + n] = out[a:a + n] * (1 - w) + raw[a:a + n] * w
+    out[a + n:] = raw[a + n:len(out)]
+    return out
 
 
 def median_f0(x):
@@ -434,9 +459,15 @@ def apply(ex, only=()):
                 if f_take:
                     shift_ratio = float(np.clip(ln["pitch_target"] / f_take, ln.get("max_down", 0.84), 1.12))
                     if ln.get("pitch_range"):
-                        best = {**best, "x": pitch_reshape(best["x"], f_take * shift_ratio, ln["pitch_range"])}
+                        # same pitch measurement (Praat) for the target and the reshape
+                        y, shift_ratio = pitch_reshape(best["x"], ln["pitch_target"], ln["pitch_range"],
+                                                       ln.get("max_down", 0.84), 1.12)
+                        if ln.get("keep_creak"):
+                            y = keep_creak_tail(best["x"], y)
+                        best = {**best, "x": y}
                     elif abs(np.log(shift_ratio)) > np.log(1.03):
-                        best = {**best, "x": pitch_shift(best["x"], shift_ratio)}
+                        y = pitch_shift(best["x"], shift_ratio)
+                        best = {**best, "x": keep_creak_tail(best["x"], y) if ln.get("keep_creak") else y}
             nat = best["nat"]
             # natural pace where possible: speed up at most 1.12x to meet the span, 1.2x if room is short,
             # slow down at most 1.08x to fill it

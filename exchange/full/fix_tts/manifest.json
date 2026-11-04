@@ -1679,6 +1679,330 @@
    "file": "fix_tts/L08d_r5_t7.mp3",
    "duration": 1.68,
    "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L88",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L88_t0.mp3",
+   "duration": 4.4,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L88_t1.mp3",
+   "duration": 4.56,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "L88",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L88_t2.mp3",
+   "duration": 4.48,
+   "text": "Yanko, how many times have I told you not to play with that beau in the courtyard?"
+  },
+  {
+   "id": "K59a",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/K59a_t0.mp3",
+   "duration": 6.96,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59a_t1.mp3",
+   "duration": 6.8,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59a_t2.mp3",
+   "duration": 7.12,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_0",
+   "stability": 0.4,
+   "similarity": 0.85,
+   "file": "fix_tts/K59a_r6_t0.mp3",
+   "duration": 6.72,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_1",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/K59a_r6_t1.mp3",
+   "duration": 6.72,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_2",
+   "stability": 0.5,
+   "similarity": 0.85,
+   "file": "fix_tts/K59a_r6_t2.mp3",
+   "duration": 6.88,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_3",
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59a_r6_t3.mp3",
+   "duration": 6.88,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_4",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/K59a_r6_t4.mp3",
+   "duration": 6.72,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_5",
+   "stability": 0.6,
+   "similarity": 0.85,
+   "file": "fix_tts/K59a_r6_t5.mp3",
+   "duration": 6.88,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_6",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/K59a_r6_t6.mp3",
+   "duration": 6.96,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59a",
+   "take": "r6_7",
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59a_r6_t7.mp3",
+   "duration": 7.04,
+   "text": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores."
+  },
+  {
+   "id": "K59b",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/K59b_t0.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59b_t1.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59b_t2.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_0",
+   "stability": 0.4,
+   "similarity": 0.85,
+   "file": "fix_tts/K59b_r6_t0.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_1",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/K59b_r6_t1.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_2",
+   "stability": 0.5,
+   "similarity": 0.85,
+   "file": "fix_tts/K59b_r6_t2.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_3",
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59b_r6_t3.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_4",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/K59b_r6_t4.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_5",
+   "stability": 0.6,
+   "similarity": 0.85,
+   "file": "fix_tts/K59b_r6_t5.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_6",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/K59b_r6_t6.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59b",
+   "take": "r6_7",
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59b_r6_t7.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Janko!"
+  },
+  {
+   "id": "K59c",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/K59c_t0.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59c_t1.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59c_t2.mp3",
+   "duration": 3.52,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_0",
+   "stability": 0.4,
+   "similarity": 0.85,
+   "file": "fix_tts/K59c_r6_t0.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_1",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/K59c_r6_t1.mp3",
+   "duration": 3.6,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_2",
+   "stability": 0.5,
+   "similarity": 0.85,
+   "file": "fix_tts/K59c_r6_t2.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_3",
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59c_r6_t3.mp3",
+   "duration": 3.52,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_4",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/K59c_r6_t4.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_5",
+   "stability": 0.6,
+   "similarity": 0.85,
+   "file": "fix_tts/K59c_r6_t5.mp3",
+   "duration": 3.28,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_6",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/K59c_r6_t6.mp3",
+   "duration": 3.52,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59c",
+   "take": "r6_7",
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59c_r6_t7.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
   }
  ]
 }

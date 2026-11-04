@@ -2003,6 +2003,105 @@
    "file": "fix_tts/K59c_r6_t7.mp3",
    "duration": 3.36,
    "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "K59d",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/K59d_t0.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/K59d_t1.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/K59d_t2.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_0",
+   "stability": 0.45,
+   "similarity": 0.9,
+   "file": "fix_tts/K59d_r6_t0.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_1",
+   "stability": 0.5,
+   "similarity": 0.85,
+   "file": "fix_tts/K59d_r6_t1.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_2",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/K59d_r6_t2.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_3",
+   "stability": 0.6,
+   "similarity": 0.85,
+   "file": "fix_tts/K59d_r6_t3.mp3",
+   "duration": 2.32,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_4",
+   "stability": 0.6,
+   "similarity": 0.95,
+   "file": "fix_tts/K59d_r6_t4.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_5",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/K59d_r6_t5.mp3",
+   "duration": 2.4,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_6",
+   "stability": 0.7,
+   "similarity": 0.85,
+   "file": "fix_tts/K59d_r6_t6.mp3",
+   "duration": 2.56,
+   "text": "Excuse me, daughter. Yanko."
+  },
+  {
+   "id": "K59d",
+   "take": "r6_7",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/K59d_r6_t7.mp3",
+   "duration": 2.48,
+   "text": "Excuse me, daughter. Yanko."
   }
  ]
 }

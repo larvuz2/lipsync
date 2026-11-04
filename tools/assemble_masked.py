@@ -57,7 +57,7 @@ def unzoom(orig, syn, zoom, k=None):
     return f
 
 
-def track(src, f0, f1, pin_frame, pin_xy, det):
+def track(src, f0, f1, pin_frame, pin_xy, det, size=None):
     """Face box per frame in [f0, f1] (absolute), following the face nearest the pin from the pin frame."""
     cap = cv2.VideoCapture(src)
     raw = {}
@@ -155,6 +155,32 @@ def hull_mask(pts, w, grow=0.025, soft=0.02):
     r = max(2, int(w * grow))
     m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
     return cv2.GaussianBlur(m, (0, 0), max(1.0, w * soft))
+
+
+def corner_mask(q, box, grow=1.0):
+    """Mouth-only mask from the face detector's mouth corners (works on profiles, where the landmark model
+    fails): an ellipse along the mouth line, reaching down to the chin, feathered."""
+    x, y, w, h = box
+    (rx, ry), (lx, ly) = q[0], q[1]
+    cx, cy = (rx + lx) / 2, (ry + ly) / 2 + 0.08 * h
+    half = max(0.5 * np.hypot(lx - rx, ly - ry), 0.16 * w) + 0.08 * w
+    m = np.zeros((H, W), np.float32)
+    ang = np.degrees(np.arctan2(ly - ry, lx - rx))
+    cv2.ellipse(m, (int(cx), int(cy)), (int(half * grow), int(0.22 * h * grow)), ang, 0, 360, 1.0, -1)
+    return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.04))
+
+
+def detect_corners(det, im, box):
+    """Mouth corners [(rx, ry), (lx, ly)] of the detection nearest box on this frame, or None."""
+    det.setInputSize((im.shape[1], im.shape[0]))
+    fs = det.detect(im)[1]
+    if fs is None:
+        return None
+    cx, cy = box[0] + box[2] / 2, box[1] + box[3] / 2
+    q = min(fs, key=lambda f: np.hypot(f[0] + f[2] / 2 - cx, f[1] + f[3] / 2 - cy))
+    if np.hypot(q[0] + q[2] / 2 - cx, q[1] + q[3] / 2 - cy) > 0.6 * box[2]:
+        return None
+    return [(float(q[10]), float(q[11])), (float(q[12]), float(q[13]))]
 
 
 def ellipse_mask(box):
@@ -296,7 +322,26 @@ def build(ex, media, out_dir, clip):
             pin = (zx + j["face"]["xy"][0] * zs / 1080, zy + j["face"]["xy"][1] * zs / 1080)
         else:
             pin = tuple(j["face"]["xy"])
-        boxes = track(src, f0, f1, f0 + j["face"]["frame"], pin, det)
+        if zoom and j.get("input_video"):
+            # small face: track it on the enlarged input, where it is ~3x bigger, then map back
+            zin = os.path.join(ex, j["input_video"])
+            zdet = cv2.FaceDetectorYN.create(f"{MODELS}/yunet.onnx", "", (1080, 1080), 0.4)
+            zb = track(zin, 0, f1 - f0, j["face"]["frame"], tuple(j["face"]["xy"]), zdet, size=(1080, 1080))
+            boxes = {}
+            for kk, q in zb.items():
+                zx, zy, zs = zoom_at(zoom, f0 + kk)
+                kz = zs / 1080
+                boxes[f0 + kk] = np.array([zx + q[0] * kz, zy + q[1] * kz, q[2] * kz, q[3] * kz])
+            known = sorted(boxes)
+            for kk in range(f0, f1 + 1):  # any frame still missing: interpolate along the path
+                if kk not in boxes and known:
+                    lo_ = [q for q in known if q < kk]
+                    hi_ = [q for q in known if q > kk]
+                    a_, b_ = (lo_[-1] if lo_ else hi_[0]), (hi_[0] if hi_ else lo_[-1])
+                    t_ = 0 if a_ == b_ else (kk - a_) / (b_ - a_)
+                    boxes[kk] = boxes[a_] * (1 - t_) + boxes[b_] * t_
+        else:
+            boxes = track(src, f0, f1, f0 + j["face"]["frame"], pin, det)
         # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
         a0, a1 = pj.get("active", [f0, f1])
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
@@ -315,30 +360,40 @@ def build(ex, media, out_dir, clip):
         co, cs = cv2.VideoCapture(src), cv2.VideoCapture(L["out"])
         co.set(cv2.CAP_PROP_POS_FRAMES, L["f0"])
         cz = cv2.VideoCapture(L["zin"]) if L["zoom"] else None
+        cdet = cv2.FaceDetectorYN.create(f"{MODELS}/yunet.onnx", "", (W, H), 0.3)
+        L["corners"] = {}
         raw = {}
         cost = np.full(n, np.nan, np.float32)
         for k in range(L["f0"], L["f1"] + 1):
             ok1, a = co.read()
             ok2, b = cs.read()
+            az = cz.read()[1] if cz is not None else None  # keep the zoom input in step with every frame
             if not (ok1 and ok2) or k not in L["boxes"]:
                 continue
             if L["zoom"]:
-                # small face: find the lower-face outline on the enlarged crops, then map it back
+                # small face: find the outline / mouth corners on the enlarged crops, then map them back
                 zx, zy, zs = zoom_at(L["zoom"], k)
                 kz = b.shape[0] / zs
-                az = cz.read()[1]
                 bx = L["boxes"][k]
                 bz = ((bx[0] - zx) * kz, (bx[1] - zy) * kz, bx[2] * kz, bx[3] * kz)
                 pa, pb = lower_face(az, bz, L["idx"]), lower_face(b, bz, L["idx"])
                 pa = None if pa is None else pa / kz + np.array([zx, zy], np.float32)
                 pb = None if pb is None else pb / kz + np.array([zx, zy], np.float32)
+                cq = detect_corners(cdet, az, bz)
+                if cq is not None:
+                    L["corners"][k] = [(zx + px / kz, zy + py / kz) for px, py in cq]
                 b = unzoom(a, b, L["zoom"], k)
             else:
                 pa, pb = lower_face(a, L["boxes"][k], L["idx"]), lower_face(b, L["boxes"][k], L["idx"])
+                if pa is None and pb is None:
+                    cq = detect_corners(cdet, a, L["boxes"][k])
+                    if cq is not None:
+                        L["corners"][k] = cq
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame
-            mk = hull_mask(raw[k], L["boxes"][k][2], L["grow"], L["soft"]) if k in raw else ellipse_mask(L["boxes"][k])
+            mk = hull_mask(raw[k], L["boxes"][k][2], L["grow"], L["soft"]) if k in raw else \
+                (corner_mask(L["corners"][k], L["boxes"][k]) if k in L["corners"] else ellipse_mask(L["boxes"][k]))
             d = np.abs(a.astype(np.float32) - b.astype(np.float32)).mean(2)
             cost[k] = float((d * mk).sum() / max(mk.sum(), 1.0))
         cost = np.where(np.isnan(cost), np.nanmax(cost) if np.isfinite(cost).any() else 0, cost)
@@ -388,13 +443,23 @@ def build(ex, media, out_dir, clip):
                 shift = np.array([box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2])
                 m = hull_mask(L["pts"][j] + shift, box[2], L["grow"], L["soft"]) * a
             else:
-                m = ellipse_mask(box) * a
-                L["fallback"] = L.get("fallback", 0) + 1
+                nc = [j for j in range(k - 12, k + 13) if j in L["corners"]]
+                if nc:
+                    j = min(nc, key=lambda q: abs(q - k))
+                    bj = L["boxes"].get(j, box)
+                    dx, dy = box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2
+                    m = corner_mask([(px + dx, py + dy) for px, py in L["corners"][j]], box) * a
+                    L["corner_fb"] = L.get("corner_fb", 0) + 1
+                else:
+                    m = ellipse_mask(box) * a
+                    L["fallback"] = L.get("fallback", 0) + 1
             outf = outf * (1 - m[..., None]) + syn.astype(np.float32) * m[..., None]
         enc.stdin.write(np.clip(outf + 0.5, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
     enc.wait()
     for L in layers:
+        if L.get("corner_fb"):
+            print(f"  {L['name']}: mouth-corner mask on {L['corner_fb']} frames (no landmark outline)", flush=True)
         if L.get("fallback"):
             print(f"  {L['name']}: ellipse fallback on {L['fallback']} frames", flush=True)
     got = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",

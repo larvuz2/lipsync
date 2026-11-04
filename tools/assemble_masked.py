@@ -27,7 +27,34 @@ FADE = 4          # frames of fade in/out around speech windows
 PRE, POST = 0.12, 0.18
 MODELS = "/tmp/claude-0/-home-user-lipsync/68247ef9-9d3a-5aed-9838-8178804c0bd0/scratchpad/models"
 X264 = ["-c:v", "libx264", "-crf", "14", "-preset", "slow", "-pix_fmt", "yuv420p",
-        "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-r", "24000/1001"]
+        "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-color_range", "tv",
+        "-r", "24000/1001"]
+
+
+def frames_yuv(path):
+    """Frames as planar YUV 4:4:4 (3, H, W) uint8, decoded by ffmpeg with no colour-matrix conversion,
+    so blending and re-encoding keep the original colours exactly (an RGB round trip shifted dark scenes)."""
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-f", "rawvideo", "-pix_fmt", "yuv444p", "-"],
+                         stdout=subprocess.PIPE)
+    n = W * H * 3
+    while True:
+        buf = p.stdout.read(n)
+        if len(buf) < n:
+            p.stdout.close()
+            p.wait()
+            return
+        yield np.frombuffer(buf, np.uint8).reshape(3, H, W)
+
+
+def unzoom_yuv(orig, syn, zoom, k):
+    """YUV version of unzoom: the enlarged crop shrunk back into place over the original frame."""
+    if not zoom:
+        return syn
+    zx, zy, zs = zoom_at(zoom, k)
+    f = orig.copy()
+    for c in range(3):
+        f[c, zy:zy + zs, zx:zx + zs] = cv2.resize(syn[c], (zs, zs), interpolation=cv2.INTER_AREA)
+    return f
 
 
 def frames(path):
@@ -57,7 +84,7 @@ def unzoom(orig, syn, zoom, k=None):
     return f
 
 
-def track(src, f0, f1, pin_frame, pin_xy, det, size=None):
+def track(src, f0, f1, pin_frame, pin_xy, det, size=None, max_gap=12):
     """Face box per frame in [f0, f1] (absolute), following the face nearest the pin from the pin frame."""
     cap = cv2.VideoCapture(src)
     raw = {}
@@ -97,7 +124,7 @@ def track(src, f0, f1, pin_frame, pin_xy, det, size=None):
             continue
         prev = [j for j in ks if j < k]
         nxt = [j for j in ks if j > k]
-        if prev and nxt and nxt[0] - prev[-1] <= 12:
+        if prev and nxt and nxt[0] - prev[-1] <= max_gap:
             a, b = prev[-1], nxt[0]
             t = (k - a) / (b - a)
             full[k] = boxes[a] * (1 - t) + boxes[b] * t
@@ -343,8 +370,25 @@ def build(ex, media, out_dir, clip):
                     a_, b_ = (lo_[-1] if lo_ else hi_[0]), (hi_[0] if hi_ else lo_[-1])
                     t_ = 0 if a_ == b_ else (kk - a_) / (b_ - a_)
                     boxes[kk] = boxes[a_] * (1 - t_) + boxes[b_] * t_
+        elif pj.get("pins"):
+            # the job spans a cut: track each shot on its own, from its own pin (frame -> [x, y])
+            pins = {f0 + j["face"]["frame"]: pin, **{int(k): tuple(v) for k, v in pj["pins"].items()}}
+            bounds = sorted({f0, f1 + 1, *[c for c in cutset if f0 < c <= f1]})
+            boxes = {}
+            det_lo = cv2.FaceDetectorYN.create(f"{MODELS}/yunet.onnx", "", (W, H), 0.25)
+            for a_, b_ in zip(bounds[:-1], bounds[1:]):
+                pk = [k for k in pins if a_ <= k < b_]
+                if not pk:
+                    raise SystemExit(f"{j['name']}: no pin for the shot {a_}-{b_ - 1}")
+                boxes.update(track(src, a_, b_ - 1, pk[0], pins[pk[0]], det_lo, max_gap=int(pj.get("max_gap", 24))))
         else:
             boxes = track(src, f0, f1, f0 + j["face"]["frame"], pin, det)
+            if len(boxes) < 0.97 * (f1 - f0 + 1):
+                # dark or turning face: retry with a lower detection threshold, bridge gaps up to ~1 s
+                det_lo = cv2.FaceDetectorYN.create(f"{MODELS}/yunet.onnx", "", (W, H), 0.25)
+                b2 = track(src, f0, f1, f0 + j["face"]["frame"], pin, det_lo, max_gap=int(pj.get("max_gap", 24)))
+                if len(b2) > len(boxes):
+                    boxes = b2
         # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
         a0, a1 = pj.get("active", [f0, f1])
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
@@ -413,21 +457,23 @@ def build(ex, media, out_dir, clip):
         need = [k for k in range(L["f0"], L["f1"] + 1) if env[k] > 0 and k in L["boxes"]]
         print(f"  {L['name']}: lower-face outline on {len(pts)}/{len(need)} gated frames", flush=True)
         # one mask type per shot, so the mask edge does not change shape from frame to frame
-        if need and len(pts) < 0.8 * len(need) and len(L["corners"]) > len(pts):
+        gaps = [k for k in need if not any(q in pts for q in range(k - 12, k + 13))]
+        if need and ((len(pts) < 0.8 * len(need) and len(L["corners"]) > len(pts))
+                     or (gaps and len(L["corners"]) >= 0.95 * len(need))):
             L["pts"] = {}
             print(f"  {L['name']}: using the mouth-corner mask for the whole shot "
                   f"(corners on {len(L['corners'])}/{len(need)} frames)", flush=True)
     dst = os.path.join(out_dir, os.path.basename(src)[:-4] + "_EN.mp4")
     audio = os.path.join(ex, "en", f"{clip}_EN.wav")
-    enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",
+    enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "yuv444p", "-s", f"{W}x{H}",
                             "-r", "24000/1001", "-i", "-", "-i", audio, "-map", "0:v", "-map", "1:a", *X264,
                             "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-shortest", "-movflags", "+faststart", dst],
                            stdin=subprocess.PIPE)
     # shots kept exactly as already delivered (e.g. other speakers already done): taken from plan["base_from"]
     keep = [tuple(r) for r in plan.get("base_keep", [])]
-    base_it = frames(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), plan["base_from"])) \
+    base_it = frames_yuv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), plan["base_from"])) \
         if keep else None
-    for k, im in enumerate(frames(src)):
+    for k, im in enumerate(frames_yuv(src)):
         if base_it is not None:
             bf = next(base_it)
             if any(a <= k <= b for a, b in keep):
@@ -437,8 +483,9 @@ def build(ex, media, out_dir, clip):
             if not (L["f0"] <= k <= L["f1"]):
                 continue
             if L["it"] is None:
-                L["it"] = frames(L["out"])
-            syn = unzoom(im, next(L["it"]), L["zoom"], k)
+                L["it"] = frames_yuv(L["out"])
+            sy = next(L["it"])
+            syn = unzoom_yuv(im, sy, L["zoom"], k) if L["zoom"] else sy
             a = L["env"][k]
             if a <= 0 or k not in L["boxes"]:
                 continue
@@ -460,7 +507,7 @@ def build(ex, media, out_dir, clip):
                 else:
                     m = ellipse_mask(box) * a
                     L["fallback"] = L.get("fallback", 0) + 1
-            outf = outf * (1 - m[..., None]) + syn.astype(np.float32) * m[..., None]
+            outf = outf * (1 - m[None]) + syn.astype(np.float32) * m[None]
         enc.stdin.write(np.clip(outf + 0.5, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
     enc.wait()

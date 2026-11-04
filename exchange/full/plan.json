@@ -655,7 +655,7 @@
   "jobs": []
  },
  "00106229": {
-  "note": "dark hall: man then woman, chained, faces visible f100-410 | client r7: candles behind the man moved (whole-frame swap of the lip-sync output) -> same approved lip-sync outputs, mouths only (mouth mask, kept on for the whole job as approved); background original",
+  "note": "dark hall: man then woman, chained, faces visible f100-410 | client r7: candles behind the man moved (whole-frame swap of the lip-sync output) -> same approved lip-sync outputs, mouths only (mouth mask, kept on for the whole job as approved); background original | hard cut at frame 319 (dark, missed by scene detection): each shot tracked from its own pin",
   "jobs": [
    {
     "first": 100,
@@ -676,7 +676,13 @@
      ]
     ],
     "mask": "mouth",
-    "gate": false
+    "gate": false,
+    "pins": {
+     "330": [
+      945,
+      378
+     ]
+    }
    },
    {
     "first": 100,
@@ -698,10 +704,19 @@
     ],
     "after": 0,
     "mask": "mouth",
-    "gate": false
+    "gate": false,
+    "pins": {
+     "330": [
+      731,
+      396
+     ]
+    }
    }
   ],
-  "assemble": "masked"
+  "assemble": "masked",
+  "cuts": [
+   319
+  ]
  },
  "00107025": {
   "note": "fur-collared nobleman (shot 2) both lines; shot 3 listeners",

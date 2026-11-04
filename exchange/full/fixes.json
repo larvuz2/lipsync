@@ -791,6 +791,150 @@
    "pitch_range": 0.75,
    "lead": 0.1,
    "note": "client r5: 'bow' said as BAU -> her line re-voiced with her own clone (MOTHER, from her dub + Hungarian lines); 'bow' spelled 'beau' so it is read /boʊ/ (checked: phonemes 'b oʊ', heard 'bow'); take st 0.45 sim 0.9, voice match 0.66, 'Yanko' said 'YAHN-ko'; pitch to her 215 Hz and the 'how MANY' emphasis peak tamed (swings x0.75) so there is no sudden high note; runs to the end of the clip (2nd shot: tiny figure) at natural pace"
+  },
+  {
+   "id": "K59a",
+   "clip": "00104359",
+   "type": "take_only",
+   "start": 4.4,
+   "end": 10.3,
+   "character": "OLDNOBLE",
+   "en": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+   "note": "104359 (client's last note): the King's lines re-voiced for better acting; 8 more takes with settings nudged around the ones used before; best chosen by pitch smoothness (no sudden high notes), clean voice, recognition and fit to his Serbian phrase lengths",
+   "extra_takes": {
+    "tag": "r6",
+    "settings": [
+     [
+      0.4,
+      0.85
+     ],
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.5,
+      0.95
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.6,
+      0.85
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.7,
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "id": "K59b",
+   "clip": "00104359",
+   "type": "take_only",
+   "start": 11.5,
+   "end": 13.6,
+   "character": "OLDNOBLE",
+   "en": "Excuse me, daughter. Janko!",
+   "tts": "Excuse me, daughter. Janko!",
+   "note": "104359 (client's last note): the King's lines re-voiced for better acting; 8 more takes with settings nudged around the ones used before; best chosen by pitch smoothness (no sudden high notes), clean voice, recognition and fit to his Serbian phrase lengths",
+   "extra_takes": {
+    "tag": "r6",
+    "settings": [
+     [
+      0.4,
+      0.85
+     ],
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.5,
+      0.95
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.6,
+      0.85
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.7,
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "id": "K59c",
+   "clip": "00104359",
+   "type": "take_only",
+   "start": 0.2,
+   "end": 1.5,
+   "character": "OLDNOBLE",
+   "en": "The king is coming. Your Hungarian king.",
+   "tts": "The king is coming. Your Hungarian king.",
+   "note": "104359 (client's last note): the King's lines re-voiced for better acting; 8 more takes with settings nudged around the ones used before; best chosen by pitch smoothness (no sudden high notes), clean voice, recognition and fit to his Serbian phrase lengths",
+   "extra_takes": {
+    "tag": "r6",
+    "settings": [
+     [
+      0.4,
+      0.85
+     ],
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.5,
+      0.95
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.6,
+      0.85
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.7,
+      0.9
+     ]
+    ]
+   }
   }
  ],
  "edits": [

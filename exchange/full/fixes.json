@@ -935,6 +935,54 @@
      ]
     ]
    }
+  },
+  {
+   "id": "K59d",
+   "clip": "00104359",
+   "type": "take_only",
+   "start": 11.4,
+   "end": 13.6,
+   "character": "OLDNOBLE",
+   "en": "Excuse me, daughter. Janko.",
+   "tts": "Excuse me, daughter. Yanko.",
+   "note": "104359: the actor says 'Janko' low and calm (~84 Hz, same level as his other lines); every 'Janko!' take was a shout (190-255 Hz). Period for a calm delivery; 'Yanko' spelling for YAHN-ko",
+   "extra_takes": {
+    "tag": "r6",
+    "settings": [
+     [
+      0.45,
+      0.9
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.55,
+      0.9
+     ],
+     [
+      0.6,
+      0.85
+     ],
+     [
+      0.6,
+      0.95
+     ],
+     [
+      0.65,
+      0.9
+     ],
+     [
+      0.7,
+      0.85
+     ],
+     [
+      0.75,
+      0.9
+     ]
+    ]
+   }
   }
  ],
  "edits": [

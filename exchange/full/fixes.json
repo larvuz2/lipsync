@@ -589,13 +589,13 @@
    "id": "L08b",
    "clip": "00104240",
    "start": 6.72,
-   "end": 7.8,
+   "end": 8.0,
    "character": "HUNYADI2",
-   "en": "Is Sigismund here already?",
-   "tts": "Is Sigismund here already?",
+   "en": "Is Sigismund here yet?",
+   "tts": "Is Sigismund here yet?",
    "was": "Je l' Zigismund već tu? (new Hunyadi voice; timed to the original)",
    "source": "serbian",
-   "pitch_target": 139,
+   "pitch_target": 101,
    "extra_takes": {
     "tag": "r5",
     "settings": [
@@ -634,14 +634,15 @@
     ]
    },
    "takes": [
-    "L08b_r4_t7"
+    "L08d_t1"
    ],
-   "note": "r4: lowest natural take (163 Hz, st 0.75, sim 0.95), PSOLA to the actor's own 139 Hz on this line (was a 5 st phase-vocoder shift)",
+   "note": "client r5: too posh English -> 'already' was always said with the British 'awl' vowel, so the line is now 'Is Sigismund here yet?' (Serbian 'već'); take L08d_t1 (st 0.5, sim 0.95): American 'r' in 'here', least English-sounding of 34 takes, naturally deep (~101 Hz, no pitch shift); emphasis peak on 'SIG' tamed (swings x0.75)",
    "take_lines": [
     "L08b",
     "L08c",
     "L08d"
-   ]
+   ],
+   "pitch_range": 0.75
   },
   {
    "id": "L08d",

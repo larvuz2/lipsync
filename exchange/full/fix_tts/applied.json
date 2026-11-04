@@ -455,6 +455,22 @@
   "pitch_ratio": 0.84
  },
  {
+  "id": "L88",
+  "clip": "00088514",
+  "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+  "take": "fix_tts/L88b_r5_t0.mp3",
+  "heard": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
+  "wer": 0.06,
+  "span_s": 3.9,
+  "natural_s": 4.27,
+  "placed": [
+   0.95,
+   4.85
+  ],
+  "speed": 1.09,
+  "pitch_ratio": 0.85
+ },
+ {
   "id": "E11",
   "clip": "00104240",
   "type": "mute",
@@ -534,33 +550,17 @@
  {
   "id": "L08b",
   "clip": "00104240",
-  "en": "Is Sigismund here already?",
-  "take": "fix_tts/L08b_r4_t7.mp3",
-  "heard": "Is Sigismund here already?",
+  "en": "Is Sigismund here yet?",
+  "take": "fix_tts/L08d_t1.mp3",
+  "heard": "Is Sigismund here yet?",
   "wer": 0.0,
-  "span_s": 1.08,
-  "natural_s": 1.63,
+  "span_s": 1.28,
+  "natural_s": 1.34,
   "placed": [
    6.72,
-   8.18
+   8.0
   ],
-  "speed": 1.12,
-  "pitch_ratio": 0.853
- },
- {
-  "id": "L88",
-  "clip": "00088514",
-  "en": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
-  "take": "fix_tts/L88b_r5_t0.mp3",
-  "heard": "Yanko, how many times have I told you not to play with that bow in the courtyard?",
-  "wer": 0.06,
-  "span_s": 3.9,
-  "natural_s": 4.27,
-  "placed": [
-   0.95,
-   4.85
-  ],
-  "speed": 1.09,
-  "pitch_ratio": 0.85
+  "speed": 1.05,
+  "pitch_ratio": 0.989
  }
 ]

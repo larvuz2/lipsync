@@ -148,3 +148,13 @@ Note: "Only focus on the king… the lip sync is not very good with the English 
 | Pixels moving around the mouth: the lip-sync output re-renders the whole beard, cheeks and chin edge. | Mouth-only mask (lips plus the strip down to the chin) from face landmarks, or from the mouth corners on profile shots; one mask type per shot. Movement around the mouth measures the same as the original (e.g. 7.40 vs 7.28). |
 | Lip sync for all 4 King shots | Close-ups at 0–50, 188–251, 285–335; wide shot 102–187 with a zoom window that follows his head. Janko's and the daughter's shots are unchanged. |
 | Found in QA | His "…whores" had cut into the daughter's "Father!"; it now ends just before her line. Praat time-stretching was not repeatable (random pulses in unvoiced sounds); it is now seeded, and the two finished shots use the exact audio their lip sync was made from. |
+
+## Client review round 7 (105631, 106229)
+
+| Clip | Note | Cause | Fix |
+|---|---|---|---|
+| 105631 | Jumping glitch in the very first frames (general, not only the lips) | The lip-sync job started at frame 10 and its whole frame was swapped in mid-shot, so the face jumped at frame 10. | One lip-sync job over the whole clip (frames 0–157), mouth-only masked composite, so there is no switch point anywhere. Audio unchanged (same voice). |
+| 106229 | The candles behind the man moved (lip sync itself was right) | The whole lip-sync frame was swapped in, and the lip-sync model re-renders the area around the face, candle flames included. | Same approved lip-sync outputs, but only the two mouths are taken from them; everything else is the original film. A hard cut at frame 319 (dark, missed by scene detection) is now handled: each shot is tracked from its own pin (the tracker had jumped to a soldier). |
+| Both | Double-check the voices | — | Each line is voiced by the right character (the woman's lines 173–189 Hz and matching each other; the man's 62–138 Hz). No new clones. Audio is unchanged. |
+
+Also fixed in the compositing tool: frames are now blended and encoded in YUV. The earlier RGB round trip made dark scenes about 1.5–2.6 levels darker and slightly less blue. Background vs original is now 0.53–0.55 mean difference, with no colour bias.

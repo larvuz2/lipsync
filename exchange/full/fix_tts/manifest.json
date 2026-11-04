@@ -1553,6 +1553,132 @@
    "file": "fix_tts/L88a_r5_t2.mp3",
    "duration": 4.56,
    "text": "Yanko, how many times have I told you not to play with that bo in the courtyard?"
+  },
+  {
+   "id": "L07h",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L07h_t0.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L07h",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L07h_t1.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L07h",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L07h_t2.mp3",
+   "duration": 3.36,
+   "text": "The king is coming. Your Hungarian king."
+  },
+  {
+   "id": "L08d",
+   "take": 0,
+   "stability": 0.35,
+   "similarity": 0.95,
+   "file": "fix_tts/L08d_t0.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": 1,
+   "stability": 0.5,
+   "similarity": 0.95,
+   "file": "fix_tts/L08d_t1.mp3",
+   "duration": 1.52,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": 2,
+   "stability": 0.7,
+   "similarity": 0.9,
+   "file": "fix_tts/L08d_t2.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_0",
+   "stability": 0.55,
+   "similarity": 0.9,
+   "file": "fix_tts/L08d_r5_t0.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_1",
+   "stability": 0.65,
+   "similarity": 0.9,
+   "file": "fix_tts/L08d_r5_t1.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_2",
+   "stability": 0.75,
+   "similarity": 0.9,
+   "file": "fix_tts/L08d_r5_t2.mp3",
+   "duration": 1.44,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_3",
+   "stability": 0.75,
+   "similarity": 0.95,
+   "file": "fix_tts/L08d_r5_t3.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_4",
+   "stability": 0.6,
+   "similarity": 0.8,
+   "file": "fix_tts/L08d_r5_t4.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_5",
+   "stability": 0.7,
+   "similarity": 0.8,
+   "file": "fix_tts/L08d_r5_t5.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_6",
+   "stability": 0.5,
+   "similarity": 0.85,
+   "file": "fix_tts/L08d_r5_t6.mp3",
+   "duration": 1.6,
+   "text": "Is Sigismund here yet?"
+  },
+  {
+   "id": "L08d",
+   "take": "r5_7",
+   "stability": 0.65,
+   "similarity": 0.85,
+   "file": "fix_tts/L08d_r5_t7.mp3",
+   "duration": 1.68,
+   "text": "Is Sigismund here yet?"
   }
  ]
 }

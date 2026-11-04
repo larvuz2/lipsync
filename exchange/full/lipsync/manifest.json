@@ -2004,5 +2004,79 @@
   "errorCode": null,
   "outputUrl": "https://api.sync.so/v2/generations/a8c53e95-6bbf-44ea-b47f-474a28108111/result?token=52cc8c22-d359-48ee-ac0b-df650c04df1a",
   "file": "lipsync/out/00105631_f0-157_e7ca05.mp4"
+ },
+ {
+  "name": "00104359_f188-251_s4z_z_ad74b3",
+  "clip": "00104359",
+  "first_frame": 188,
+  "last_frame": 251,
+  "audio": "lipsync_audio/00104359_f188-251_s4z_z_ad74b3.wav",
+  "face": {
+   "frame": 20,
+   "xy": [
+    500,
+    480
+   ]
+  },
+  "variant": "z",
+  "zoom": {
+   "size": 560,
+   "file": "lipsync_zoom/00104359_f188-251_s4z_z_ad74b3.json"
+  },
+  "input_video": "lipsync_zoom/00104359_f188-251_s4z_z_ad74b3.mp4",
+  "generationId": "1ee71fba-e7fd-4c9b-9f3b-555ed846005e",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1ee71fba-e7fd-4c9b-9f3b-555ed846005e/result?token=ba586380-45f7-42ab-af60-f1a1ac0b4e55",
+  "file": "lipsync/out/00104359_f188-251_s4z_z_ad74b3.mp4"
+ },
+ {
+  "name": "00104359_f188-251_s5_p3_cccd46",
+  "clip": "00104359",
+  "first_frame": 188,
+  "last_frame": 251,
+  "audio": "lipsync_audio/00104359_f188-251_s5_p3_cccd46.wav",
+  "face": {
+   "frame": 20,
+   "xy": [
+    761,
+    537
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.3
+  },
+  "variant": "p3",
+  "input_video": "lipsync_inputs/00104359_f188-251_s5_p3_cccd46.mp4",
+  "generationId": "cdf8dab7-3f3c-4ff9-88d4-c1874af24cdf",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/cdf8dab7-3f3c-4ff9-88d4-c1874af24cdf/result?token=fc1c9248-6ba6-4e22-8415-5423c445c4e5",
+  "file": "lipsync/out/00104359_f188-251_s5_p3_cccd46.mp4"
+ },
+ {
+  "name": "00104359_f188-251_s6_r2_1eab89",
+  "clip": "00104359",
+  "first_frame": 188,
+  "last_frame": 251,
+  "audio": "lipsync_audio/00104359_f188-251_s6_r2_1eab89.wav",
+  "face": {
+   "frame": 20,
+   "xy": [
+    761,
+    537
+   ]
+  },
+  "variant": "r2",
+  "input_video": "lipsync_inputs/00104359_f188-251_s6_r2_1eab89.mp4",
+  "generationId": "1148355d-b3cf-4f9a-bc47-ded1c5495741",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1148355d-b3cf-4f9a-bc47-ded1c5495741/result?token=e1944c07-c7e9-4807-b5cc-cfa2f15d1132",
+  "file": "lipsync/out/00104359_f188-251_s6_r2_1eab89.mp4"
  }
 ]

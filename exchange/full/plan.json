@@ -967,7 +967,7 @@
     "en_keep": [
      [
       7.84,
-      10.51
+      10.28
      ]
     ],
     "mask": "mouth"
@@ -990,6 +990,7 @@
    }
   ],
   "base_from": "outputs/full/base_00104359_r5.mp4",
-  "prepared_inputs": true
+  "prepared_inputs": true,
+  "after_apply": "python3 tools/restore_job_audio.py exchange/full 00104359 00104359_f0-50_s0_fd8e1b:0.10-1.68 00104359_f102-187_s1z_d0966a:4.26-7.74  (puts back the exact audio those finished lip-sync jobs were made from)"
  }
 }

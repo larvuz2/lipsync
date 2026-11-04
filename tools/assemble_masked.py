@@ -385,10 +385,9 @@ def build(ex, media, out_dir, clip):
                 b = unzoom(a, b, L["zoom"], k)
             else:
                 pa, pb = lower_face(a, L["boxes"][k], L["idx"]), lower_face(b, L["boxes"][k], L["idx"])
-                if pa is None and pb is None:
-                    cq = detect_corners(cdet, a, L["boxes"][k])
-                    if cq is not None:
-                        L["corners"][k] = cq
+                cq = detect_corners(cdet, a, L["boxes"][k])
+                if cq is not None:
+                    L["corners"][k] = cq
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame
@@ -410,6 +409,11 @@ def build(ex, media, out_dir, clip):
         L["pts"] = pts
         need = [k for k in range(L["f0"], L["f1"] + 1) if env[k] > 0 and k in L["boxes"]]
         print(f"  {L['name']}: lower-face outline on {len(pts)}/{len(need)} gated frames", flush=True)
+        # one mask type per shot, so the mask edge does not change shape from frame to frame
+        if need and len(pts) < 0.8 * len(need) and len(L["corners"]) > len(pts):
+            L["pts"] = {}
+            print(f"  {L['name']}: using the mouth-corner mask for the whole shot "
+                  f"(corners on {len(L['corners'])}/{len(need)} frames)", flush=True)
     dst = os.path.join(out_dir, os.path.basename(src)[:-4] + "_EN.mp4")
     audio = os.path.join(ex, "en", f"{clip}_EN.wav")
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",

@@ -657,13 +657,13 @@
   "take": "fix_tts/K59a_r6_t2.mp3",
   "heard": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
   "wer": 0.0,
-  "span_s": 2.59,
+  "span_s": 2.39,
   "natural_s": 2.65,
   "placed": [
    7.86,
-   10.45
+   10.25
   ],
-  "speed": 1.02,
+  "speed": 1.11,
   "pitch_ratio": null
  },
  {

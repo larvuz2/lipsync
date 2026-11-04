@@ -174,12 +174,17 @@ def main():
                 if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 1 and \
                         old[base]["face"] == {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
                     name = base
-            if name not in done and not j.get("after") and not j.get("zoom"):
+            if name not in done and not j.get("after") and j.get("zoom") in (None, "track"):
                 # a finished job for the same shot, face and range whose audio differs only by rounding noise
                 # (at most 8 LSB of 16-bit, about -72 dB, e.g. from rebuilding the mix) is reused, not re-run
                 for cand in sorted(glob.glob(os.path.join(ex, "lipsync_audio", f"{base}_*.wav"))):
                     cn = os.path.basename(cand)[:-4]
-                    if cn not in done or done[cn]["face"] != {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
+                    if cn not in done:
+                        continue
+                    if j.get("zoom") == "track":
+                        if (done[cn].get("zoom") or {}).get("size") != int(j.get("zoom_size", 360)):
+                            continue
+                    elif done[cn]["face"] != {"frame": j["face"][0] - f0, "xy": j["face"][1:]}:
                         continue
                     prev = np.round(load(cand)[:len(seg)] * 32767).astype(np.int16)
                     if len(prev) == len(q) and np.abs(prev.astype(np.int32) - q).max() <= 8:

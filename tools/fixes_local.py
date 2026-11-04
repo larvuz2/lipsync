@@ -47,6 +47,13 @@ def trim(x, rel=40):
     return x[max(0, on[0] * 480 - 960):min(len(x), (on[-1] + 1) * 480 + 960)]
 
 
+def praat_seed(seed=20261104):
+    """Praat places pulses in unvoiced stretches at random; seed it so every run gives the same audio
+    (lip sync is made from this exact audio, so it must be repeatable)."""
+    from parselmouth.praat import run
+    run(f"random_initializeWithSeedUnsafelyButPredictably ({seed})")
+
+
 def stretch(x, n):
     """Change length to n samples, pitch kept. PSOLA (Praat "Lengthen (overlap-add)"): clean on speech at the small
     factors used here (0.83-1.2x); the phase vocoder used before added a metallic, robotic colour."""
@@ -58,6 +65,7 @@ def stretch(x, n):
     if abs(f - 1) < 0.005:
         y = np.asarray(x, np.float32)
     else:
+        praat_seed()
         y = call(parselmouth.Sound(np.asarray(x, np.float64), SR), "Lengthen (overlap-add)", 60, 400, f).values[0]
         y = y.astype(np.float32)
     return np.pad(y[:n], (0, max(0, n - len(y))))
@@ -207,6 +215,7 @@ def pitch_shift(x, ratio):
     med = call(p, "Get quantile", 0, 0, 0.5, "Hertz")
     if not med or med != med:
         return x
+    praat_seed()
     y = call(s, "Change gender", 60, 400, 1.0, med * ratio, 1.0, 1.0).values[0].astype(np.float32)
     return np.pad(y[:len(x)], (0, max(0, len(x) - len(y))))
 
@@ -226,6 +235,7 @@ def pitch_reshape(x, target, k, lo=0.84, hi=1.12):
     pt = call(man, "Extract pitch tier")
     call(pt, "Formula", f"{target} * (self / {med}) ^ {k}")
     call([man, pt], "Replace pitch tier")
+    praat_seed()
     y = call(man, "Get resynthesis (overlap-add)").values[0].astype(np.float32)
     return np.pad(y[:len(x)], (0, max(0, len(x) - len(y)))), target / med
 

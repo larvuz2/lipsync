@@ -1052,11 +1052,11 @@
    "clip": "00104359",
    "character": "OLDNOBLE",
    "exact": true,
-   "lead": 0.05,
+   "lead": 0.0,
    "source": "serbian",
    "id": "K59p4",
    "start": 7.86,
-   "end": 10.45,
+   "end": 10.25,
    "en": "No doubt still amusing himself with his whores.",
    "tts": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
    "take_lines": [
@@ -1066,7 +1066,7 @@
     "K59a_r6_t2"
    ],
    "crop_text": "No doubt still amusing himself with his whores",
-   "note": "on 'sigurno se još zabavlja sa svojim kurvama' (8.13-10.1 s, close-up from 7.84); actor low (~81 Hz), take 121 Hz -> 108 | no pitch processing (already in his range; keeps the gravelly ending clean)"
+   "note": "on 'sigurno se još zabavlja sa svojim kurvama' (8.13-10.1 s, close-up from 7.84); actor low (~81 Hz), take 121 Hz -> 108 | no pitch processing (already in his range; keeps the gravelly ending clean) | ends at 10.25 s so the daughter's 'Father!' (from 10.34 s) stays whole"
   },
   {
    "clip": "00104359",

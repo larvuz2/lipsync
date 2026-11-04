@@ -256,16 +256,18 @@
   ]
  },
  "00105631": {
-  "note": "man with gold chain speaks; woman silent",
+  "note": "man with gold chain speaks; woman silent | client r7: jump at the first frames (old job started at frame 10, whole-frame swap) -> one job over the whole clip, mouth-only masked composite; audio unchanged",
+  "assemble": "masked",
   "jobs": [
    {
-    "first": 10,
-    "last": 125,
+    "first": 0,
+    "last": 157,
     "face": [
      47,
      1226,
      471
-    ]
+    ],
+    "mask": "mouth"
    }
   ]
  },
@@ -653,7 +655,7 @@
   "jobs": []
  },
  "00106229": {
-  "note": "dark hall: man then woman, chained, faces visible f100-410",
+  "note": "dark hall: man then woman, chained, faces visible f100-410 | client r7: candles behind the man moved (whole-frame swap of the lip-sync output) -> same approved lip-sync outputs, mouths only (mouth mask, kept on for the whole job as approved); background original",
   "jobs": [
    {
     "first": 100,
@@ -672,7 +674,9 @@
       11.2,
       15.6
      ]
-    ]
+    ],
+    "mask": "mouth",
+    "gate": false
    },
    {
     "first": 100,
@@ -692,9 +696,12 @@
       16.7
      ]
     ],
-    "after": 0
+    "after": 0,
+    "mask": "mouth",
+    "gate": false
    }
-  ]
+  ],
+  "assemble": "masked"
  },
  "00107025": {
   "note": "fur-collared nobleman (shot 2) both lines; shot 3 listeners",

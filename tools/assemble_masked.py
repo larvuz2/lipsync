@@ -314,6 +314,9 @@ def build(ex, media, out_dir, clip):
         aud = os.path.join(ex, j["audio"])
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
+        if pj.get("gate") is False:
+            # keep this job's mouth for its whole range (reproduces an approved full lip sync, mouths only)
+            windows = [[round(f0 / FPS + PRE, 3), round(f1 / FPS - POST, 3)]]
         zoom = j.get("zoom")
         if isinstance(zoom, dict):
             zoom = {**zoom, **json.load(open(os.path.join(ex, zoom["file"])))}

@@ -141,6 +141,8 @@ JAW = [234, 93, 132, 58, 172, 136, 150, 149, 176, 148, 152, 377, 400, 378, 379, 
 # (for "mask": "mouth" - keeps cheeks, beard sides and moustache edges original)
 MOUTH = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291, 409, 270, 269, 267, 0, 37, 39, 40, 185,
          57, 287, 43, 273, 204, 424, 194, 418, 200, 199, 175, 152, 148, 377]
+# lips only: the outer lip contour (no chin) - the lower beard and chin stay original ("mask": "lips")
+LIPS = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291, 409, 270, 269, 267, 0, 37, 39, 40, 185]
 _LM = None
 
 
@@ -184,16 +186,16 @@ def hull_mask(pts, w, grow=0.025, soft=0.02):
     return cv2.GaussianBlur(m, (0, 0), max(1.0, w * soft))
 
 
-def corner_mask(q, box, grow=1.0):
+def corner_mask(q, box, grow=1.0, tight=False):
     """Mouth-only mask from the face detector's mouth corners (works on profiles, where the landmark model
     fails): an ellipse along the mouth line, reaching down to the chin, feathered."""
     x, y, w, h = box
     (rx, ry), (lx, ly) = q[0], q[1]
-    cx, cy = (rx + lx) / 2, (ry + ly) / 2 + 0.08 * h
-    half = max(0.5 * np.hypot(lx - rx, ly - ry), 0.16 * w) + 0.08 * w
+    cx, cy = (rx + lx) / 2, (ry + ly) / 2 + (0.02 if tight else 0.08) * h
+    half = max(0.5 * np.hypot(lx - rx, ly - ry), 0.16 * w) + (0.05 if tight else 0.08) * w
     m = np.zeros((H, W), np.float32)
     ang = np.degrees(np.arctan2(ly - ry, lx - rx))
-    cv2.ellipse(m, (int(cx), int(cy)), (int(half * grow), int(0.22 * h * grow)), ang, 0, 360, 1.0, -1)
+    cv2.ellipse(m, (int(cx), int(cy)), (int(half * grow), int((0.11 if tight else 0.22) * h * grow)), ang, 0, 360, 1.0, -1)
     return cv2.GaussianBlur(m, (0, 0), max(1.0, w * 0.04))
 
 
@@ -398,9 +400,10 @@ def build(ex, media, out_dir, clip):
                        "spans": windows, "start_cut": f0 == 0 or f0 in cutset or a0 > f0,
                        "end_cut": f1 >= n - 1 or (f1 + 1) in cutset or a1 < f1,
                        "out": os.path.join(ex, m["file"]), "it": None, "zoom": zoom,
-                       "idx": MOUTH if pj.get("mask") == "mouth" else JAW,
-                       "grow": 0.04 if pj.get("mask") == "mouth" else 0.025,
-                       "soft": 0.03 if pj.get("mask") == "mouth" else 0.02,
+                       "idx": {"mouth": MOUTH, "lips": LIPS}.get(pj.get("mask"), JAW),
+                       "grow": {"mouth": 0.04, "lips": 0.05}.get(pj.get("mask"), 0.025),
+                       "soft": {"mouth": 0.03, "lips": 0.025}.get(pj.get("mask"), 0.02),
+                       "tight": pj.get("mask") == "lips",
                        "zin": os.path.join(ex, j["input_video"]) if zoom else None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
@@ -442,7 +445,7 @@ def build(ex, media, out_dir, clip):
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame
             mk = hull_mask(raw[k], L["boxes"][k][2], L["grow"], L["soft"]) if k in raw else \
-                (corner_mask(L["corners"][k], L["boxes"][k]) if k in L["corners"] else ellipse_mask(L["boxes"][k]))
+                (corner_mask(L["corners"][k], L["boxes"][k], tight=L["tight"]) if k in L["corners"] else ellipse_mask(L["boxes"][k]))
             d = np.abs(a.astype(np.float32) - b.astype(np.float32)).mean(2)
             cost[k] = float((d * mk).sum() / max(mk.sum(), 1.0))
         cost = np.where(np.isnan(cost), np.nanmax(cost) if np.isfinite(cost).any() else 0, cost)
@@ -505,7 +508,7 @@ def build(ex, media, out_dir, clip):
                     j = min(nc, key=lambda q: abs(q - k))
                     bj = L["boxes"].get(j, box)
                     dx, dy = box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2
-                    m = corner_mask([(px + dx, py + dy) for px, py in L["corners"][j]], box) * a
+                    m = corner_mask([(px + dx, py + dy) for px, py in L["corners"][j]], box, tight=L["tight"]) * a
                     L["corner_fb"] = L.get("corner_fb", 0) + 1
                 else:
                     m = ellipse_mask(box) * a

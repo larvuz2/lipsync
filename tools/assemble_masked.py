@@ -34,16 +34,19 @@ X264 = ["-c:v", "libx264", "-crf", "14", "-preset", "slow", "-pix_fmt", "yuv420p
 def frames_yuv(path):
     """Frames as planar YUV 4:4:4 (3, H, W) uint8, decoded by ffmpeg with no colour-matrix conversion,
     so blending and re-encoding keep the original colours exactly (an RGB round trip shifted dark scenes)."""
+    ww, hh = (int(v) for v in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                                               "stream=width,height", "-of", "csv=p=0", path],
+                                              capture_output=True, text=True).stdout.strip().split(","))
     p = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-f", "rawvideo", "-pix_fmt", "yuv444p", "-"],
                          stdout=subprocess.PIPE)
-    n = W * H * 3
+    n = ww * hh * 3
     while True:
         buf = p.stdout.read(n)
         if len(buf) < n:
             p.stdout.close()
             p.wait()
             return
-        yield np.frombuffer(buf, np.uint8).reshape(3, H, W)
+        yield np.frombuffer(buf, np.uint8).reshape(3, hh, ww)
 
 
 def unzoom_yuv(orig, syn, zoom, k):

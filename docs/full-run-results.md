@@ -158,3 +158,18 @@ Note: "Only focus on the king… the lip sync is not very good with the English 
 | Both | Double-check the voices | — | Each line is voiced by the right character (the woman's lines 173–189 Hz and matching each other; the man's 62–138 Hz). No new clones. Audio is unchanged. |
 
 Also fixed in the compositing tool: frames are now blended and encoded in YUV. The earlier RGB round trip made dark scenes about 1.5–2.6 levels darker and slightly less blue. Background vs original is now 0.53–0.55 mean difference, with no colour bias.
+
+## Client review round 8 (104359, the King's beard)
+
+Note: "12:40 his beard does that weird flip twice… it's the mouth change, it also affects the lower beard and chin for a few frames." This is the King's close-up, frames 188–251 ("No doubt still amusing himself with his whores").
+
+| Step | Result |
+|---|---|
+| Cause | The lip-sync model re-drew the lower beard and chin on that turn of the head, and the mouth mask reached down to the chin. The beard differed from the original by 5–7 levels, with sudden changes around frames 210 and 228–232: the two "flips". |
+| Trials (192 frames in total) | Same voice and audio for all. (a) Re-run of the same job: almost the same as before. (b) Different lip-sync model at a lower temperature: worse (chin up to 13, lips flicker). (c) Same model on an enlarged view of his face (560 px crop scaled to 1080): much steadier. |
+| Chosen | (c), composited with a lips-only mask: the lips come from the lip sync, and the beard, chin and cheeks are the original film. |
+| Beard and chin vs original | Before: 7–15 per frame, largest change between frames 4.8. Now: 1–2 per frame (encoding noise), largest change 0.8. No flip frames found. |
+| Lips | Still re-animated to the English line (difference from the original lips 6–27 per frame). Mouth opening matches the mouth-mask version. |
+| Unchanged | Audio is bit-identical to the clip sent before; each lip-sync job was made from exactly this audio. Janko's (51–101) and the daughter's (252–284) shots are the approved ones. The King's other three shots match the previous version, apart from the colour fix below. |
+| Colours | The clip is now composited in YUV, so the King's shots are back to the original colours (they were about 1.7 levels darker before). |
+| Checks | 336 frames, 1920x1080 at 23.976 fps, AAC 48 kHz, same length as the original; no frame-to-frame jumps beyond the original's; background unchanged. |

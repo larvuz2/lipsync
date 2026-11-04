@@ -1984,5 +1984,25 @@
   "errorCode": null,
   "outputUrl": "https://api.sync.so/v2/generations/32197d0a-ba32-4240-8cb8-e50af09e530c/result?token=282902ed-96f3-42ec-b40e-dc068311e9ba",
   "file": "lipsync/out/00104359_f285-335_s3_38c5cc.mp4"
+ },
+ {
+  "name": "00105631_f0-157_e7ca05",
+  "clip": "00105631",
+  "first_frame": 0,
+  "last_frame": 157,
+  "audio": "lipsync_audio/00105631_f0-157_e7ca05.wav",
+  "face": {
+   "frame": 47,
+   "xy": [
+    1226,
+    471
+   ]
+  },
+  "generationId": "a8c53e95-6bbf-44ea-b47f-474a28108111",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/a8c53e95-6bbf-44ea-b47f-474a28108111/result?token=52cc8c22-d359-48ee-ac0b-df650c04df1a",
+  "file": "lipsync/out/00105631_f0-157_e7ca05.mp4"
  }
 ]

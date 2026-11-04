@@ -1067,6 +1067,49 @@
    ],
    "crop_text": "No doubt still amusing himself with his whores",
    "note": "on 'sigurno se još zabavlja sa svojim kurvama' (8.13-10.1 s, close-up from 7.84); actor low (~81 Hz), take 121 Hz -> 108 | no pitch processing (already in his range; keeps the gravelly ending clean)"
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "take_lines": [
+    "K59d"
+   ],
+   "takes": [
+    "K59d_r6_t7"
+   ],
+   "tts": "Excuse me, daughter. Yanko.",
+   "id": "K59p5",
+   "start": 11.4,
+   "end": 12.55,
+   "en": "Excuse me, daughter.",
+   "crop_text": "Excuse me, daughter",
+   "pitch_target": 122,
+   "pitch_range": 0.8,
+   "keep_creak": true,
+   "note": "on 'Oprosti, kćeri' (11.67-12.35 s); take st 0.75 sim 0.9: the only take without a jump on '-CUSE'; high start softened (swings x0.8), gravelly ending kept raw"
+  },
+  {
+   "clip": "00104359",
+   "character": "OLDNOBLE",
+   "exact": true,
+   "lead": 0.05,
+   "source": "serbian",
+   "take_lines": [
+    "K59d"
+   ],
+   "takes": [
+    "K59d_r6_t7"
+   ],
+   "tts": "Excuse me, daughter. Yanko.",
+   "id": "K59p6",
+   "start": 12.9,
+   "end": 13.5,
+   "en": "Janko.",
+   "crop_text": "Yanko",
+   "note": "on 'Janko' (13.13-13.45 s, close-up); calm (~140 Hz) like the actor's low 'Janko', not the shout of the old take; no processing"
   }
  ],
  "edits": [

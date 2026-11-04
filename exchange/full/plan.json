@@ -989,6 +989,7 @@
     "mask": "mouth"
    }
   ],
-  "base_from": "outputs/full/base_00104359_r5.mp4"
+  "base_from": "outputs/full/base_00104359_r5.mp4",
+  "prepared_inputs": true
  }
 }

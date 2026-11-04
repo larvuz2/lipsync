@@ -117,7 +117,7 @@ def main():
         en = load(os.path.join(ex, "en", f"{clip}_EN.wav"))
         # Hungarian sentence boundaries from the transcript (they separate speakers; loudness phrases can merge them)
         hu_ph = [(sg["start"], sg["end"]) for sg in tr.get(clip, {}).get("hu", [])] or \
-            [(p["start"], p["end"]) for p in an[clip]["phrases"]]
+            [(p["start"], p["end"]) for p in an.get(clip, {}).get("phrases", [])]
         names = {}
         for k, j in enumerate(cfg.get("jobs", [])):
             f0, f1 = j["first"], j["last"]
@@ -196,6 +196,19 @@ def main():
                      "face": {"frame": fr - f0, "xy": [fx, fy]}}
             if parent:
                 entry["input_from"] = parent
+            if cfg.get("prepared_inputs") and not j.get("zoom"):
+                # the runner does not have this clip's source: send the job's frames as a prepared input
+                rel_v = f"lipsync_inputs/{name}.mp4"
+                entry["input_video"] = rel_v
+                if not os.path.exists(os.path.join(ex, rel_v)):
+                    os.makedirs(os.path.join(ex, "lipsync_inputs"), exist_ok=True)
+                    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+                    srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
+                    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", srcv, "-vf",
+                                    f"select='between(n,{f0},{f1})',setpts=N/FRAME_RATE/TB", "-an", "-r", "24000/1001",
+                                    "-c:v", "libx264", "-crf", "12", "-preset", "slow", "-bf", "0", "-pix_fmt", "yuv420p",
+                                    "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+                                    os.path.join(ex, rel_v)], check=True)
             if j.get("zoom") == "track":
                 # small face that moves (camera or actor): a square window that follows the tracked face,
                 # enlarged to ZOOM_OUT px; per-frame windows are saved next to the input video

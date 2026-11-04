@@ -562,5 +562,140 @@
   ],
   "speed": 1.05,
   "pitch_ratio": 0.989
+ },
+ {
+  "id": "M59a",
+  "clip": "00104359",
+  "type": "mute",
+  "span": [
+   0.0,
+   1.72
+  ],
+  "cleared": [
+   0.0,
+   1.72
+  ]
+ },
+ {
+  "id": "M59b",
+  "clip": "00104359",
+  "type": "mute",
+  "span": [
+   4.0,
+   9.95
+  ],
+  "cleared": [
+   4.0,
+   9.95
+  ]
+ },
+ {
+  "id": "M59c",
+  "clip": "00104359",
+  "type": "mute",
+  "span": [
+   10.95,
+   14.02
+  ],
+  "cleared": [
+   10.95,
+   14.01
+  ]
+ },
+ {
+  "id": "K59p1",
+  "clip": "00104359",
+  "en": "Your Hungarian king.",
+  "take": "fix_tts/K59c_r6_t5.mp3",
+  "heard": "The king is coming. Your Hungarian king.",
+  "wer": 0.0,
+  "span_s": 1.47,
+  "natural_s": 1.47,
+  "placed": [
+   0.15,
+   1.62
+  ],
+  "speed": 1.0,
+  "pitch_ratio": 0.928
+ },
+ {
+  "id": "K59p2",
+  "clip": "00104359",
+  "en": "Only the queen.",
+  "take": "fix_tts/K59a_r6_t2.mp3",
+  "heard": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+  "wer": 0.0,
+  "span_s": 1.1,
+  "natural_s": 1.19,
+  "placed": [
+   4.35,
+   5.45
+  ],
+  "speed": 1.08,
+  "pitch_ratio": 0.84
+ },
+ {
+  "id": "K59p3",
+  "clip": "00104359",
+  "en": "The king is late, as usual.",
+  "take": "fix_tts/K59a_r6_t2.mp3",
+  "heard": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+  "wer": 0.0,
+  "span_s": 1.87,
+  "natural_s": 1.89,
+  "placed": [
+   5.75,
+   7.62
+  ],
+  "speed": 1.01,
+  "pitch_ratio": null
+ },
+ {
+  "id": "K59p4",
+  "clip": "00104359",
+  "en": "No doubt still amusing himself with his whores.",
+  "take": "fix_tts/K59a_r6_t2.mp3",
+  "heard": "Only the queen. The king is late, as usual. No doubt still amusing himself with his whores.",
+  "wer": 0.0,
+  "span_s": 2.59,
+  "natural_s": 2.65,
+  "placed": [
+   7.86,
+   10.45
+  ],
+  "speed": 1.02,
+  "pitch_ratio": null
+ },
+ {
+  "id": "K59p5",
+  "clip": "00104359",
+  "en": "Excuse me, daughter.",
+  "take": "fix_tts/K59d_r6_t7.mp3",
+  "heard": "Excuse me, daughter. Yanko.",
+  "wer": 0.0,
+  "span_s": 1.15,
+  "natural_s": 1.26,
+  "placed": [
+   11.4,
+   12.55
+  ],
+  "speed": 1.1,
+  "pitch_ratio": 1.021
+ },
+ {
+  "id": "K59p6",
+  "clip": "00104359",
+  "en": "Janko.",
+  "take": "fix_tts/K59d_r6_t7.mp3",
+  "heard": "Excuse me, daughter. Yanko.",
+  "wer": 0.0,
+  "span_s": 0.6,
+  "natural_s": 0.53,
+  "placed": [
+   12.9,
+   13.47
+  ],
+  "speed": 0.93,
+  "pitch_ratio": null
  }
 ]

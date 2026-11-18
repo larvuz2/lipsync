@@ -84,11 +84,11 @@
   }
  },
  {
-  "name": "00000101_f1925-2012_s6_43dccc",
+  "name": "00000101_f1925-2012_s6_c901d9",
   "clip": "00000101",
   "first_frame": 1925,
   "last_frame": 2012,
-  "audio": "lipsync_audio/00000101_f1925-2012_s6_43dccc.wav",
+  "audio": "lipsync_audio/00000101_f1925-2012_s6_c901d9.wav",
   "face": {
    "frame": 19,
    "xy": [

@@ -251,12 +251,12 @@
     ],
     "en_keep": [
      [
-      80.98,
-      81.85
+      80.9,
+      81.8
      ],
      [
-      82.36,
-      83.2
+      82.05,
+      83.25
      ]
     ],
     "mask": "mouth",
@@ -266,7 +266,7 @@
       83.2
      ]
     ],
-    "note": "Melody (song)"
+    "note": "Melody (end)"
    }
   ],
   "note": "Melody EP101 demo: Spanish original, then English, Hebrew, Portuguese, French (lip-synced)"

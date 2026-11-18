@@ -12,7 +12,7 @@ count (2013), with the dialogue switching language and the mouths lip-synced to 
 | 16.5 – 53.4 s | English | 3–7 "For how much longer?" … "Charlie is the picture of balance." | station two-shot (both girls) |
 | 53.4 – 60.16 s | Hebrew | 8–10 "מוכנה." / "כמה שזה מעצבן אותי…" / "תבטיחי לי שיום אחד…" | Melody at the door, Layla close-up |
 | 60.16 – 66.18 s | Portuguese (BR) | 11–13 "Não, esquece." / "Esse tal de futuro não existe." / "Meu presente é isso que vivemos aqui e agora, porque…" | Melody, radio studio |
-| 66.18 s – end | French | 14 "Mon futur, c'est aujourd'hui." + the sung line "Mon avenir… c'est aujourd'hui" | Melody, then the close-up at the mic |
+| 66.18 s – end | French | 14 "Mon futur, c'est aujourd'hui." + the ending "Mon futur ? Mon futur, c'est aujourd'hui." (her humming before it stays original) | Melody, then the close-up at the mic |
 
 Each language switch sits in a pause of both neighbouring takes. The label (top left) shows the language
 playing; the Phatty Acid logo is top right.
@@ -33,14 +33,15 @@ playing; the Phatty Acid logo is top right.
    A re-dub of lines 11–13 alone was tried and rejected ("Não tinha nada", "Por quê?").
 5. **Voice match** (ECAPA, dub line vs the same actress's original lines): Melody 0.56–0.62, Layla 0.50–0.58 on
    lines long enough to measure, always closer to the right girl than to the other.
-6. **French song** (`tools/melody_song_tts.py`, `tools/melody_song.py`): the dubbing engine spoke the lyrics
-   instead of singing them. Instead: Melody's voice cloned (Sync/ElevenLabs IVC) from her clean Spanish lines,
-   "Mon avenir… c'est aujourd'hui." voiced, and its 8 syllables placed on the 8 sung notes of "Mi futuro / …es
-   hoy" with each note's original pitch contour (Praat PSOLA). Result: transcribes as "Mon avenir, c'est
-   aujourd'hui.", pitch within 0.2 semitones (median) of her original melody. The "na-ra-na" part stays original.
+6. **Ending** (`tools/melody_dub_end.py`): she hums, then says "¿Mi futuro? Mi futuro es hoy" softly. The humming
+   stays original (identical audio). The spoken line is dubbed like the others (Sync, fr-FR), with Melody's lines
+   12–14 in the same dub source so the voice and wording match line 14: "Mon futur ? Mon futur, c'est
+   aujourd'hui." In the original she says it barely above the music; the French sits about 4 dB above her original
+   level (−28 LUFS) so it is clearly understood. (Client review: a first version re-sung the line on her melody;
+   it was replaced — it is speech, not singing.)
 7. **Lip sync** (`tools/melody_build.py` → `tools/build_lipsync_jobs.py` → `tools/full_stage.py`, sync-3):
    7 jobs, 42.4 s: English two-shot (one job per girl, each with only her own lines), Hebrew (Melody, Layla),
-   Portuguese (2 shots), French line, French song close-up.
+   Portuguese (2 shots), French line, French ending close-up.
 8. **Composite** (`tools/assemble_masked.py`): mouth-only masks, YUV compositing; the masked window covers both
    the dubbed speech and the original line (`also_windows`), so no original Spanish mouth movement shows
    without sound when a dub starts later than the original.
@@ -51,9 +52,10 @@ playing; the Phatty Acid logo is top right.
 ## QA
 
 - 2013 frames, 1920x1080, 24000/1001, AAC 48 kHz 320k; same length as the original.
-- Language ID of the final audio per section: es 0.97, en 0.94, he 0.98, pt 1.00, fr 0.97 (line), fr 0.97 (song).
-- No frame-to-frame jumps beyond the original's outside the song close-up, where the large mouth changes are the lip sync itself
-  (checked frame by frame: smooth, no flicker). Picture outside the mouths unchanged (encoding noise only).
+- Language ID of the final audio per section: es 0.97, en 0.90, he 0.98, pt 0.99, fr 0.97 (line 14), fr 0.98 (ending).
+- Humming before the ending: correlation with the original 1.0000 (untouched).
+- No frame-to-frame jumps beyond the original's outside the close-up at the mic, where the large mouth changes are the lip
+  sync itself (checked frame by frame: smooth, no flicker). Picture outside the mouths unchanged (encoding noise only).
 
 ## For a native speaker to spot-check
 

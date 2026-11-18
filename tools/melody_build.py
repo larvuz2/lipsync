@@ -3,11 +3,12 @@
     python3 tools/melody_build.py work/melody exchange/melody
 
 Language plan (clip seconds): Spanish original until 16.50, English 16.50-29.60 (lines 3-7), Hebrew 53.40-60.16
-(lines 8-10), Portuguese 60.16-66.18 (lines 11-13), French 66.18-67.80 (line 14) and the sung line (song_fr.wav,
-made by melody_song.py, 80.9-83.3). Each cut sits in a pause of both neighbouring dubs.
+(lines 8-10), Portuguese 60.16-66.18 (lines 11-13), French 66.18-67.80 (line 14) and the spoken ending after her
+humming (end_fr-FR.flac, made by melody_dub_end.py, 80.70-83.50; the humming stays original). Each cut sits in a
+pause of both neighbouring dubs.
 Writes:
   exchange/melody/en/00000101_EN.wav   dubbed voices only (job audio for lip sync)
-  work/melody/mix/voice_final.wav      dialogue stem of the demo (original Spanish + dubs + French song)
+  work/melody/mix/voice_final.wav      dialogue stem of the demo (original Spanish + dubs + French ending)
   work/melody/mix/final_mix.wav        voice_final + music/effects stem
   exchange/melody/plan.json, clips.json, transcripts.json, analysis/analysis.json
 """
@@ -36,11 +37,12 @@ LINES = [
 # where the ORIGINAL Spanish lines move the mouth (Whisper segments): lip-synced mouth also covers these
 ORIG = {"L3": (16.84, 18.04), "L4": (18.68, 20.18), "L5": (21.49, 23.29), "L6": (24.48, 26.52), "L7": (26.84, 28.90),
         "L8": (53.85, 54.37), "L9": (56.87, 58.61), "L10": (58.83, 59.59), "L11": (59.59, 60.29),
-        "L12": (61.11, 63.51), "L13": (63.85, 66.33), "L14": (66.33, 67.27), "song": (81.00, 83.12)}
-SONG = (80.90, 83.30)
+        "L12": (61.11, 63.51), "L13": (63.85, 66.33), "L14": (66.33, 67.27), "end": (81.00, 83.12)}
+END = (80.70, 83.50)   # spoken ending (after the humming, which stays original)
+END_GAIN_DB = 4.3      # the original says it softly, barely above the music; the French sits ~4 dB above that
 # final-mix trim per language (dB), so each dubbed section has the original voice's loudness (EBU R128, K-weighted;
 # the dubbed voices are brighter, so plain RMS matching left them about 3 dB loud). Not applied to the lip-sync audio.
-TRIM = {"en-US": -2.8, "he": -3.3, "pt-BR": -2.8, "fr-FR": -1.8, "song": -2.4}  # French sung line replaces the original vocal here
+TRIM = {"en-US": -2.8, "he": -3.3, "pt-BR": -2.8, "fr-FR": -1.8}  # French sung line replaces the original vocal here
 # lip-sync jobs: frames, face pin (frame, x, y), speaker, gate windows from LINES
 JOBS = [
     {"first": 393, "last": 714, "face": [457, 519, 361], "who": "Melody", "langs": ["en-US"]},
@@ -49,8 +51,8 @@ JOBS = [
     {"first": 1363, "last": 1424, "face": [1394, 1563, 428], "who": "Layla", "langs": ["he"]},
     {"first": 1425, "last": 1470, "face": [1448, 763, 408], "who": "Melody", "langs": ["pt-BR"]},
     {"first": 1513, "last": 1640, "face": [1577, 761, 410], "who": "Melody", "langs": ["pt-BR", "fr-FR"]},
-    {"first": 1925, "last": 2012, "face": [1944, 902, 462], "who": "Melody", "langs": ["song"],
-     "keep": [[80.98, 81.85], [82.36, 83.20]]},  # the French sung line (close-up at the mic)
+    {"first": 1925, "last": 2012, "face": [1944, 902, 462], "who": "Melody", "langs": ["end"],
+     "keep": [[80.90, 81.80], [82.05, 83.25]]},  # the spoken French ending (close-up at the mic)
 ]
 
 
@@ -111,13 +113,20 @@ def main():
         keep_orig -= e
     keep_orig = np.clip(keep_orig, 0, 1)
     voice = vocals * keep_orig[:, None] + dub_mix
-    song_p = os.path.join(w, "song", "song_fr.wav")
-    if os.path.exists(song_p):
-        s = load(song_p)[:n]
-        e = window(n, *SONG, 0.03)
-        voice = voice * (1 - e)[:, None] + np.pad(s, ((0, n - len(s)), (0, 0))) * (e * 10 ** (TRIM["song"] / 20))[:, None]
-        dub_only = dub_only + np.pad(s, ((0, n - len(s)), (0, 0))) * e[:, None]
-        print("French song included")
+    end_p = os.path.join(w, "dub", "end_fr-FR.flac")
+    if os.path.exists(end_p):
+        emap = json.load(open(os.path.join(w, "dub", "end_map.json")))[1]  # the ending piece of that dub source
+        x = load(end_p)
+        s0 = int(round(emap["src_start"] * SR))
+        seg = x[s0:s0 + int(round((emap["clip_end"] - emap["clip_start"]) * SR))]
+        tr = np.zeros((n, 2), np.float32)
+        c = int(round(emap["clip_start"] * SR))
+        tr[c:c + len(seg)] = seg[:n - c]
+        e = window(n, *END, 0.03)
+        g = 10 ** (END_GAIN_DB / 20)
+        voice = voice * (1 - e)[:, None] + tr * (e * g)[:, None]
+        dub_only = dub_only + tr * (e * g)[:, None]
+        print("French ending included")
     save(os.path.join(ex, "en", f"{CLIP}_EN.wav"), dub_only)
     save(os.path.join(w, "mix", "voice_final.wav"), voice)
     mix = voice + bg
@@ -131,8 +140,8 @@ def main():
                                  if who == j["who"] and lang in j["langs"]]
         also = [[round(ORIG[i][0] - 0.08, 2), round(ORIG[i][1] + 0.08, 2)] for i, lang, who, *_ in LINES
                 if who == j["who"] and lang in j["langs"]]
-        if "song" in j["langs"]:
-            also.append([ORIG["song"][0] - 0.08, ORIG["song"][1] + 0.08])
+        if "end" in j["langs"]:
+            also.append([ORIG["end"][0] - 0.08, ORIG["end"][1] + 0.08])
         jobs.append({"first": j["first"], "last": j["last"], "face": j["face"], "en_keep": keep, "mask": "mouth",
                      "also_windows": also, "note": f"{j['who']} ({', '.join(j['langs'])})"})
     plan = {CLIP: {"assemble": "masked", "cuts": [15, 33, 49, 66, 128, 160, 212, 781, 850, 921, 963, 1028, 1085, 1111, 1150, 1198,

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import glob
 import json
+import os
 import subprocess
 import sys
 import time
@@ -20,8 +21,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sync_api as api  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-MEDIA = ROOT / "media" / "full"
-PROJECT_ID = "7c2e9a41-3b5d-4f8e-a1c6-2d9b0e4f6a73"  # fixed, so reruns reuse the same Studio project
+MEDIA = Path(os.environ.get("LIPSYNC_MEDIA", ROOT / "media" / "full"))  # other shows: set LIPSYNC_MEDIA
+PROJECT_ID = os.environ.get("LIPSYNC_PROJECT", "7c2e9a41-3b5d-4f8e-a1c6-2d9b0e4f6a73")  # fixed, so reruns reuse the same Studio project
 
 
 def load_json(p: Path, default=None):

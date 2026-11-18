@@ -349,6 +349,18 @@ def build(ex, media, out_dir, clip):
         aud = os.path.join(ex, j["audio"])
         windows = [[round(a + f0 / FPS, 2), round(b + f0 / FPS, 2)] for a, b in speech_spans(aud)] \
             if os.path.exists(aud) else (pj.get("en_keep") or pj.get("keep") or [])
+        if pj.get("also_windows"):
+            # also cover where the ORIGINAL line moved the mouth (e.g. the dub starts later than the original):
+            # there the lip-synced mouth (quiet) replaces original mouth movement that would have no sound
+            ws = sorted([list(w) for w in windows] + [list(w) for w in pj["also_windows"]
+                                                       if w[1] > f0 / FPS and w[0] < (f1 + 1) / FPS])
+            merged = []
+            for a, b in ws:
+                if merged and a <= merged[-1][1] + 0.05:
+                    merged[-1][1] = max(merged[-1][1], b)
+                else:
+                    merged.append([a, b])
+            windows = [[round(max(a, f0 / FPS), 2), round(min(b, (f1 + 1) / FPS), 2)] for a, b in merged]
         if pj.get("gate") is False:
             # keep this job's mouth for its whole range (reproduces an approved full lip sync, mouths only)
             windows = [[round(f0 / FPS + PRE, 3), round(f1 / FPS - POST, 3)]]

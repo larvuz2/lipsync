@@ -61,7 +61,7 @@ def zoom_track(ex, clip, f0, f1, pin, zs, name):
     import cv2
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import assemble_masked as am
-    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+    media = os.environ.get("LIPSYNC_MEDIA") or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
     srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
     det = cv2.FaceDetectorYN.create(f"{am.MODELS}/yunet.onnx", "", (am.W, am.H), 0.4)
     fr, fx, fy = pin
@@ -213,7 +213,7 @@ def main():
                 entry["input_video"] = rel_v
                 if not os.path.exists(os.path.join(ex, rel_v)):
                     os.makedirs(os.path.join(ex, "lipsync_inputs"), exist_ok=True)
-                    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+                    media = os.environ.get("LIPSYNC_MEDIA") or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
                     srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", srcv, "-vf",
                                     f"select='between(n,{f0},{f1})',setpts=N/FRAME_RATE/TB", "-an", "-r", "24000/1001",
@@ -235,7 +235,7 @@ def main():
                 entry["input_video"] = rel_v
                 if not os.path.exists(os.path.join(ex, rel_v)):
                     os.makedirs(os.path.join(ex, "lipsync_zoom"), exist_ok=True)
-                    media = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
+                    media = os.environ.get("LIPSYNC_MEDIA") or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(ex))), "media", "full")
                     srcv = glob.glob(os.path.join(media, f"*Splits{clip}.mp4"))[0]
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", srcv, "-vf",
                                     f"select='between(n,{f0},{f1})',setpts=N/FRAME_RATE/TB,crop={zs}:{zs}:{zx}:{zy},"

@@ -37,3 +37,8 @@ exchange/full/analysis/*.jpg
 exchange/*/lipsync/src/
 exchange/full/en_orig/
 exchange/full/qa/
+
+# Melody demo: large/local-only working files
+exchange/melody/en/
+exchange/melody/lipsync/out/
+exchange/melody/lipsync_audio/

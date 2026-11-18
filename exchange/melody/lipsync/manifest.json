@@ -1,0 +1,162 @@
+[
+ {
+  "name": "00000101_f393-714_s0_5173b8",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 714,
+  "audio": "lipsync_audio/00000101_f393-714_s0_5173b8.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    519,
+    361
+   ]
+  },
+  "generationId": "5752cdbd-1be4-4594-a934-fba5199bf421",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/5752cdbd-1be4-4594-a934-fba5199bf421/result?token=034f526f-9e9e-4acb-a4ce-1f9b2dc06b8d",
+  "file": "lipsync/out/00000101_f393-714_s0_5173b8.mp4"
+ },
+ {
+  "name": "00000101_f393-714_s1_c2e953",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 714,
+  "audio": "lipsync_audio/00000101_f393-714_s1_c2e953.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    1373,
+    153
+   ]
+  },
+  "generationId": "35a74086-8d23-4193-88e2-c41ade52f97a",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/35a74086-8d23-4193-88e2-c41ade52f97a/result?token=bf9fdc0d-aaec-44cf-9ade-b05b5aa59616",
+  "file": "lipsync/out/00000101_f393-714_s1_c2e953.mp4"
+ },
+ {
+  "name": "00000101_f1281-1329_s2_969620",
+  "clip": "00000101",
+  "first_frame": 1281,
+  "last_frame": 1329,
+  "audio": "lipsync_audio/00000101_f1281-1329_s2_969620.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    874,
+    234
+   ]
+  },
+  "generationId": "1ee13b1f-4289-494a-9e29-2f5ab24d77fc",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1ee13b1f-4289-494a-9e29-2f5ab24d77fc/result?token=f38fc7ad-5675-4da2-a7d5-58ab3c1cc3ea",
+  "file": "lipsync/out/00000101_f1281-1329_s2_969620.mp4"
+ },
+ {
+  "name": "00000101_f1363-1424_s3_0a703b",
+  "clip": "00000101",
+  "first_frame": 1363,
+  "last_frame": 1424,
+  "audio": "lipsync_audio/00000101_f1363-1424_s3_0a703b.wav",
+  "face": {
+   "frame": 31,
+   "xy": [
+    1563,
+    428
+   ]
+  },
+  "generationId": "2aa12d62-e930-47bc-a100-52f516343370",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/2aa12d62-e930-47bc-a100-52f516343370/result?token=072d683d-e926-4dd8-a93e-f784e35ce59a",
+  "file": "lipsync/out/00000101_f1363-1424_s3_0a703b.mp4"
+ },
+ {
+  "name": "00000101_f1425-1470_s4_7dc209",
+  "clip": "00000101",
+  "first_frame": 1425,
+  "last_frame": 1470,
+  "audio": "lipsync_audio/00000101_f1425-1470_s4_7dc209.wav",
+  "face": {
+   "frame": 23,
+   "xy": [
+    763,
+    408
+   ]
+  },
+  "generationId": "226c68c5-396f-455c-b6e8-5f2dab7d4593",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/226c68c5-396f-455c-b6e8-5f2dab7d4593/result?token=4f6f7b5b-d202-4c3c-9daf-7b06bf3c276c",
+  "file": "lipsync/out/00000101_f1425-1470_s4_7dc209.mp4"
+ },
+ {
+  "name": "00000101_f1513-1640_s5_1bf609",
+  "clip": "00000101",
+  "first_frame": 1513,
+  "last_frame": 1640,
+  "audio": "lipsync_audio/00000101_f1513-1640_s5_1bf609.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    761,
+    410
+   ]
+  },
+  "generationId": "bf8e5fbe-604d-4808-9bd7-954362116880",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/bf8e5fbe-604d-4808-9bd7-954362116880/result?token=b642bdd9-5b6e-4f96-b159-92f2401f3dbc",
+  "file": "lipsync/out/00000101_f1513-1640_s5_1bf609.mp4"
+ },
+ {
+  "name": "00000101_f1925-2012_s6_43dccc",
+  "clip": "00000101",
+  "first_frame": 1925,
+  "last_frame": 2012,
+  "audio": "lipsync_audio/00000101_f1925-2012_s6_43dccc.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    902,
+    462
+   ]
+  },
+  "generationId": "6a4252e3-e2e7-432f-8f25-c90fb3d28506",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/6a4252e3-e2e7-432f-8f25-c90fb3d28506/result?token=4c54676d-0ea3-474d-bfd7-5617e106beff",
+  "file": "lipsync/out/00000101_f1925-2012_s6_43dccc.mp4"
+ },
+ {
+  "name": "00000101_f1425-1470_s4_452b59",
+  "clip": "00000101",
+  "first_frame": 1425,
+  "last_frame": 1470,
+  "audio": "lipsync_audio/00000101_f1425-1470_s4_452b59.wav",
+  "face": {
+   "frame": 23,
+   "xy": [
+    763,
+    408
+   ]
+  },
+  "generationId": "df39e03e-762a-4492-b012-f2bfcb0a77fb",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/df39e03e-762a-4492-b012-f2bfcb0a77fb/result?token=fee2c538-92ce-478c-b82e-52bf8b85ef73",
+  "file": "lipsync/out/00000101_f1425-1470_s4_452b59.mp4"
+ }
+]

@@ -45,6 +45,12 @@ playing; the Phatty Acid logo is top right.
 8. **Composite** (`tools/assemble_masked.py`): mouth-only masks, YUV compositing; the masked window covers both
    the dubbed speech and the original line (`also_windows`), so no original Spanish mouth movement shows
    without sound when a dub starts later than the original.
+   Ending close-up (client review: "glitches and flickers"): her face is very close, moving and under changing blue
+   light, so the face detector's box jumped in size and place from frame to frame. On 4 frames (82.50–82.54 s,
+   82.83–82.87 s) the mask was shifted by those jumps off her mouth and the original Spanish mouth showed for two
+   frames at a time. The job is now marked `steady`: the box is a temporal median, the mouth outline is searched
+   where the mouth was on the last frame (found on 88/88 frames), and the mask's grow/feather use the shot's median
+   face size. All 59 frames of the line now carry the lip-synced mouth (was 55); the other shots are unchanged.
 9. **Mix and render** (`tools/melody_render.py`): music/effects stem + voices; each dubbed section trimmed to
    the original voice's loudness (EBU R128). Overall −23.3 LUFS vs −23.4 LUFS original, every section within
    0.2 LU.

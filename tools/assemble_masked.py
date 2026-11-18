@@ -241,6 +241,8 @@ def envelope(n_abs, f0, f1, windows):
     return np.clip(e, 0, 1)
 
 
+DEBUG = [int(v) for v in os.environ["MASK_DEBUG"].split("-")] if os.environ.get("MASK_DEBUG") else None
+
 MERGE = 2.5  # s: pauses shorter than this keep the lip sync on (no fade out and back in mid-sentence)
 
 
@@ -409,6 +411,15 @@ def build(ex, media, out_dir, clip):
                 b2 = track(src, f0, f1, f0 + j["face"]["frame"], pin, det_lo, max_gap=int(pj.get("max_gap", 24)))
                 if len(b2) > len(boxes):
                     boxes = b2
+        if pj.get("steady") and boxes:
+            # very close / moving face (e.g. a close-up at a mic): the detector's box jumps in size and place from
+            # frame to frame; a temporal median of centre and size keeps it on the face
+            ks = sorted(boxes)
+            arr = np.array([[boxes[q][0] + boxes[q][2] / 2, boxes[q][1] + boxes[q][3] / 2, boxes[q][2], boxes[q][3]]
+                            for q in ks])
+            r = 3
+            med = np.array([np.median(arr[max(0, i - r):i + r + 1], 0) for i in range(len(ks))])
+            boxes = {q: np.array([cx - w / 2, cy - h / 2, w, h]) for q, (cx, cy, w, h) in zip(ks, med)}
         # frames where the mouth can be seen (e.g. not hidden by a hand or by someone passing in front)
         a0, a1 = pj.get("active", [f0, f1])
         layers.append({"name": j["name"], "f0": f0, "f1": f1, "a0": max(f0, a0), "a1": min(f1, a1), "boxes": boxes,
@@ -419,7 +430,9 @@ def build(ex, media, out_dir, clip):
                        "grow": {"mouth": 0.04, "lips": 0.05}.get(pj.get("mask"), 0.025),
                        "soft": {"mouth": 0.03, "lips": 0.025}.get(pj.get("mask"), 0.02),
                        "tight": pj.get("mask") == "lips",
-                       "zin": os.path.join(ex, j["input_video"]) if zoom else None})
+                       "zin": os.path.join(ex, j["input_video"]) if zoom else None,
+                       "steady": bool(pj.get("steady")),
+                       "wmed": float(np.median([b[2] for b in boxes.values()])) if boxes else None})
         print(f"  {j['name']}: face tracked on {len(boxes)}/{f1 - f0 + 1} frames, windows {windows or 'whole job'}",
               flush=True)
     for L in layers:
@@ -452,10 +465,23 @@ def build(ex, media, out_dir, clip):
                     L["corners"][k] = [(zx + px / kz, zy + py / kz) for px, py in cq]
                 b = unzoom(a, b, L["zoom"], k)
             else:
-                pa, pb = lower_face(a, L["boxes"][k], L["idx"]), lower_face(b, L["boxes"][k], L["idx"])
-                cq = detect_corners(cdet, a, L["boxes"][k])
+                bk = L["boxes"][k]
+                if L["steady"] and L.get("mc") is not None:
+                    # follow the mouth itself (where it was on the last frame), not the detector's jumpy face box
+                    wq = L["wmed"]
+                    bk = np.array([L["mc"][0] - wq / 2, L["mc"][1] - 0.72 * wq * 1.1, wq, wq * 1.1])
+                    L["boxes"][k] = bk
+                pa, pb = lower_face(a, bk, L["idx"]), lower_face(b, bk, L["idx"])
+                if L["steady"] and pa is None and pb is None and bk is not L["boxes"].get(k):
+                    pa, pb = lower_face(a, L["boxes"][k], L["idx"]), lower_face(b, L["boxes"][k], L["idx"])
+                cq = detect_corners(cdet, a, bk)
                 if cq is not None:
                     L["corners"][k] = cq
+            if L["steady"] and (pa is None) != (pb is None):
+                pa = pb if pa is None else pa  # same point count on every frame, so outlines can be interpolated
+                pb = pa if pb is None else pb
+            if L["steady"] and pa is not None:
+                L["mc"] = np.concatenate([pa, pb]).mean(0)
             if pa is not None or pb is not None:
                 raw[k] = np.concatenate([p for p in (pa, pb) if p is not None])
             # how different the lip-synced mouth looks from the original on this frame
@@ -512,7 +538,23 @@ def build(ex, media, out_dir, clip):
                 continue
             box = L["boxes"][k]
             near = [j for j in range(k - 12, k + 13) if j in L["pts"]]
-            if near:
+            if L["steady"] and near:
+                wq = L["wmed"]
+                if k in L["pts"]:
+                    j, P = k, L["pts"][k]
+                else:
+                    before = [q for q in near if q < k]
+                    after = [q for q in near if q > k]
+                    j1 = max(before) if before else None
+                    j2 = min(after) if after else None
+                    if j1 is not None and j2 is not None and L["pts"][j1].shape == L["pts"][j2].shape:
+                        u = (k - j1) / (j2 - j1)
+                        j, P = j1, L["pts"][j1] * (1 - u) + L["pts"][j2] * u
+                    else:
+                        j = j1 if j1 is not None else j2
+                        P = L["pts"][j]
+                m = hull_mask(P, wq, L["grow"], L["soft"]) * a
+            elif near:
                 j = min(near, key=lambda q: abs(q - k))
                 bj = L["boxes"].get(j, box)
                 shift = np.array([box[0] + box[2] / 2 - bj[0] - bj[2] / 2, box[1] + box[3] / 2 - bj[1] - bj[3] / 2])
@@ -528,6 +570,9 @@ def build(ex, media, out_dir, clip):
                 else:
                     m = ellipse_mask(box) * a
                     L["fallback"] = L.get("fallback", 0) + 1
+            if DEBUG and DEBUG[0] <= k <= DEBUG[1]:
+                print(f"    debug {L['name'][-9:]} frame {k}: alpha {a:.2f} mask sum {m.sum():.0f} "
+                      f"outline from {j if near else None} box {np.round(box[:4]).astype(int).tolist()}", flush=True)
             outf = outf * (1 - m[None]) + syn.astype(np.float32) * m[None]
         enc.stdin.write(np.clip(outf + 0.5, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()

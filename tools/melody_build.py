@@ -52,7 +52,9 @@ JOBS = [
     {"first": 1425, "last": 1470, "face": [1448, 763, 408], "who": "Melody", "langs": ["pt-BR"]},
     {"first": 1513, "last": 1640, "face": [1577, 761, 410], "who": "Melody", "langs": ["pt-BR", "fr-FR"]},
     {"first": 1925, "last": 2012, "face": [1944, 902, 462], "who": "Melody", "langs": ["end"],
-     "keep": [[80.90, 81.80], [82.05, 83.25]]},  # the spoken French ending (close-up at the mic)
+     "keep": [[80.90, 81.80], [82.05, 83.25]], "steady": True},  # the spoken French ending (close-up at the mic);
+    # steady: her face is very close and moving under blue light, so the mask follows the mouth itself, not the
+    # face detector's jumpy box (that box made the mask slip off her mouth on 4 frames: flicker)
 ]
 
 
@@ -143,7 +145,8 @@ def main():
         if "end" in j["langs"]:
             also.append([ORIG["end"][0] - 0.08, ORIG["end"][1] + 0.08])
         jobs.append({"first": j["first"], "last": j["last"], "face": j["face"], "en_keep": keep, "mask": "mouth",
-                     "also_windows": also, "note": f"{j['who']} ({', '.join(j['langs'])})"})
+                     "also_windows": also, "note": f"{j['who']} ({', '.join(j['langs'])})",
+                     **({"steady": True} if j.get("steady") else {})})
     plan = {CLIP: {"assemble": "masked", "cuts": [15, 33, 49, 66, 128, 160, 212, 781, 850, 921, 963, 1028, 1085, 1111, 1150, 1198,
                             1221, 1255, 1280, 1330, 1363, 1425, 1471, 1513, 1641, 1707, 1752],
                    "jobs": jobs,

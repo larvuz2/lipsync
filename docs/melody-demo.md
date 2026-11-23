@@ -79,3 +79,35 @@ playing; the Phatty Acid logo is top right.
 Dubbing 4 × 36.4 s + song test 11 s + PT re-dub test 6.8 s (163 s, about $16 at $0.10/s); lip sync 42.4 s + 1.9 s
 re-run of the PT shot (about $5.6 with sync-3); a few short TTS takes. About $22 in total. Three ElevenLabs
 dubbing test runs also went through fal.ai while the Sync account was suspended; they are not used.
+
+---
+
+# Version 2 — Spanish → English → Hebrew (native accents)
+
+Client: only English and Hebrew ("Israel is a big market"), and English "without accents, like native English
+speakers". Output: `Melody_EP101_ES_EN_HE_demo.mp4`.
+
+| Clip time | Language | Lines (approved script) |
+|---|---|---|
+| 0 – 16.5 s | Spanish (original audio) | 1 Layla "¡Buf! ¡Ey! ¿Pasó algo?" · 2 Melody "Lo de siempre…" |
+| 16.5 – 53.4 s | English | 3 Layla "How much longer?" · 4 Melody "I know, don't even say it." · 5 Melody "What about Charlie? Everything okay?" · 6 Layla "With him, everything is always more than fine." · 7 Layla "Charlie is the picture of balance." |
+| 53.4 s – end | Hebrew | 8 Melody "מוכנה." · 9 Layla "כמה זה מעצבן אותי שאת צריכה להסתתר!" · 10 Layla "תבטיחי לי שיום אחד…" · 11 Melody "אל תגידי לי כלום." · 12 "זה העתיד, והעתיד לא קיים." · 13 "ההווה שלי זה מה שאני חיה כאן ועכשיו, כי…" · 14 "העתיד שלי הוא היום." · (humming: original) · 15 "העתיד שלי? העתיד שלי הוא היום." |
+
+## Why line-by-line voicing instead of the auto-dub
+
+Tried first (`tools/melody_dub_pieces.py`): Sync dubbing with lower cloning strength (2 and 4 for English, 4 and 6
+for Hebrew). Lower strength gives a native accent but loses the voices (Layla's voice match fell to ~0 at strength
+2), the English wording drifted from the script, and several Hebrew lines came out wrong at both strengths (line 11
+nonsense, line 14 "ancient" instead of "future"). Not used.
+
+Used (`tools/melody_tts_lines.py`, `tools/melody_build_enhe.py`): each girl's voice cloned (Sync/ElevenLabs) from
+her own clean Spanish lines; every line voiced from the approved script, 3–6 takes per line; per line the take with
+the most native accent (English, CommonAccent classifier) and the closest voice was picked. Every Hebrew take
+transcribes exactly as the script. Line 6: with "everything's" every take read British; "everything is" reads
+American (same words). Each take: long pauses shortened to 0.18 s, fitted to its slot with Praat PSOLA (0.85–1.0x),
+pitch moved partly toward the actress's pitch in that same line (at most 2.5 semitones), level matched to the original
+line (EBU R128; the ending +4.3 dB as in v1). English accent after fitting: US on lines 3, 4, 6, 7; line 5 North
+American (classified Canada).
+
+Lip sync: same 7 shots, sync-3, re-run on the new audio; mouth-only masks covering the new line and the original
+line; the close-up at the mic uses the `steady` mask.

@@ -140,8 +140,9 @@ def run_job(job: dict, ex: Path, frames: dict) -> dict:
         gen = api.generate(body)
         print(f"{job['name']}: submitted {gen['id']}", flush=True)
         g = api.wait_generation(gen["id"])
+        # the result link carries an access token: keep it out of the manifest (it is committed to git)
         res = {**job, "generationId": gen["id"], "status": g["status"], "error": g.get("error"),
-               "errorCode": g.get("errorCode"), "outputUrl": g.get("outputUrl")}
+               "errorCode": g.get("errorCode"), "outputUrl": (g.get("outputUrl") or "").split("?")[0] or None}
         if g["status"] == "COMPLETED" and g.get("outputUrl"):
             api.download(g["outputUrl"], out)
             res["file"] = str(out.relative_to(ex))

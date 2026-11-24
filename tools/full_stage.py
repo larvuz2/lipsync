@@ -131,7 +131,7 @@ def run_job(job: dict, ex: Path, frames: dict) -> dict:
         body = {"model": job.get("model", "sync-3"), "projectId": PROJECT_ID,
                 "input": [{"type": "video", "assetId": vid}, {"type": "audio", "assetId": aud}],
                 "options": {"sync_mode": "cut_off", **job.get("options", {})}, "outputFileName": job["name"]}
-        face = job.get("face")
+        face = "auto" if job.get("asd") == "auto" else job.get("face")  # asd auto: let Sync find the speaking face
         if face == "auto":
             body["options"]["active_speaker_detection"] = {"auto_detect": True}
         elif face:

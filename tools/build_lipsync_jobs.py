@@ -204,7 +204,7 @@ def main():
                      "face": {"frame": fr - f0, "xy": [fx, fy]}}
             if parent:
                 entry["input_from"] = parent
-            for key in ("model", "options", "variant"):
+            for key in ("model", "options", "variant", "asd"):
                 if j.get(key):
                     entry[key] = j[key]
             if cfg.get("prepared_inputs") and not j.get("zoom"):

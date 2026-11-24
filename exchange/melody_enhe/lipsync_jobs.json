@@ -1,38 +1,52 @@
 [
  {
-  "name": "00000101_f393-725_s0_d1fbeb",
+  "name": "00000101_f393-725_s0z_z_52d446",
   "clip": "00000101",
   "first_frame": 393,
   "last_frame": 725,
-  "audio": "lipsync_audio/00000101_f393-725_s0_d1fbeb.wav",
+  "audio": "lipsync_audio/00000101_f393-725_s0z_z_52d446.wav",
   "face": {
    "frame": 64,
    "xy": [
-    519,
-    361
+    506,
+    443
    ]
-  }
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s0z_z_52d446.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s0z_z_52d446.mp4"
  },
  {
-  "name": "00000101_f393-725_s1_cdf127",
+  "name": "00000101_f393-725_s1z_z_6b7039",
   "clip": "00000101",
   "first_frame": 393,
   "last_frame": 725,
-  "audio": "lipsync_audio/00000101_f393-725_s1_cdf127.wav",
+  "audio": "lipsync_audio/00000101_f393-725_s1z_z_6b7039.wav",
   "face": {
    "frame": 207,
    "xy": [
-    1373,
-    153
+    514,
+    432
    ]
-  }
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s1z_z_6b7039.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s1z_z_6b7039.mp4"
  },
  {
-  "name": "00000101_f1281-1329_s2_90cc17",
+  "name": "00000101_f1281-1329_s2_cfedd2",
   "clip": "00000101",
   "first_frame": 1281,
   "last_frame": 1329,
-  "audio": "lipsync_audio/00000101_f1281-1329_s2_90cc17.wav",
+  "audio": "lipsync_audio/00000101_f1281-1329_s2_cfedd2.wav",
   "face": {
    "frame": 19,
    "xy": [
@@ -42,11 +56,11 @@
   }
  },
  {
-  "name": "00000101_f1363-1424_s3_1383b2",
+  "name": "00000101_f1363-1424_s3_224c98",
   "clip": "00000101",
   "first_frame": 1363,
   "last_frame": 1424,
-  "audio": "lipsync_audio/00000101_f1363-1424_s3_1383b2.wav",
+  "audio": "lipsync_audio/00000101_f1363-1424_s3_224c98.wav",
   "face": {
    "frame": 31,
    "xy": [
@@ -56,11 +70,11 @@
   }
  },
  {
-  "name": "00000101_f1425-1470_s4_779104",
+  "name": "00000101_f1425-1470_s4_93313f",
   "clip": "00000101",
   "first_frame": 1425,
   "last_frame": 1470,
-  "audio": "lipsync_audio/00000101_f1425-1470_s4_779104.wav",
+  "audio": "lipsync_audio/00000101_f1425-1470_s4_93313f.wav",
   "face": {
    "frame": 23,
    "xy": [
@@ -70,11 +84,11 @@
   }
  },
  {
-  "name": "00000101_f1513-1640_s5_a15067",
+  "name": "00000101_f1513-1640_s5_4414fc",
   "clip": "00000101",
   "first_frame": 1513,
   "last_frame": 1640,
-  "audio": "lipsync_audio/00000101_f1513-1640_s5_a15067.wav",
+  "audio": "lipsync_audio/00000101_f1513-1640_s5_4414fc.wav",
   "face": {
    "frame": 64,
    "xy": [
@@ -84,11 +98,11 @@
   }
  },
  {
-  "name": "00000101_f1925-2012_s6_39479d",
+  "name": "00000101_f1925-2012_s6_bd3249",
   "clip": "00000101",
   "first_frame": 1925,
   "last_frame": 2012,
-  "audio": "lipsync_audio/00000101_f1925-2012_s6_39479d.wav",
+  "audio": "lipsync_audio/00000101_f1925-2012_s6_bd3249.wav",
   "face": {
    "frame": 19,
    "xy": [
@@ -96,5 +110,55 @@
     462
    ]
   }
+ },
+ {
+  "name": "00000101_f393-725_s7z_zp_19e0e2",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s7z_zp_19e0e2.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s7z_zp_19e0e2.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s7z_zp_19e0e2.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s8z_zp_686dc3",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s8z_zp_686dc3.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s8z_zp_686dc3.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s8z_zp_686dc3.mp4"
  }
 ]

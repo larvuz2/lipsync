@@ -111,3 +111,33 @@ American (classified Canada).
 
 Lip sync: same 7 shots, sync-3, re-run on the new audio; mouth-only masks covering the new line and the original
 line; the close-up at the mic uses the `steady` mask.
+
+## Client review: "the English section is awful lip sync" — cause and fix
+
+Same lip-sync process as Rise of the Raven (sync-3 + mouth-only masked composite). What differed:
+
+- **Timing.** sync-3 keeps much of the actor's original mouth rhythm (it preserves the performance; its output
+  mouth followed Melody's original Spanish mouth at r = 0.82). On Raven the English always followed the original
+  timing (auto-dub, or the King's phrases re-timed onto his mouth). In version 2 the native-accent lines were placed
+  by Whisper's word times, which ran up to 0.5 s early (e.g. Melody's line 4 really starts at 19.03 s, not 18.68 s),
+  and some English lines were ~50 % longer than the Spanish — so the mouths moved against the English
+  (mouth vs. speech r = −0.24 for Melody).
+- **Fix:** every line (English and Hebrew) now starts where the actress really starts (from the dialogue stem's
+  energy), is fitted toward her original length (0.75–1.12x, Praat PSOLA), and phrase by phrase where both have
+  phrases (line 5). Two English lines use slightly shorter wordings so they fit her mouth: "I know, don't say it."
+  and "With him, it's always more than fine." (US accent 0.99 on both). Layla's Hebrew line 10 is cut off after
+  "תבטיחי לי ש-" by Melody's line 11, as in the original, so line 11 starts on Melody's own mouth. New speech vs. the
+  original mouth rhythm: r = +0.26 for both girls (was −0.09 / −0.03; the Spanish itself scores ~0.3).
+- **English two-shot faces** (~200 px, 3/4 view) are sent as tracked, enlarged crops (as for small faces in Raven),
+  with Sync's own speaker detection in the crop.
+- Tested and not used: sync-3 with higher temperature (ignored by sync-3); lipsync-2-pro (moves the mouth more but
+  misplaces and smears it on these angled faces, a doubled mouth on Layla at 25.4 s).
+- Compositor fixes found in this pass (`tools/assemble_masked.py`):
+  - Two zoomed jobs on the same shot (one per girl) were both matched to the first plan entry, so Layla's layer
+    used Melody's speech windows. Each job now uses its own plan entry (its index is in the job name).
+  - Where the mouth outline cannot be found for a few frames (a `steady` job), the neighbours' outlines are
+    interpolated and moved with the detector's mouth corners, and the mask is a little wider.
+  - Melody turns to full profile at 23.06–23.36 s: there neither the landmarks nor the mouth corners find her mouth,
+    and sync-3's output differs from the original along her whole profile, so no mask can be trusted; that job is
+    marked `fade_profile`: the lip sync fades out and back in over 3 frames there instead of flipping between
+    mouths. (Layla's profile frames keep the lip sync: there the interpolated outline sits on her mouth.)

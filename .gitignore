@@ -45,3 +45,6 @@ exchange/melody/lipsync_audio/
 exchange/melody_enhe/en/
 exchange/melody_enhe/lipsync/out/
 exchange/melody_enhe/lipsync_audio/
+exchange/melody_enhe/lipsync_zoom/*.mp4
+# client footage kept out of git (the push was blocked as sensitive); delivered via chat and a download link
+deliverables/melody/Melody_EP101_ES_EN_HE_demo.mp4

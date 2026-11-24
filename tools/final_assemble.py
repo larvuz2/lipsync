@@ -3,7 +3,7 @@
     python3 tools/final_assemble.py <out.mp4> [crf] [--preview frame,frame,...]
 
 Order: title "Dubbing & Lip Sync" -> multi-language demo (ES/EN/HE/PT/FR master) -> title "Product Placement" ->
-product placement v2 -> title "Vertical Reframe" -> vertical reframe demo.
+product placement v2 -> title "Vertical Reframe" -> vertical reframe demo -> title "Animated Version" -> animated version.
 Title cards: black, centred logo, "01 / 03" eyebrow, the service name large, a gold rule and one line on what follows,
 in the label design (Space Mono gold, Playfair Display cream, Inter muted); the elements fade/rise in.
 Transitions: each title crossfades into its clip (0.58 s) while the clip's sound fades in from silence; each clip
@@ -28,15 +28,18 @@ OUT_FR = 12                   # clip -> black dip / sound fade-out (0.5 s)
 END_FR = 18                   # last clip's fade to black
 FONTS = "work/melody/fonts"
 CLIPS = [
-    ("01 / 03", "Dubbing & Lip Sync",
+    ("01 / 04", "Dubbing & Lip Sync",
      "Spanish original, then English, Hebrew, Portuguese and French in the actresses’ own voices",
      "outputs/melody/Melody_EP101_multilanguage_demo.mp4"),
-    ("02 / 03", "Product Placement",
+    ("02 / 04", "Product Placement",
      "A brand’s jacket placed on a character after the shoot",
      "outputs/pp/Melody_EP101_product_placement_v2.mp4"),
-    ("03 / 03", "Vertical Reframe",
+    ("03 / 04", "Vertical Reframe",
      "A 16:9 scene extended to 9:16 for social, the original picture intact",
      "outputs/vr/Melody_EP101_vertical_reframe_demo.mp4"),
+    ("04 / 04", "Animated Version",
+     "The actors as animated characters, with the same performance and dialogue",
+     "outputs/anim/Melody_EP101_animated_version.mp4"),
 ]
 
 

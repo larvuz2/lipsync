@@ -1,0 +1,534 @@
+[
+ {
+  "name": "00000101_f393-725_s0_d1fbeb",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s0_d1fbeb.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    519,
+    361
+   ]
+  },
+  "generationId": "8a7def61-62c6-4ad3-8119-05d146a5cfb5",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/8a7def61-62c6-4ad3-8119-05d146a5cfb5/result",
+  "file": "lipsync/out/00000101_f393-725_s0_d1fbeb.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s1_cdf127",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s1_cdf127.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    1373,
+    153
+   ]
+  },
+  "generationId": "8ed494d4-a7b5-4c72-b781-d478758b8238",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/8ed494d4-a7b5-4c72-b781-d478758b8238/result",
+  "file": "lipsync/out/00000101_f393-725_s1_cdf127.mp4"
+ },
+ {
+  "name": "00000101_f1281-1329_s2_90cc17",
+  "clip": "00000101",
+  "first_frame": 1281,
+  "last_frame": 1329,
+  "audio": "lipsync_audio/00000101_f1281-1329_s2_90cc17.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    874,
+    234
+   ]
+  },
+  "generationId": "f574ec80-d690-4a6c-9f2f-6e5370644714",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/f574ec80-d690-4a6c-9f2f-6e5370644714/result",
+  "file": "lipsync/out/00000101_f1281-1329_s2_90cc17.mp4"
+ },
+ {
+  "name": "00000101_f1363-1424_s3_1383b2",
+  "clip": "00000101",
+  "first_frame": 1363,
+  "last_frame": 1424,
+  "audio": "lipsync_audio/00000101_f1363-1424_s3_1383b2.wav",
+  "face": {
+   "frame": 31,
+   "xy": [
+    1563,
+    428
+   ]
+  },
+  "generationId": "a0c9c273-b25a-4f61-809d-d35342a42f82",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/a0c9c273-b25a-4f61-809d-d35342a42f82/result",
+  "file": "lipsync/out/00000101_f1363-1424_s3_1383b2.mp4"
+ },
+ {
+  "name": "00000101_f1425-1470_s4_779104",
+  "clip": "00000101",
+  "first_frame": 1425,
+  "last_frame": 1470,
+  "audio": "lipsync_audio/00000101_f1425-1470_s4_779104.wav",
+  "face": {
+   "frame": 23,
+   "xy": [
+    763,
+    408
+   ]
+  },
+  "generationId": "25aff850-0a0d-4d0b-aff5-c0fe91207826",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/25aff850-0a0d-4d0b-aff5-c0fe91207826/result",
+  "file": "lipsync/out/00000101_f1425-1470_s4_779104.mp4"
+ },
+ {
+  "name": "00000101_f1513-1640_s5_a15067",
+  "clip": "00000101",
+  "first_frame": 1513,
+  "last_frame": 1640,
+  "audio": "lipsync_audio/00000101_f1513-1640_s5_a15067.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    761,
+    410
+   ]
+  },
+  "generationId": "894afa68-b5f4-46b6-b6f8-9d2a39fe495b",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/894afa68-b5f4-46b6-b6f8-9d2a39fe495b/result",
+  "file": "lipsync/out/00000101_f1513-1640_s5_a15067.mp4"
+ },
+ {
+  "name": "00000101_f1925-2012_s6_39479d",
+  "clip": "00000101",
+  "first_frame": 1925,
+  "last_frame": 2012,
+  "audio": "lipsync_audio/00000101_f1925-2012_s6_39479d.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    902,
+    462
+   ]
+  },
+  "generationId": "1781fb5f-5b63-4323-ba4e-9a5567826756",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1781fb5f-5b63-4323-ba4e-9a5567826756/result",
+  "file": "lipsync/out/00000101_f1925-2012_s6_39479d.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s7z_z_93c39f",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s7z_z_93c39f.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s7z_z_93c39f.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s7z_z_93c39f.mp4",
+  "generationId": "b21c41dc-4b3c-485d-9f52-7bd0811e6c29",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/b21c41dc-4b3c-485d-9f52-7bd0811e6c29/result",
+  "file": "lipsync/out/00000101_f393-725_s7z_z_93c39f.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s8z_z_230be1",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s8z_z_230be1.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s8z_z_230be1.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s8z_z_230be1.mp4",
+  "generationId": "6d3d9cf3-06b5-4cad-ada6-13b1be3cc652",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/6d3d9cf3-06b5-4cad-ada6-13b1be3cc652/result",
+  "file": "lipsync/out/00000101_f393-725_s8z_z_230be1.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s9z_zt_bf7965",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s9z_zt_bf7965.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "options": {
+   "temperature": 0.9
+  },
+  "variant": "zt",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s9z_zt_bf7965.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s9z_zt_bf7965.mp4",
+  "generationId": "3337e377-432d-4f87-8328-f83c9c4eea18",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/3337e377-432d-4f87-8328-f83c9c4eea18/result",
+  "file": "lipsync/out/00000101_f393-725_s9z_zt_bf7965.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s10z_zt_a313a2",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s10z_zt_a313a2.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "options": {
+   "temperature": 0.9
+  },
+  "variant": "zt",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s10z_zt_a313a2.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s10z_zt_a313a2.mp4",
+  "generationId": "1c2fe2c8-50ce-4c76-8239-2b83451d0e0f",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1c2fe2c8-50ce-4c76-8239-2b83451d0e0f/result",
+  "file": "lipsync/out/00000101_f393-725_s10z_zt_a313a2.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s11z_zp_95789e",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s11z_zp_95789e.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s11z_zp_95789e.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s11z_zp_95789e.mp4",
+  "generationId": "518f8f29-ea15-44f0-9d8a-d34c42823802",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/518f8f29-ea15-44f0-9d8a-d34c42823802/result",
+  "file": "lipsync/out/00000101_f393-725_s11z_zp_95789e.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s12z_zp_b88e13",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s12z_zp_b88e13.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s12z_zp_b88e13.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s12z_zp_b88e13.mp4",
+  "generationId": "0ae4cc38-80e8-48c4-a91c-9cf17fa48995",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/0ae4cc38-80e8-48c4-a91c-9cf17fa48995/result",
+  "file": "lipsync/out/00000101_f393-725_s12z_zp_b88e13.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s0z_z_52d446",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s0z_z_52d446.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s0z_z_52d446.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s0z_z_52d446.mp4",
+  "generationId": "0ea34e99-de5c-4ec3-bdd1-f3566f59e3e2",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/0ea34e99-de5c-4ec3-bdd1-f3566f59e3e2/result",
+  "file": "lipsync/out/00000101_f393-725_s0z_z_52d446.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s1z_z_6b7039",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s1z_z_6b7039.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "variant": "z",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s1z_z_6b7039.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s1z_z_6b7039.mp4",
+  "generationId": "380cea54-06fb-4478-b394-b3239bf25cd2",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/380cea54-06fb-4478-b394-b3239bf25cd2/result",
+  "file": "lipsync/out/00000101_f393-725_s1z_z_6b7039.mp4"
+ },
+ {
+  "name": "00000101_f1281-1329_s2_cfedd2",
+  "clip": "00000101",
+  "first_frame": 1281,
+  "last_frame": 1329,
+  "audio": "lipsync_audio/00000101_f1281-1329_s2_cfedd2.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    874,
+    234
+   ]
+  },
+  "generationId": "848ae9b6-536a-4151-877a-fbc55b6d1419",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/848ae9b6-536a-4151-877a-fbc55b6d1419/result",
+  "file": "lipsync/out/00000101_f1281-1329_s2_cfedd2.mp4"
+ },
+ {
+  "name": "00000101_f1363-1424_s3_224c98",
+  "clip": "00000101",
+  "first_frame": 1363,
+  "last_frame": 1424,
+  "audio": "lipsync_audio/00000101_f1363-1424_s3_224c98.wav",
+  "face": {
+   "frame": 31,
+   "xy": [
+    1563,
+    428
+   ]
+  },
+  "generationId": "20e6c231-4a70-4236-9be1-c3e6ce3b4627",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/20e6c231-4a70-4236-9be1-c3e6ce3b4627/result",
+  "file": "lipsync/out/00000101_f1363-1424_s3_224c98.mp4"
+ },
+ {
+  "name": "00000101_f1425-1470_s4_93313f",
+  "clip": "00000101",
+  "first_frame": 1425,
+  "last_frame": 1470,
+  "audio": "lipsync_audio/00000101_f1425-1470_s4_93313f.wav",
+  "face": {
+   "frame": 23,
+   "xy": [
+    763,
+    408
+   ]
+  },
+  "generationId": "93fc2eb4-d99c-4f11-82f7-9c3ef255f2e1",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/93fc2eb4-d99c-4f11-82f7-9c3ef255f2e1/result",
+  "file": "lipsync/out/00000101_f1425-1470_s4_93313f.mp4"
+ },
+ {
+  "name": "00000101_f1513-1640_s5_4414fc",
+  "clip": "00000101",
+  "first_frame": 1513,
+  "last_frame": 1640,
+  "audio": "lipsync_audio/00000101_f1513-1640_s5_4414fc.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    761,
+    410
+   ]
+  },
+  "generationId": "4b403dbe-205f-4c0c-a72d-c0720f9fbc9c",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/4b403dbe-205f-4c0c-a72d-c0720f9fbc9c/result",
+  "file": "lipsync/out/00000101_f1513-1640_s5_4414fc.mp4"
+ },
+ {
+  "name": "00000101_f1925-2012_s6_bd3249",
+  "clip": "00000101",
+  "first_frame": 1925,
+  "last_frame": 2012,
+  "audio": "lipsync_audio/00000101_f1925-2012_s6_bd3249.wav",
+  "face": {
+   "frame": 19,
+   "xy": [
+    902,
+    462
+   ]
+  },
+  "generationId": "555227f7-fbd8-4f02-ab97-cfb333699b2a",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/555227f7-fbd8-4f02-ab97-cfb333699b2a/result",
+  "file": "lipsync/out/00000101_f1925-2012_s6_bd3249.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s7z_zp_19e0e2",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s7z_zp_19e0e2.wav",
+  "face": {
+   "frame": 64,
+   "xy": [
+    506,
+    443
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s7z_zp_19e0e2.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s7z_zp_19e0e2.mp4",
+  "generationId": "1da5ce37-45c8-4fd5-8863-4b7c26c06eaa",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/1da5ce37-45c8-4fd5-8863-4b7c26c06eaa/result",
+  "file": "lipsync/out/00000101_f393-725_s7z_zp_19e0e2.mp4"
+ },
+ {
+  "name": "00000101_f393-725_s8z_zp_686dc3",
+  "clip": "00000101",
+  "first_frame": 393,
+  "last_frame": 725,
+  "audio": "lipsync_audio/00000101_f393-725_s8z_zp_686dc3.wav",
+  "face": {
+   "frame": 207,
+   "xy": [
+    514,
+    432
+   ]
+  },
+  "model": "lipsync-2-pro",
+  "options": {
+   "temperature": 0.8
+  },
+  "variant": "zp",
+  "asd": "auto",
+  "zoom": {
+   "size": 380,
+   "file": "lipsync_zoom/00000101_f393-725_s8z_zp_686dc3.json"
+  },
+  "input_video": "lipsync_zoom/00000101_f393-725_s8z_zp_686dc3.mp4",
+  "generationId": "4c9c90e3-e21a-4337-bf8f-0b5574f95760",
+  "status": "COMPLETED",
+  "error": null,
+  "errorCode": null,
+  "outputUrl": "https://api.sync.so/v2/generations/4c9c90e3-e21a-4337-bf8f-0b5574f95760/result",
+  "file": "lipsync/out/00000101_f393-725_s8z_zp_686dc3.mp4"
+ }
+]

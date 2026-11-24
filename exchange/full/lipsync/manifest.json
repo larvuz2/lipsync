@@ -16,7 +16,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6f26543b-4918-4992-b229-bea36adc62bd/result?token=bbc559b1-dc62-421a-a8a8-bc89f697d418",
+  "outputUrl": "https://api.sync.so/v2/generations/6f26543b-4918-4992-b229-bea36adc62bd/result",
   "file": "lipsync/out/00088011_f182-235.mp4"
  },
  {
@@ -36,7 +36,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/8a0f225e-848a-4854-a085-1e9f60dbbc25/result?token=62730c23-2e05-4ac7-9a8b-b31dde3e0d11",
+  "outputUrl": "https://api.sync.so/v2/generations/8a0f225e-848a-4854-a085-1e9f60dbbc25/result",
   "file": "lipsync/out/00088514_f20-79.mp4"
  },
  {
@@ -56,7 +56,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a71e96aa-a1d7-4cab-a38b-1a1c7049cd75/result?token=b3957358-e92a-4eb6-b70d-0f2781f5159a",
+  "outputUrl": "https://api.sync.so/v2/generations/a71e96aa-a1d7-4cab-a38b-1a1c7049cd75/result",
   "file": "lipsync/out/00088693_f0-37.mp4"
  },
  {
@@ -76,7 +76,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/e9554d58-5ea4-477a-9e83-ab2d322c4497/result?token=7477f7b1-48ea-4181-afa3-11a45ea3fd35",
+  "outputUrl": "https://api.sync.so/v2/generations/e9554d58-5ea4-477a-9e83-ab2d322c4497/result",
   "file": "lipsync/out/00090058_f0-115.mp4"
  },
  {
@@ -96,7 +96,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/5774fc3f-2cd6-43a8-a0b1-05975119f21c/result?token=8d49b6ff-9d5c-4b43-9091-a4cff6d8ae1e",
+  "outputUrl": "https://api.sync.so/v2/generations/5774fc3f-2cd6-43a8-a0b1-05975119f21c/result",
   "file": "lipsync/out/00090058_f160-193.mp4"
  },
  {
@@ -116,7 +116,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6241968d-c728-40eb-ac82-b91f105c691f/result?token=da8adf48-1b66-4acf-b0bf-19ea64cd2672",
+  "outputUrl": "https://api.sync.so/v2/generations/6241968d-c728-40eb-ac82-b91f105c691f/result",
   "file": "lipsync/out/00090252_f0-31.mp4"
  },
  {
@@ -136,7 +136,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/f0235146-d504-4f0e-bb4f-023ea8efb2e9/result?token=9bf900c4-792d-40d1-adcd-e53d8ac23d3d",
+  "outputUrl": "https://api.sync.so/v2/generations/f0235146-d504-4f0e-bb4f-023ea8efb2e9/result",
   "file": "lipsync/out/00090527_f0-85.mp4"
  },
  {
@@ -156,7 +156,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a2353306-4962-422f-9c9d-0e4ee780d5ab/result?token=9cc1f418-5320-4bc5-8670-b658623ab3e1",
+  "outputUrl": "https://api.sync.so/v2/generations/a2353306-4962-422f-9c9d-0e4ee780d5ab/result",
   "file": "lipsync/out/00090694_f30-61.mp4"
  },
  {
@@ -176,7 +176,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/2a43d5da-6b19-4144-97d5-80304450bcde/result?token=ae21ef92-0a63-4ec4-95bc-b5d46702e7bb",
+  "outputUrl": "https://api.sync.so/v2/generations/2a43d5da-6b19-4144-97d5-80304450bcde/result",
   "file": "lipsync/out/00090756_f0-55.mp4"
  },
  {
@@ -196,7 +196,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/bf6c3433-c347-49e3-8b89-e41043a6e447/result?token=e957e4f7-5b89-4132-9b57-9e1036e6b63f",
+  "outputUrl": "https://api.sync.so/v2/generations/bf6c3433-c347-49e3-8b89-e41043a6e447/result",
   "file": "lipsync/out/00090983_f53-81.mp4"
  },
  {
@@ -216,7 +216,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/fb39f3e5-d93c-478e-aa63-286bc3b84995/result?token=18dbe68b-f82b-4a98-a97a-329962d5abb6",
+  "outputUrl": "https://api.sync.so/v2/generations/fb39f3e5-d93c-478e-aa63-286bc3b84995/result",
   "file": "lipsync/out/00091606_f0-36.mp4"
  },
  {
@@ -236,7 +236,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/5d5e07d6-6ec7-40e6-bdb9-6a304b98fc9b/result?token=16bf003e-dc87-40e9-966b-6bcfe2c62519",
+  "outputUrl": "https://api.sync.so/v2/generations/5d5e07d6-6ec7-40e6-bdb9-6a304b98fc9b/result",
   "file": "lipsync/out/00101509_f0-45.mp4"
  },
  {
@@ -256,7 +256,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/96232c41-9d58-45a0-9592-111cb8904d50/result?token=d20c74d9-7129-49c4-a733-d8ee42215ecd",
+  "outputUrl": "https://api.sync.so/v2/generations/96232c41-9d58-45a0-9592-111cb8904d50/result",
   "file": "lipsync/out/00101704_f0-71.mp4"
  },
  {
@@ -276,7 +276,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/618a841d-59d7-4d1b-8a26-727802ce913f/result?token=7801ad1d-dd06-490c-bae5-792f39abfbb2",
+  "outputUrl": "https://api.sync.so/v2/generations/618a841d-59d7-4d1b-8a26-727802ce913f/result",
   "file": "lipsync/out/00102065_f20-75.mp4"
  },
  {
@@ -296,7 +296,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/999add26-df2e-41e6-970c-c62ffc051fde/result?token=58f2da91-96c8-40fb-8c4d-a7d2548606ed",
+  "outputUrl": "https://api.sync.so/v2/generations/999add26-df2e-41e6-970c-c62ffc051fde/result",
   "file": "lipsync/out/00102148_f20-75.mp4"
  },
  {
@@ -316,7 +316,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/e2626941-6afb-4e9c-b29f-d74340204580/result?token=cb9aadec-1cc8-41bb-b457-51d7d2ffc1be",
+  "outputUrl": "https://api.sync.so/v2/generations/e2626941-6afb-4e9c-b29f-d74340204580/result",
   "file": "lipsync/out/00103215_f0-64.mp4"
  },
  {
@@ -336,7 +336,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a6c346c2-bea0-44bf-a008-f6808bb6933b/result?token=da8bdcaf-9a17-441c-9594-74853c3c32f0",
+  "outputUrl": "https://api.sync.so/v2/generations/a6c346c2-bea0-44bf-a008-f6808bb6933b/result",
   "file": "lipsync/out/00103280_f0-50.mp4"
  },
  {
@@ -356,7 +356,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/29c717dd-cc8c-4971-9e1b-6b5917b0fecd/result?token=835b38c7-8c9e-4936-8506-2dc34d00d846",
+  "outputUrl": "https://api.sync.so/v2/generations/29c717dd-cc8c-4971-9e1b-6b5917b0fecd/result",
   "file": "lipsync/out/00103280_f102-178.mp4"
  },
  {
@@ -376,7 +376,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/2ae6d0dc-726d-4579-a342-c6da23619986/result?token=007d32a5-50e3-400e-a203-c23ebda16ec5",
+  "outputUrl": "https://api.sync.so/v2/generations/2ae6d0dc-726d-4579-a342-c6da23619986/result",
   "file": "lipsync/out/00103280_f179-215.mp4"
  },
  {
@@ -396,7 +396,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/3e050844-cacf-4154-969f-c9823ea62150/result?token=ddbba64f-1af7-4646-95ee-c4838cafb61e",
+  "outputUrl": "https://api.sync.so/v2/generations/3e050844-cacf-4154-969f-c9823ea62150/result",
   "file": "lipsync/out/00105631_f10-125.mp4"
  },
  {
@@ -416,7 +416,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/c9af6704-0c9b-45a7-bab1-06c787f8d990/result?token=411a7bdd-8bc2-4176-b450-b1e1f838fac1",
+  "outputUrl": "https://api.sync.so/v2/generations/c9af6704-0c9b-45a7-bab1-06c787f8d990/result",
   "file": "lipsync/out/00105789_f10-42.mp4"
  },
  {
@@ -436,7 +436,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/0e6da987-b412-4bed-8491-7b9bd11f2951/result?token=0d29788c-a83b-41f5-925d-e1989cf3b167",
+  "outputUrl": "https://api.sync.so/v2/generations/0e6da987-b412-4bed-8491-7b9bd11f2951/result",
   "file": "lipsync/out/00105832_f0-40.mp4"
  },
  {
@@ -456,7 +456,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/90d8acd7-a088-4faf-953b-fb7179c273a3/result?token=8b56cf39-cfcd-4d37-9865-a915fc59b976",
+  "outputUrl": "https://api.sync.so/v2/generations/90d8acd7-a088-4faf-953b-fb7179c273a3/result",
   "file": "lipsync/out/00105832_f65-110.mp4"
  },
  {
@@ -476,7 +476,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/546de2d7-cebe-40a3-b779-7fcb47faaf20/result?token=d2970bfe-208d-49d2-89b6-24383048df11",
+  "outputUrl": "https://api.sync.so/v2/generations/546de2d7-cebe-40a3-b779-7fcb47faaf20/result",
   "file": "lipsync/out/00105832_f111-240.mp4"
  },
  {
@@ -496,7 +496,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/12b222a0-e299-4f68-9a8a-083a3b39e3c6/result?token=6a126b10-a26d-4dfd-9311-6c01acaf6b33",
+  "outputUrl": "https://api.sync.so/v2/generations/12b222a0-e299-4f68-9a8a-083a3b39e3c6/result",
   "file": "lipsync/out/00090252_f0-31_s0_a51923.mp4"
  },
  {
@@ -516,7 +516,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/0a99812b-9bd6-4dfe-abe5-c0a5e3847a1d/result?token=2290994d-7a4a-4a51-98dd-6c5235026776",
+  "outputUrl": "https://api.sync.so/v2/generations/0a99812b-9bd6-4dfe-abe5-c0a5e3847a1d/result",
   "file": "lipsync/out/00103280_f102-178_s1_11d70f.mp4"
  },
  {
@@ -536,7 +536,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/98f0ff78-722c-4687-b91b-727ba5a60d87/result?token=a42ad238-2fc7-4cbe-a990-1782467b9a45",
+  "outputUrl": "https://api.sync.so/v2/generations/98f0ff78-722c-4687-b91b-727ba5a60d87/result",
   "file": "lipsync/out/00103280_f179-215_s2_31d86f.mp4"
  },
  {
@@ -556,7 +556,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6c03aa6a-b44b-46c3-82d9-918df875f609/result?token=1b6cf111-bea5-41de-a03e-473cb3bf82d0",
+  "outputUrl": "https://api.sync.so/v2/generations/6c03aa6a-b44b-46c3-82d9-918df875f609/result",
   "file": "lipsync/out/00105832_f65-110_s1_a15f1f.mp4"
  },
  {
@@ -576,7 +576,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a5cd2e79-b88a-45e1-91f6-ae52fe5233fc/result?token=922fc84f-d2fb-45b9-8546-17c1201ee600",
+  "outputUrl": "https://api.sync.so/v2/generations/a5cd2e79-b88a-45e1-91f6-ae52fe5233fc/result",
   "file": "lipsync/out/00105832_f111-150_s2_3f5d3a.mp4"
  },
  {
@@ -596,7 +596,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/bf14ef6b-7ed4-4b34-9ae6-00a80ac44246/result?token=8b7f859e-d570-4a3e-8fed-12380fa0ab8d",
+  "outputUrl": "https://api.sync.so/v2/generations/bf14ef6b-7ed4-4b34-9ae6-00a80ac44246/result",
   "file": "lipsync/out/00090252_f0-31_s0_a9bccd.mp4"
  },
  {
@@ -616,7 +616,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1a3db5a7-882e-4e6b-b1e6-e0ab269c917e/result?token=9f657813-b1ef-4da4-a964-28a73a863abb",
+  "outputUrl": "https://api.sync.so/v2/generations/1a3db5a7-882e-4e6b-b1e6-e0ab269c917e/result",
   "file": "lipsync/out/00103280_f102-178_s1_4d59bb.mp4"
  },
  {
@@ -636,7 +636,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/669f6b6a-c5a7-4338-af92-23dbc12dedce/result?token=18794467-68fc-4594-a79c-4e91fdab8421",
+  "outputUrl": "https://api.sync.so/v2/generations/669f6b6a-c5a7-4338-af92-23dbc12dedce/result",
   "file": "lipsync/out/00103280_f179-215_s2_3702a4.mp4"
  },
  {
@@ -656,7 +656,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/58fccc92-ec6a-4d56-b98d-b1679f7ac1c0/result?token=8e2c2452-468b-4c40-9bf4-520197699cb0",
+  "outputUrl": "https://api.sync.so/v2/generations/58fccc92-ec6a-4d56-b98d-b1679f7ac1c0/result",
   "file": "lipsync/out/00105832_f65-110_s1_9bf46c.mp4"
  },
  {
@@ -676,7 +676,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6e98bb0e-ae80-42e9-971f-eb6e9dc5e399/result?token=b71d342d-7c43-49b5-91d1-68caa223a81c",
+  "outputUrl": "https://api.sync.so/v2/generations/6e98bb0e-ae80-42e9-971f-eb6e9dc5e399/result",
   "file": "lipsync/out/00105832_f111-150_s2_997901.mp4"
  },
  {
@@ -696,7 +696,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/0f252216-5201-41a9-8251-a5b1e77d7de9/result?token=f09f93a7-9548-4230-9d7a-53b5e20a235a",
+  "outputUrl": "https://api.sync.so/v2/generations/0f252216-5201-41a9-8251-a5b1e77d7de9/result",
   "file": "lipsync/out/00104123_f0-70_334111.mp4"
  },
  {
@@ -716,7 +716,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/139776fc-61dc-45ca-b7c5-6f33bf6afecb/result?token=dd33d27c-d2dd-4334-99c9-a12359828a03",
+  "outputUrl": "https://api.sync.so/v2/generations/139776fc-61dc-45ca-b7c5-6f33bf6afecb/result",
   "file": "lipsync/out/00107025_f60-193_ed9e7f.mp4"
  },
  {
@@ -736,7 +736,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/55589bdc-f863-43d6-ad33-88f9b9b1c5b0/result?token=b97a8e13-ffaf-4305-baec-b5813097a076",
+  "outputUrl": "https://api.sync.so/v2/generations/55589bdc-f863-43d6-ad33-88f9b9b1c5b0/result",
   "file": "lipsync/out/00107339_f0-121_5cd705.mp4"
  },
  {
@@ -756,7 +756,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/fa066e8b-d49f-4654-8c70-172af75821a0/result?token=48d7d7f1-617a-4b7e-8650-65a418090108",
+  "outputUrl": "https://api.sync.so/v2/generations/fa066e8b-d49f-4654-8c70-172af75821a0/result",
   "file": "lipsync/out/00107339_f178-215_67f7fb.mp4"
  },
  {
@@ -776,7 +776,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/af273ebc-d2b7-44b6-a333-e9eaa5ba0f0a/result?token=0698e157-951d-4028-b448-645bf134efc9",
+  "outputUrl": "https://api.sync.so/v2/generations/af273ebc-d2b7-44b6-a333-e9eaa5ba0f0a/result",
   "file": "lipsync/out/00107575_f30-61_12b5fe.mp4"
  },
  {
@@ -796,7 +796,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6492c874-4f32-4691-b2c3-2838c1186d5d/result?token=ba1779bb-b951-4fdc-afe6-a55c8b0e0f55",
+  "outputUrl": "https://api.sync.so/v2/generations/6492c874-4f32-4691-b2c3-2838c1186d5d/result",
   "file": "lipsync/out/00107637_f41-126_6cf8b4.mp4"
  },
  {
@@ -816,7 +816,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/f8a0d122-0387-4865-b66f-a758498f549c/result?token=bebc8040-b240-494c-afb7-6498851d2a49",
+  "outputUrl": "https://api.sync.so/v2/generations/f8a0d122-0387-4865-b66f-a758498f549c/result",
   "file": "lipsync/out/00107827_f42-94_d0e530.mp4"
  },
  {
@@ -836,7 +836,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1ba289ff-9ac7-4dd3-8a06-bcae057e9d34/result?token=ad2c402e-f4c4-480c-9ce6-cc730ae7b7f4",
+  "outputUrl": "https://api.sync.so/v2/generations/1ba289ff-9ac7-4dd3-8a06-bcae057e9d34/result",
   "file": "lipsync/out/00107827_f146-198_f06322.mp4"
  },
  {
@@ -856,7 +856,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/cd31adfa-3536-43b4-85fe-e40dcb3af52d/result?token=fdc7ce61-7d4b-41e4-8338-d0f25000afca",
+  "outputUrl": "https://api.sync.so/v2/generations/cd31adfa-3536-43b4-85fe-e40dcb3af52d/result",
   "file": "lipsync/out/00108026_f30-80_5d75e9.mp4"
  },
  {
@@ -876,7 +876,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/b9eb0aff-a465-422d-b7d4-49d5ace2772b/result?token=06b43594-be05-4587-95f1-68878d6c89be",
+  "outputUrl": "https://api.sync.so/v2/generations/b9eb0aff-a465-422d-b7d4-49d5ace2772b/result",
   "file": "lipsync/out/00108382_f125-200_s0_188c8a.mp4"
  },
  {
@@ -896,7 +896,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6d4ed0f1-fdf1-4446-aa63-3f59a89f6801/result?token=88b18e39-dce9-4532-bbc3-8f2b546e982a",
+  "outputUrl": "https://api.sync.so/v2/generations/6d4ed0f1-fdf1-4446-aa63-3f59a89f6801/result",
   "file": "lipsync/out/00109321_f15-70_507ac5.mp4"
  },
  {
@@ -916,7 +916,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/904083e2-61c7-46eb-afa5-00612dcc2b7e/result?token=9ffb8f51-ec27-4989-8a8a-e19cadada984",
+  "outputUrl": "https://api.sync.so/v2/generations/904083e2-61c7-46eb-afa5-00612dcc2b7e/result",
   "file": "lipsync/out/00109943_f0-76_s0_f38abb.mp4"
  },
  {
@@ -937,7 +937,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/aa7550bf-1ce1-4094-8b0b-fa4e6a376eed/result?token=6b7bdde5-f60e-4564-883f-c5729fbfa8b7",
+  "outputUrl": "https://api.sync.so/v2/generations/aa7550bf-1ce1-4094-8b0b-fa4e6a376eed/result",
   "file": "lipsync/out/00109943_f0-76_s1_9bedd0.mp4"
  },
  {
@@ -957,7 +957,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/cd7ae0ea-0d12-4e8d-b927-fc67cf31c451/result?token=fdfd0aca-0d23-46a0-ad1a-bc2663179722",
+  "outputUrl": "https://api.sync.so/v2/generations/cd7ae0ea-0d12-4e8d-b927-fc67cf31c451/result",
   "file": "lipsync/out/00106229_f100-410_s0_ded917.mp4"
  },
  {
@@ -978,7 +978,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/64d7f431-b409-40cb-a139-145c86e18665/result?token=5554f32d-8b75-4cc7-b18a-48534db2f9ab",
+  "outputUrl": "https://api.sync.so/v2/generations/64d7f431-b409-40cb-a139-145c86e18665/result",
   "file": "lipsync/out/00106229_f100-410_s1_0dce2b.mp4"
  },
  {
@@ -998,7 +998,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/2365898c-51fb-4f50-82f3-be982b99f4ab/result?token=87326ee7-4e5a-4e10-a503-6fe13b5d08d5",
+  "outputUrl": "https://api.sync.so/v2/generations/2365898c-51fb-4f50-82f3-be982b99f4ab/result",
   "file": "lipsync/out/00092071_f40-80_0bd62a.mp4"
  },
  {
@@ -1018,7 +1018,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/ae6a12f0-92ff-411c-96f1-f13419162539/result?token=1b66c7dc-7472-4ff4-9727-73664d9d6fc6",
+  "outputUrl": "https://api.sync.so/v2/generations/ae6a12f0-92ff-411c-96f1-f13419162539/result",
   "file": "lipsync/out/00102229_f20-420_s0_fa92b7.mp4"
  },
  {
@@ -1038,7 +1038,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/e4cd4faa-49ea-4ad8-89b3-255be0753130/result?token=6b970ad3-e8f4-4a7a-9d11-c11eb45ffa89",
+  "outputUrl": "https://api.sync.so/v2/generations/e4cd4faa-49ea-4ad8-89b3-255be0753130/result",
   "file": "lipsync/out/00103629_f30-73_45ae3f.mp4"
  },
  {
@@ -1058,7 +1058,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/2cd58607-0dc0-4506-b914-9eca3a461225/result?token=a40dda17-148e-4f5d-836f-350eed778524",
+  "outputUrl": "https://api.sync.so/v2/generations/2cd58607-0dc0-4506-b914-9eca3a461225/result",
   "file": "lipsync/out/00103835_f106-191_2beaff.mp4"
  },
  {
@@ -1078,7 +1078,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6e177aa1-2ca4-4397-a517-edb11d3c668c/result?token=fa9ba880-23bd-47d7-a4c3-1c2fe9e237d0",
+  "outputUrl": "https://api.sync.so/v2/generations/6e177aa1-2ca4-4397-a517-edb11d3c668c/result",
   "file": "lipsync/out/00104240_f119-169_s0_16ed91.mp4"
  },
  {
@@ -1098,7 +1098,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/d7a00e8f-87e5-49e2-8521-ece7c1f5f944/result?token=2d049357-a5de-414f-9979-1991df975d97",
+  "outputUrl": "https://api.sync.so/v2/generations/d7a00e8f-87e5-49e2-8521-ece7c1f5f944/result",
   "file": "lipsync/out/00104240_f170-220_s1_113977.mp4"
  },
  {
@@ -1118,7 +1118,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/526c1e2e-cfa1-419e-b8bc-d408e5ed36ae/result?token=d1bf3f72-b04f-4aa3-b5a4-ad08283fd86a",
+  "outputUrl": "https://api.sync.so/v2/generations/526c1e2e-cfa1-419e-b8bc-d408e5ed36ae/result",
   "file": "lipsync/out/00104461_f86-149_s0_189015.mp4"
  },
  {
@@ -1138,7 +1138,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/0f242479-8d31-4800-a936-15f07ccef622/result?token=739bdf92-de6a-4222-978f-6f81925a66f2",
+  "outputUrl": "https://api.sync.so/v2/generations/0f242479-8d31-4800-a936-15f07ccef622/result",
   "file": "lipsync/out/00104461_f150-182_s1_2ebe22.mp4"
  },
  {
@@ -1158,7 +1158,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/5bff366c-f73b-45b2-b51b-c660dab668e3/result?token=ca4a3e7b-0a97-4f1e-be50-ce4e8c482d4a",
+  "outputUrl": "https://api.sync.so/v2/generations/5bff366c-f73b-45b2-b51b-c660dab668e3/result",
   "file": "lipsync/out/00104461_f183-233_s2_9fcea0.mp4"
  },
  {
@@ -1178,7 +1178,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/d10959ef-afd5-4286-80d5-b222251e19b7/result?token=6220fc51-f8d7-492d-8432-239392255cab",
+  "outputUrl": "https://api.sync.so/v2/generations/d10959ef-afd5-4286-80d5-b222251e19b7/result",
   "file": "lipsync/out/00104695_f0-176_s0_68f31f.mp4"
  },
  {
@@ -1198,7 +1198,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a430a653-6f60-4535-a922-be17fa766e41/result?token=62890259-a1e1-4daa-bb66-6cc5457b739d",
+  "outputUrl": "https://api.sync.so/v2/generations/a430a653-6f60-4535-a922-be17fa766e41/result",
   "file": "lipsync/out/00104695_f237-275_s1_6342de.mp4"
  },
  {
@@ -1218,7 +1218,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/58e1c96d-1ebc-419d-ba12-f2bdafc98e79/result?token=4ff6e482-be0b-41d1-8142-4ea1688a14a0",
+  "outputUrl": "https://api.sync.so/v2/generations/58e1c96d-1ebc-419d-ba12-f2bdafc98e79/result",
   "file": "lipsync/out/00105386_f57-161_0d7fc4.mp4"
  },
  {
@@ -1239,7 +1239,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/047a9c65-825c-4380-a863-2c49e17a617b/result?token=8e9f7ea7-4e87-42e2-b604-2382c6299e33",
+  "outputUrl": "https://api.sync.so/v2/generations/047a9c65-825c-4380-a863-2c49e17a617b/result",
   "file": "lipsync/out/00102229_f20-420_s1_09e528.mp4"
  },
  {
@@ -1259,7 +1259,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/4fd815fa-a3bd-4ff0-811f-1edd35b3e74d/result?token=ec772c04-c26b-472c-9e45-ac09832d5b38",
+  "outputUrl": "https://api.sync.so/v2/generations/4fd815fa-a3bd-4ff0-811f-1edd35b3e74d/result",
   "file": "lipsync/out/00103835_f106-191_d22034.mp4"
  },
  {
@@ -1279,7 +1279,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1c944330-606d-4982-ba8b-bd6a31177be4/result?token=71261e30-0386-46c0-94e4-e5bc924a7734",
+  "outputUrl": "https://api.sync.so/v2/generations/1c944330-606d-4982-ba8b-bd6a31177be4/result",
   "file": "lipsync/out/00104123_f0-70_a31689.mp4"
  },
  {
@@ -1299,7 +1299,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/5b0d33e8-4b36-4193-9834-b81e1d055d89/result?token=ef6bf6b8-f3d7-4211-a94e-7ba91f3df741",
+  "outputUrl": "https://api.sync.so/v2/generations/5b0d33e8-4b36-4193-9834-b81e1d055d89/result",
   "file": "lipsync/out/00104240_f119-169_s0_9e4cf3.mp4"
  },
  {
@@ -1319,7 +1319,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/2cb69cd0-69f3-4c9c-aed5-bca7397f135f/result?token=d8b5f7ff-6f8b-42fd-9a1e-86ab4b9f587f",
+  "outputUrl": "https://api.sync.so/v2/generations/2cb69cd0-69f3-4c9c-aed5-bca7397f135f/result",
   "file": "lipsync/out/00104461_f86-149_s0_664ab6.mp4"
  },
  {
@@ -1339,7 +1339,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/9dd2c2fd-defc-4a80-964a-db45e1942944/result?token=8907d536-3520-4436-92cc-df33e1ec7ef8",
+  "outputUrl": "https://api.sync.so/v2/generations/9dd2c2fd-defc-4a80-964a-db45e1942944/result",
   "file": "lipsync/out/00104461_f183-233_s2_b6a1b6.mp4"
  },
  {
@@ -1359,7 +1359,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/7be05a28-50c4-455e-a3d7-b4f0d564b9b4/result?token=b5901ba8-9f02-418e-9f57-30e4ab12ef9f",
+  "outputUrl": "https://api.sync.so/v2/generations/7be05a28-50c4-455e-a3d7-b4f0d564b9b4/result",
   "file": "lipsync/out/00104695_f0-176_s0_ac8397.mp4"
  },
  {
@@ -1379,7 +1379,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/ccd6b9c8-1741-449a-ba1c-f225c3448752/result?token=ea203a1b-c7c4-4c15-9734-228e6dd4e8a8",
+  "outputUrl": "https://api.sync.so/v2/generations/ccd6b9c8-1741-449a-ba1c-f225c3448752/result",
   "file": "lipsync/out/00104695_f237-275_s1_2db307.mp4"
  },
  {
@@ -1399,7 +1399,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/4ed510e8-4d3e-4c23-9c22-04051da4b7cd/result?token=434dabb6-86f6-4bd1-a8ed-f687b6b9179b",
+  "outputUrl": "https://api.sync.so/v2/generations/4ed510e8-4d3e-4c23-9c22-04051da4b7cd/result",
   "file": "lipsync/out/00107827_f42-94_b31449.mp4"
  },
  {
@@ -1419,7 +1419,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/b25d74a0-8bdd-4387-a99d-685d4efed96d/result?token=48a7fc58-4038-48b7-a067-cc01641869aa",
+  "outputUrl": "https://api.sync.so/v2/generations/b25d74a0-8bdd-4387-a99d-685d4efed96d/result",
   "file": "lipsync/out/00107827_f146-198_b8ca6d.mp4"
  },
  {
@@ -1439,7 +1439,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/3b7ae76b-2783-44e1-a4f4-8989dfa66c43/result?token=7145200f-733b-4075-bc3d-48fc2cafa3a4",
+  "outputUrl": "https://api.sync.so/v2/generations/3b7ae76b-2783-44e1-a4f4-8989dfa66c43/result",
   "file": "lipsync/out/00102065_f0-82_1c6b60.mp4"
  },
  {
@@ -1459,7 +1459,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/b38866e0-7683-4ea6-8238-cb2faab9c07d/result?token=a08c46e8-49f7-41aa-93de-c23826b46997",
+  "outputUrl": "https://api.sync.so/v2/generations/b38866e0-7683-4ea6-8238-cb2faab9c07d/result",
   "file": "lipsync/out/00102229_f0-464_s0_cb0ec1.mp4"
  },
  {
@@ -1479,7 +1479,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/b716a0ad-7103-4459-b39c-0830208f65b9/result?token=c4950022-8c45-4431-bbb3-214e2d856817",
+  "outputUrl": "https://api.sync.so/v2/generations/b716a0ad-7103-4459-b39c-0830208f65b9/result",
   "file": "lipsync/out/00108382_f0-252_s0_819b8e.mp4"
  },
  {
@@ -1500,7 +1500,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/9c03d6d0-e828-45fb-b798-886957f4601a/result?token=957262a2-e68c-4e1f-84b7-913493507d05",
+  "outputUrl": "https://api.sync.so/v2/generations/9c03d6d0-e828-45fb-b798-886957f4601a/result",
   "file": "lipsync/out/00102229_f0-464_s1_c134de.mp4"
  },
  {
@@ -1520,7 +1520,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1c68f729-b883-466b-93b6-049dc762b9a6/result?token=b38eaa06-1900-42b4-bcb8-932cda3d1760",
+  "outputUrl": "https://api.sync.so/v2/generations/1c68f729-b883-466b-93b6-049dc762b9a6/result",
   "file": "lipsync/out/00105832_f111-294_s2_3922f3.mp4"
  },
  {
@@ -1540,7 +1540,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/5101a598-96e6-42c4-ac99-851cdf4f642c/result?token=96d53266-4d73-4f29-98df-9bf10600f64e",
+  "outputUrl": "https://api.sync.so/v2/generations/5101a598-96e6-42c4-ac99-851cdf4f642c/result",
   "file": "lipsync/out/00102229_f0-380_s0_69d8d8.mp4"
  },
  {
@@ -1560,7 +1560,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/cbf84f5d-c5fd-4981-9d21-f51c7d3f14cc/result?token=94cad335-52b9-4e30-b7ee-fa23cfabf7ef",
+  "outputUrl": "https://api.sync.so/v2/generations/cbf84f5d-c5fd-4981-9d21-f51c7d3f14cc/result",
   "file": "lipsync/out/00102229_f60-440_s1_9b5caa.mp4"
  },
  {
@@ -1580,7 +1580,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/be91d5b4-59d6-4416-ad76-2f5c0a545b60/result?token=b2870cfd-4123-4da8-878d-ceebf735cf1d",
+  "outputUrl": "https://api.sync.so/v2/generations/be91d5b4-59d6-4416-ad76-2f5c0a545b60/result",
   "file": "lipsync/out/00104123_f0-80_s0_b37e65.mp4"
  },
  {
@@ -1600,7 +1600,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1a497c2e-b5e6-4b79-b158-350b35d4588e/result?token=f63a7ebd-5e55-48e7-9aa1-5ddebbb9a516",
+  "outputUrl": "https://api.sync.so/v2/generations/1a497c2e-b5e6-4b79-b158-350b35d4588e/result",
   "file": "lipsync/out/00104240_f119-169_s0_b6ea9f.mp4"
  },
  {
@@ -1620,7 +1620,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/52009dac-e872-4a2a-9595-87e84cae83e8/result?token=a3bde343-e9da-4220-ae4c-0c735a5330f6",
+  "outputUrl": "https://api.sync.so/v2/generations/52009dac-e872-4a2a-9595-87e84cae83e8/result",
   "file": "lipsync/out/00104240_f170-220_s1_147cb1.mp4"
  },
  {
@@ -1640,7 +1640,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/fc4575a5-3be7-412f-b01f-ee09cc1cb585/result?token=463e6a7d-6f80-46d6-8b04-ee4744b34091",
+  "outputUrl": "https://api.sync.so/v2/generations/fc4575a5-3be7-412f-b01f-ee09cc1cb585/result",
   "file": "lipsync/out/00108943_f80-176_s0_88e49a.mp4"
  },
  {
@@ -1660,7 +1660,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1c59740a-9c6a-495c-96a5-5935517b5835/result?token=452bba73-23d9-428b-9bad-cb3b4f23ca51",
+  "outputUrl": "https://api.sync.so/v2/generations/1c59740a-9c6a-495c-96a5-5935517b5835/result",
   "file": "lipsync/out/00102229_f0-380_s0_d1a233.mp4"
  },
  {
@@ -1680,7 +1680,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/84956590-031a-4042-b7ff-be7212060df0/result?token=d7a61349-1109-47ad-b3f4-e0bb3974bb86",
+  "outputUrl": "https://api.sync.so/v2/generations/84956590-031a-4042-b7ff-be7212060df0/result",
   "file": "lipsync/out/00104123_f0-116_s0_a2906b.mp4"
  },
  {
@@ -1700,7 +1700,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/e5eb816f-6d91-4332-8aae-e4bc5e70d3cc/result?token=106ed5ac-115a-4796-8585-304f0409b9b5",
+  "outputUrl": "https://api.sync.so/v2/generations/e5eb816f-6d91-4332-8aae-e4bc5e70d3cc/result",
   "file": "lipsync/out/00104240_f71-118_s0_5717d8.mp4"
  },
  {
@@ -1720,7 +1720,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/91cb6645-699c-4248-b115-c8f9a5d42ed1/result?token=4136e5e2-bc3c-4c14-a9ed-ba391a1bf151",
+  "outputUrl": "https://api.sync.so/v2/generations/91cb6645-699c-4248-b115-c8f9a5d42ed1/result",
   "file": "lipsync/out/00104240_f119-169_s1_1aee7f.mp4"
  },
  {
@@ -1740,7 +1740,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/dc77577a-5878-4bc0-8433-056c79f8210b/result?token=b6908d6b-35b3-4278-b1a2-76a5ec401864",
+  "outputUrl": "https://api.sync.so/v2/generations/dc77577a-5878-4bc0-8433-056c79f8210b/result",
   "file": "lipsync/out/00104240_f170-220_s2_32ff84.mp4"
  },
  {
@@ -1766,7 +1766,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/00a1a8ff-2e25-4cfc-a247-5cf2cc72b8d1/result?token=0cef5cb1-1435-4e91-9134-c9e4718216bf",
+  "outputUrl": "https://api.sync.so/v2/generations/00a1a8ff-2e25-4cfc-a247-5cf2cc72b8d1/result",
   "file": "lipsync/out/00104240_f71-118_s0z_369a04.mp4"
  },
  {
@@ -1786,7 +1786,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/7cb7f9da-00da-42c9-82a6-d97df3c7806a/result?token=3d5e375f-d3aa-41a5-8cf1-19c2d31b6370",
+  "outputUrl": "https://api.sync.so/v2/generations/7cb7f9da-00da-42c9-82a6-d97df3c7806a/result",
   "file": "lipsync/out/00088514_f20-79_72bbad.mp4"
  },
  {
@@ -1812,7 +1812,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/07be073a-6e98-454d-8854-176e291e5956/result?token=81a5ef11-e1c7-4490-91d4-f62a759edd91",
+  "outputUrl": "https://api.sync.so/v2/generations/07be073a-6e98-454d-8854-176e291e5956/result",
   "file": "lipsync/out/00104240_f71-118_s0z_969fb4.mp4"
  },
  {
@@ -1832,7 +1832,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/ddd35691-35eb-4350-b46e-08bc8025b727/result?token=87434257-3095-4948-8566-1f46b71785de",
+  "outputUrl": "https://api.sync.so/v2/generations/ddd35691-35eb-4350-b46e-08bc8025b727/result",
   "file": "lipsync/out/00104240_f119-169_s1_6fdb7d.mp4"
  },
  {
@@ -1852,7 +1852,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1efcdb65-4654-44f7-9aa4-96f461586d44/result?token=fd9aca0b-afe3-45a5-88d0-4f881ab0a918",
+  "outputUrl": "https://api.sync.so/v2/generations/1efcdb65-4654-44f7-9aa4-96f461586d44/result",
   "file": "lipsync/out/00104240_f170-220_s2_c59277.mp4"
  },
  {
@@ -1873,7 +1873,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/426b81eb-8463-4571-a8ea-d5daf4fe6449/result?token=393cf018-02c9-4edb-8dff-0037a5c6cb4e",
+  "outputUrl": "https://api.sync.so/v2/generations/426b81eb-8463-4571-a8ea-d5daf4fe6449/result",
   "file": "lipsync/out/00104359_f0-50_s0_fd8e1b.mp4"
  },
  {
@@ -1898,7 +1898,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/6c616a8a-2ae8-493e-90ee-c019f4fe95f2/result?token=2a2e99c7-c083-4f12-91ec-4d8764256f1b",
+  "outputUrl": "https://api.sync.so/v2/generations/6c616a8a-2ae8-493e-90ee-c019f4fe95f2/result",
   "file": "lipsync/out/00104359_f102-187_s1z_d0966a.mp4"
  },
  {
@@ -1919,7 +1919,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/f99931cf-fdb9-42fb-b34a-047a4d49d897/result?token=88c61b82-5ca0-422d-8678-5e947a30be91",
+  "outputUrl": "https://api.sync.so/v2/generations/f99931cf-fdb9-42fb-b34a-047a4d49d897/result",
   "file": "lipsync/out/00104359_f188-251_s2_54b26c.mp4"
  },
  {
@@ -1940,7 +1940,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/c7c9fb8b-bbb5-4ece-8480-69280b89f7ce/result?token=e630fd9e-d261-4f72-8e9d-241b3b47b0ba",
+  "outputUrl": "https://api.sync.so/v2/generations/c7c9fb8b-bbb5-4ece-8480-69280b89f7ce/result",
   "file": "lipsync/out/00104359_f285-335_s3_f071f1.mp4"
  },
  {
@@ -1961,7 +1961,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/120228fc-8c1c-4420-9200-daae583d64f8/result?token=2d22e8e6-3123-403b-8f3f-1ea70b340523",
+  "outputUrl": "https://api.sync.so/v2/generations/120228fc-8c1c-4420-9200-daae583d64f8/result",
   "file": "lipsync/out/00104359_f188-251_s2_991f47.mp4"
  },
  {
@@ -1982,7 +1982,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/32197d0a-ba32-4240-8cb8-e50af09e530c/result?token=282902ed-96f3-42ec-b40e-dc068311e9ba",
+  "outputUrl": "https://api.sync.so/v2/generations/32197d0a-ba32-4240-8cb8-e50af09e530c/result",
   "file": "lipsync/out/00104359_f285-335_s3_38c5cc.mp4"
  },
  {
@@ -2002,7 +2002,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/a8c53e95-6bbf-44ea-b47f-474a28108111/result?token=52cc8c22-d359-48ee-ac0b-df650c04df1a",
+  "outputUrl": "https://api.sync.so/v2/generations/a8c53e95-6bbf-44ea-b47f-474a28108111/result",
   "file": "lipsync/out/00105631_f0-157_e7ca05.mp4"
  },
  {
@@ -2028,7 +2028,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1ee71fba-e7fd-4c9b-9f3b-555ed846005e/result?token=ba586380-45f7-42ab-af60-f1a1ac0b4e55",
+  "outputUrl": "https://api.sync.so/v2/generations/1ee71fba-e7fd-4c9b-9f3b-555ed846005e/result",
   "file": "lipsync/out/00104359_f188-251_s4z_z_ad74b3.mp4"
  },
  {
@@ -2054,7 +2054,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/cdf8dab7-3f3c-4ff9-88d4-c1874af24cdf/result?token=fc1c9248-6ba6-4e22-8415-5423c445c4e5",
+  "outputUrl": "https://api.sync.so/v2/generations/cdf8dab7-3f3c-4ff9-88d4-c1874af24cdf/result",
   "file": "lipsync/out/00104359_f188-251_s5_p3_cccd46.mp4"
  },
  {
@@ -2076,7 +2076,7 @@
   "status": "COMPLETED",
   "error": null,
   "errorCode": null,
-  "outputUrl": "https://api.sync.so/v2/generations/1148355d-b3cf-4f9a-bc47-ded1c5495741/result?token=e1944c07-c7e9-4807-b5cc-cfa2f15d1132",
+  "outputUrl": "https://api.sync.so/v2/generations/1148355d-b3cf-4f9a-bc47-ded1c5495741/result",
   "file": "lipsync/out/00104359_f188-251_s6_r2_1eab89.mp4"
  }
 ]

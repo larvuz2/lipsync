@@ -51,3 +51,31 @@ reuses `tools/melody_labels.py`).
 
 One Seedance 2.5 run at 1080p (billed per token, roughly $8–16 for 8 s at 1080p) and 11 SAM 3 mask runs (under
 $0.50). No fallback provider was needed.
+
+---
+
+# Version 2 — full-frame video-edit model (client: "the cropped jacket moves weirdly")
+
+Output: `outputs/pp/Melody_EP101_product_placement_v2.mp4` (same edit, card, wipe, labels and original audio).
+The jacket is no longer cut out and warped onto the original: the whole frame comes from a video-EDIT model (the
+source video is the base and is kept; only the jacket is changed), so the jacket moves with his body natively.
+
+Same 8 s input (original 23.976 fps, 192 frames), same product photo, one prompt for all models
+(`tools/pp_edit_models.py`): replace only his olive jacket with the jacket in the image, worn open, hood down; keep
+face, identity, expressions, eye and mouth/lip movement on every frame, motion and timing, bucket, other people,
+background, camera, cuts, speed, light and grain identical. Compared with `tools/pp_eval_edits.py` against the
+original (timing offset per shot in frames, + = late; face/background mean abs difference at 960x540, 0-255):
+
+| Model (fal) | Frames | Offset per shot | Face diff | Background diff | Jacket | Verdict |
+|---|---|---|---|---|---|---|
+| Seedance 2.5 reference-to-video (v1) | 185 @ 24 | −1, −4, −5 | 24.5 | 14.7 | right | not frame-exact |
+| **Kling O3 Pro video-to-video edit** | 193 @ 24 | **0, 0, 0** | **6.2** | **3.3** | logo, black piping, cuffs, hem; open in every shot | **used** |
+| Kling 4.0 video-to-video edit | 193 @ 24 | 0, +1, +1 | 9.3 (6.0 after shifting) | 5.0 | perforated texture, hood tape; zipped up in the wide shot (continuity) | close second |
+| Happy Horse video edit | 193 @ 24 | +2, +4, +8 | 32.3 | 17.5 | very good | changes his face; late |
+| Wan 2.7 edit video | 240 @ 30 | −5, −6, 0 | 35.4 | 23.2 | — | drifts |
+
+Kling O3 Pro's cuts fall on the original's frames (66, 113, 156), so its frames are used 1:1. The box shot he is not in
+(frames 113–155 of the 8 s) is the original shot. Faces are about 20 % softer than the source (a full-frame re-render)
+but the same face, expression and mouth on every frame; no flicker beyond the original's own motion.
+
+Cost (fal): Kling O3 Pro ~$1.1, Kling 4.0 ~$1.3, Wan 2.7 ~$0.8, Happy Horse ~$1.1 (one server error, re-run).
